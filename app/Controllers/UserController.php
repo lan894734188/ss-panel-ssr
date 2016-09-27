@@ -168,6 +168,24 @@ class UserController extends BaseController
         $res['ret'] = 1;
         return $this->echoJson($response, $res);
     }
+    public function updateSSRProtocol($request, $response, $args)
+    {
+        $user = Auth::getUser();
+        $SSRProtocol = $request->getParam('SSRProtocol');
+        $SSRProtocol = strtolower($SSRProtocol);
+        $user->updateMethod($SSRProtocol);
+        $res['ret'] = 1;
+        return $this->echoJson($response, $res);
+    }
+    public function updateSSRobfs($request, $response, $args)
+    {
+        $user = Auth::getUser();
+        $SSRobfs = $request->getParam('SSRobfs');
+        $SSRobfs = strtolower($SSRobfs);
+        $user->updateMethod($SSRobfs);
+        $res['ret'] = 1;
+        return $this->echoJson($response, $res);
+    }
 
     public function logout($request, $response, $args)
     {
