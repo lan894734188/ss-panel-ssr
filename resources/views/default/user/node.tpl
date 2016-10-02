@@ -59,7 +59,7 @@
                                                         class="pull-right badge bg-green">{$node->getNodeLoad()}</span></a>
                                         </li>
                                         <li><a href="./node/{$node->id}">SSR连接协议: <span
-                                                        class="pull-right badge bg-green">{$user->SSRProtocol}</span></a>
+                                                        class="pull-right badge bg-green">{$user->protocol}</span></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -78,7 +78,7 @@
                                                         class="pull-right badge bg-green">{$node->getNodeUptime()}</span></a>
                                         </li>
                                         <li><a href="./node/{$node->id}">SSR混淆协议: <span
-                                                        class="pull-right badge bg-green">{$user->SSRobfs}</span></a>
+                                                        class="pull-right badge bg-green">{$user->obfs}</span></a>
                                         </li>
                                     </ul>
                                 </div>
