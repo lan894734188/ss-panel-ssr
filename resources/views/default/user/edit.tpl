@@ -114,7 +114,11 @@
 
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" id="method" placeholder="输入新加密方式" class="form-control">
+                                        <select type="text" id="method" placeholder="输入新加密方式" class="form-control">
+                                            <option value="{$user->method}">{$user->method}</option>
+                                            <option value="aes-256-cfb">AES-256-CFB</option>
+                                            <option value="chacha20">CHACHA20</option>
+                                        </select>
                                         <div class="input-group-btn">
                                             <button type="submit" id="method-update" class="btn btn-primary">修改</button>
                                         </div>
