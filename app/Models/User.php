@@ -88,13 +88,13 @@ class User extends Model
 
     public function updateSSRProtocol($SSRProtocol)
     {
-        $this->SSRProtocol = $SSRProtocol;
+        $this->protocol = $SSRProtocol;
         $this->save();
     }
 
     public function updateSSRobfs($SSRobfs)
     {
-        $this->SSRobfs = $SSRobfs;
+        $this->obfs = $SSRobfs;
         $this->save();
     }
 
