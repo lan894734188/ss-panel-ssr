@@ -30,7 +30,7 @@
 	</div>
 	<div class="footer-copyright">
 		<div class="container">
-			&copy; {$config["appName"]}  Powered by <a class="orange-text text-lighten-3" href="https://github.com/orvice/ss-panel">ss-panel</a> {$config["version"]}
+			&copy; {$config["appName"]}  Powered by <a class="orange-text text-lighten-3" href="https://github.com/lan894734188/ss-panel-ssr">批发靓鸡仔</a> <a class="orange-text text-lighten-3" href="https://github.com/orvice/ss-panel">orvice</a> {$config["version"]}
 		 Theme by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
 		</div>
 		<div style="display:none;">
