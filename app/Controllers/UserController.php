@@ -62,6 +62,8 @@ class UserController extends BaseController
         $ary['server_port'] = $this->user->port;
         $ary['password'] = $this->user->passwd;
         $ary['method'] = $node->method;
+        $ary['SSRProtocol'] = $this->user->protocol;
+        $ary['SSRobfs'] = $this->user->obfs;
         if ($node->custom_method) {
             $ary['method'] = $this->user->method;
         }
@@ -173,7 +175,7 @@ class UserController extends BaseController
         $user = Auth::getUser();
         $SSRProtocol = $request->getParam('SSRProtocol');
         $SSRProtocol = strtolower($SSRProtocol);
-        $user->updateMethod($SSRProtocol);
+        $user->updateSSRProtocol($SSRProtocol);
         $res['ret'] = 1;
         return $this->echoJson($response, $res);
     }
@@ -182,7 +184,7 @@ class UserController extends BaseController
         $user = Auth::getUser();
         $SSRobfs = $request->getParam('SSRobfs');
         $SSRobfs = strtolower($SSRobfs);
-        $user->updateMethod($SSRobfs);
+        $user->updateSSRobfs($SSRobfs);
         $res['ret'] = 1;
         return $this->echoJson($response, $res);
     }
