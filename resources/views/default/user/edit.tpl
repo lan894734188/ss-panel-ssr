@@ -62,7 +62,7 @@
                                 <label class="col-sm-3 control-label">新密码</label>
 
                                 <div class="col-sm-9">
-                                    <input type="password" class="form-control" placeholder="新密码" id="pwd">
+                                    <input type="password" class="form-control" placeholder="新密码" id="pwd" pattern=".{6,32}">
                                 </div>
                             </div>
 
@@ -70,7 +70,7 @@
                                 <label class="col-sm-3 control-label">确认密码</label>
 
                                 <div class="col-sm-9">
-                                    <input type="password" placeholder="确认密码" class="form-control" id="repwd">
+                                    <input type="password" placeholder="确认密码" class="form-control" id="repwd" pattern=".{6,32}">
                                 </div>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
 
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" id="sspwd" placeholder="输入新连接密码" class="form-control">
+                                        <input type="text" id="sspwd" placeholder="输入新连接密码" pattern=".{6,32}" class="form-control">
                                         <div class="input-group-btn">
                                             <button type="submit" id="ss-pwd-update" class="btn btn-primary">修改</button>
                                         </div>
