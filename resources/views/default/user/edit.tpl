@@ -129,8 +129,51 @@
                 </div>
                 <!-- /.box -->
             </div>
-            <!-- /.col (right) -->
+            <div class="col-md-6">
 
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <i class="fa fa-link"></i>
+
+                        <h3 class="box-title">ShadowsocksRSS连接信息修改</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">连接协议</label>
+
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <input type="text" id="SSRProtocol" placeholder="输入新连接密码" class="form-control">
+                                        <div class="input-group-btn">
+                                            <button type="submit" id="SSRProtocol-update" class="btn btn-primary">修改</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">混淆方式</label>
+
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <input type="text" id="SSRobfs" placeholder="输入新加密方式" class="form-control">
+                                        <div class="input-group-btn">
+                                            <button type="submit" id="SSRobfs-update" class="btn btn-primary">修改</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="box-footer"></div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col (right) -->
         </div>
     </section>
     <!-- /.content -->
@@ -209,6 +252,60 @@
                 dataType: "json",
                 data: {
                     method: $("#method").val()
+                },
+                success: function (data) {
+                    if (data.ret) {
+                        $("#ss-msg-success").show();
+                        $("#ss-msg-success-p").html(data.msg);
+                    } else {
+                        $("#ss-msg-error").show();
+                        $("#ss-msg-error-p").html(data.msg);
+                    }
+                },
+                error: function (jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                }
+            })
+        })
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#SSRProtocol-update").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "SSRProtocol",
+                dataType: "json",
+                data: {
+                    SSRProtocol: $("#SSRProtocol").val()
+                },
+                success: function (data) {
+                    if (data.ret) {
+                        $("#ss-msg-success").show();
+                        $("#ss-msg-success-p").html(data.msg);
+                    } else {
+                        $("#ss-msg-error").show();
+                        $("#ss-msg-error-p").html(data.msg);
+                    }
+                },
+                error: function (jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                }
+            })
+        })
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#SSRobfs-update").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "SSRobfs",
+                dataType: "json",
+                data: {
+                    SSRobfs: $("#SSRobfs").val()
                 },
                 success: function (data) {
                     if (data.ret) {
