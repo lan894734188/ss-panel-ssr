@@ -110,9 +110,9 @@
                             <dt>自定义加密方式</dt>
                             <dd>{$user->method}</dd>
                             <dt>自定义SSR连接协议</dt>
-                            <dd>{$user->SSRProtocol}</dd>
+                            <dd>{$user->protocol}</dd>
                             <dt>自定义SSR混淆方式</dt>
-                            <dd>{$user->SSRobfs}</dd>
+                            <dd>{$user->obfs}</dd>
                             <dt>上次使用</dt>
                             <dd>{$user->lastSsTime()}</dd>
                         </dl>
