@@ -152,7 +152,7 @@
                     <div class="box-header">
                         <i class="fa fa-link"></i>
 
-                        <h3 class="box-title">ShadowsocksRSS连接信息修改</h3>
+                        <h3 class="box-title">ShadowsocksR连接信息修改</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -163,7 +163,7 @@
                                 <div class="col-sm-9">
                                     <div class="input-group">
                                         <select type="text" id="SSRProtocol" class="form-control">
-                                            <option value="{$user->protocol}">{$user->protocol}</option>
+                                            <option value="{$user->protocol}">当前:{$user->protocol}</option>
                                             <option value="origin">origin原版协议</option>
                                             <option value="verify_simple">verify_simple(不兼容原版)</option>
                                             <option value="verify_deflate">verify_deflate(不兼容原版)</option>
@@ -187,7 +187,7 @@
                                 <div class="col-sm-9">
                                     <div class="input-group">
                                         <select type="text" id="SSRobfs" class="form-control">
-                                            <option value="{$user->obfs}">{$user->obfs}</option>
+                                            <option value="{$user->obfs}">当前:{$user->obfs}</option>
                                             <option value="plain">plain无混淆</option>
                                             <option value="http_simple_compatible">http_simple(兼容原版)</option>
                                             <option value="http_post_compatible">http_post(兼容原版)</option>
