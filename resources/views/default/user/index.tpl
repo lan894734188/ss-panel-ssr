@@ -109,6 +109,10 @@
                             <dd>{$user->passwd}</dd>
                             <dt>自定义加密方式</dt>
                             <dd>{$user->method}</dd>
+                            <dt>自定义SSR连接协议</dt>
+                            <dd>{$user->SSRProtocol}</dd>
+                            <dt>自定义SSR混淆方式</dt>
+                            <dd>{$user->SSRobfs}</dd>
                             <dt>上次使用</dt>
                             <dd>{$user->lastSsTime()}</dd>
                         </dl>
