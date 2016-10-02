@@ -115,7 +115,7 @@
                                 <div class="col-sm-9">
                                     <div class="input-group">
                                         <select type="text" id="method" class="form-control">
-                                            <option value="{$user->method}">{$user->method}</option>
+                                            <option value="{$user->method}">当前:{$user->method}</option>
                                             <option value="aes-128-cfb">AES-128-CFB</option>
                                             <option value="aes-192-cfb">AES-192-CFB</option>
                                             <option value="aes-256-cfb">AES-256-CFB</option>
