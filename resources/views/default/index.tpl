@@ -1,4 +1,4 @@
-{include file='cg.tpl'}
+{include file='header.tpl'}
 <div class="section no-pad-bot" id="index-banner">
     <div class="container">
         <br><br>
