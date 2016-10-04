@@ -2,7 +2,7 @@
 <div class="section no-pad-bot" id="index-banner">
     <div class="container">
         <br><br>
-        <div class="row center">
+        <div class="row center white-text">
             <h5>邀请码实时刷新</h5>
             <h5>如遇到无邀请码请找已经注册的用户获取。</h5>
             {$msg}
@@ -13,7 +13,7 @@
 <div class="container">
     <div class="section">
         <!--   Icon Section   -->
-        <div class="row">
+        <div class="row white-text">
             <div class="row marketing">
                 <h2 class="sub-header">邀请码</h2>
                 <div class="table-responsive">
