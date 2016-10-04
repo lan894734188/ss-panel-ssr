@@ -122,7 +122,7 @@
 
                 <li>
                     <a href="/user/edit">
-                        <i class="fa  fa-pencil"></i> <span>修改资料</span>
+                        <i class="fa  fa-pencil"></i> <span>密码/协议/混淆设置</span>
                     </a>
                 </li>
 
