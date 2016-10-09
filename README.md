@@ -10,6 +10,6 @@
 <br/>
 #FAQ
 https://github.com/lan894734188/ss-panel-ssr/wiki
-###LICENSE
+#LICENSE
 GNU GENERAL PUBLIC LICENSE<br/>
 Version 3
