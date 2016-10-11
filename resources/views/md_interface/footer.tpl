@@ -1,6 +1,6 @@
 <footer class="ui-footer">
 	<div class="container">
-		<p>Material</p>
+		<p>ss-panel-ssr</p>
 	</div>
 </footer>
 <div class="fbtn-container">
