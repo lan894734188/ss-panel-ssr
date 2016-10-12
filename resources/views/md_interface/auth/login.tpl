@@ -49,7 +49,7 @@
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<a class="btn btn-block btn-brand waves-attach waves-light" id="login">登陆/Sign In</a>
+													<button class="btn btn-block btn-brand waves-attach waves-light" id="login">登陆/Sign In</button>
 												</div>
 											</div>
 										</div>
@@ -102,7 +102,7 @@
 				<p class="h5 margin-top-sm text-black-hint" id="msg-success-p"></p>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭/Discard</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal" id="ok-close">关闭/Discard</a></p>
 			</div>
 		</div>
 	</div>
@@ -115,7 +115,7 @@
 				<p class="h5 margin-top-sm text-black-hint" id="msg-error-p"></p>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭/Discard</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal" id="error-close">关闭/Discard</a></p>
 			</div>
 		</div>
 	</div>
