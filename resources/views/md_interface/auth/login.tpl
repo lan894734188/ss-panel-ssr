@@ -80,7 +80,7 @@
 						<div class="card-inner" data-toggle="tab" href="#ui_tab_reg">
 									<p class="text-center">
 										<span class="avatar avatar-inline avatar-lg">
-											<img alt="Login" src="../images/users/avatar-001.jpg">
+											<img alt="Login" src="../assets/md-interface/images/users/avatar-001.jpg">
 										</span>
 									</p>
 									<form class="form" action="index.html">
