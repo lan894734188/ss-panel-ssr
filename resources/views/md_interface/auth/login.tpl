@@ -20,13 +20,13 @@
 							</ul>
 						</nav>
 						<div class="card tab-content">
-							<div class="card-main">
+							<div class="card-main tab-pane fade active in" data-toggle="tab" href="#ui_tab_login">
 								<div class="card-header">
 									<div class="card-inner">
 										<h1 class="card-heading">登陆与注册/Login or SighUP</h1>
 									</div>
 								</div>
-								<div class="card-inner tab-pane fade active in" data-toggle="tab" href="#ui_tab_login">
+								<div class="card-inner">
 									<p class="text-center">
 										<span class="avatar avatar-inline avatar-lg">
 											<img alt="Login" src="../assets/md-interface/images/users/avatar-001.jpg">
@@ -75,8 +75,8 @@
 									<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="javascript:void(0)">Create an account</a></p>
 								</div>
 							</div>
-							<div class="card-main">
-								<div class="card-inner tab-pane fade" data-toggle="tab" href="#ui_tab_reg">
+							<div class="card-main tab-pane fade" data-toggle="tab" href="#ui_tab_reg">
+								<div class="card-inner">
 									<p class="text-center">
 										<span class="avatar avatar-inline avatar-lg">
 											<img alt="Login" src="../assets/md-interface/images/users/avatar-001.jpg">
