@@ -73,7 +73,7 @@
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<button class="btn btn-block btn-brand waves-attach waves-light" data-backdrop="static" data-toggle="modal" href="#ui_dialog_mailcheck">同意用户协议并下一步/Sign UP</button>
+													<a class="btn btn-block btn-brand waves-attach waves-light" data-backdrop="static" data-toggle="modal" href="#ui_dialog_mailcheck">同意用户协议并下一步/Sign UP</a>
 												</div>
 											</div>
 										</div>
