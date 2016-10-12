@@ -114,7 +114,9 @@
 				<p class="h5 margin-top-sm text-black-hint">请将xxx.xxx添加到邮箱白名单。否则可能收不到验证码</p>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" data-dismiss="modal">取消/Cancel</a><a class="btn btn-brand-accent waves-attach waves-light" id="sendcode">获取验证码/Recheck</a><a class="btn btn-brand-accent waves-attach waves-light" data-dismiss="modal" id="reg">继续/KeepGoing</a></p>
+				<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" data-dismiss="modal">取消/Cancel</a></p>
+				<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" id="sendcode">获取验证码/Recheck</a></p>
+				<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" data-dismiss="modal" id="reg">继续/KeepGoing</a></p>
 			</div>
 		</div>
 	</div>
