@@ -19,123 +19,119 @@
 								</li>
 							</ul>
 						</nav>
-						<div class="card" data-toggle="tab" href="#ui_tab_login">
+						<div class="card">
 							<div class="card-main">
 								<div class="card-header">
 									<div class="card-inner">
 										<h1 class="card-heading">登陆与注册/Login or SighUP</h1>
 									</div>
 								</div>
-								<div class="card-inner">
-									<p class="text-center">
-										<span class="avatar avatar-inline avatar-lg">
-											<img alt="Login" src="../assets/md-interface/images/users/avatar-001.jpg">
-										</span>
-									</p>
-									<form class="form" action="index.html">
-										<div class="form-group form-group-label">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="login_email">用户名/Username</label>
-													<input class="form-control" id="login_email" type="text">
-												</div>
-											</div>
-										</div>
-										<div class="form-group form-group-label">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="login_password">密码/Password</label>
-													<input class="form-control" id="login_password" type="password">
-												</div>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<button class="btn btn-block btn-brand waves-attach waves-light" id="login">登陆/Sign In</button>
-												</div>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<div class="checkbox checkbox-adv">
-														<label for="ui_login_remember">
-															<input class="access-hide" id="ui_login_remember" name="ui_login_remember" type="checkbox">保持登陆/Stay signed in
-															<span class="checkbox-circle"></span><span class="checkbox-circle-check"></span><span class="checkbox-circle-icon icon">done</span>
-														</label>
+								<div class="tab-content">
+									<div class="card-inner tab-pane fade active in" data-toggle="tab" href="#ui_tab_login">
+										<p class="text-center">
+											<span class="avatar avatar-inline avatar-lg">
+												<img alt="Login" src="../assets/md-interface/images/users/avatar-001.jpg">
+											</span>
+										</p>
+										<form class="form" action="index.html">
+											<div class="form-group form-group-label">
+												<div class="row">
+													<div class="col-md-10 col-md-push-1">
+														<label class="floating-label" for="login_email">用户名/Username</label>
+														<input class="form-control" id="login_email" type="text">
 													</div>
 												</div>
 											</div>
-										</div>
-									</form>
+											<div class="form-group form-group-label">
+												<div class="row">
+													<div class="col-md-10 col-md-push-1">
+														<label class="floating-label" for="login_password">密码/Password</label>
+														<input class="form-control" id="login_password" type="password">
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="row">
+													<div class="col-md-10 col-md-push-1">
+														<button class="btn btn-block btn-brand waves-attach waves-light" id="login">登陆/Sign In</button>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="row">
+													<div class="col-md-10 col-md-push-1">
+														<div class="checkbox checkbox-adv">
+															<label for="ui_login_remember">
+																<input class="access-hide" id="ui_login_remember" name="ui_login_remember" type="checkbox">保持登陆/Stay signed in
+																<span class="checkbox-circle"></span><span class="checkbox-circle-check"></span><span class="checkbox-circle-icon icon">done</span>
+															</label>
+														</div>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+									<div class="card-inner tab-pane fade" data-toggle="tab" href="#ui_tab_reg">
+										<p class="text-center">
+											<span class="avatar avatar-inline avatar-lg">
+												<img alt="Login" src="../assets/md-interface/images/users/avatar-001.jpg">
+											</span>
+										</p>
+										<form class="form" action="index.html">
+											<div class="form-group form-group-label">
+												<div class="row">
+													<div class="col-md-10 col-md-push-1">
+														<label class="floating-label" for="name">名称/Name</label>
+														<input class="form-control" id="name" type="text">
+													</div>
+												</div>
+											</div>
+											<div class="form-group form-group-label">
+												<div class="row">
+													<div class="col-md-10 col-md-push-1">
+														<label class="floating-label" for="email">邮箱/E-Mail</label>
+														<input class="form-control" id="email" type="text">
+													</div>
+												</div>
+											</div>
+											<div class="form-group form-group-label">
+												<div class="row">
+													<div class="col-md-10 col-md-push-1">
+														<label class="floating-label" for="passwd">密码/Password</label>
+														<input class="form-control" id="passwd" type="text">
+													</div>
+												</div>
+											</div>
+											<div class="form-group form-group-label">
+												<div class="row">
+													<div class="col-md-10 col-md-push-1">
+														<label class="floating-label" for="repasswd">重复密码/Repeat password</label>
+														<input class="form-control" id="repasswd" type="text">
+													</div>
+												</div>
+											</div>
+											<div class="form-group form-group-label">
+												<div class="row">
+													<div class="col-md-10 col-md-push-1">
+														<label class="floating-label" for="code">邀请码/Invitation code</label>
+														<input class="form-control" id="code" value="{$code}" type="password">
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="row">
+													<div class="col-md-10 col-md-push-1">
+														<button class="btn btn-block btn-brand waves-attach waves-light" data-backdrop="static" data-toggle="modal" href="#ui_dialog_mailcheck">同意用户协议并下一步/Sign UP</button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
 								</div>
 							</div>
 							<div class="clearfix">
-							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="javascript:void(0)">Need help?</a></p>
-							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="javascript:void(0)">Create an account</a></p>
-							</div>
-						</div>
-						<div class="card-inner" data-toggle="tab" href="#ui_tab_reg">
-									<p class="text-center">
-										<span class="avatar avatar-inline avatar-lg">
-											<img alt="Login" src="../assets/md-interface/images/users/avatar-001.jpg">
-										</span>
-									</p>
-									<form class="form" action="index.html">
-										<div class="form-group form-group-label">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="name">名称/Name</label>
-													<input class="form-control" id="name" type="text">
-												</div>
-											</div>
-										</div>
-										<div class="form-group form-group-label">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="email">邮箱/E-Mail</label>
-													<input class="form-control" id="email" type="text">
-												</div>
-											</div>
-										</div>
-										<div class="form-group form-group-label">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="passwd">密码/Password</label>
-													<input class="form-control" id="passwd" type="text">
-												</div>
-											</div>
-										</div>
-										<div class="form-group form-group-label">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="repasswd">重复密码/Repeat password</label>
-													<input class="form-control" id="repasswd" type="text">
-												</div>
-											</div>
-										</div>
-										<div class="form-group form-group-label">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="code">邀请码/Invitation code</label>
-													<input class="form-control" id="code" value="{$code}" type="password">
-												</div>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<button class="btn btn-block btn-brand waves-attach waves-light" data-backdrop="static" data-toggle="modal" href="#ui_dialog_mailcheck">同意用户协议并下一步/Sign UP</button>
-												</div>
-											</div>
-										</div>
-									</form>
-								</div>
-							</div>
-							<div class="clearfix">
-							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="javascript:void(0)">Need help?</a></p>
-							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="javascript:void(0)">Create an account</a></p>
+								<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="javascript:void(0)">Need help?</a></p>
+								<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="javascript:void(0)">Create an account</a></p>
 							</div>
 						</div>
 					</section>
