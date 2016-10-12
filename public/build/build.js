@@ -1,4 +1,4 @@
-webpackJsonp([0,3],[
+webpackJsonp([0,1],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -14,30 +14,33 @@ webpackJsonp([0,3],[
 	var resource = __webpack_require__(5);
 	__webpack_require__(6);
 
+	var home  = __webpack_require__(7);
+	var about = __webpack_require__(11);
+	var app = __webpack_require__(15)
 	vue.use(router);
 	vue.use(resource);
 
-	var app = vue.extend({});
-
 	var route = new router({
-		hashbang : true,
+		hashbang : false,
 		history : false,
 		saveScrollPosition: true,
-		transitionOnLoad : true
+		transitionOnLoad : true,
+		transition:true,
+		transitionMode: 'out-in'
 	});
 
 	route.map({
-		'/':{
-			component: function(resolve){
-				__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(7)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this))
-			}
+		'/home':{
+			component: home
 		},
 		'/about':{
-			component: function(resolve){
-				__webpack_require__.e/* require */(2, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(11)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this))
-			}	
+			component: about
 		}
 	});
+
+	route.redirect({
+	    '*': '/home'
+	})
 
 	route.afterEach(function(transition){
 		console.log("成功浏览到：" + transition.to.path)
@@ -14717,6 +14720,360 @@ webpackJsonp([0,3],[
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__webpack_require__(8)
+	__vue_script__ = __webpack_require__(9)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/vue/home.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(10)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-661e12ac/home.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	// <template>
+	// 	<div>
+	// 		<div>I am {{ name }}</div>
+	// 	</div>
+	// </template>
+	//
+	//
+	// <script>
+	//js
+	exports.default = {
+		name: 'home',
+
+		data: function data() {
+			return {
+				name: 'home'
+			};
+		},
+		created: function created() {
+			this.$loadingRouteData = false;
+			console.log(this.name);
+		}
+	};
+	// </script>
+	//
+	// <style>
+	//
+	// </style>
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div>\n\t<div>I am {{ name }}</div>\n</div>\n";
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__webpack_require__(12)
+	__vue_script__ = __webpack_require__(13)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/vue/about.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(14)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-dbaca8e0/about.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	// <template>
+	// 	<div>I am {{ name }}</div>
+	// </template>
+	//
+	//
+	// <script>
+	//js
+
+	exports.default = {
+		name: 'about',
+
+		data: function data() {
+			return {
+				name: 'about'
+			};
+		}
+	};
+	// </script>
+	//
+	//
+	// <style>
+	// </style>
+
+/***/ },
+/* 14 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div>I am {{ name }}</div>\n";
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__webpack_require__(16)
+	__vue_script__ = __webpack_require__(17)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/vue/app.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(22)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-71be96e4/app.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 16 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _nav = __webpack_require__(18);
+
+	var _nav2 = _interopRequireDefault(_nav);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//js
+	exports.default = {
+		name: 'app',
+
+		components: [_nav2.default],
+
+		data: function data() {
+			return {
+				name: 'app'
+			};
+		},
+		created: function created() {
+			this.$loadingRouteData = false;
+			console.log(this.name);
+		}
+	};
+	// </script>
+	//
+	// <style>
+	// ul{
+	// 	list-style-type: none;
+	// }
+	// </style>
+	// <template>
+	// 	<div>
+	// 		<Navbar></Navbar>
+	// 		<router-view
+	// 		transition="route"
+	// 		transition-mode="out-in">	
+	// 		</router-view>
+	// 	</div>
+	// </template>
+	//
+	//
+	// <script>
+
+/***/ },
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__webpack_require__(19)
+	__vue_script__ = __webpack_require__(20)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/vue/nav.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(21)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-082b74e6/nav.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 19 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 20 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	// <template>
+	// 	<div class="nav-view">
+	// 		<ul>	
+	// 			<li v-link="{path:'/home'}">
+	// 				<a href="">首页</a>
+	// 			</li>
+	// 			<li v-link="{path:'/about'}">
+	// 				<a href="">关于</a>
+	// 			</li>
+	// 		</ul>
+	// 	</div>
+	// </template>
+	//
+	// <script>
+
+	exports.default = {
+		name: 'Navbar'
+
+	};
+	// </script>
+	//
+	// <style lang="sass">
+	// 	.nav-view{
+	// 		position: fixed;
+	// 		top: 0;
+	// 		left: 0;
+	// 	}
+	// 	.nav-view li{
+	// 		float: left;
+	// 	}
+	// </style>
+
+/***/ },
+/* 21 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"nav-view\">\n\t<ul>\t\n\t\t<li v-link=\"{path:'/home'}\">\n\t\t\t<a href=\"\">首页</a>\n\t\t</li>\n\t\t<li v-link=\"{path:'/about'}\">\n\t\t\t<a href=\"\">关于</a>\n\t\t</li>\n\t</ul>\n</div>\n";
+
+/***/ },
+/* 22 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div>\n\t<Navbar></Navbar>\n\t<router-view\n\ttransition=\"route\"\n\ttransition-mode=\"out-in\">\t\n\t</router-view>\n</div>\n";
 
 /***/ }
 ]);

@@ -33,7 +33,7 @@ webpackJsonp([1,3],[
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-69068e7e/home.vue"
+	  var id = "_v-751f6f84/home.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {

@@ -23,7 +23,35 @@ body{margin:0;padding:0;}
 
 
 
-.home {
-  background: red;
-  height: 20px;
-  width: 20px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ul {
+  list-style-type: none; }
+.nav-view {
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+.nav-view li {
+  float: left; }
