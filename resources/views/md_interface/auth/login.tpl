@@ -41,8 +41,8 @@
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="password">密码/Password</label>
-													<input class="form-control" id="password" type="password">
+													<label class="floating-label" for="passwd">密码/Password</label>
+													<input class="form-control" id="passwd" type="password">
 												</div>
 											</div>
 										</div>
@@ -57,8 +57,8 @@
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
 													<div class="checkbox checkbox-adv">
-														<label for="remember">
-															<input class="access-hide" id="remember" name="remember" type="checkbox">Stay signed in
+														<label for="remember_me">
+															<input class="access-hide" id="remember_me" name="remember_me" type="checkbox">Stay signed in
 															<span class="checkbox-circle"></span><span class="checkbox-circle-check"></span><span class="checkbox-circle-icon icon">done</span>
 														</label>
 													</div>
