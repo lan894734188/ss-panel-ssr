@@ -170,19 +170,19 @@
                 },
                 success: function (data) {
                     if (data.ret == 1) {
-                        $("#msg-error").hide(10);
-                        $("#msg-success").show(100);
+                        $("#msg-error").modal("hide");
+                        $("#msg-success").modal("show");
                         $("#msg-success-p").html(data.msg);
                         window.setTimeout("location.href='/auth/login'", 2000);
                     } else {
-                        $("#msg-success").hide(10);
-                        $("#msg-error").show(100);
+                        $("#msg-success").modal("hide");
+                        $("#msg-error").modal("show");
                         $("#msg-error-p").html(data.msg);
                     }
                 },
                 error: function (jqXHR) {
-                    $("#msg-error").hide(10);
-                    $("#msg-error").show(100);
+                    $("#msg-error").modal("hide");
+                    $("#msg-error").modal("show");
                     $("#msg-error-p").html("发生错误：" + jqXHR.status);
                 }
             });
@@ -203,8 +203,8 @@
             if (count > 3 || timer) return false;
 
             if (!email) {
-                $("#msg-error").hide(10);
-                $("#msg-error").show(100);
+                $("#msg-error").modal("hide");
+                $("#msg-error").modal("show");
                 $("#msg-error-p").html("请先填写邮箱!");
                 return $("#email").focus();
             }
@@ -218,8 +218,8 @@
                 },
                 success: function (data) {
                     if (data.ret == 1) {
-                        $("#msg-error").hide(10);
-                        $("#msg-success").show(100);
+                        $("#msg-error").modal("hide");
+                        $("#msg-success").modal("show");
                         $("#msg-success-p").html(data.msg);
                         timer = setInterval(function () {
                             --countdown;
@@ -230,15 +230,15 @@
                             }
                         }, 1000);
                     } else {
-                        $("#msg-success").hide(10);
-                        $("#msg-error").show(100);
+                        $("#msg-success").modal("hide");
+                        $("#msg-error").modal("show");
                         $("#msg-error-p").html(data.msg);
                         clearTimer();
                     }
                 },
                 error: function (jqXHR) {
-                    $("#msg-error").hide(10);
-                    $("#msg-error").show(100);
+                    $("#msg-error").modal("hide");
+                    $("#msg-error").modal("show");
                     $("#msg-error-p").html("发生错误：" + jqXHR.status);
                     clearTimer();
                 }
@@ -252,10 +252,10 @@
             }
         });
         $("#ok-close").click(function () {
-            $("#msg-success").hide(100);
+            //$("#msg-success").modal("hide");
         });
         $("#error-close").click(function () {
-            $("#msg-error").hide(100);
+            //$("#msg-error").modal("hide");
         });
     })
 </script>
