@@ -36,7 +36,7 @@
 			</li>
 		</ul>
 	</header>
-	{include file='nav.tpl'}
+{include file='nav.tpl'}
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
