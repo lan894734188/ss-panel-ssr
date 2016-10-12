@@ -11,13 +11,13 @@
 					<section class="content-inner margin-top-no">
 						<div class="card tab-content">
 							<div class="card-main tab-pane fade active in" data-toggle="tab" href="#ui_tab_example_1">
-								<nav class="tab-nav ui-tab">
+								<nav class="margin-top-no tab-nav ui-tab">
 									<ul class="nav nav-list">
 										<li class="active">
-											<a class="waves-attach waves-light" data-toggle="tab" href="#ui_tab_example_1"><span class="text-black">登陆/LOGIN</span></a>
+											<a class="waves-attach waves-light" data-toggle="tab" href="#ui_tab_example_1">登陆/LOGIN</a>
 										</li>
 										<li>
-											<a class="waves-attach waves-light" data-toggle="tab" href="#ui_tab_example_2"><span class="text-black">注册/SIGNUP</span></a>
+											<a class="waves-attach waves-light" data-toggle="tab" href="#ui_tab_example_2">注册/SIGNUP</a>
 										</li>
 									</ul>
 								</nav>
