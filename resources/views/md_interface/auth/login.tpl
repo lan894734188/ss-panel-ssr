@@ -142,19 +142,19 @@
                 },
                 success:function(data){
                     if(data.ret == 1){
-                        //$("#msg-error").hide();
-                        $("#msg-success").show();
+                        $("#msg-error").modal(show);
+                        $("#msg-success").modal(hide);
                         $("#msg-success-p").html(data.msg);
                         window.setTimeout("location.href='/user'", 2000);
                     }else{
-                        //$("#msg-success").hide();
-                        $("#msg-error").show();
+                        $("#msg-success").modal(hide);
+                        $("#msg-error").modal(show);
                         $("#msg-error-p").html(data.msg);
                     }
                 },
                 error:function(jqXHR){
-                    //$("#msg-error").hide();
-                    $("#msg-error").show();
+                    $("#msg-error").modal(hide);
+                    $("#msg-error").modal(show);
                     $("#msg-error-p").html("发生错误："+jqXHR.status);
                 }
             });
