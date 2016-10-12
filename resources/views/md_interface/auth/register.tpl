@@ -96,7 +96,7 @@
 		</div>
 	</footer>
 
-<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_mailcheck" role="dialog" tabindex="-1">
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_mailcheck" role="dialog" tabindex="-2">
 	<div class="modal-dialog modal-xs">
 		<div class="modal-content">
 			<div class="modal-heading">
