@@ -37,7 +37,7 @@ class AuthController extends BaseController
 
     public function login($request, $response, $args)
     {
-        if (!empty($request->getQueryParams())) 
+        if (!empty($_GET['code'])) 
         {
             $ary = $request->getQueryParams();
             $code = "";
