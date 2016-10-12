@@ -29,7 +29,7 @@
 											<img alt="Login" src="../assets/md-interface/images/users/avatar-001.jpg">
 										</span>
 									</p>
-									<form class="form" action="index.html">
+									<form class="form">
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
@@ -95,7 +95,7 @@
 			<p>Material</p>
 		</div>
 	</footer>
-	
+
 <div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_mailcheck" role="dialog" tabindex="-1">
 	<div class="modal-dialog modal-xs">
 		<div class="modal-content">

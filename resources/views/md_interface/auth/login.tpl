@@ -29,7 +29,7 @@
 											<img alt="Login" src="../assets/md-interface/images/users/avatar-001.jpg">
 										</span>
 									</p>
-									<form class="form" action="index.html">
+									<form class="form">
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
