@@ -37,16 +37,7 @@ class AuthController extends BaseController
 
     public function login($request, $response, $args)
     {
-        if (!empty($_GET[''])) 
-        {
-            $ary = $request->getQueryParams();
-            $code = $ary['code'];
-            $requireEmailVerification = Config::get('emailVerifyEnabled');
-            return $this->view()->assign('code', $code)->assign('requireEmailVerification', $requireEmailVerification)->display('auth/login.tpl');
-        }else{
-            return $this->view()->display('auth/login.tpl');
-        }
-        
+        return $this->view()->display('auth/login.tpl');
     }
 
     public function loginHandle($request, $response, $args)
@@ -84,6 +75,17 @@ class AuthController extends BaseController
         $res['ret'] = 1;
         $res['msg'] = "欢迎回来";
         return $this->echoJson($response, $res);
+    }
+
+    public function register($request, $response, $args)
+    {
+        $ary = $request->getQueryParams();
+        $code = "";
+        if (isset($ary['code'])) {
+            $code = $ary['code'];
+        }
+        $requireEmailVerification = Config::get('emailVerifyEnabled');
+        return $this->view()->assign('code', $code)->assign('requireEmailVerification', $requireEmailVerification)->display('auth/register.tpl');
     }
 
     public function registerHandle($request, $response, $args)
