@@ -86,6 +86,18 @@ class User extends Model
         $this->save();
     }
 
+    public function updateSSRProtocol($SSRProtocol)
+    {
+        $this->protocol = $SSRProtocol;
+        $this->save();
+    }
+
+    public function updateSSRobfs($SSRobfs)
+    {
+        $this->obfs = $SSRobfs;
+        $this->save();
+    }
+
     public function addInviteCode()
     {
         $uid = $this->attributes['id'];

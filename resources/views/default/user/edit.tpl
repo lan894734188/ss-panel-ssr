@@ -114,7 +114,24 @@
 
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input type="text" id="method" placeholder="输入新加密方式" class="form-control">
+                                        <select type="text" id="method" class="form-control">
+                                            <option value="{$user->method}">当前:{$user->method}</option>
+                                            <option value="aes-128-cfb">AES-128-CFB</option>
+                                            <option value="aes-192-cfb">AES-192-CFB</option>
+                                            <option value="aes-256-cfb">AES-256-CFB</option>
+                                            <option value="aes-128-ctr">AES-128-CTR</option>
+                                            <option value="aes-192-ctr">AES-192-CTR</option>
+                                            <option value="aes-256-ctr">AES-256-CTR</option>
+                                            <option value="bf-cfb">BF-CFB</option>
+                                            <option value="camellia-128-cfb">CAMELLIA-128-CFB</option>
+                                            <option value="camellia-192-cfb">CAMELLIA-192-CFB</option>
+                                            <option value="camellia-256-cfb">CAMELLIA-256-CFB</option>
+                                            <option value="rc4-md5">RC4-MD5</option>
+                                            <option value="rc4-md5-6">RC4-MD5-6</option>
+                                            <option value="salsa20">SALSA20</option>
+                                            <option value="chacha20">CHACHA20</option>
+                                            <option value="chacha20-ietf">CHACHA20-IETF</option>
+                                        </select>
                                         <div class="input-group-btn">
                                             <button type="submit" id="method-update" class="btn btn-primary">修改</button>
                                         </div>
@@ -129,8 +146,68 @@
                 </div>
                 <!-- /.box -->
             </div>
-            <!-- /.col (right) -->
+            <div class="col-md-6">
 
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <i class="fa fa-link"></i>
+
+                        <h3 class="box-title">ShadowsocksR连接信息修改</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">连接协议</label>
+
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <select type="text" id="SSRProtocol" class="form-control">
+                                            <option value="{$user->protocol}">当前:{$user->protocol}</option>
+                                            <option value="origin">origin原版协议</option>
+                                            <option value="verify_simple">verify_simple(不兼容原版)</option>
+                                            <option value="verify_deflate">verify_deflate(不兼容原版)</option>
+                                            <option value="verify_sha1_compatible">verify_sha1(兼容原版)</option>
+                                            <option value="auth_sha1_compatible">auth_sha1(兼容原版)</option>
+                                            <option value="auth_sha1_v2_compatible">auth_sha1_v2(兼容原版)</option>
+                                            <option value="auth_sha1_v3_compatible">auth_sha1_v3(兼容原版)</option>
+                                            <option value="auth_sha1_v4_compatible">auth_sha1_v4(兼容原版)</option>
+                                            <option value="auth_aes128">auth_aes128(不兼容原版)</option>
+                                        </select>
+                                        <div class="input-group-btn">
+                                            <button type="submit" id="SSRProtocol-update" class="btn btn-primary">修改</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">混淆方式</label>
+
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <select type="text" id="SSRobfs" class="form-control">
+                                            <option value="{$user->obfs}">当前:{$user->obfs}</option>
+                                            <option value="plain">plain无混淆</option>
+                                            <option value="http_simple_compatible">http_simple(兼容原版)</option>
+                                            <option value="http_post_compatible">http_post(兼容原版)</option>
+                                            <option value="tls1.2_ticket_auth_compatible">tls1.2_ticket_auth(兼容原版)</option>
+                                        </select>
+                                        <div class="input-group-btn">
+                                            <button type="submit" id="SSRobfs-update" class="btn btn-primary">修改</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="box-footer"></div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col (right) -->
         </div>
     </section>
     <!-- /.content -->
@@ -209,6 +286,60 @@
                 dataType: "json",
                 data: {
                     method: $("#method").val()
+                },
+                success: function (data) {
+                    if (data.ret) {
+                        $("#ss-msg-success").show();
+                        $("#ss-msg-success-p").html(data.msg);
+                    } else {
+                        $("#ss-msg-error").show();
+                        $("#ss-msg-error-p").html(data.msg);
+                    }
+                },
+                error: function (jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                }
+            })
+        })
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#SSRProtocol-update").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "SSRProtocol",
+                dataType: "json",
+                data: {
+                    SSRProtocol: $("#SSRProtocol").val()
+                },
+                success: function (data) {
+                    if (data.ret) {
+                        $("#ss-msg-success").show();
+                        $("#ss-msg-success-p").html(data.msg);
+                    } else {
+                        $("#ss-msg-error").show();
+                        $("#ss-msg-error-p").html(data.msg);
+                    }
+                },
+                error: function (jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                }
+            })
+        })
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#SSRobfs-update").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "SSRobfs",
+                dataType: "json",
+                data: {
+                    SSRobfs: $("#SSRobfs").val()
                 },
                 success: function (data) {
                     if (data.ret) {

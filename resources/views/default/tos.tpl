@@ -1,6 +1,6 @@
 {include file='header.tpl'}
 <!-- Begin page content -->
-<div class="section no-pad-bot" id="index-banner">
+<div class="section no-pad-bot white-text" id="index-banner">
 <div class="container">
     <div class="page-header">
         <h1>用户协议 Terms of Service </h1>

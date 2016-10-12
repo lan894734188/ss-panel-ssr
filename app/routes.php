@@ -51,6 +51,8 @@ $app->group('/user', function () {
     $this->post('/password', 'App\Controllers\UserController:updatePassword');
     $this->post('/sspwd', 'App\Controllers\UserController:updateSsPwd');
     $this->post('/method', 'App\Controllers\UserController:updateMethod');
+    $this->post('/SSRProtocol', 'App\Controllers\UserController:updateSSRProtocol');
+    $this->post('/SSRobfs', 'App\Controllers\UserController:updateSSRobfs');
     $this->get('/sys', 'App\Controllers\UserController:sys');
     $this->get('/trafficlog', 'App\Controllers\UserController:trafficLog');
     $this->get('/kill', 'App\Controllers\UserController:kill');

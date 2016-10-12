@@ -173,7 +173,7 @@ class UserController extends BaseController
         $user = Auth::getUser();
         $SSRProtocol = $request->getParam('SSRProtocol');
         $SSRProtocol = strtolower($SSRProtocol);
-        $user->updateMethod($SSRProtocol);
+        $user->updateSSRProtocol($SSRProtocol);
         $res['ret'] = 1;
         return $this->echoJson($response, $res);
     }
@@ -182,7 +182,7 @@ class UserController extends BaseController
         $user = Auth::getUser();
         $SSRobfs = $request->getParam('SSRobfs');
         $SSRobfs = strtolower($SSRobfs);
-        $user->updateMethod($SSRobfs);
+        $user->updateSSRobfs($SSRobfs);
         $res['ret'] = 1;
         return $this->echoJson($response, $res);
     }
