@@ -5,7 +5,6 @@
 	</header>
 	{include file='nav.tpl'}
 	<main class="content">
-
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 col-lg-push-4 col-sm-6 col-sm-push-3">
@@ -144,55 +143,6 @@
 			</div>
 		</div>
 	</main>
-	<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_mailcheck" role="dialog" tabindex="-1">
-		<div class="modal-dialog modal-xs">
-			<div class="modal-content">
-				<div class="modal-heading">
-					<p class="modal-title">邮箱验证</p>
-				</div>
-				<div class="modal-inner">
-					<div class="form-group form-group-label">
-						<div class="row">
-							<div class="col-md-10 col-md-push-1">
-								<label class="floating-label" for="verifycode">邮箱验证码/Mailbox Check code</label>
-								<input class="form-control" id="verifycode" type="text">
-							</div>
-						</div>
-					</div>
-					<p class="h5 margin-top-sm text-black-hint">请将xxx.xxx添加到邮箱白名单。否则可能收不到验证码</p>
-				</div>
-				<div class="modal-footer">
-					<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" data-dismiss="modal">取消/Cancel</a><a class="btn btn-brand-accent waves-attach waves-light" id="sendcode">获取验证码/Recheck</a><a class="btn btn-brand-accent waves-attach waves-light" data-dismiss="modal" id="reg">继续/KeepGoing</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div aria-hidden="true" class="modal modal-va-middle fade" id="msg-success" role="dialog" tabindex="-1">
-		<div class="modal-dialog modal-xs">
-			<div class="modal-content">
-				<div class="modal-inner">
-					<h4>成功!</h4>
-					<p class="h5 margin-top-sm text-black-hint" id="msg-success-p"></p>
-				</div>
-				<div class="modal-footer">
-					<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭/Discard</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div aria-hidden="true" class="modal modal-va-middle fade" id="msg-error" role="dialog" tabindex="-1">
-		<div class="modal-dialog modal-xs">
-			<div class="modal-content">
-				<div class="modal-inner">
-					<h4>成功!</h4>
-					<p class="h5 margin-top-sm text-black-hint" id="msg-error-p"></p>
-				</div>
-				<div class="modal-footer">
-					<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭/Discard</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
 <footer class="ui-footer">
 	<div class="container">
 		<p>ss-panel-ssr</p>
@@ -208,11 +158,60 @@
 		</div>
 	</div>
 </div>
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_mailcheck" role="dialog" tabindex="-1">
+	<div class="modal-dialog modal-xs">
+		<div class="modal-content">
+			<div class="modal-heading">
+				<p class="modal-title">邮箱验证</p>
+			</div>
+			<div class="modal-inner">
+				<div class="form-group form-group-label">
+					<div class="row">
+						<div class="col-md-10 col-md-push-1">
+							<label class="floating-label" for="verifycode">邮箱验证码/Mailbox Check code</label>
+							<input class="form-control" id="verifycode" type="text">
+						</div>
+					</div>
+				</div>
+				<p class="h5 margin-top-sm text-black-hint">请将xxx.xxx添加到邮箱白名单。否则可能收不到验证码</p>
+			</div>
+			<div class="modal-footer">
+				<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" data-dismiss="modal">取消/Cancel</a><a class="btn btn-brand-accent waves-attach waves-light" id="sendcode">获取验证码/Recheck</a><a class="btn btn-brand-accent waves-attach waves-light" data-dismiss="modal" id="reg">继续/KeepGoing</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<div aria-hidden="true" class="modal modal-va-middle fade" id="msg-success" role="dialog" tabindex="-1">
+	<div class="modal-dialog modal-xs">
+		<div class="modal-content">
+			<div class="modal-inner">
+				<h4>成功!</h4>
+				<p class="h5 margin-top-sm text-black-hint" id="msg-success-p"></p>
+			</div>
+			<div class="modal-footer">
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭/Discard</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<div aria-hidden="true" class="modal modal-va-middle fade" id="msg-error" role="dialog" tabindex="-1">
+	<div class="modal-dialog modal-xs">
+		<div class="modal-content">
+			<div class="modal-inner">
+				<h4>成功!</h4>
+				<p class="h5 margin-top-sm text-black-hint" id="msg-error-p"></p>
+			</div>
+			<div class="modal-footer">
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭/Discard</a></p>
+			</div>
+		</div>
+	</div>
+</div>
 <div style="display:none;">
     {$analyticsCode}
 </div>
 <!-- js -->
-<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="../assets/md-interface/js/base.min.js"></script>
 <script src="../assets/md-interface/js/project.min.js"></script>
 
