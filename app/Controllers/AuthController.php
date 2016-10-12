@@ -43,10 +43,10 @@ class AuthController extends BaseController
     public function loginHandle($request, $response, $args)
     {
         // $data = $request->post('sdf');
-        $email = $request->getParam('email');
+        $email = $request->getParam('logon_email');
         $email = strtolower($email);
-        $passwd = $request->getParam('passwd');
-        $rememberMe = $request->getParam('remember_me');
+        $passwd = $request->getParam('login_passwd');
+        $rememberMe = $request->getParam('login_remember_me');
 
         // Handle Login
         $user = User::where('email', '=', $email)->first();
