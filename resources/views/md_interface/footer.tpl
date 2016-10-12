@@ -13,7 +13,7 @@
 		</div>
 	</div>
 </div>
-
+{$analyticsCode}
 <!-- js -->
 <script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
 <script src="../assets/md-interface/js/base.min.js"></script>
