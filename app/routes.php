@@ -64,7 +64,7 @@ $app->group('/user', function () {
 $app->group('/auth', function () {
     $this->get('/login', 'App\Controllers\AuthController:login');
     $this->post('/login', 'App\Controllers\AuthController:loginHandle');
-    $this->get('/register', 'App\Controllers\AuthController:register');
+    $this->get('/login', 'App\Controllers\AuthController:register');
     $this->post('/register', 'App\Controllers\AuthController:registerHandle');
     $this->post('/sendcode', 'App\Controllers\AuthController:sendVerifyEmail');
     $this->get('/logout', 'App\Controllers\AuthController:logout');
