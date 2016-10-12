@@ -30,7 +30,7 @@
 								<div class="card-inner">
 									<p class="text-center">
 										<span class="avatar avatar-inline avatar-lg">
-											<img alt="Login" src="../images/users/avatar-001.jpg">
+											<img alt="Login" src="../assets/md-interface/images/users/avatar-001.jpg">
 										</span>
 									</p>
 									<form class="form" action="index.html">
@@ -53,7 +53,7 @@
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<button class="btn btn-block btn-brand waves-attach waves-light" id="login_remember_me">登陆/Sign In</button>
+													<button class="btn btn-block btn-brand waves-attach waves-light" id="login">登陆/Sign In</button>
 												</div>
 											</div>
 										</div>
