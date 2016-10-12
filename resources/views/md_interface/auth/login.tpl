@@ -12,15 +12,15 @@
 						<nav class="tab-nav ui-tab">
 							<ul class="nav nav-list">
 								<li class="active">
-									<a class="waves-attach waves-light" data-toggle="tab" href="#ui_tab_login"><span class="text-black">登陆/LOGIN</span></a>
+									<a class="waves-attach waves-light" data-toggle="tab" href="#ui_tab_example_1"><span class="text-black">登陆/LOGIN</span></a>
 								</li>
 								<li>
-									<a class="waves-attach waves-light" data-toggle="tab" href="#ui_tab_reg"><span class="text-black">注册/SIGNUP</span></a>
+									<a class="waves-attach waves-light" data-toggle="tab" href="#ui_tab_example_2"><span class="text-black">注册/SIGNUP</span></a>
 								</li>
 							</ul>
 						</nav>
 						<div class="card tab-content">
-							<div class="card-main tab-pane fade active in" data-toggle="tab" href="#ui_tab_login">
+							<div class="card-main tab-pane fade active in" data-toggle="tab" href="#ui_tab_example_1">
 								<div class="card-header">
 									<div class="card-inner">
 										<h1 class="card-heading">登陆与注册/Login or SighUP</h1>
@@ -75,7 +75,7 @@
 									<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="javascript:void(0)">Create an account</a></p>
 								</div>
 							</div>
-							<div class="card-main tab-pane fade" data-toggle="tab" href="#ui_tab_reg">
+							<div class="card-main tab-pane fade" data-toggle="tab" href="#ui_tab_example_2">
 								<div class="card-inner">
 									<p class="text-center">
 										<span class="avatar avatar-inline avatar-lg">
