@@ -120,7 +120,7 @@
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
 													<label class="floating-label" for="code">邀请码/Invitation code</label>
-													<input class="form-control" value="{$code}" id="code" type="password">
+													<input class="form-control" id="code" value="{$code}" type="password">
 												</div>
 											</div>
 										</div>
@@ -349,3 +349,4 @@
         });
     })
 </script>
+{include file='footer.tpl'}
