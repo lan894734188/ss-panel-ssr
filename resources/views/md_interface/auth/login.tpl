@@ -34,7 +34,7 @@
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
 													<label class="floating-label" for="email">用户名/Username</label>
-													<input class="form-control" id="email" type="text">
+													<input class="form-control" name="email" type="text">
 												</div>
 											</div>
 										</div>
@@ -42,14 +42,14 @@
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
 													<label class="floating-label" for="password">密码/Password</label>
-													<input class="form-control" id="password" type="password">
+													<input class="form-control" name="password" type="password">
 												</div>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<button class="btn btn-block btn-brand waves-attach waves-light" id="login">登陆/Sign In</button>
+													<a class="btn btn-block btn-brand waves-attach waves-light" id="login">登陆/Sign In</a>
 												</div>
 											</div>
 										</div>
@@ -58,7 +58,7 @@
 												<div class="col-md-10 col-md-push-1">
 													<div class="checkbox checkbox-adv">
 														<label for="ui_login_remember">
-															<input class="access-hide" id="remember" name="ui_login_remember" type="checkbox">保持登陆/Stay signed in
+															<input class="access-hide" id="remember" name="remember" type="checkbox">保持登陆/Stay signed in
 															<span class="checkbox-circle"></span><span class="checkbox-circle-check"></span><span class="checkbox-circle-icon icon">done</span>
 														</label>
 													</div>
