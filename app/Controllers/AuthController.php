@@ -39,14 +39,8 @@ class AuthController extends BaseController
     {
         if (!empty($_GET['code'])) 
         {
-            $ary = $request->getQueryParams();
-            $code = "";
-            if (isset($ary['code'])) 
-            {
-                $code = $ary['code'];
-            }
             $requireEmailVerification = Config::get('emailVerifyEnabled');
-            return $this->view()->assign('code', $code)->assign('requireEmailVerification', $requireEmailVerification)->display('auth/login.tpl');
+            return $this->view()->assign('requireEmailVerification', $requireEmailVerification)->display('auth/login.tpl');
         }else{
             return $this->view()->display('auth/login.tpl');
         }
