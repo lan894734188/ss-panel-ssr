@@ -114,9 +114,9 @@
 				<p class="h5 margin-top-sm text-black-hint">请将xxx.xxx添加到邮箱白名单。否则可能收不到验证码</p>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" data-dismiss="modal">取消/Cancel</a></p>
-				<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" id="sendcode">获取验证码/GetCode</a></p>
-				<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" data-dismiss="modal" id="mail_Continue">继续/Continue</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-red waves-attach waves-effect" data-dismiss="modal">取消/Cancel</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-green waves-attach waves-effect" id="sendcode">获取验证码/GetCode</a></p>
+				<p class="text-right"><a class="btn btn-brand waves-attach waves-light" data-dismiss="modal" id="mail_Continue">继续/Continue</a></p>
 			</div>
 		</div>
 	</div>
@@ -138,8 +138,8 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" data-dismiss="modal" id="tos_calcel">取消/Cancel</a></p>
-				<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" data-dismiss="modal" id="reg">继续/Continue</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-red waves-attach waves-effect" data-dismiss="modal" id="tos_calcel">取消/Cancel</a></p>
+				<p class="text-right"><a class="btn btn-brand waves-attach waves-light" data-dismiss="modal" id="reg">继续/Continue</a></p>
 			</div>
 		</div>
 	</div>
@@ -153,7 +153,7 @@
 				<p class="h5 margin-top-sm text-black-hint" id="msg-success-p"></p>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭/Discard</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-red waves-attach waves-effect" data-dismiss="modal">关闭/Discard</a></p>
 			</div>
 		</div>
 	</div>
@@ -166,7 +166,7 @@
 				<p class="h5 margin-top-sm text-black-hint" id="msg-error-p"></p>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭/Discard</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-red waves-attach waves-effect" data-dismiss="modal">关闭/Discard</a></p>
 			</div>
 		</div>
 	</div>
