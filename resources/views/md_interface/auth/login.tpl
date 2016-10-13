@@ -153,7 +153,7 @@
                     }
                 },
                 error:function(jqXHR){
-                    $("#msg-error").modal("hide");
+                    //$("#msg-error").modal("hide");
                     $("#msg-error").modal("show");
                     $("#msg-error-p").html("发生错误："+jqXHR.status);
                 }
