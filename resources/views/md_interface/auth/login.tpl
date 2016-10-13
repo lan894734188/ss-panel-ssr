@@ -98,7 +98,7 @@
 	<div class="modal-dialog modal-xs">
 		<div class="modal-content">
 			<div class="modal-inner">
-				<h4>成功!</h4>
+				<h4>成功/Success</h4>
 				<p class="h5 margin-top-sm text-black-hint" id="msg-success-p"></p>
 			</div>
 			<div class="modal-footer">
@@ -111,7 +111,7 @@
 	<div class="modal-dialog modal-xs">
 		<div class="modal-content">
 			<div class="modal-inner">
-				<h4>失败!</h4>
+				<h4>失败/Error</h4>
 				<p class="h5 margin-top-sm text-black-hint" id="msg-error-p"></p>
 			</div>
 			<div class="modal-footer">
