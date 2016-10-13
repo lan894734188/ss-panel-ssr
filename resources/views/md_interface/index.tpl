@@ -70,10 +70,10 @@
 								</div>
 								<div class="card-inner">
 									<p class="margin-top-no">
-										<a class="btn btn-brand waves-attach" href="#" target="_blank">登陆/Login</a>&nbsp;&nbsp;&nbsp;
-										<a class="btn btn-green waves-attach" href="#" target="_blank">注册/SignUP</a>&nbsp;&nbsp;&nbsp;
-										<a class="btn btn-orange waves-attach" href="#" target="_blank">用户协议/TOS</a>&nbsp;&nbsp;&nbsp;
-										<a class="btn btn-red waves-attach waves-light" href="#" target="_blank">Github</a>
+										<a class="btn waves-attach" href="#" target="_blank">登陆/Login</a>&nbsp;&nbsp;&nbsp;
+										<a class="btn waves-attach" href="#" target="_blank">注册/SignUP</a>&nbsp;&nbsp;&nbsp;
+										<a class="btn waves-attach" href="#" target="_blank">用户协议/TOS</a>&nbsp;&nbsp;&nbsp;
+										<a class="btn waves-attach" href="#" target="_blank">Github</a>
 									</p>
 								</div>
 							</div>
