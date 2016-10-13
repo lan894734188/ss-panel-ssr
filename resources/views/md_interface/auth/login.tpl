@@ -143,11 +143,11 @@
                 success:function(data){
                     if(data.ret == 1){
                         $("#msg-error").modal('show');
-                        $("#msg-success").modal("hide");
+                        //$("#msg-success").modal("hide");
                         $("#msg-success-p").html(data.msg);
                         window.setTimeout("location.href='/user'", 2000);
                     }else{
-                        $("#msg-success").modal("hide");
+                        //$("#msg-success").modal("hide");
                         $("#msg-error").modal("show");
                         $("#msg-error-p").html(data.msg);
                     }
