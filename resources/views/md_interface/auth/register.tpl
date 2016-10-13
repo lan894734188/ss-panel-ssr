@@ -20,7 +20,7 @@
 							<div class="card-main">
 								<div class="card-header">
 									<div class="card-inner">
-										<h1 class="card-heading">SIGN UP</h1>
+										<h1 class="card-heading">注册 / SIGN UP</h1>
 									</div>
 								</div>
 								<div class="card-inner">
@@ -83,7 +83,7 @@
 						</div>
 						<div class="clearfix">
 							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="javascript:void(0)">Need help?</a></p>
-							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="javascript:void(0)">Create an account</a></p>
+							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="/user/login">Have account</a></p>
 						</div>
 					</section>
 				</div>
@@ -92,7 +92,7 @@
 	</main>
 	<footer class="ui-footer">
 		<div class="container">
-			<p>Material</p>
+			<p>SS-Panel-SSR</p>
 		</div>
 	</footer>
 
@@ -176,6 +176,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="../assets/md-interface/js/base.min.js"></script>
 	<script src="../assets/md-interface/js/project.min.js"></script>
+
+<div style="display:none;">
+    {$analyticsCode}
+</div>
+
 
 <script>
     $(document).ready(function () {

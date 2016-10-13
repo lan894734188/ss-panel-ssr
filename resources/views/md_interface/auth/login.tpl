@@ -20,7 +20,7 @@
 							<div class="card-main">
 								<div class="card-header">
 									<div class="card-inner">
-										<h1 class="card-heading">Login</h1>
+										<h1 class="card-heading">登陆 / Login</h1>
 									</div>
 								</div>
 								<div class="card-inner">
@@ -58,7 +58,7 @@
 												<div class="col-md-10 col-md-push-1">
 													<div class="checkbox checkbox-adv">
 														<label for="remember_me">
-															<input class="access-hide" id="remember_me" name="remember_me" value="week" type="checkbox">Stay signed in
+															<input class="access-hide" id="remember_me" name="remember_me" value="week" type="checkbox">保持登录/Stay signed in
 															<span class="checkbox-circle"></span><span class="checkbox-circle-check"></span><span class="checkbox-circle-icon icon">done</span>
 														</label>
 													</div>
@@ -71,7 +71,7 @@
 						</div>
 						<div class="clearfix">
 							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="javascript:void(0)">Need help?</a></p>
-							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="javascript:void(0)">Create an account</a></p>
+							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="javascript:void(0)">注册一个账户/Create an account</a></p>
 						</div>
 					</section>
 				</div>
@@ -80,7 +80,7 @@
 	</main>
 <footer class="ui-footer">
 	<div class="container">
-		<p>ss-panel-ssr</p>
+		<p>SS-Panel-SSR</p>
 	</div>
 </footer>
 <div class="fbtn-container">
