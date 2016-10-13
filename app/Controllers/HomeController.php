@@ -24,17 +24,11 @@ class HomeController extends BaseController
     public function index()
     {
         $homeIndexMsg = DbConfig::get('home-index');
-        $msg = DbConfig::get('home-code');
+        $msg = DbConfig::get('home-code'); //code
         $codes = InviteCode::where('user_id', '=', '0')->take(10)->get();
         return $this->view()->assign('homeIndexMsg', $homeIndexMsg)->assign('codes', $codes)->assign('msg', $msg)->display('index.tpl');
     }
 
-    public function code()
-    {
-        $msg = DbConfig::get('home-code');
-        $codes = InviteCode::where('user_id', '=', '0')->take(10)->get();
-        return $this->view()->assign('codes', $codes)->assign('msg', $msg)->display('code.tpl');
-    }
 
     public function debug($request, $response, $args)
     {
