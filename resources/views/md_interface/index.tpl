@@ -13,11 +13,12 @@
 			<li class="dropdown margin-right">
 				<a class="dropdown-toggle padding-left-no padding-right-no" data-toggle="dropdown">
 					{if $user->isLogin}
-					<span class="access-hide">{$user->user_name}</span>
+					<span class="padding-right">{$user->user_name}</span>
+					<span class="avatar avatar-sm"><img alt="User Image" src="{$user->gravatar}"></span>
 					{else}
-					<span class="access-hide">Hello Wlord</span>
+					<span class="access-hide"></span>
+					<span class="avatar avatar-sm"><img alt="User Image" src="../assets/md-interface/images/users/avatar-001.jpg"></span>
 					{/if}
-					<span class="avatar avatar-sm"><img alt="alt text for John Smith avatar" src="../assets/md-interface/images/users/avatar-001.jpg"></span>
 				</a>
 				<ul class="dropdown-menu dropdown-menu-right">
 					{if $user->isLogin}
