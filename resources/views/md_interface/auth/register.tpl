@@ -73,7 +73,7 @@
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<a class="btn btn-block btn-brand waves-attach waves-light" data-backdrop="static" data-toggle="modal" href="#ui_dialog_mailcheck">同意用户协议并下一步/Sign UP</a>
+													<a class="btn btn-block btn-brand waves-attach waves-light" data-backdrop="static" data-toggle="modal" href="#ui_dialog_mailcheck">下一步/NextStep</a>
 												</div>
 											</div>
 										</div>
@@ -96,7 +96,7 @@
 		</div>
 	</footer>
 
-<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_mailcheck" role="dialog" tabindex="-2">
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_mailcheck" role="dialog" tabindex="-3">
 	<div class="modal-dialog modal-xs">
 		<div class="modal-content">
 			<div class="modal-heading">
@@ -115,8 +115,31 @@
 			</div>
 			<div class="modal-footer">
 				<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" data-dismiss="modal">取消/Cancel</a></p>
-				<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" id="sendcode">获取验证码/Recheck</a></p>
-				<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" data-dismiss="modal" id="reg">继续/KeepGoing</a></p>
+				<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" id="sendcode">获取验证码/GetCode</a></p>
+				<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" data-dismiss="modal" id="mail_Continue">继续/Continue</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_tos" role="dialog" tabindex="-2">
+	<div class="modal-dialog modal-xs">
+		<div class="modal-content">
+			<div class="modal-heading">
+				<p class="modal-title">用户协议 / TOS</p>
+			</div>
+			<div class="modal-inner">
+				<div class="form-group form-group-label">
+					<div class="row">
+						<div class="col-md-10 col-md-push-1">
+							{include file='tosbody.tpl'}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" data-dismiss="modal" id="tos_calcel">取消/Cancel</a></p>
+				<p class="text-right"><a class="btn btn-brand-accent waves-attach waves-light" data-dismiss="modal" id="reg">继续/Continue</a></p>
 			</div>
 		</div>
 	</div>
@@ -253,11 +276,11 @@
                 timer = null;
             }
         });
-        $("#ok-close").click(function () {
-            //$("#msg-success").modal("hide");
+        $("#mail_Continue").click(function () {
+            $("#ui_dialog_tos").modal("show");
         });
-        $("#error-close").click(function () {
-            //$("#msg-error").modal("hide");
+        $("#tos_calcel").click(function () {
+            $("#ui_dialog_tos").modal("hide");
         });
     })
 </script>

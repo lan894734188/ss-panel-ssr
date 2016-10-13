@@ -64,14 +64,15 @@
 							<div class="card-main">
 								<div class="card-header">
 									<div class="card-inner">
-										<h3 class="h5 margin-bottom-no margin-top-no">Colour Palettes</h3>
+										<h3 class="h5 margin-bottom-no margin-top-no">快速链接 / Quick Links</h3>
 									</div>
 								</div>
 								<div class="card-inner">
 									<p class="margin-top-no">
-										<a class="btn btn-green waves-attach">.btn-green</a>&nbsp;&nbsp;&nbsp;
-										<a class="btn btn-orange waves-attach">.btn-orange</a>&nbsp;&nbsp;&nbsp;
-										<a class="btn btn-red waves-attach waves-light">.btn-red</a>
+										<a class="btn btn-brand waves-attach" href="#" target="_blank">登陆/Login</a>&nbsp;&nbsp;&nbsp;
+										<a class="btn btn-green waves-attach" href="#" target="_blank">注册/SignUP</a>&nbsp;&nbsp;&nbsp;
+										<a class="btn btn-orange waves-attach" href="#" target="_blank">用户协议/TOS</a>&nbsp;&nbsp;&nbsp;
+										<a class="btn btn-red waves-attach waves-light" href="#" target="_blank">Github</a>
 									</p>
 								</div>
 							</div>
