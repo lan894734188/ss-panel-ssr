@@ -50,7 +50,7 @@
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
 													<label class="floating-label" for="passwd">密码/Password</label>
-													<input class="form-control" id="passwd" type="text">
+													<input class="form-control" id="passwd" type="password">
 												</div>
 											</div>
 										</div>
@@ -58,7 +58,7 @@
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
 													<label class="floating-label" for="repasswd">重复密码/Repeat password</label>
-													<input class="form-control" id="repasswd" type="text">
+													<input class="form-control" id="repasswd" type="password">
 												</div>
 											</div>
 										</div>
@@ -139,7 +139,7 @@
 	<div class="modal-dialog modal-xs">
 		<div class="modal-content">
 			<div class="modal-inner">
-				<h4>成功!</h4>
+				<h4>失败!</h4>
 				<p class="h5 margin-top-sm text-black-hint" id="msg-error-p"></p>
 			</div>
 			<div class="modal-footer">

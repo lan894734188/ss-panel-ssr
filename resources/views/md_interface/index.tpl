@@ -54,8 +54,8 @@
 						<div class="card">
 							<div class="card-main">
 								<div class="card-inner">
-									<p>加入我们 变成一只猫~</p>
-									<blockquote>加入我们 变成一只猫~</blockquote>
+									<p>A secure socks5 proxy, designed to protect your Internet traffic.</p>
+									<blockquote>If you want to keep a secret, you must also hide it from yourself.</blockquote>
 									<p>高级用户xxxx <a href="#" target="_blank">door<sup class="margin-left-xs"><span class="icon">open_in_new</span></sup></a> site.</p>
 								</div>
 							</div>
@@ -73,6 +73,41 @@
 										<a class="btn btn-orange waves-attach">.btn-orange</a>&nbsp;&nbsp;&nbsp;
 										<a class="btn btn-red waves-attach waves-light">.btn-red</a>
 									</p>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-main">
+								<div class="card-inner margin-bottom-no">
+									<p class="card-heading">邀请码/Invitation code</p>
+									<div class="card-table">
+										<div class="table-responsive">
+											<table class="table" title="A table within a card">
+												<thead>
+							                        <tr>
+							                            <th>###</th>
+							                            <th>邀请码 (点击邀请码进入注册页面)</th>
+							                            <th>状态</th>
+							                        </tr>
+						                        </thead>
+												<tbody>
+						                        {foreach $codes as $code}
+						                            <tr>
+						                                <td>{$code->id}</td>
+						                                <td><a href="/auth/register?code={$code->code}">{$code->code}</a></td>
+						                                <td>可用</td>
+						                            </tr>
+						                        {/foreach}
+						                        </tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="card-action">
+									<div class="card-action-btn pull-right">
+										<a class="btn btn-flat waves-attach" href="javascript:void(0)"><span class="icon">chevron_left</span></a>
+										<a class="btn btn-flat waves-attach" href="javascript:void(0)"><span class="icon">chevron_right</span></a>
+									</div>
 								</div>
 							</div>
 						</div>
