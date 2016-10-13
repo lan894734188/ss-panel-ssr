@@ -30,7 +30,7 @@
 						<a class="padding-right-lg waves-attach" href="/auth/register"><span class="icon icon-lg margin-right">lightbulb_outline</span>加入我们</a>
 					</li>
 					<li>
-						<a class="padding-right-lg waves-attach" href="/auth/login"><span class="icon icon-lg margin-right">people</span>登陆用户中心</a>
+						<a class="padding-right-lg waves-attach" href="/auth/login"><span class="icon icon-lg margin-right">people</span>登陆</a>
 					</li>
 					{/if}
 				</ul>
