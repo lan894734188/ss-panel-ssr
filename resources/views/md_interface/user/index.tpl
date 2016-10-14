@@ -128,7 +128,7 @@
 				<div class="ui-card-wrap">
 					<div class="row">
 						<div class="col-lg-12 col-md-12">
-							<div class="card card-green">
+							<div class="card">
 								<div class="card-main">
 									<div class="card-inner">
 										<p class="card-heading">節點列表</p>
