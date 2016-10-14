@@ -58,14 +58,23 @@
 								<div class="card-main">
 									<div class="card-inner">
 										<p class="card-heading">个人连接信息</p>
-										<p>
-				                            端口:{$user->port}<br>
-				                            密码:{$user->passwd}<br>
-				                            自定义加密方式:<br>{$user->method}<br>
-				                            自定义SSR连接协议:<br>{$user->protocol}<br>
-				                            自定义SSR混淆方式:<br>{$user->obfs}<br>
-				                            上次使用:<code>{$user->lastSsTime()}</code>
-				                        </p>
+										<div>
+											端口:<br>
+				                            密码:<br>
+				                            自定义加密方式:<br>
+				                            自定义SSR连接协议:<br>
+				                            自定义SSR混淆方式:<br>
+				                            上次使用:
+										</div>
+										<div>
+											{$user->port}<br>
+				                            {$user->passwd}<br>
+				                            {$user->method}<br>
+				                            {$user->protocol}<br>
+				                            {$user->obfs}<br>
+				                            <code>{$user->lastSsTime()}</code>
+										</div>
+										
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
