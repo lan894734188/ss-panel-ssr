@@ -83,7 +83,7 @@
 				                            自定义加密方式:<br>{$user->method}<br>
 				                            自定义SSR连接协议:<br>{$user->protocol}<br>
 				                            自定义SSR混淆方式:<br>{$user->obfs}<br>
-				                            上次使用:<code>{$user->lastSsTime()</code>}
+				                            上次使用:<code>{$user->lastSsTime()}</code>
 				                        </p>
 									</div>
 									<div class="card-action">
