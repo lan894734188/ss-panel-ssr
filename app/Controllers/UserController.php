@@ -34,19 +34,27 @@ class UserController extends BaseController
 
     public function index($request, $response, $args)
     {
-        $msg = DbConfig::get('user-index');
-        if ($msg == null) {
-            $msg = "在后台修改用户中心公告...";
+        $user_index_msg = DbConfig::get('user-index');
+        if ($user_index_msg == null) {
+            $user_index_msg = "在后台修改用户中心公告...";
         }
-        return $this->view()->assign('msg', $msg)->display('user/index.tpl');
+
+        $node_msg = DbConfig::get('user-node');
+        $user = Auth::getUser();
+        $nodes = Node::where('type', 1)->orderBy('sort')->get();
+
+
+        return $this->view()->assign('user_index_msg', $user_index_msg)
+                    ->assign('nodes', $nodes)
+                    ->assign('user', $user)
+                    ->assign('node_msg', $node_msg)
+                    ->display('user/index.tpl');
     }
 
     public function node($request, $response, $args)
     {
-        $msg = DbConfig::get('user-node');
-        $user = Auth::getUser();
-        $nodes = Node::where('type', 1)->orderBy('sort')->get();
-        return $this->view()->assign('nodes', $nodes)->assign('user', $user)->assign('msg', $msg)->display('user/node.tpl');
+        
+       // return $this->view()->assign('nodes', $nodes)->assign('user', $user)->assign('msg', $msg)->display('user/node.tpl');
     }
 
 
