@@ -31,7 +31,7 @@
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+				<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
 					<section class="content-inner margin-top-no">
 						<div class="col-lg-8 col-md-9">
 							<div class="card margin-bottom-no">
