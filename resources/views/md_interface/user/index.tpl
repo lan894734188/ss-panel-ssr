@@ -26,78 +26,76 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">UserInterface</h1>
+				<div class="row">
+					<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
+						<h1 class="content-heading">UserInterface</h1>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
 					<section class="content-inner margin-top-no">
-						<div class="col-lg-8 col-md-9">
-							<div class="card margin-bottom-no">
-								<div class="card-main">
-									<div class="card-inner">
-										<p>
-											<a class="btn btn-flat collapsed waves-attach" data-toggle="collapse" href="#ui_collapse_msg">
-												<span class="collapsed-hide">Collapse</span>
-												<span class="collapsed-show">Expand</span>
-											</a>
-										</p>
-										<div class="collapsible-region collapse" id="ui_collapse_msg">
-											{$user_index_msg}
-										</div>
+						<div class="card">
+							<div class="card-main">
+								<div class="card-inner">
+									<p>
+										<a class="btn btn-flat collapsed waves-attach" data-toggle="collapse" href="#ui_collapse_msg">
+											<span class="collapsed-hide">Collapse</span>
+											<span class="collapsed-show">Expand</span>
+										</a>
+									</p>
+									<div class="collapsible-region collapse" id="ui_collapse_msg">
+										{$user_index_msg}
 									</div>
 								</div>
 							</div>
 						</div>
 						<h3 class="h5">Colour Palettes</h3>
 						<div class="ui-card-wrap">
-							<div class="col-md-4 col-sm-6">
-								<div class="card">
-									<div class="card-main">
-										<div class="card-inner">
-											<p class="card-heading">个人连接信息</p>
-											<p>
-					                            端口:{$user->port}<br>
-					                            密码:{$user->passwd}<br>
-					                            自定义加密方式:<br>{$user->method}<br>
-					                            自定义SSR连接协议:<br>{$user->protocol}<br>
-					                            自定义SSR混淆方式:<br>{$user->obfs}<br>
-					                            上次使用:<code>{$user->lastSsTime()}</code>
-					                        </p>
-										</div>
-										<div class="card-action">
-											<div class="card-action-btn pull-left">
-												<a class="btn waves-attach" href="javascript:void(0)">修改连接信息</a>
-											</div>
+							<div class="card">
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">个人连接信息</p>
+										<p>
+				                            端口:{$user->port}<br>
+				                            密码:{$user->passwd}<br>
+				                            自定义加密方式:<br>{$user->method}<br>
+				                            自定义SSR连接协议:<br>{$user->protocol}<br>
+				                            自定义SSR混淆方式:<br>{$user->obfs}<br>
+				                            上次使用:<code>{$user->lastSsTime()}</code>
+				                        </p>
+									</div>
+									<div class="card-action">
+										<div class="card-action-btn pull-left">
+											<a class="btn waves-attach" href="javascript:void(0)">修改连接信息</a>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-4 col-sm-6">
-								<div class="card">
-									<div class="card-main">
-										<div class="card-inner">
-											<p class="card-heading">流量与签到</p>
-											<dl class="dl-horizontal">
-					                            <dt>总流量</dt>
-					                            <dd>{$user->enableTraffic()}</dd>
-					                            <dt>已用流量</dt>
-					                            <dd>{$user->usedTraffic()}</dd>
-					                            <dt>剩余流量</dt>
-					                            <dd>{$user->unusedTraffic()}</dd>
-					                        </dl>
-					                        <p> 每{$config['checkinTime']}小时可以签到一次。</p>
-											<p>上次签到时间：<code>{$user->lastCheckInTime()}</code></p>
-										</div>
-										<div class="card-action">
-											<div class="card-action-btn pull-left">
-												{if $user->isAbleToCheckin() }
-						                            <a id="checkin" class="btn waves-attach btn-flat">签到</a>
-						                        {else}
-						                            <a class="btn waves-attach disabled" href="#">不能签到</a>
-						                        {/if}
-											</div>
+							<div class="card">
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">流量与签到</p>
+										<dl class="dl-horizontal">
+				                            <dt>总流量</dt>
+				                            <dd>{$user->enableTraffic()}</dd>
+				                            <dt>已用流量</dt>
+				                            <dd>{$user->usedTraffic()}</dd>
+				                            <dt>剩余流量</dt>
+				                            <dd>{$user->unusedTraffic()}</dd>
+				                        </dl>
+				                        <p> 每{$config['checkinTime']}小时可以签到一次。</p>
+										<p>上次签到时间：<code>{$user->lastCheckInTime()}</code></p>
+									</div>
+									<div class="card-action">
+										<div class="card-action-btn pull-left">
+											{if $user->isAbleToCheckin() }
+					                            <a id="checkin" class="btn waves-attach btn-flat">签到</a>
+					                        {else}
+					                            <a class="btn waves-attach disabled" href="#">不能签到</a>
+					                        {/if}
 										</div>
 									</div>
 								</div>
