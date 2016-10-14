@@ -36,12 +36,12 @@
 							<div class="card-main">
 								<div class="card-inner">
 									<p>
-										<a class="btn btn-flat collapsed waves-attach" data-toggle="collapse" href="#ui_collapse_example">
+										<a class="btn btn-flat collapsed waves-attach" data-toggle="collapse" href="#ui_collapse_msg">
 											<span class="collapsed-hide">Collapse</span>
 											<span class="collapsed-show">Expand</span>
 										</a>
 									</p>
-									<div class="collapsible-region collapse" id="ui_collapse_example">
+									<div class="collapsible-region collapse" id="ui_collapse_msg">
 										{$user_index_msg}
 									</div>
 								</div>
@@ -135,13 +135,13 @@
 											Lorem ipsum dolor sit amet.<br>
 											{$node_msg}<br>
 											<p>
-												<a class="btn btn-flat collapsed waves-attach" data-toggle="collapse" href="#ui_collapse_example">
+												<a class="btn btn-flat collapsed waves-attach" data-toggle="collapse" href="#ui_collapse_node">
 													<span class="collapsed-hide">展开/Collapse</span>
 													<span class="collapsed-show">收起/Expand</span>
 												</a>
 											</p>
 										</p>
-										<div class="collapsible-region collapse" id="ui_collapse_example">
+										<div class="collapsible-region collapse" id="ui_collapse_node">
 										{foreach $nodes as $node}
 											<div class="col-md-4 col-sm-6">
 												<div class="card">
