@@ -1,4 +1,5 @@
 {include file='header.tpl'}
+<body class="page-brand">
 <header class="header header-transparent header-waterfall ui-header">
 		<ul class="nav nav-list pull-left">
 			<li>
@@ -60,7 +61,7 @@
 										<p>
 											用户名:{$user->user_name}<br>
 											邮箱:{$user->email}<br>
-											加入时间:{$user->regDate()}<br>
+											加入时间:<code>{$user->regDate()}</code><br>
 										</p>
 									</div>
 									<div class="card-action">
@@ -82,7 +83,7 @@
 				                            自定义加密方式:<br>{$user->method}<br>
 				                            自定义SSR连接协议:<br>{$user->protocol}<br>
 				                            自定义SSR混淆方式:<br>{$user->obfs}<br>
-				                            上次使用:{$user->lastSsTime()}
+				                            上次使用:<code>{$user->lastSsTime()</code>}
 				                        </p>
 									</div>
 									<div class="card-action">
