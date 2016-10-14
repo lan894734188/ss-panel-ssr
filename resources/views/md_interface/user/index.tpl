@@ -30,151 +30,149 @@
 			</div>
 		</div>
 		<div class="container">
-			<section class="content-inner margin-top-no">
-				<div class="row">
-					<div class="col-lg-8 col-md-9">
-						<div class="card margin-bottom-no">
-							<div class="card-main">
-								<div class="card-inner">
-									<p>
-										<a class="btn btn-flat collapsed waves-attach" data-toggle="collapse" href="#ui_collapse_msg">
-											<span class="collapsed-hide">Collapse</span>
-											<span class="collapsed-show">Expand</span>
-										</a>
-									</p>
-									<div class="collapsible-region collapse" id="ui_collapse_msg">
-										{$user_index_msg}
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<h3 class="h5">Colour Palettes</h3>
-				<div class="ui-card-wrap">
-					<div class="row">
-						<div class="col-md-4 col-sm-6">
-							<div class="card">
+			<div class="row">
+				<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+					<section class="content-inner margin-top-no">
+						<div class="col-lg-8 col-md-9">
+							<div class="card margin-bottom-no">
 								<div class="card-main">
 									<div class="card-inner">
-										<p class="card-heading">用户信息</p>
 										<p>
-											用户名:{$user->user_name}<br>
-											邮箱:{$user->email}<br>
-											加入时间:<code>{$user->regDate()}</code><br>
+											<a class="btn btn-flat collapsed waves-attach" data-toggle="collapse" href="#ui_collapse_msg">
+												<span class="collapsed-hide">Collapse</span>
+												<span class="collapsed-show">Expand</span>
+											</a>
 										</p>
-									</div>
-									<div class="card-action">
-										<div class="card-action-btn pull-left">
-											<a class="btn waves-attach" href="javascript:void(0)">修改个人信息</a>
+										<div class="collapsible-region collapse" id="ui_collapse_msg">
+											{$user_index_msg}
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-6">
-							<div class="card">
-								<div class="card-main">
-									<div class="card-inner">
-										<p class="card-heading">个人连接信息</p>
-										<p>
-				                            端口:{$user->port}<br>
-				                            密码:{$user->passwd}<br>
-				                            自定义加密方式:<br>{$user->method}<br>
-				                            自定义SSR连接协议:<br>{$user->protocol}<br>
-				                            自定义SSR混淆方式:<br>{$user->obfs}<br>
-				                            上次使用:<code>{$user->lastSsTime()}</code>
-				                        </p>
-									</div>
-									<div class="card-action">
-										<div class="card-action-btn pull-left">
-											<a class="btn waves-attach" href="javascript:void(0)">修改连接信息</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6">
-							<div class="card">
-								<div class="card-main">
-									<div class="card-inner">
-										<p class="card-heading">流量与签到</p>
-										<dl class="dl-horizontal">
-				                            <dt>总流量</dt>
-				                            <dd>{$user->enableTraffic()}</dd>
-				                            <dt>已用流量</dt>
-				                            <dd>{$user->usedTraffic()}</dd>
-				                            <dt>剩余流量</dt>
-				                            <dd>{$user->unusedTraffic()}</dd>
-				                        </dl>
-				                        <p> 每{$config['checkinTime']}小时可以签到一次。</p>
-										<p>上次签到时间：<code>{$user->lastCheckInTime()}</code></p>
-									</div>
-									<div class="card-action">
-										<div class="card-action-btn pull-left">
-											{if $user->isAbleToCheckin() }
-					                            <a id="checkin" class="btn waves-attach btn-flat">签到</a>
-					                        {else}
-					                            <a class="btn waves-attach disabled" href="#">不能签到</a>
-					                        {/if}
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<h3 class="h5"></h3>
-				<div class="ui-card-wrap">
-					<div class="row">
-						<div class="col-lg-12 col-md-12">
-							<div class="card">
-								<div class="card-main">
-									<div class="card-inner">
-										<p class="card-heading">節點列表</p>
-										<p>
-											Lorem ipsum dolor sit amet.<br>
-											{$node_msg}<br>
+						<h3 class="h5">Colour Palettes</h3>
+						<div class="ui-card-wrap">
+							<div class="col-md-4 col-sm-6">
+								<div class="card">
+									<div class="card-main">
+										<div class="card-inner">
+											<p class="card-heading">用户信息</p>
 											<p>
-												<a class="btn btn-flat collapsed waves-attach" data-toggle="collapse" href="#ui_collapse_node">
-													<span class="collapsed-hide">展开/Collapse</span>
-													<span class="collapsed-show">收起/Expand</span>
-												</a>
+												用户名:{$user->user_name}<br>
+												邮箱:{$user->email}<br>
+												加入时间:<code>{$user->regDate()}</code><br>
 											</p>
-										</p>
-										<div class="collapsible-region collapse" id="ui_collapse_node">
-										{foreach $nodes as $node}
-											<div class="col-md-4 col-sm-6">
-												<div class="card">
-													<div class="card-main">
-														<div class="card-inner">
-															<p class="card-heading">{$node->name}</p>
-															<p>
-																狀態/Status:{$node->status}<br>
-																在綫人數/Online:{$node->getOnlineUserCount()}<br>
-																流量比例/Traffic Rate:{$node->traffic_rate}<br>
-																產生流量/Traffic Data:{$node->getTrafficFromLogs()}<br>
-																在綫時間/Uptime:{$node->getNodeUptime()}<br>
-																负载:{$node->getNodeLoad()}
-															</p>
-														</div>
-														<div class="card-action">
-															<div class="card-action-btn pull-left">
-																<a class="btn btn-flat waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_node_{$node->id}">详细信息/More</a>
+										</div>
+										<div class="card-action">
+											<div class="card-action-btn pull-left">
+												<a class="btn waves-attach" href="javascript:void(0)">修改个人信息</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-6">
+								<div class="card">
+									<div class="card-main">
+										<div class="card-inner">
+											<p class="card-heading">个人连接信息</p>
+											<p>
+					                            端口:{$user->port}<br>
+					                            密码:{$user->passwd}<br>
+					                            自定义加密方式:<br>{$user->method}<br>
+					                            自定义SSR连接协议:<br>{$user->protocol}<br>
+					                            自定义SSR混淆方式:<br>{$user->obfs}<br>
+					                            上次使用:<code>{$user->lastSsTime()}</code>
+					                        </p>
+										</div>
+										<div class="card-action">
+											<div class="card-action-btn pull-left">
+												<a class="btn waves-attach" href="javascript:void(0)">修改连接信息</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-6">
+								<div class="card">
+									<div class="card-main">
+										<div class="card-inner">
+											<p class="card-heading">流量与签到</p>
+											<dl class="dl-horizontal">
+					                            <dt>总流量</dt>
+					                            <dd>{$user->enableTraffic()}</dd>
+					                            <dt>已用流量</dt>
+					                            <dd>{$user->usedTraffic()}</dd>
+					                            <dt>剩余流量</dt>
+					                            <dd>{$user->unusedTraffic()}</dd>
+					                        </dl>
+					                        <p> 每{$config['checkinTime']}小时可以签到一次。</p>
+											<p>上次签到时间：<code>{$user->lastCheckInTime()}</code></p>
+										</div>
+										<div class="card-action">
+											<div class="card-action-btn pull-left">
+												{if $user->isAbleToCheckin() }
+						                            <a id="checkin" class="btn waves-attach btn-flat">签到</a>
+						                        {else}
+						                            <a class="btn waves-attach disabled" href="#">不能签到</a>
+						                        {/if}
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<h3 class="h5"></h3>
+						<div class="ui-card-wrap">
+							<div class="col-lg-12 col-md-12">
+								<div class="card">
+									<div class="card-main">
+										<div class="card-inner">
+											<p class="card-heading">節點列表</p>
+											<p>
+												Lorem ipsum dolor sit amet.<br>
+												{$node_msg}<br>
+												<p>
+													<a class="btn btn-flat collapsed waves-attach" data-toggle="collapse" href="#ui_collapse_node">
+														<span class="collapsed-hide">展开/Collapse</span>
+														<span class="collapsed-show">收起/Expand</span>
+													</a>
+												</p>
+											</p>
+											<div class="collapsible-region collapse" id="ui_collapse_node">
+											{foreach $nodes as $node}
+												<div class="col-md-4 col-sm-6 margin-top">
+													<div class="card">
+														<div class="card-main">
+															<div class="card-inner">
+																<p class="card-heading">{$node->name}</p>
+																<p>
+																	狀態/Status:{$node->status}<br>
+																	在綫人數/Online:{$node->getOnlineUserCount()}<br>
+																	流量比例/Traffic Rate:{$node->traffic_rate}<br>
+																	產生流量/Traffic Data:{$node->getTrafficFromLogs()}<br>
+																	在綫時間/Uptime:{$node->getNodeUptime()}<br>
+																	负载:{$node->getNodeLoad()}
+																</p>
+															</div>
+															<div class="card-action">
+																<div class="card-action-btn pull-left">
+																	<a class="btn btn-flat waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_node_{$node->id}">详细信息/More</a>
+																</div>
 															</div>
 														</div>
 													</div>
 												</div>
+											{/foreach}
 											</div>
-										{/foreach}
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</section>
 				</div>
-			</section>
+			</div>
 		</div>
 	</main>
 <footer class="ui-footer">
