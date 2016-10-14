@@ -56,25 +56,6 @@
 								<div class="card">
 									<div class="card-main">
 										<div class="card-inner">
-											<p class="card-heading">用户信息</p>
-											<p>
-												用户名:{$user->user_name}<br>
-												邮箱:{$user->email}<br>
-												加入时间:<code>{$user->regDate()}</code><br>
-											</p>
-										</div>
-										<div class="card-action">
-											<div class="card-action-btn pull-left">
-												<a class="btn waves-attach" href="javascript:void(0)">修改个人信息</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-6">
-								<div class="card">
-									<div class="card-main">
-										<div class="card-inner">
 											<p class="card-heading">个人连接信息</p>
 											<p>
 					                            端口:{$user->port}<br>
@@ -124,7 +105,7 @@
 						</div>
 						<h3 class="h5"></h3>
 						<div class="ui-card-wrap">
-							<div class="col-lg-12 col-md-12">
+							<div class="col-lg-8 col-md-4">
 								<div class="card">
 									<div class="card-main">
 										<div class="card-inner">
