@@ -692,7 +692,14 @@
     })
 </script>
 
-
+<script type="text/javascript">
+	$("#ok-close").click(function () {
+        window.location.reload;
+    });
+    $("#error-close").click(function () {
+        window.location.reload;
+    });
+</script>
 
 
 
