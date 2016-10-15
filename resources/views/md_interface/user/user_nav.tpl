@@ -25,7 +25,7 @@
 							</div>
 						</span>
 					</a>
-					<ul class="menu-collapse collapse" id="#ui_menu_link">
+					<ul class="menu-collapse collapse" id="ui_menu_link">
 						<li>
 							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_ss-passwd">连接密码与加密设置</a>
 						</li>
@@ -46,7 +46,7 @@
 						</div>
 					</span>
 					</a>
-					<ul class="menu-collapse collapse" id="#ui_menu_profile">
+					<ul class="menu-collapse collapse" id="ui_menu_profile">
 						<li>
 							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_passwd">登陆密码设置</a>
 						</li>
