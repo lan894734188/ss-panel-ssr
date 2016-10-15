@@ -16,7 +16,7 @@
 				<li>
 					<a class="waves-attach">
 						连接设置
-						<span class="menu-collapse-toggle collapsed waves-attach" data-target="#ui_menu_link" data-toggle="collapse">
+						<span class="menu-collapse-toggle collapsed waves-attach" data-target="#link-set" data-toggle="collapse">
 							<div class="menu-collapse-toggle-close">
 								<i class="icon icon-lg">close</i>
 							</div>
@@ -25,7 +25,7 @@
 							</div>
 						</span>
 					</a>
-					<ul class="menu-collapse collapse" id="ui_menu_link">
+					<ul class="menu-collapse collapse" id="link-set">
 						<li>
 							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_ss-passwd">连接密码与加密设置</a>
 						</li>
@@ -37,7 +37,7 @@
 				<li>
 					<a class="waves-attach">
 					账户设定
-					<span class="menu-collapse-toggle collapsed waves-attach" data-target="#ui_menu_profile" data-toggle="collapse">
+					<span class="menu-collapse-toggle collapsed waves-attach" data-target="#ui_menu_account" data-toggle="collapse">
 						<div class="menu-collapse-toggle-close">
 							<i class="icon icon-lg">close</i>
 						</div>
@@ -46,7 +46,7 @@
 						</div>
 					</span>
 					</a>
-					<ul class="menu-collapse collapse" id="ui_menu_profile">
+					<ul class="menu-collapse collapse" id="ui_menu_account">
 						<li>
 							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_passwd">登陆密码设置</a>
 						</li>
