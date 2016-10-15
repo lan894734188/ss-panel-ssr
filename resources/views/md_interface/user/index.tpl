@@ -151,7 +151,7 @@
 									</p>
 									<div class="collapsible-region collapse" id="ui_collapse_node">
 									{foreach $nodes as $node}
-										<div class="col-md-4 col-sm-6 margin-top">
+										<div class="col-md-6 col-sm-6 margin-top">
 											<div class="card">
 												<div class="card-main">
 													<div class="card-inner">
@@ -224,7 +224,7 @@
 </div>
 <!-- ===node_info==== -->
 {foreach $nodes as $node}
-	<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_node_{$node->id}" role="dialog" tabindex="-1">
+	<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_node_{$node->id}" role="dialog" tabindex="-3">
 		<div class="modal-dialog modal-xs">
 			<div class="modal-content">
 				<div class="modal-heading">
@@ -262,22 +262,156 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Disagree</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Agree</a></p>
+					<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach disable">二维码</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a></p>
 				</div>
 			</div>
 		</div>
 	</div>
 {/foreach}
 
+<!-- passwd_modal -->
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_passwd" role="dialog" tabindex="-3">
+	<div class="modal-dialog modal-xs">
+		<div class="modal-content">
+			<div class="modal-heading">
+				<p class="modal-title">网站登陆密码修改</p>
+			</div>
+			<div class="modal-inner">
+				<p class="h5 margin-top-sm text-black-hint">网站登陆密码修改</p>
+			</div>
+			<div class="modal-footer">
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- ss-passwd_modal -->
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_ss-passwd" role="dialog" tabindex="-3">
+	<div class="modal-dialog modal-xs">
+		<div class="modal-content">
+			<div class="modal-heading">
+				<p class="modal-title">Shadowsocks连接密码修改</p>
+			</div>
+			<div class="modal-inner">
+				<p class="h5 margin-top-sm text-black-hint">Shadowsocks连接密码修改</p>
+			</div>
+			<div class="modal-footer">
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- ssr-protocol-obfs_modal -->
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_ssr" role="dialog" tabindex="-3">
+	<div class="modal-dialog modal-xs">
+		<div class="modal-content">
+			<div class="modal-heading">
+				<p class="modal-title">SSR连接信息修改</p>
+			</div>
+			<div class="modal-inner">
+				<p class="h5 margin-top-sm text-black-hint">SSR连接信息修改</p>
+			</div>
+			<div class="modal-footer">
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- trafficlog_modal -->
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_trafficlog" role="dialog" tabindex="-3">
+	<div class="modal-dialog modal-xs">
+		<div class="modal-content">
+			<div class="modal-heading">
+				<p class="modal-title">流量记录</p>
+			</div>
+			<div class="modal-inner">
+				<p class="h5 margin-top-sm text-black-hint">流量记录</p>
+			</div>
+			<div class="modal-footer">
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- kill-account_modal -->
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_kill-account" role="dialog" tabindex="-3">
+	<div class="modal-dialog modal-xs">
+		<div class="modal-content">
+			<div class="modal-heading">
+				<p class="modal-title">彻底删除账户</p>
+			</div>
+			<div class="modal-inner">
+				<p class="h5 margin-top-sm text-black-hint">彻底删除账户</p>
+			</div>
+			<div class="modal-footer">
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Invitation_modal -->
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_inv" role="dialog" tabindex="-2">
+	<div class="modal-dialog modal-xs">
+		<div class="modal-content">
+			<div class="modal-heading">
+				<p class="modal-title">邀请码</p>
+			</div>
+			<div class="modal-inner">
+				<p class="h5 margin-top-sm text-black-hint">邀请码</p>
+			</div>
+			<div class="modal-footer">
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- qrcode_modal -->
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_qrcode" role="dialog" tabindex="-2">
+	<div class="modal-dialog modal-xs">
+		<div class="modal-content">
+			<div class="modal-heading">
+				<p class="modal-title">二维码</p>
+			</div>
+			<div class="modal-inner">
+				<p class="h5 margin-top-sm text-black-hint">二维码</p>
+			</div>
+			<div class="modal-footer">
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 
 
-
-
-
-
-
+<!-- msg_modal -->
+<div aria-hidden="true" class="modal modal-va-middle fade" id="msg-success" role="dialog" tabindex="-1">
+	<div class="modal-dialog modal-xs">
+		<div class="modal-content">
+			<div class="modal-inner">
+				<h4>成功/Success</h4>
+				<p class="h5 margin-top-sm text-black-hint" id="msg-success-p"></p>
+			</div>
+			<div class="modal-footer">
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal" id="ok-close">关闭/Discard</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<div aria-hidden="true" class="modal modal-va-middle fade" id="msg-error" role="dialog" tabindex="-1">
+	<div class="modal-dialog modal-xs">
+		<div class="modal-content">
+			<div class="modal-inner">
+				<h4>失败/Error</h4>
+				<p class="h5 margin-top-sm text-black-hint" id="msg-error-p"></p>
+			</div>
+			<div class="modal-footer">
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal" id="error-close">关闭/Discard</a></p>
+			</div>
+		</div>
+	</div>
+</div>
 
 <div style="display:none;">
     {$analyticsCode}
@@ -296,7 +430,7 @@
                 dataType: "json",
                 success: function (data) {
                     $("#checkin-msg").html(data.msg);
-                    $("#checkin-btn").hide();
+                    $("#checkin-btn").modal('hide');
                 },
                 error: function (jqXHR) {
                     alert("发生错误：" + jqXHR.status);
@@ -307,7 +441,145 @@
 </script>
 
 
+<script>
+    $(document).ready(function () {
+        $("#pwd-update").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "password",
+                dataType: "json",
+                data: {
+                    oldpwd: $("#oldpwd").val(),
+                    pwd: $("#pwd").val(),
+                    repwd: $("#repwd").val()
+                },
+                success: function (data) {
+                    if (data.ret) {
+                        $("#msg-error").modal('hide');
+                        $("#msg-success").modal('show');
+                        $("#msg-success-p").html(data.msg);
+                    } else {
+                        $("#msg-error").modal('show');
+                        $("#msg-error-p").html(data.msg);
+                    }
+                },
+                error: function (jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                }
+            })
+        })
+    })
+</script>
 
+<script>
+    $(document).ready(function () {
+        $("#ss-pwd-update").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "sspwd",
+                dataType: "json",
+                data: {
+                    sspwd: $("#sspwd").val()
+                },
+                success: function (data) {
+                    if (data.ret) {
+                        $("#ss-msg-success").modal('show');
+                        $("#ss-msg-success-p").html(data.msg);
+                    } else {
+                        $("#ss-msg-error").modal('show');
+                        $("#ss-msg-error-p").html(data.msg);
+                    }
+                },
+                error: function (jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                }
+            })
+        })
+    })
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $("#method-update").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "method",
+                dataType: "json",
+                data: {
+                    method: $("#method").val()
+                },
+                success: function (data) {
+                    if (data.ret) {
+                        $("#ss-msg-success").modal('show');
+                        $("#ss-msg-success-p").html(data.msg);
+                    } else {
+                        $("#ss-msg-error").modal('show');
+                        $("#ss-msg-error-p").html(data.msg);
+                    }
+                },
+                error: function (jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                }
+            })
+        })
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#SSRProtocol-update").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "SSRProtocol",
+                dataType: "json",
+                data: {
+                    SSRProtocol: $("#SSRProtocol").val()
+                },
+                success: function (data) {
+                    if (data.ret) {
+                        $("#ss-msg-success").modal('show');
+                        $("#ss-msg-success-p").html(data.msg);
+                    } else {
+                        $("#ss-msg-error").modal('show');
+                        $("#ss-msg-error-p").html(data.msg);
+                    }
+                },
+                error: function (jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                }
+            })
+        })
+    })
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $("#SSRobfs-update").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "SSRobfs",
+                dataType: "json",
+                data: {
+                    SSRobfs: $("#SSRobfs").val()
+                },
+                success: function (data) {
+                    if (data.ret) {
+                        $("#ss-msg-success").modal('show');
+                        $("#ss-msg-success-p").html(data.msg);
+                    } else {
+                        $("#ss-msg-error").modal('show');
+                        $("#ss-msg-error-p").html(data.msg);
+                    }
+                },
+                error: function (jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                }
+            })
+        })
+    })
+</script>
 
 
 
