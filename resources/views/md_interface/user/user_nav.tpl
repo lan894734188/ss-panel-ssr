@@ -14,7 +14,7 @@
 		<div class="menu-content">
 			<ul class="nav">
 				<li>
-					<a class="waves-attach" href="#ui_menu_link">
+					<a class="waves-attach">
 						连接设置
 						<span class="menu-collapse-toggle collapsed waves-attach" data-target="#ui_menu_link_settings" data-toggle="collapse">
 							<div class="menu-collapse-toggle-close">
@@ -35,7 +35,7 @@
 					</ul>
 				</li>
 				<li>
-					<a class="waves-attach" href="#ui_menu_profile">
+					<a class="waves-attach">
 					账户设定
 					<span class="menu-collapse-toggle collapsed waves-attach" data-target="#ui_menu_profile" data-toggle="collapse">
 						<div class="menu-collapse-toggle-close">
