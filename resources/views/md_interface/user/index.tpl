@@ -278,9 +278,33 @@
 			</div>
 			<div class="modal-inner">
 				<p class="h5 margin-top-sm text-black-hint">网站登陆密码修改</p>
+				<div class="form-group form-group-label">
+					<div class="row">
+						<div class="col-md-10 col-md-push-1">
+							<label class="floating-label" for="oldpwd">原密码</label>
+							<input class="form-control" id="oldpwd" type="password">
+						</div>
+					</div>
+				</div>
+				<div class="form-group form-group-label">
+					<div class="row">
+						<div class="col-md-10 col-md-push-1">
+							<label class="floating-label" for="pwd">新密码</label>
+							<input class="form-control" id="pwd" type="password">
+						</div>
+					</div>
+				</div>
+				<div class="form-group form-group-label">
+					<div class="row">
+						<div class="col-md-10 col-md-push-1">
+							<label class="floating-label" for="repwd">重复新密码</label>
+							<input class="form-control" id="repwd" type="password">
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" id="pwd-update">提交</a></p>
 			</div>
 		</div>
 	</div>
@@ -294,25 +318,112 @@
 			</div>
 			<div class="modal-inner">
 				<p class="h5 margin-top-sm text-black-hint">Shadowsocks连接密码修改</p>
+				<div class="form-group form-group-label">
+					<div class="row">
+						<div class="col-md-10 col-md-push-1">
+							<label class="floating-label" for="sspwd">新密码</label>
+							<input class="form-control" id="sspwd" type="password">
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" id="ss-pwd-update">Discard</a></p>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- ssr-protocol-obfs_modal -->
+<!-- ss-method_modal -->
 <div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_ssr" role="dialog" tabindex="-3">
 	<div class="modal-dialog modal-xs">
 		<div class="modal-content">
 			<div class="modal-heading">
-				<p class="modal-title">SSR连接信息修改</p>
+				<p class="modal-title">加密方式修改</p>
 			</div>
 			<div class="modal-inner">
-				<p class="h5 margin-top-sm text-black-hint">SSR连接信息修改</p>
+				<p class="h5 margin-top-sm text-black-hint">加密方式修改</p>
+				<div class="form-group form-group-label">
+				    <label class="floating-label" for="method"></label>
+				    <select class="form-control" id="method">
+				        <option value="{$user->method}"> 当前:{$user->method}</option>
+				        <option value="aes-128-cfb">AES-128-CFB</option>
+                        <option value="aes-192-cfb">AES-192-CFB</option>
+                        <option value="aes-256-cfb">AES-256-CFB</option>
+                        <option value="aes-128-ctr">AES-128-CTR</option>
+                        <option value="aes-192-ctr">AES-192-CTR</option>
+                        <option value="aes-256-ctr">AES-256-CTR</option>
+                        <option value="bf-cfb">BF-CFB</option>
+                        <option value="camellia-128-cfb">CAMELLIA-128-CFB</option>
+                        <option value="camellia-192-cfb">CAMELLIA-192-CFB</option>
+                        <option value="camellia-256-cfb">CAMELLIA-256-CFB</option>
+                        <option value="rc4-md5">RC4-MD5</option>
+                        <option value="rc4-md5-6">RC4-MD5-6</option>
+                        <option value="salsa20">SALSA20</option>
+                        <option value="chacha20">CHACHA20</option>
+                        <option value="chacha20-ietf">CHACHA20-IETF</option>
+				    </select>
+				</div>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" id="method-update">Discard</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- ssr-protocol_modal -->
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_ssr" role="dialog" tabindex="-3">
+	<div class="modal-dialog modal-xs">
+		<div class="modal-content">
+			<div class="modal-heading">
+				<p class="modal-title">SSR连接协议修改</p>
+			</div>
+			<div class="modal-inner">
+				<p class="h5 margin-top-sm text-black-hint">SSR连接协议修改</p>
+				<div class="form-group form-group-label">
+				    <label class="floating-label" for="SSRProtocol"></label>
+				    <select class="form-control" id="SSRProtocol">
+				        <option value="{$user->protocol}">当前:{$user->protocol}</option>
+                        <option value="origin">origin原版协议</option>
+                        <option value="verify_simple">verify_simple(不兼容原版)</option>
+                        <option value="verify_deflate">verify_deflate(不兼容原版)</option>
+                        <option value="verify_sha1_compatible">verify_sha1(兼容原版)</option>
+                        <option value="auth_sha1_compatible">auth_sha1(兼容原版)</option>
+                        <option value="auth_sha1_v2_compatible">auth_sha1_v2(兼容原版)</option>
+                        <option value="auth_sha1_v3_compatible">auth_sha1_v3(兼容原版)</option>
+                        <option value="auth_sha1_v4_compatible">auth_sha1_v4(兼容原版)</option>
+                        <option value="auth_aes128_md5_compatible">auth_aes128_md5(兼容原版)</option>
+                        <option value="auth_aes128_sha1_compatible">auth_aes128_sha1(兼容原版)</option>
+				    </select>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" id="SSRProtocol-update">Discard</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- ssr-obfs_modal -->
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_ssr" role="dialog" tabindex="-3">
+	<div class="modal-dialog modal-xs">
+		<div class="modal-content">
+			<div class="modal-heading">
+				<p class="modal-title">SSR混淆方式修改</p>
+			</div>
+			<div class="modal-inner">
+				<p class="h5 margin-top-sm text-black-hint">SSR混淆方式修改</p>
+				<div class="form-group form-group-label">
+				    <label class="floating-label" for="SSRobfs"></label>
+				    <select class="form-control" id="SSRobfs">
+				        <option value="{$user->obfs}">当前:{$user->obfs}</option>
+                        <option value="plain">plain无混淆</option>
+                        <option value="http_simple_compatible">http_simple(兼容原版)</option>
+                        <option value="http_post_compatible">http_post(兼容原版)</option>
+                        <option value="tls1.2_ticket_auth_compatible">tls1.2_ticket_auth(兼容原版)</option>
+				    </select>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" id="SSRobfs-update">Discard</a></p>
 			</div>
 		</div>
 	</div>
