@@ -557,7 +557,7 @@
         $("#pwd-update").click(function () {
             $.ajax({
                 type: "POST",
-                url: "password",
+                url: "/user/password",
                 dataType: "json",
                 data: {
                     oldpwd: $("#oldpwd").val(),
@@ -587,7 +587,7 @@
         $("#ss-pwd-update").click(function () {
             $.ajax({
                 type: "POST",
-                url: "sspwd",
+                url: "/user/sspwd",
                 dataType: "json",
                 data: {
                     sspwd: $("#sspwd").val()
@@ -615,7 +615,7 @@
         $("#method-update").click(function () {
             $.ajax({
                 type: "POST",
-                url: "method",
+                url: "/user/method",
                 dataType: "json",
                 data: {
                     method: $("#method").val()
@@ -642,7 +642,7 @@
         $("#SSRProtocol-update").click(function () {
             $.ajax({
                 type: "POST",
-                url: "SSRProtocol",
+                url: "/user/SSRProtocol",
                 dataType: "json",
                 data: {
                     SSRProtocol: $("#SSRProtocol").val()
@@ -670,7 +670,7 @@
         $("#SSRobfs-update").click(function () {
             $.ajax({
                 type: "POST",
-                url: "SSRobfs",
+                url: "/user/SSRobfs",
                 dataType: "json",
                 data: {
                     SSRobfs: $("#SSRobfs").val()
