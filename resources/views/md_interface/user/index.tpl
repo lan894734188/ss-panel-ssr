@@ -49,137 +49,155 @@
 							</div>
 						</div>
 						<h3 class="h5">个人连接信息</h3>
-						<div class="ui-card-wrap">
-							<div class="card">
-								<div class="card-main">
-									<div class="card-inner margin-bottom-no">
-										<div class="card-table">
-											<div class="table-responsive">
-												<table class="table">
-													<tbody>
-														<tr>
-															<td>端口:</td>
-															<td>{$user->port}</td>
-														</tr>
-														<tr>
-															<td>密码:</td>
-															<td>{$user->passwd}</td>
-														</tr>
-														<tr>
-															<td>自定义加密方式:</td>
-															<td>{$user->method}</td>
-														</tr>
-														<tr>
-															<td>自定义SSR连接协议:</td>
-															<td>{$user->protocol}</td>
-														</tr>
-														<tr>
-															<td>自定义SSR混淆方式:</td>
-															<td>{$user->obfs}</td>
-														</tr>
-														<tr>
-															<td>上次使用:</td>
-															<td>{$user->lastSsTime()}</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-									<div class="card-action">
-										<div class="card-action-btn pull-left">
-											<a class="btn waves-attach" href="javascript:void(0)">修改连接信息</a>
+						<div class="card">
+							<div class="card-main">
+								<div class="card-inner margin-bottom-no margin-top-no">
+									<div class="card-table">
+										<div class="table-responsive">
+											<table class="table">
+												<tbody>
+													<tr>
+														<td>端口:</td>
+														<td>{$user->port}</td>
+													</tr>
+													<tr>
+														<td>密码:</td>
+														<td>{$user->passwd}</td>
+													</tr>
+													<tr>
+														<td>自定义加密方式:</td>
+														<td>{$user->method}</td>
+													</tr>
+													<tr>
+														<td>自定义SSR连接协议:</td>
+														<td>{$user->protocol}</td>
+													</tr>
+													<tr>
+														<td>自定义SSR混淆方式:</td>
+														<td>{$user->obfs}</td>
+													</tr>
+													<tr>
+														<td>上次使用:</td>
+														<td>{$user->lastSsTime()}</td>
+													</tr>
+												</tbody>
+											</table>
 										</div>
 									</div>
 								</div>
-							</div>
-							<h3 class="h5">流量与签到</h3>
-							<div class="card">
-								<div class="card-main">
-									<div class="card-inner margin-bottom-no">
-										<div class="card-table">
-											<div class="table-responsive">
-												<table class="table">
-													<tbody>
-														<tr>
-															<td>总流量</td>
-															<td>{$user->enableTraffic()}</td>
-														</tr>
-														<tr>
-															<td>已用流量:</td>
-															<td>{$user->usedTraffic()}</td>
-														</tr>
-														<tr>
-															<td>剩余流量:</td>
-															<td>{$user->unusedTraffic()}</td>
-														</tr>
-														<tr>
-															<td>上次签到时间:</td>
-															<td>{$user->lastCheckInTime()}</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-										</div>										
-				                        <p> 每{$config['checkinTime']}小时可以签到一次。</p>
-										<p id="checkin-msg"></p>
-									</div>
-									<div class="card-action">
-										<div class="card-action-btn pull-left">
-											{if $user->isAbleToCheckin() }
-					                            <a id="checkin" class="btn waves-attach btn-flat">签到</a>
-					                        {else}
-					                            <a class="btn waves-attach disabled" href="">不能签到</a>
-					                        {/if}
-										</div>
+								<div class="card-action">
+									<div class="card-action-btn pull-left">
+										<a class="btn waves-attach" href="javascript:void(0)">修改连接信息</a>
 									</div>
 								</div>
 							</div>
 						</div>
-						<h3 class="h5"></h3>
-						<div class="ui-card-wrap">
-							<div class="col-lg-8 col-md-4">
-								<div class="card">
-									<div class="card-main">
-										<div class="card-inner">
-											<p class="card-heading">節點列表</p>
-											<p>
-												Lorem ipsum dolor sit amet.<br>
-												{$node_msg}<br>
-												<p>
-													<a class="btn btn-flat collapsed waves-attach" data-toggle="collapse" href="#ui_collapse_node">
-														<span class="collapsed-hide">展开/Collapse</span>
-														<span class="collapsed-show">收起/Expand</span>
-													</a>
-												</p>
-											</p>
-											<div class="collapsible-region collapse" id="ui_collapse_node">
-											{foreach $nodes as $node}
-												<div class="col-md-4 col-sm-6 margin-top">
-													<div class="card">
-														<div class="card-main">
-															<div class="card-inner">
-																<p class="card-heading">{$node->name}</p>
-																<p>
-																	狀態/Status:{$node->status}<br>
-																	在綫人數/Online:{$node->getOnlineUserCount()}<br>
-																	流量比例/Traffic Rate:{$node->traffic_rate}<br>
-																	產生流量/Traffic Data:{$node->getTrafficFromLogs()}<br>
-																	在綫時間/Uptime:{$node->getNodeUptime()}<br>
-																	负载:{$node->getNodeLoad()}
-																</p>
-															</div>
-															<div class="card-action">
-																<div class="card-action-btn pull-left">
-																	<a class="btn btn-flat waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_node_{$node->id}">详细信息/More</a>
-																</div>
+						<h3 class="h5">流量与签到</h3>
+						<div class="card">
+							<div class="card-main">
+								<div class="card-inner margin-bottom-no margin-top-no">
+									<div class="card-table">
+										<div class="table-responsive">
+											<table class="table">
+												<tbody>
+													<tr>
+														<td>总流量</td>
+														<td>{$user->enableTraffic()}</td>
+													</tr>
+													<tr>
+														<td>已用流量:</td>
+														<td>{$user->usedTraffic()}</td>
+													</tr>
+													<tr>
+														<td>剩余流量:</td>
+														<td>{$user->unusedTraffic()}</td>
+													</tr>
+													<tr>
+														<td>上次签到时间:</td>
+														<td>{$user->lastCheckInTime()}</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>										
+			                        <p> 每{$config['checkinTime']}小时可以签到一次。</p>
+									<p id="checkin-msg"></p>
+								</div>
+								<div class="card-action">
+									<div class="card-action-btn pull-left">
+										{if $user->isAbleToCheckin() }
+				                            <a id="checkin" class="btn waves-attach btn-flat">签到</a>
+				                        {else}
+				                            <a class="btn waves-attach disabled" href="">不能签到</a>
+				                        {/if}
+									</div>
+								</div>
+							</div>
+						</div>
+						<h3 class="h5">節點列表</h3>
+						<div class="card">
+							<div class="card-main">
+								<div class="card-inner">
+									<p class="card-heading"></p>
+									<p>
+										Lorem ipsum dolor sit amet.<br>
+										{$node_msg}<br>
+										<p>
+											<a class="btn btn-flat collapsed waves-attach" data-toggle="collapse" href="#ui_collapse_node">
+												<span class="collapsed-hide">收起/Collapse</span>
+												<span class="collapsed-show">展开/Expand</span>
+											</a>
+										</p>
+									</p>
+									<div class="collapsible-region collapse" id="ui_collapse_node">
+									{foreach $nodes as $node}
+										<div class="col-md-4 col-sm-6 margin-top">
+											<div class="card">
+												<div class="card-main">
+													<div class="card-inner">
+														<p class="card-heading">{$node->name}</p>
+														<div class="card-table">
+															<div class="table-responsive">
+																<table class="table">
+																	<tbody>
+																		<tr>
+																			<td>狀態</td>
+																			<td>{$node->status}</td>
+																		</tr>
+																		<tr>
+																			<td>在綫人數</td>
+																			<td>{$node->getOnlineUserCount()}</td>
+																		</tr>
+																		<tr>
+																			<td>流量比例</td>
+																			<td>{$node->traffic_rate}</td>
+																		</tr>
+																		<tr>
+																			<td>產生流量</td>
+																			<td>{$node->getTrafficFromLogs()}</td>
+																		</tr>
+																		<tr>
+																			<td>在綫時間</td>
+																			<td>{$node->getNodeUptime()}</td>
+																		</tr>
+																		<tr>
+																			<td>负载</td>
+																			<td>{$node->getNodeLoad()}</td>
+																		</tr>
+																	</tbody>
+																</table>
 															</div>
 														</div>
 													</div>
+													<div class="card-action">
+														<div class="card-action-btn pull-left">
+															<a class="btn btn-flat waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_node_{$node->id}">详细信息/More</a>
+														</div>
+													</div>
 												</div>
-											{/foreach}
 											</div>
 										</div>
+									{/foreach}
 									</div>
 								</div>
 							</div>
