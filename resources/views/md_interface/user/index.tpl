@@ -231,17 +231,35 @@
 					<p class="modal-title">{$node->name}</p>
 				</div>
 				<div class="modal-inner">
-					<p class="h5 margin-top-sm text-black-hint">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					<p>
-						{$node->info}<br>
-						<br>
-						地址/Address:{$node->server}<br>
-						端口/Port:{$node->port}<br>
-						加密/Method:{if $node->custom_method == 1} {$user->method} {else} {$node->method} {/if}<br>
-						SSR协议/SSR-Protocol:{$node->status}<br>
-						SSR混淆/SSR-obfs:{$node->status}<br>
-					<br>
-					</p>
+					<p class="h5 margin-top-sm text-black-hint">{$node->info}</p>
+					<div class="card-table">
+						<div class="table-responsive">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td>地址</td>
+										<td>{$node->server}</td>
+									</tr>
+									<tr>
+										<td>端口</td>
+										<td>{$node->port}</td>
+									</tr>
+									<tr>
+										<td>加密</td>
+										<td>{if $node->custom_method == 1} {$user->method} {else} {$node->method} {/if}</td>
+									</tr>
+									<tr>
+										<td>SSR协议</td>
+										<td>{$user->protocol}</td>
+									</tr>
+									<tr>
+										<td>SSR混淆</td>
+										<td>{$user->obfs}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 				<div class="modal-footer">
 					<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Disagree</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Agree</a></p>
