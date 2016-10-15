@@ -16,7 +16,7 @@
 				<li>
 					<a class="waves-attach">
 						连接设置
-						<span class="menu-collapse-toggle collapsed waves-attach" data-target="#ui_menu_link_settings" data-toggle="collapse">
+						<span class="menu-collapse-toggle collapsed waves-attach" data-target="#ui_menu_link" data-toggle="collapse">
 							<div class="menu-collapse-toggle-close">
 								<i class="icon icon-lg">close</i>
 							</div>
