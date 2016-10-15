@@ -86,7 +86,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="card-footer">
+									<div class="card-action">
 										<div class="card-action-btn pull-left">
 											<a class="btn waves-attach" href="javascript:void(0)">修改连接信息</a>
 										</div>
@@ -104,10 +104,16 @@
 														<tr>
 															<td>总流量</td>
 															<td>{$user->enableTraffic()}</td>
+														</tr>
+														<tr>
 															<td>已用流量:</td>
 															<td>{$user->usedTraffic()}</td>
+														</tr>
+														<tr>
 															<td>剩余流量:</td>
 															<td>{$user->unusedTraffic()}</td>
+														</tr>
+														<tr>
 															<td>上次签到时间:</td>
 															<td>{$user->lastCheckInTime()}</td>
 														</tr>
