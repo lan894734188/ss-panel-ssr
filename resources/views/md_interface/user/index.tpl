@@ -10,19 +10,15 @@
 		</ul>
 		<ul class="nav nav-list pull-right">
 			<li class="dropdown margin-right">
-				<a class="dropdown-toggle padding-left-no padding-right-no" data-toggle="dropdown">
+				<a data-toggle="menu" href="#ui_menu_profile">
 					<span class="padding-right">{$user->user_name}</span>
 					<span class="avatar avatar-sm"><img alt="User Image" src="{$user->gravatar}"></span>
 				</a>
-				<ul class="dropdown-menu dropdown-menu-right">
-					<li>
-						<a class="padding-right-lg waves-attach" href="/user/logout"><span class="icon icon-lg margin-right">eject</span>登出/Logout</a>
-					</li>
-				</ul>
 			</li>
 		</ul>
 	</header>
 {include file='nav.tpl'}
+{include file='user_nav.tpl'}
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
@@ -52,31 +48,42 @@
 								</div>
 							</div>
 						</div>
-						<h3 class="h5">Colour Palettes</h3>
+						<h3 class="h5">个人连接信息</h3>
 						<div class="ui-card-wrap">
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner">
-										<p class="card-heading">个人连接信息</p>
-										<div>
-											端口:<br>
-				                            密码:<br>
-				                            自定义加密方式:<br>
-				                            自定义SSR连接协议:<br>
-				                            自定义SSR混淆方式:<br>
-				                            上次使用:
-										</div>
-										<div>
-											{$user->port}<br>
-				                            {$user->passwd}<br>
-				                            {$user->method}<br>
-				                            {$user->protocol}<br>
-				                            {$user->obfs}<br>
-				                            <code>{$user->lastSsTime()}</code>
-										</div>
 										
+										<table class="table">
+											<tbody>
+												<tr>
+													<td>端口:</td>
+													<td>{$user->port}</td>
+												</tr>
+												<tr>
+													<td>密码:</td>
+													<td>{$user->passwd}</td>
+												</tr>
+												<tr>
+													<td>自定义加密方式:</td>
+													<td>{$user->method}</td>
+												</tr>
+												<tr>
+													<td>自定义SSR连接协议:</td>
+													<td>{$user->protocol}</td>
+												</tr>
+												<tr>
+													<td>自定义SSR混淆方式:</td>
+													<td>{$user->obfs}</td>
+												</tr>
+												<tr>
+													<td>上次使用:</td>
+													<td>{$user->lastSsTime()}</td>
+												</tr>
+											</tbody>
+										</table>
 									</div>
-									<div class="card-action">
+									<div class="card-footer">
 										<div class="card-action-btn pull-left">
 											<a class="btn waves-attach" href="javascript:void(0)">修改连接信息</a>
 										</div>
