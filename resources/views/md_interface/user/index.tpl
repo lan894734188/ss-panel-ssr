@@ -18,7 +18,7 @@
 		</ul>
 	</header>
 {include file='nav.tpl'}
-{include file='user_nav.tpl'}
+{include file='user/user_nav.tpl'}
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
