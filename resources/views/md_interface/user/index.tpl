@@ -594,11 +594,11 @@
                 },
                 success: function (data) {
                     if (data.ret) {
-                        $("#ss-msg-success").modal('show');
-                        $("#ss-msg-success-p").html(data.msg);
+                        $("#msg-success").modal('show');
+                        $("#msg-success-p").html(data.msg);
                     } else {
-                        $("#ss-msg-error").modal('show');
-                        $("#ss-msg-error-p").html(data.msg);
+                        $("#msg-error").modal('show');
+                        $("#msg-error-p").html(data.msg);
                     }
                 },
                 error: function (jqXHR) {
@@ -622,11 +622,11 @@
                 },
                 success: function (data) {
                     if (data.ret) {
-                        $("#ss-msg-success").modal('show');
-                        $("#ss-msg-success-p").html(data.msg);
+                        $("#msg-success").modal('show');
+                        $("#msg-success-p").html(data.msg);
                     } else {
-                        $("#ss-msg-error").modal('show');
-                        $("#ss-msg-error-p").html(data.msg);
+                        $("#msg-error").modal('show');
+                        $("#msg-error-p").html(data.msg);
                     }
                 },
                 error: function (jqXHR) {
@@ -649,11 +649,11 @@
                 },
                 success: function (data) {
                     if (data.ret) {
-                        $("#ss-msg-success").modal('show');
-                        $("#ss-msg-success-p").html(data.msg);
+                        $("#msg-success").modal('show');
+                        $("#msg-success-p").html(data.msg);
                     } else {
-                        $("#ss-msg-error").modal('show');
-                        $("#ss-msg-error-p").html(data.msg);
+                        $("#msg-error").modal('show');
+                        $("#msg-error-p").html(data.msg);
                     }
                 },
                 error: function (jqXHR) {
@@ -677,11 +677,11 @@
                 },
                 success: function (data) {
                     if (data.ret) {
-                        $("#ss-msg-success").modal('show');
-                        $("#ss-msg-success-p").html(data.msg);
+                        $("#msg-success").modal('show');
+                        $("#msg-success-p").html(data.msg);
                     } else {
-                        $("#ss-msg-error").modal('show');
-                        $("#ss-msg-error-p").html(data.msg);
+                        $("#msg-error").modal('show');
+                        $("#msg-error-p").html(data.msg);
                     }
                 },
                 error: function (jqXHR) {
