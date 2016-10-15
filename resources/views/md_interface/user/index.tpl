@@ -52,36 +52,39 @@
 						<div class="ui-card-wrap">
 							<div class="card">
 								<div class="card-main">
-									<div class="card-inner">
-										
-										<table class="table">
-											<tbody>
-												<tr>
-													<td>端口:</td>
-													<td>{$user->port}</td>
-												</tr>
-												<tr>
-													<td>密码:</td>
-													<td>{$user->passwd}</td>
-												</tr>
-												<tr>
-													<td>自定义加密方式:</td>
-													<td>{$user->method}</td>
-												</tr>
-												<tr>
-													<td>自定义SSR连接协议:</td>
-													<td>{$user->protocol}</td>
-												</tr>
-												<tr>
-													<td>自定义SSR混淆方式:</td>
-													<td>{$user->obfs}</td>
-												</tr>
-												<tr>
-													<td>上次使用:</td>
-													<td>{$user->lastSsTime()}</td>
-												</tr>
-											</tbody>
-										</table>
+									<div class="card-inner margin-bottom-no">
+										<div class="card-table">
+											<div class="table-responsive">
+												<table class="table">
+													<tbody>
+														<tr>
+															<td>端口:</td>
+															<td>{$user->port}</td>
+														</tr>
+														<tr>
+															<td>密码:</td>
+															<td>{$user->passwd}</td>
+														</tr>
+														<tr>
+															<td>自定义加密方式:</td>
+															<td>{$user->method}</td>
+														</tr>
+														<tr>
+															<td>自定义SSR连接协议:</td>
+															<td>{$user->protocol}</td>
+														</tr>
+														<tr>
+															<td>自定义SSR混淆方式:</td>
+															<td>{$user->obfs}</td>
+														</tr>
+														<tr>
+															<td>上次使用:</td>
+															<td>{$user->lastSsTime()}</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
 									</div>
 									<div class="card-footer">
 										<div class="card-action-btn pull-left">

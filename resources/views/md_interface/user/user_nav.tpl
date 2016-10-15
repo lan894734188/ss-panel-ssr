@@ -2,7 +2,7 @@
 	<div class="menu-scroll">
 		<div class="menu-top">
 			<div class="menu-top-img">
-				<img alt="John Smith" src="../images/samples/landscape.jpg">
+				<img alt="John Smith" src="../assets/md-interface/images/samples/landscape.jpg">
 			</div>
 			<div class="menu-top-info">
 				<a class="menu-top-user" href="javascript:void(0)"><span class="avatar avatar-inline margin-right"><img alt="alt text for John Smith avatar" src="{$user->gravatar}"></span>{$user->user_name}</a>
