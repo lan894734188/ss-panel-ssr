@@ -93,27 +93,37 @@
 									</div>
 								</div>
 							</div>
+							<h3 class="h5">流量与签到</h3>
 							<div class="card">
 								<div class="card-main">
-									<div class="card-inner">
-										<p class="card-heading">流量与签到</p>
-										<dl class="dl-horizontal">
-				                            <dt>总流量</dt>
-				                            <dd>{$user->enableTraffic()}</dd>
-				                            <dt>已用流量</dt>
-				                            <dd>{$user->usedTraffic()}</dd>
-				                            <dt>剩余流量</dt>
-				                            <dd>{$user->unusedTraffic()}</dd>
-				                        </dl>
+									<div class="card-inner margin-bottom-no">
+										<div class="card-table">
+											<div class="table-responsive">
+												<table class="table">
+													<tbody>
+														<tr>
+															<td>总流量</td>
+															<td>{$user->enableTraffic()}</td>
+															<td>已用流量:</td>
+															<td>{$user->usedTraffic()}</td>
+															<td>剩余流量:</td>
+															<td>{$user->unusedTraffic()}</td>
+															<td>上次签到时间:</td>
+															<td>{$user->lastCheckInTime()}</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>										
 				                        <p> 每{$config['checkinTime']}小时可以签到一次。</p>
-										<p>上次签到时间：<code>{$user->lastCheckInTime()}</code></p>
+										<p id="checkin-msg"></p>
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
 											{if $user->isAbleToCheckin() }
 					                            <a id="checkin" class="btn waves-attach btn-flat">签到</a>
 					                        {else}
-					                            <a class="btn waves-attach disabled" href="#">不能签到</a>
+					                            <a class="btn waves-attach disabled" href="">不能签到</a>
 					                        {/if}
 										</div>
 									</div>
