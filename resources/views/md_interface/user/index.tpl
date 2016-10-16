@@ -38,8 +38,8 @@
 								<div class="card-inner">
 									<p>
 										<a class="btn btn-flat collapsed waves-attach" data-toggle="collapse" href="#ui_collapse_msg">
-											<span class="collapsed-hide">Collapse</span>
-											<span class="collapsed-show">Expand</span>
+											<span class="collapsed-hide">收起公告</span>
+											<span class="collapsed-show">展开公告</span>
 										</a>
 									</p>
 									<div class="collapsible-region collapse" id="ui_collapse_msg">
@@ -85,11 +85,6 @@
 										</div>
 									</div>
 								</div>
-								<div class="card-action">
-									<div class="card-action-btn pull-left">
-										<a class="btn waves-attach" href="javascript:void(0)">修改连接信息</a>
-									</div>
-								</div>
 							</div>
 						</div>
 						<h3 class="h5">流量与签到</h3>
@@ -126,9 +121,9 @@
 								<div class="card-action">
 									<div class="card-action-btn pull-left">
 										{if $user->isAbleToCheckin() }
-				                            <a id="checkin" class="btn waves-attach btn-flat">签到</a>
+				                            <a id="checkin" class="btn btn-brand waves-attach waves-light">签到</a>
 				                        {else}
-				                            <a class="btn waves-attach disabled" href="">不能签到</a>
+				                            <a class="btn btn-brand waves-attach waves-light disable" href="">不能签到</a>
 				                        {/if}
 									</div>
 								</div>
@@ -436,7 +431,7 @@
 				<p class="modal-title">流量记录</p>
 			</div>
 			<div class="modal-inner">
-				<p class="h5 margin-top-sm text-black-hint">流量记录</p>
+				<p class="h5 margin-top-sm text-black-hint">流量记录还没好</p>
 			</div>
 			<div class="modal-footer">
 				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
@@ -452,7 +447,7 @@
 				<p class="modal-title">彻底删除账户</p>
 			</div>
 			<div class="modal-inner">
-				<p class="h5 margin-top-sm text-black-hint">彻底删除账户</p>
+				<p class="h5 margin-top-sm text-black-hint">彻底删除账户还没好</p>
 			</div>
 			<div class="modal-footer">
 				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
@@ -468,7 +463,7 @@
 				<p class="modal-title">邀请码</p>
 			</div>
 			<div class="modal-inner">
-				<p class="h5 margin-top-sm text-black-hint">邀请码</p>
+				<p class="h5 margin-top-sm text-black-hint">邀请码还没好</p>
 			</div>
 			<div class="modal-footer">
 				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
@@ -484,7 +479,7 @@
 				<p class="modal-title">二维码</p>
 			</div>
 			<div class="modal-inner">
-				<p class="h5 margin-top-sm text-black-hint">二维码</p>
+				<p class="h5 margin-top-sm text-black-hint">二维码还没弄</p>
 			</div>
 			<div class="modal-footer">
 				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
