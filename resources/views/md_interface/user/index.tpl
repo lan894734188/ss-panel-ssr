@@ -242,7 +242,7 @@
 									</tr>
 									<tr>
 										<td>端口</td>
-										<td>{$node->port}</td>
+										<td>{$user->port}</td>
 									</tr>
 									<tr>
 										<td>加密</td>
