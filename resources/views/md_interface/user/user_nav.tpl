@@ -27,7 +27,19 @@
 					</a>
 					<ul class="menu-collapse collapse" id="link-set">
 						<li>
-							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_ss-passwd">连接密码与加密设置</a>
+							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_ss-passwd">连接密码设置</a>
+						</li>
+						<li>
+							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_method">加密设置</a>
+						</li>
+						<li>
+							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_ssrprotocol">SSR协议设置</a>
+						</li>
+						<li>
+							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_ssrobfs">SSR混淆设置</a>
+						</li>
+						<li>
+							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_trafficlog">连接/流量记录</a>
 						</li>
 						<li>
 							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_ssr">SSR协议与混淆设置</a>
@@ -49,9 +61,6 @@
 					<ul class="menu-collapse collapse" id="ui_menu_account">
 						<li>
 							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_passwd">登陆密码设置</a>
-						</li>
-						<li>
-							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_trafficlog">连接/流量记录</a>
 						</li>
 						<li>
 							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_inv">邀请码</a>

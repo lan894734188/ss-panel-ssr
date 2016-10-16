@@ -334,7 +334,7 @@
 	</div>
 </div>
 <!-- ss-method_modal -->
-<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_ssr" role="dialog" tabindex="-3">
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_method" role="dialog" tabindex="-3">
 	<div class="modal-dialog modal-xs">
 		<div class="modal-content">
 			<div class="modal-heading">
@@ -371,7 +371,7 @@
 	</div>
 </div>
 <!-- ssr-protocol_modal -->
-<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_ssr" role="dialog" tabindex="-3">
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_ssrprotocol" role="dialog" tabindex="-3">
 	<div class="modal-dialog modal-xs">
 		<div class="modal-content">
 			<div class="modal-heading">
@@ -403,7 +403,7 @@
 	</div>
 </div>
 <!-- ssr-obfs_modal -->
-<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_ssr" role="dialog" tabindex="-3">
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_ssrobfs" role="dialog" tabindex="-3">
 	<div class="modal-dialog modal-xs">
 		<div class="modal-content">
 			<div class="modal-heading">
