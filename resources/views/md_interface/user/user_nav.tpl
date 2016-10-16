@@ -41,9 +41,6 @@
 						<li>
 							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_trafficlog">连接/流量记录</a>
 						</li>
-						<li>
-							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_ssr">SSR协议与混淆设置</a>
-						</li>
 					</ul>
 				</li>
 				<li>
