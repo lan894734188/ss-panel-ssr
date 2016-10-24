@@ -59,8 +59,8 @@ class UserController extends BaseController
 
     public function nodeqrcode($request, $response, $args)
     {
-        $node_id = $request->getParam('nodeid');
-        $node = Node::find($node_id);
+        $id = $args['id'];
+        $node = Node::find($id);
         if ($node == null) {
             $res['msg'] = "发生错误";
         } else {
