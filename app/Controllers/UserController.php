@@ -57,6 +57,39 @@ class UserController extends BaseController
        // return $this->view()->assign('nodes', $nodes)->assign('user', $user)->assign('msg', $msg)->display('user/node.tpl');
     }
 
+    public function nodeqrcode($request, $response, $args)
+    {
+        $node_id = $request->getParam('node_id');
+        $node = Node::find($node_id);
+        if ($node == null) {
+            $res['msg'] = "发生错误";
+        } else {
+            $ary['server'] = $node->server;
+            $ary['server_port'] = $this->user->port;
+            $ary['password'] = $this->user->passwd;
+            $ary['method'] = $node->method;
+            if ($node->custom_method) {
+                $ary['method'] = $this->user->method;
+            }
+            $json = json_encode($ary);
+            $json_show = json_encode($ary, JSON_PRETTY_PRINT);
+            $ssurl = $ary['method'] . ":" . $ary['password'] . "@" . $ary['server'] . ":" . $ary['server_port'];
+            $ssqr = "ss://" . base64_encode($ssurl);
+
+            $surge_base = Config::get('baseUrl') . "/downloads/ProxyBase.conf";
+            $surge_proxy = "#!PROXY-OVERRIDE:ProxyBase.conf\n";
+            $surge_proxy .= "[Proxy]\n";
+            $surge_proxy .= "Proxy = custom," . $ary['server'] . "," . $ary['server_port'] . "," . $ary['method'] . "," . $ary['password'] . "," . Config::get('baseUrl') . "/downloads/SSEncrypt.module";
+            $res['json'] = $json;
+            $res['json_show'] = $json_show;
+            $res['ssqr'] = $ssqr;
+            $res['surge_base'] = $surge_base;
+            $res['surge_proxy'] = $surge_proxy;
+        }
+        return $this->echoJson($response, $res);
+
+    }
+
 
     public function nodeInfo($request, $response, $args)
     {
