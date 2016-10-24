@@ -271,7 +271,7 @@
 								url: "/user/nodeqrcode",
 								dataType: "json",
 								data: {
-									node_id: $("{$node->id}") .val()
+									nodeid: $("{$node->id}") .val()
 								},
 								success: function (data) {
 									if(data.ret) {
