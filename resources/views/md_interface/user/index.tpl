@@ -262,7 +262,7 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<p class="text-right"><a id="node_qrcode_{$node->id}" class="btn btn-flat btn-brand-accent waves-attach disable">二维码</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a></p>
+					<p class="text-right"><a id="node_sugre_{$node->id}" class="btn btn-flat btn-brand-accent waves-attach">Sugre</a><a id="node_qrcode_{$node->id}" class="btn btn-flat btn-brand-accent waves-attach">二维码</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a></p>
 				</div>
 				<script type="text/javascript">
 					$(document).ready(function (){
@@ -337,7 +337,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" id="pwd-update">提交</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">取消</a><a class="btn btn-flat btn-brand-accent waves-attach" id="pwd-update">提交</a></p>
 			</div>
 		</div>
 	</div>
@@ -361,7 +361,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" id="ss-pwd-update">Discard</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">取消</a><a class="btn btn-flat btn-brand-accent waves-attach" id="ss-pwd-update">确定</a></p>
 			</div>
 		</div>
 	</div>
@@ -398,7 +398,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" id="method-update">Discard</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">取消</a><a class="btn btn-flat btn-brand-accent waves-attach" id="method-update">确定</a></p>
 			</div>
 		</div>
 	</div>
@@ -430,7 +430,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" id="SSRProtocol-update">Discard</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">取消</a><a class="btn btn-flat btn-brand-accent waves-attach" id="SSRProtocol-update">确定</a></p>
 			</div>
 		</div>
 	</div>
@@ -456,7 +456,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" id="SSRobfs-update">Discard</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">取消</a><a class="btn btn-flat btn-brand-accent waves-attach" id="SSRobfs-update">确定</a></p>
 			</div>
 		</div>
 	</div>
@@ -472,7 +472,7 @@
 				<p class="h5 margin-top-sm text-black-hint">流量记录还没好</p>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a></p>
 			</div>
 		</div>
 	</div>
@@ -488,7 +488,7 @@
 				<p class="h5 margin-top-sm text-black-hint">彻底删除账户还没好</p>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">确定</a></p>
 			</div>
 		</div>
 	</div>
@@ -504,7 +504,7 @@
 				<p class="h5 margin-top-sm text-black-hint">邀请码还没好</p>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a></p>
 			</div>
 		</div>
 	</div>
@@ -521,7 +521,7 @@
 				<div id="ss-qr"></div>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a></p>
 			</div>
 		</div>
 	</div>
