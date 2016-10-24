@@ -274,7 +274,7 @@
 								success: function (data) {
 									if(data.ret) {
 										console.log(data)
-										//$("").modal('show');
+										$("ui_dialog_qrcode").modal('show');
 										jQuery('#ss-qr').qrcode({
 											"text": data.ssqr 
 										});
@@ -517,6 +517,7 @@
 			</div>
 			<div class="modal-inner">
 				<p class="h5 margin-top-sm text-black-hint">二维码还没弄</p>
+				<div id="ss-qr"></div>
 			</div>
 			<div class="modal-footer">
 				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancel</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Discard</a></p>
