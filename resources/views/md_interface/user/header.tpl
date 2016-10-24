@@ -1,47 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-    <title>{$config["appName"]}</title>
-    <!-- CSS fonts -->
-    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="/assets/materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="/assets/materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <script src="https://ajax-googleapis.cdn.bydisk.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="../assets/md-interface/js/base.min.js"></script>
-    <script src="../assets/md-interface/js/project.min.js"></script>
-    <script src=" /assets/public/js/jquery.qrcode.min.js "></script>
+	<meta charset="UTF-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta name="theme-color" content="#293696">
+	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" name="viewport">
+	<title>{$config["appName"]}</title>
+
+	<!-- css -->
+	<link href="../assets/md-interface/css/base.min.css" rel="stylesheet">
+	<link href="../assets/md-interface/css/project.min.css" rel="stylesheet">
+	<!-- ... -->
+	<!-- js -->
+	<script src="https://ajax-googleapis.cdn.bydisk.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="../assets/md-interface/js/base.min.js"></script>
+	<script src="../assets/md-interface/js/project.min.js"></script>
+	<script src=" /assets/public/js/jquery.qrcode.min.js "></script>
+	<!-- ... -->
 </head>
-<body class="black">
-<nav class="black lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">{$config["appName"]}</a>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="/">首页</a></li>
-            <li><a href="https://shadowsocks.org/en/download/clients.html">客户端下载</a></li>
-            <li><a href="/code">邀请码</a></li>
-            {if $user->isLogin}
-                <li><a href="/user">用户中心</a></li>
-                <li><a href="/user/logout">退出</a></li>
-            {else}
-                <li><a href="/auth/login">登录</a></li>
-                <li><a href="/auth/register">注册</a></li>
-            {/if}
-
-        </ul>
-
-        <ul id="nav-mobile" class="side-nav">
-            <li><a href="/">首页</a></li>
-            <li><a href="https://shadowsocks.org/en/download/clients.html">客户端下载</a></li>
-            <li><a href="/code">邀请码</a></li>
-            {if $user->isLogin}
-                <li><a href="/user">用户中心</a></li>
-                <li><a href="/user/logout">退出</a></li>
-            {else}
-                <li><a href="/auth/login">登录</a></li>
-                <li><a href="/auth/register">注册</a></li>
-            {/if}
-        </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-</nav>
