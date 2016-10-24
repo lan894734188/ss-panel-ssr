@@ -257,7 +257,7 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach disable">二维码</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a></p>
+					<p class="text-right"><a id="node_qrcode" class="btn btn-flat btn-brand-accent waves-attach disable">二维码</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a></p>
 				</div>
 			</div>
 		</div>
@@ -656,6 +656,41 @@
         })
     })
 </script>
+<script type="text/javascript">
+	$(document).ready(function (){
+		$("#node_qrcode").click(function () {
+			$.ajax({
+				type: "POST",
+				url: "/user/nodeqrcode",
+				dataType: "json",
+				data: {
+					node_id: $("{$node->id}").val()
+				},
+				success: function (data) {
+					if(data.ret) {
+						console.log(data)
+						//$("").modal('show');
+						jQuery('#ss-qr').qrcode({
+							"text": data.ssqr 
+						});
+						jQuery('#surge-base-qr').qrcode({
+			                "text": data.surge_base
+			            });
+			            jQuery('#surge-proxy-qr').qrcode({
+			                "text": data.surge_proxy
+			            });
+					} else {
+						$("#msg-error").modal('show');
+                        $("#msg-error-p").html(data.msg);
+					}
+				},
+				error: function (jqXHR) {
+					alert("发生错误：" + jqXHR.status);
+				}
+			})
+		})
+	})
+</script>
 
 
 <script>
@@ -695,7 +730,9 @@
 </script>
 
 
-
+<script type="text/javascript">
+	var 
+</script>
 
 
 
