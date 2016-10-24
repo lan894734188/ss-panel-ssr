@@ -44,7 +44,7 @@ $app->group('/user', function () {
     $this->post('/checkin', 'App\Controllers\UserController:doCheckin');
     $this->get('/node', 'App\Controllers\UserController:node');
     $this->get('/node/{id}', 'App\Controllers\UserController:nodeInfo');
-    $this->post('/nodeqrcode', 'App\Controllers\UserController:nodeqrcode');
+    $this->post('/nodeqrcode/{id}', 'App\Controllers\UserController:nodeqrcode');
     $this->get('/profile', 'App\Controllers\UserController:profile');
     $this->get('/invite', 'App\Controllers\UserController:invite');
     $this->post('/invite', 'App\Controllers\UserController:doInvite');
