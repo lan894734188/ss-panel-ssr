@@ -63,7 +63,6 @@ class UserController extends BaseController
         $node = Node::find($node_id);
         if ($node == null) {
             $res['msg'] = "发生错误";
-            $res['ret'] = null;
         } else {
             $ary['server'] = $node->server;
             $ary['server_port'] = $this->user->port;
