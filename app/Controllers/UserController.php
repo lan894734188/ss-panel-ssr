@@ -63,6 +63,7 @@ class UserController extends BaseController
         $node = Node::find($node_id);
         if ($node == null) {
             $res['msg'] = "发生错误";
+            $res['ret'] = null;
         } else {
             $ary['server'] = $node->server;
             $ary['server_port'] = $this->user->port;
@@ -85,6 +86,7 @@ class UserController extends BaseController
             $res['ssqr'] = $ssqr;
             $res['surge_base'] = $surge_base;
             $res['surge_proxy'] = $surge_proxy;
+            $res['ret'] = "1";
         }
         return $this->echoJson($response, $res);
 
