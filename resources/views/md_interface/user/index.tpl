@@ -517,7 +517,7 @@
 				<p class="modal-title">二维码</p>
 			</div>
 			<div class="modal-inner">
-				<p class="h5 margin-top-sm text-black-hint">二维码还没弄</p>
+				<p class="h5 margin-top-sm text-black-hint">Shadowsocks二维码</p>
 				<div id="ss-qr"></div>
 			</div>
 			<div class="modal-footer">
