@@ -268,11 +268,8 @@
 						$("#node_qrcode_{$node->id}").click(function () {
 							$.ajax({
 								type: "POST",
-								url: "/user/nodeqrcode",
+								url: "/user/nodeqrcode/{$node->id}",
 								dataType: "json",
-								data: {
-									nodeid: $("{$node->id}") .val()
-								},
 								success: function (data) {
 									if(data.ret) {
 										console.log(data)
