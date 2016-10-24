@@ -274,7 +274,7 @@
 								success: function (data) {
 									if(data.ret) {
 										console.log(data)
-										$("ui_dialog_qrcode").modal('show');
+										$("#ui_dialog_qrcode").modal('show');
 										jQuery('#ss-qr').qrcode({
 											"text": data.ssqr 
 										});
