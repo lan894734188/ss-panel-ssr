@@ -37,7 +37,7 @@ class UserController extends BaseController
         $user_index_msg = DbConfig::get('user-index');
         $user_index_topmsg = DbConfig::get('user-index-top');
         if ($user_index_topmsg == null) {
-            $user_index_msg = "在后台修改用户中心置顶公告...";
+            $user_index_topmsg = "在后台修改用户中心置顶公告...";
         }
         if ($user_index_msg == null) {
             $user_index_msg = "在后台修改用户中心公告...";
