@@ -16,6 +16,5 @@
 	<script src="../assets/md-interface/js/base.min.js"></script>
 	<script src="../assets/md-interface/js/project.min.js"></script>
 
-
-</head>
 {include file='cg.tpl'}
+</head>

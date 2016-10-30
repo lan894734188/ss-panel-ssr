@@ -18,6 +18,5 @@
 	<script src="../assets/md-interface/js/project.min.js"></script>
 	<script src="../assets/public/js/jquery.qrcode.min.js "></script>
 	<!-- ... -->
-
-</head>
 {include file='cg.tpl'}
+</head>
