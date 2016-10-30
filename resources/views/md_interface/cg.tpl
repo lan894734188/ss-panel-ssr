@@ -2,10 +2,8 @@
 <link rel="stylesheet" href="../assets/md-interface/xLoader/css/xloader.css">
 <script type="text/javascript">
 	$("#xLoader").show();
-    $(document).ready(){  
-    $("#xLoader").hide();
-	};
-	</script>
+	$(document).ready(){$("#xLoader").hide()};
+</script>
 <style>
 	#xLoader{
 		padding: 20px;
