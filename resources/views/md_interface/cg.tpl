@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="../assets/md-interface/xLoader/css/xloader.css">
 <script type="text/javascript">
 	$("#xLoader").show();
-   window.onload=function(){  
+    window.ready()=function(){  
     $("#xLoader").fadeOut(800);
 	};
 	</script>
