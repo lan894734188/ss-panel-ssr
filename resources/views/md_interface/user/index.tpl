@@ -271,16 +271,43 @@
 									if(data.ret) {
 										//console.log(data)
 										$("#ss-qr").empty();
+										$("#ssurl").empty();
 										$("#ui_dialog_qrcode").modal('show');
+										$("#ssurl").html(data.ssqr);
 										jQuery('#ss-qr').qrcode({
 											"text": data.ssqr 
 										});
-										//jQuery('#surge-base-qr').qrcode({
-							            //    "text": data.surge_base
-							            //});
-							            //jQuery('#surge-proxy-qr').qrcode({
-							            //    "text": data.surge_proxy
-							            //});
+									} else {
+										$("#msg-error").modal('show');
+				                        $("#msg-error-p").html(data.msg);
+									}
+								},
+								error: function (jqXHR) {
+									alert("发生错误：" + jqXHR.status);
+								}
+							})
+						})
+						$("#node_sugre_{$node->id}").click(function () {
+							$.ajax({
+								type: "POST",
+								url: "/user/nodeqrcode/{$node->id}",
+								dataType: "json",
+								success: function (data) {
+									if(data.ret) {
+										//console.log(data)
+										$("#surge-base-qr").empty();
+										$("#surge-proxy-qr").empty();
+										$("#surge-base").empty();
+										$("#surge-proxy").empty();
+										$("#ui_dialog_sugre").modal('show');
+										$("#surge-base").html(data.surge_base);
+										$("#surge-proxy").html(data.surge_proxy);
+										jQuery('#surge-base-qr').qrcode({
+											"text": data.surge_base 
+										});
+										jQuery('#surge-proxy-qr').qrcode({
+											"text": data.surge_proxy 
+										});
 									} else {
 										$("#msg-error").modal('show');
 				                        $("#msg-error-p").html(data.msg);
@@ -338,6 +365,8 @@
 		</div>
 	</div>
 </div>
+<!-- ... -->
+
 <!-- ss-passwd_modal -->
 <div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_ss-passwd" role="dialog" tabindex="-3">
 	<div class="modal-dialog modal-xs">
@@ -362,6 +391,8 @@
 		</div>
 	</div>
 </div>
+<!-- ... -->
+
 <!-- ss-method_modal -->
 <div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_method" role="dialog" tabindex="-3">
 	<div class="modal-dialog modal-xs">
@@ -399,6 +430,8 @@
 		</div>
 	</div>
 </div>
+<!-- ... -->
+
 <!-- ssr-protocol_modal -->
 <div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_ssrprotocol" role="dialog" tabindex="-3">
 	<div class="modal-dialog modal-xs">
@@ -431,6 +464,8 @@
 		</div>
 	</div>
 </div>
+<!-- ... -->
+
 <!-- ssr-obfs_modal -->
 <div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_ssrobfs" role="dialog" tabindex="-3">
 	<div class="modal-dialog modal-xs">
@@ -457,6 +492,8 @@
 		</div>
 	</div>
 </div>
+<!-- ... -->
+
 <!-- trafficlog_modal -->
 <div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_trafficlog" role="dialog" tabindex="-3">
 	<div class="modal-dialog modal-xs">
@@ -473,6 +510,8 @@
 		</div>
 	</div>
 </div>
+<!-- ... -->
+
 <!-- kill-account_modal -->
 <div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_kill-account" role="dialog" tabindex="-3">
 	<div class="modal-dialog modal-xs">
@@ -489,6 +528,8 @@
 		</div>
 	</div>
 </div>
+<!-- ... -->
+
 <!-- Invitation_modal -->
 <div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_inv" role="dialog" tabindex="-2">
 	<div class="modal-dialog modal-xs">
@@ -505,7 +546,9 @@
 		</div>
 	</div>
 </div>
-<!-- qrcode_modal -->
+<!-- ... -->
+
+<!-- ss-qrcode_modal -->
 <div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_qrcode" role="dialog" tabindex="-2">
 	<div class="modal-dialog modal-xs">
 		<div class="modal-content">
@@ -514,6 +557,7 @@
 			</div>
 			<div class="modal-inner">
 				<p class="h5 margin-top-sm text-black-hint">Shadowsocks二维码</p>
+				<small id="ssurl"></small>
 				<div id="ss-qr"></div>
 			</div>
 			<div class="modal-footer">
@@ -522,8 +566,31 @@
 		</div>
 	</div>
 </div>
+<!-- ... -->
 
-
+<!-- sugre_qrcode_modal -->
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_sugre" role="dialog" tabindex="-2">
+	<div class="modal-dialog modal-xs">
+		<div class="modal-content">
+			<div class="modal-heading">
+				<p class="modal-title">SUGRE连接信息</p>
+			</div>
+			<div class="modal-inner">
+				<p class="h5 margin-top-sm text-black-hint">基础配置二维码</p>
+				<small id="surge-base"></small>
+				<div id="surge-base-qr"></div>
+				<br/>
+				<p class="h5 margin-top-sm text-black-hint">代理配置二维码</p>
+				<small id="surge-proxy"></small>
+				<div id="surge-proxy-qr"></div>
+			</div>
+			<div class="modal-footer">
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- ... -->
 
 
 <!-- msg_modal -->
@@ -553,7 +620,7 @@
 		</div>
 	</div>
 </div>
-
+<!-- ... -->
 
 
 
