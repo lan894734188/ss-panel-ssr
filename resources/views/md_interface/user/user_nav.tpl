@@ -64,7 +64,7 @@
 							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="/user/invite">邀请码/Invite</a>
 						</li>
 						<li>
-							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="/user/trafficlog">连接/流量记录</a>
+							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="/user/trafficlog">连接/流量记录/TrafficLog</a>
 						</li>
 						<li>
 							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#/user/kill">永久删除账户/Kill this Account</a>
