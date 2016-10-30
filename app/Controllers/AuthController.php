@@ -80,12 +80,17 @@ class AuthController extends BaseController
     public function register($request, $response, $args)
     {
         $ary = $request->getQueryParams();
+        $regIndexMsg = DbConfig::get('reg-index');
         $code = "";
         if (isset($ary['code'])) {
             $code = $ary['code'];
         }
         $requireEmailVerification = Config::get('emailVerifyEnabled');
-        return $this->view()->assign('code', $code)->assign('requireEmailVerification', $requireEmailVerification)->display('auth/register.tpl');
+        return $this->view()
+                    ->assign('code', $code)
+                    ->assign('regIndexMsg', $regIndexMsg)
+                    ->assign('requireEmailVerification', $requireEmailVerification)
+                    ->display('auth/register.tpl');
     }
 
     public function registerHandle($request, $response, $args)
