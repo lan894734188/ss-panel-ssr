@@ -11,11 +11,13 @@
 	<link href="../assets/md-interface/css/base.min.css" rel="stylesheet">
 	<link href="../assets/md-interface/css/project.min.css" rel="stylesheet">
 	<!-- ... -->
+
 	<!-- js -->
 	<script src="https://ajax-googleapis.cdn.bydisk.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="../assets/md-interface/js/base.min.js"></script>
 	<script src="../assets/md-interface/js/project.min.js"></script>
 	<script src="../assets/public/js/jquery.qrcode.min.js "></script>
 	<!-- ... -->
+	
 {include file='cg.tpl'}
 </head>
