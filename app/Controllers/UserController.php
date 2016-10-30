@@ -35,16 +35,22 @@ class UserController extends BaseController
     public function index($request, $response, $args)
     {
         $user_index_msg = DbConfig::get('user-index');
+        $user_index_topmsg = DbConfig::get('user-index-top');
+        if ($user_index_topmsg == null) {
+            $user_index_msg = "在后台修改用户中心置顶公告...";
+        }
         if ($user_index_msg == null) {
             $user_index_msg = "在后台修改用户中心公告...";
         }
 
         $node_msg = DbConfig::get('user-node');
         $user = Auth::getUser();
-        $nodes = Node::where('type', 1)->orderBy('sort')->get();
+        $nodes = Node::where('type', 1)->orderBy('sort')->where("level","<=",$this->user->level)->get();
 
 
-        return $this->view()->assign('user_index_msg', $user_index_msg)
+        return $this->view()
+                    ->assign('user_index_msg', $user_index_msg)
+                    ->assign('user_index_topmsg', $user_index_topmsg)
                     ->assign('nodes', $nodes)
                     ->assign('user', $user)
                     ->assign('node_msg', $node_msg)
