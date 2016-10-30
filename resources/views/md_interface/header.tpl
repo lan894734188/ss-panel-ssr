@@ -18,3 +18,4 @@
 
 
 </head>
+{include file='cg.tpl'}
