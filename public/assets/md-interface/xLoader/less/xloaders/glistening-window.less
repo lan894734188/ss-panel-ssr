@@ -1,0 +1,58 @@
+/*
+*
+* By:		Aaron Lumsden
+* Website:	Tuts+
+* URL:		http://goo.gl/vdEJg5
+*
+*/
+
+.glistening-window{
+	position:relative;
+	width: 42px;
+	height: 42px;
+	top: 50%;
+	left: 50%;
+	.animation(xLoaderGlisteningWindow 5s infinite linear);
+
+	span{
+		width:20px;
+		height:20px;
+		position:absolute;
+		background:red;
+		display:block;
+		.animation(xLoaderGlisteningWindowSpan 1s infinite linear);
+
+		&:nth-child(1){
+			background:#2ecc71;
+		}
+		&:nth-child(2){
+			left:22px;
+			background:#9b59b6;
+			.animation-delay(.2s);
+		}
+		&:nth-child(3){
+			top:22px;
+			background:#3498db;
+			.animation-delay(.4s);
+		}
+		&:nth-child(4){
+			top:22px;
+			left:22px;
+			background:#f1c40f;
+			.animation-delay(.6s);
+		}
+	}
+}
+
+//xLoaderGlisteningWindow
+.keyframes(xLoaderGlisteningWindow;{
+	from {-webkit-transform: rotate(0deg);}
+	to {-webkit-transform: rotate(360deg);}
+});
+
+//xLoaderGlisteningWindowSpan
+.keyframes(xLoaderGlisteningWindowSpan;{
+   0% { transform:scale(1); }
+   50% { transform:scale(0.5); }
+   100% { transform:scale(1); }
+});

@@ -1,0 +1,51 @@
+/*
+*
+* By:		Aaron Lumsden
+* Website:	Tuts+
+* URL:		http://goo.gl/vdEJg5
+*
+*/
+
+.crossing-shapes{
+	position:relative;
+	top:50%;
+	left: 50%;
+
+	&:before{
+		width:20px;
+		height:20px;
+		border-radius:20px;
+		background:blue;
+		content:'';
+		position:absolute;
+		background:#9b59b6;
+		.animation(xLoaderCrossingShapesBefore 1.5s infinite ease-in-out);
+	}
+
+	&:after{
+		width:20px;
+		height:20px;
+		border-radius:20px;
+		background:blue;
+		content:'';
+		position:absolute;
+		background:#2ecc71;
+		left:22px;
+		.animation(xLoaderCrossingShapesAfter 1.5s infinite ease-in-out);
+	}
+}
+
+ 
+//xLoaderCrossingShapesBefore
+.keyframes(xLoaderCrossingShapesBefore;{
+	0% {transform: translateX(0px) rotate(0deg)}
+	50% {transform: translateX(50px) scale(1.2) rotate(260deg); background:#2ecc71;border-radius:0px;}
+	100% {transform: translateX(0px) rotate(0deg)}
+});
+
+//xLoaderCrossingShapesAfter
+.keyframes(xLoaderCrossingShapesAfter;{
+	0% {transform: translateX(0px)}
+	50% {transform: translateX(-50px) scale(1.2) rotate(-260deg);background:#9b59b6;border-radius:0px;}
+	100% {transform: translateX(0px)}
+});

@@ -1,0 +1,46 @@
+/*
+*
+* By:		Aaron Lumsden
+* Website:	Tuts+
+* URL:		http://goo.gl/vdEJg5
+*
+*/
+
+.the-snake{
+	position:relative;
+	top: 50%;
+	left: 50%;
+
+	span{
+		position:absolute;
+		width:20px;
+		height:20px;
+		background:#3498db;
+		opacity:0.5;
+		border-radius:20px;
+		.animation(xLoaderTheSnake 1s infinite ease-in-out);
+
+		&:nth-child(2){
+			left:20px;
+			.animation-delay(.2s);
+		}
+		&:nth-child(3){
+			left:40px;
+			.animation-delay(.4s);
+		}
+		&:nth-child(4){
+			left:60px;
+			.animation-delay(.6s);
+		}
+		&:nth-child(5){
+			left:80px;
+			.animation-delay(.8s);
+		}
+	}
+}
+
+.keyframes(xLoaderTheSnake;{
+	0% {opacity: 0.3; transform:translateY(0px);    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);}
+	50% {opacity: 1; transform: translateY(-10px); background:#f1c40f;  box-shadow: 0px 20px 3px rgba(0, 0, 0, 0.05);}
+	100%  {opacity: 0.3; transform:translateY(0px); box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);}
+});
