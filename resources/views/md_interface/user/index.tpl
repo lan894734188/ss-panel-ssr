@@ -25,7 +25,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
-						<h1 class="content-heading">UserInterface</h1>
+						<h1 class="content-heading">用户中心/DashBoard</h1>
 					</div>
 				</div>
 			</div>
@@ -139,8 +139,7 @@
 								<div class="card-inner">
 									<p class="card-heading"></p>
 									<p>
-										Lorem ipsum dolor sit amet.<br>
-										{$node_msg}<br>
+										{$node_msg}
 										<p>
 											<a class="btn btn-flat collapsed waves-attach" data-toggle="collapse" href="#ui_collapse_node">
 												<span class="collapsed-hide">收起/Collapse</span>
