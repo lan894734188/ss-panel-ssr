@@ -8,7 +8,7 @@
 				<a class="menu-top-user" href="javascript:void(0)"><span class="avatar avatar-inline margin-right"><img alt="alt text for John Smith avatar" src="{$user->gravatar}"></span>{$user->user_name}</a>
 			</div>
 			<div class="menu-top-info-sub">
-				<small>欢迎回来{$user->user_name}</small> <small clsas="pull-right">用户等级 LV.{$user->level}</small>
+				<small>欢迎回来{$user->user_name}</small> <small class="pull-right">用户等级 LV.{$user->level}</small>
 			</div>
 		</div>
 		<div class="menu-content">
