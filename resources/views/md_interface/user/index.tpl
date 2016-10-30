@@ -38,6 +38,9 @@
 							<div class="card-main">
 								<div class="card-inner">
 									<p>
+										<div>
+											{$user_index_topmsg}
+										</div>
 										<a class="btn btn-flat collapsed waves-attach" data-toggle="collapse" href="#ui_collapse_msg">
 											<span class="collapsed-hide">收起公告</span>
 											<span class="collapsed-show">展开公告</span>
