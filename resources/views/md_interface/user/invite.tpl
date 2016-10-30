@@ -1,97 +1,98 @@
-{include file='user/main.tpl'}
+{include file='user/header.tpl'}
 
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            邀请
-            <small>Invite</small>
-        </h1>
-    </section>
+<body class="page-brand">
+<header class="header header-transparent header-waterfall ui-header">
+		<ul class="nav nav-list pull-left">
+			<li>
+				<a data-toggle="menu" href="#ui_menu">
+					<span class="icon icon-lg">menu</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="nav nav-list pull-right">
+			<li class="dropdown margin-right">
+				<a data-toggle="menu" href="#ui_menu_profile">
+					<span class="padding-right">{$user->user_name}</span>
+					<span class="avatar avatar-sm"><img alt="User Image" src="{$user->gravatar}"></span>
+				</a>
+			</li>
+		</ul>
+	</header>
+{include file='nav.tpl'}
+{include file='user/user_nav.tpl'}
+	<main class="content">
+		<div class="content-header ui-content-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
+						<h1 class="content-heading">邀请/Invite</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
+					<section class="content-inner margin-top-no">
+						<div class="card">
+							<div class="card-main">
+								<div class="card-inner">
+									<p>当前您可以生成<code>{$user->invite_num}</code>个邀请码。 </p>
+									<br>
+									{if $user->invite_num }
+			                            <button id="invite" class="btn btn-brand waves-attach waves-light">生成我的邀请码</button>
+			                        {/if}
+									<br>
+									<ul>
+										<li>用户注册48小时后，才可以生成邀请码。</li>
 
-    <!-- Main content --><!-- Main content -->
-    <section class="content">
-        <div class="row">
-            <div class="col-sm-12">
-                <div id="msg-error" class="alert alert-warning alert-dismissable" style="display:none">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <h4><i class="icon fa fa-warning"></i> 出错了!</h4>
+						                <li>邀请码请给认识的需要的人。</li>
 
-                    <p id="msg-error-p"></p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <!-- left column -->
-            <div class="col-md-6">
-                <!-- general form elements -->
-                <div class="box box-primary">
-                    <div class="box-header">
-                        <i class="fa fa-rocket"></i>
+						                <li>邀请有记录，若被邀请的人违反用户协议，您将会有连带责任。</li>
 
-                        <h3 class="box-title">邀请</h3>
-                    </div>
-                    <!-- /.box-header -->
-                    <div class="box-body">
-                        <p>当前您可以生成<code>{$user->invite_num}</code>个邀请码。 </p>
-                        {if $user->invite_num }
-                            <button id="invite" class="btn btn-sm btn-info">生成我的邀请码</button>
-                        {/if}
-                    </div>
-                    <!-- /.box -->
-                    <div class="box-header">
-                        <h3 class="box-title">我的邀请码</h3>
-                    </div>
-                    <!-- /.box-header -->
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th>###</th>
-                                <th>邀请码(点右键复制链接)</th>
-                                <th>状态</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {foreach $codes as $code}
-                                <tr>
-                                    <td><b>{$code->id}</b></td>
-                                    <td><a href="/auth/register?code={$code->code}" target="_blank">{$code->code}</a>
-                                    </td>
-                                    <td>可用</td>
-                                </tr>
-                            {/foreach}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+						                <li>邀请码暂时无法购买，请珍惜。</li>
 
-            <div class="col-md-6">
-                <div class="callout callout-warning">
-                    <h4>注意！</h4>
-
-                    <p>邀请码请给认识的需要的人。</p>
-
-                    <p>邀请有记录，若被邀请的人违反用户协议，您将会有连带责任。</p>
-                </div>
-
-                <div class="callout callout-info">
-                    <h4>说明</h4>
-
-                    <p>用户注册48小时后，才可以生成邀请码。</p>
-
-                    <p>邀请码暂时无法购买，请珍惜。</p>
-
-                    <p>公共页面不定期发放邀请码，如果用完邀请码可以关注公共邀请。</p>
-                </div>
-            </div>
-            <!-- /.col (right) -->
-        </div>
-    </section>
-    <!-- /.content -->
-</div><!-- /.content-wrapper -->
+						                <li>公共页面不定期发放邀请码，如果用完邀请码可以关注公共邀请.</li>
+									</ul>
+									<p>
+										<a class="btn btn-flat collapsed waves-attach" data-toggle="collapse" href="#ui_collapse_msg">
+											<span class="collapsed-hide">收起表格/Close</span>
+											<span class="collapsed-show">展开表格/Open</span>
+										</a>
+									</p>
+									<div class="collapsible-region collapse" id="ui_collapse_msg">
+										<div class="table-responsive">
+											<p>我的邀请码</p>
+					                        <table class="table table-striped">
+					                            <thead>
+					                            <tr>
+					                                <th>###</th>
+					                                <th>邀请码(点右键复制链接)</th>
+					                                <th>状态</th>
+					                            </tr>
+					                            </thead>
+					                            <tbody>
+					                            {foreach $codes as $code}
+					                                <tr>
+					                                    <td><b>{$code->id}</b></td>
+					                                    <td><a href="/auth/register?code={$code->code}" target="_blank">{$code->code}</a>
+					                                    </td>
+					                                    <td>可用</td>
+					                                </tr>
+					                            {/foreach}
+					                            </tbody>
+					                        </table>
+					                    </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</main>
+{include file='user/footer.tpl'}
 
 <script>
     $(document).ready(function () {
@@ -110,5 +111,3 @@
         })
     })
 </script>
-
-{include file='user/footer.tpl'}

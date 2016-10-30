@@ -13,4 +13,5 @@
 	
 	<!-- favicon -->
 	<!-- ... -->
+{include file='cg.tpl'}
 </head>
