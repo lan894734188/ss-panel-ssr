@@ -68,7 +68,7 @@
 						</li>
 					</ul>
 				</li>
-				{if $user->isadmin}
+				{if $user->isAdmin}
 				<li>
 					<a class="waves-attach" href="/admin">管理面板(PC)</a>
 				</li>
