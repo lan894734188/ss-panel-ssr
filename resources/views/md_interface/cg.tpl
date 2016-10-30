@@ -3,7 +3,7 @@
 <script type="text/javascript">
 	$("#xLoader").show();
     $(document).ready(){  
-    $("#xLoader").fadeOut(800);
+    $("#xLoader").hide();
 	};
 	</script>
 <style>
