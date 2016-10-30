@@ -1,7 +1,7 @@
 <!-- Loading -->
 <link rel="stylesheet" href="../assets/md-interface/xLoader/css/xloader.css">
 <script type="text/javascript">
-	$("#xLoader").fadeIn(500);
+	$("#xLoader").show();
    window.onload=function(){  
     $("#xLoader").fadeOut(800);
 	};
