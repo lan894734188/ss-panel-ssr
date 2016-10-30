@@ -2,8 +2,10 @@
 <link rel="stylesheet" href="../assets/md-interface/xLoader/css/xloader.css">
 <script type="text/javascript">
 	$("#xLoader").show();
-	$(document).ready($("#xLoader").hide());
-</script>
+   window.onload=function(){  
+    $("#xLoader").fadeOut(800);
+	};
+	</script>
 <style>
 	#xLoader{
 		padding: 20px;
@@ -13,10 +15,4 @@
 	    position: fixed;
 	}
 </style>
-<div id="xLoader">
-	<div class="google-spin-wrapper">
-		<div class="google-spin">
-		</div>
-	</div>
-</div>
 <!-- ... -->

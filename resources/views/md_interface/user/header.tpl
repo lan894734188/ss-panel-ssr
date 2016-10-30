@@ -20,3 +20,9 @@
 	<!-- ... -->
 {include file='cg.tpl'}
 </head>
+<div id="xLoader">
+	<div class="google-spin-wrapper">
+		<div class="google-spin">
+		</div>
+	</div>
+</div>
