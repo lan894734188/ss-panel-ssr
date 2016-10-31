@@ -71,7 +71,7 @@
 						</li>
 					</ul>
 				</li>
-				{if $user->isAdmin}
+				{if $user->isAdmin()}
 				<li>
 					<a class="waves-attach" href="/admin">管理面板/Administrator</a>
 				</li>
