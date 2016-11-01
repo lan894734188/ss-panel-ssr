@@ -129,8 +129,8 @@
 			<div class="modal-heading">
 				<p class="modal-title">用户协议 / TOS</p>
 			</div>
-			<div class="modal-inner">
-				<div class="form-group form-group-label">
+			<div class="modal-inner margin-top-no margin-bottom-no">
+				<div class="form-group form-group-label margin-top-no margin-bottom-no">
 					<div class="row">
 						<div class="col-md-10 col-md-push-1">
 							{include file='tosbody.tpl'}
@@ -139,8 +139,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-red waves-attach waves-effect" data-dismiss="modal" id="tos_calcel">取消/Cancel</a></p>
-				<p class="text-right"><a class="btn btn-brand waves-attach waves-light" data-dismiss="modal" id="reg">继续/Continue</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-red waves-attach waves-effect" data-dismiss="modal" id="tos_calcel">取消/Cancel</a>&nbsp;<a class="btn btn-brand waves-attach waves-light" data-dismiss="modal" id="reg">继续/Continue</a></p>
 			</div>
 		</div>
 	</div>
