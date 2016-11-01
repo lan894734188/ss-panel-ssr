@@ -132,7 +132,7 @@
 			<div class="modal-inner margin-top-no margin-bottom-no">
 				<div class="form-group form-group-label margin-top-no margin-bottom-no">
 					<div class="row">
-						<div class="col-md-10 col-md-push-1">
+						<div class="col-md-10 col-md-push-1" style="height: 300px;overflow: scroll;">>
 							{include file='tosbody.tpl'}
 						</div>
 					</div>
