@@ -520,10 +520,19 @@
 				<p class="modal-title">彻底删除账户</p>
 			</div>
 			<div class="modal-inner">
-				<p class="h5 margin-top-sm text-black-hint">彻底删除账户还没好</p>
+				<from class="from">
+					<div class="form-group form-group-label">
+						<div class="row">
+							<div class="col-md-10 col-md-push-1">
+								<label class="floating-label" for="pass_kill">名称/Name</label>
+								<input class="form-control" id="pass_kill" type="password">
+							</div>
+						</div>
+					</div>
+				</from>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">确定</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a><a class="btn btn-flat btn-brand-accent waves-attach" id="kill">确定</a></p>
 			</div>
 		</div>
 	</div>
@@ -774,6 +783,35 @@
                     if (data.ret) {
                         $("#msg-success").modal('show');
                         $("#msg-success-p").html(data.msg);
+                    } else {
+                        $("#msg-error").modal('show');
+                        $("#msg-error-p").html(data.msg);
+                    }
+                },
+                error: function (jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                }
+            })
+        })
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#kill").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "kill",
+                dataType: "json",
+                data: {
+                    passwd: $("#pass_kill").val(),
+                },
+                success: function (data) {
+                    if (data.ret) {
+                        //$("#msg-error").hide();
+                        $("#msg-success").modal('show');
+                        $("#msg-success-p").html(data.msg);
+                        window.setTimeout("location.href='/'", 2000);
                     } else {
                         $("#msg-error").modal('show');
                         $("#msg-error-p").html(data.msg);

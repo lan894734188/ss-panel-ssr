@@ -29,6 +29,7 @@
 											<img alt="Login" src="../assets/md-interface/images/users/avatar-001.jpg">
 										</span>
 									</p>
+									<p class="text-center">{$regIndexMsg}</p>
 									<form class="form">
 										<div class="form-group form-group-label">
 											<div class="row">
@@ -82,8 +83,8 @@
 							</div>
 						</div>
 						<div class="clearfix">
-							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="javascript:void(0)">Need help?</a></p>
-							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="/user/login">Have account</a></p>
+							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/wiki">Need help?/需要帮助?</a></p>
+							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="/user/login">Have account/已有账号</a></p>
 						</div>
 					</section>
 				</div>
@@ -106,12 +107,12 @@
 				<div class="form-group form-group-label">
 					<div class="row">
 						<div class="col-md-10 col-md-push-1">
-							<label class="floating-label" for="verifycode">邮箱验证码/Mailbox Check code</label>
+							<label class="floating-label" for="verifycode">邮箱验证码/Mailbox Check</label>
 							<input class="form-control" id="verifycode" type="text">
 						</div>
 					</div>
 				</div>
-				<p class="h5 margin-top-sm text-black-hint">请将xxx.xxx添加到邮箱白名单。否则可能收不到验证码</p>
+				<p class="h5 margin-top-sm text-black-hint">请将本站域名添加到邮箱白名单。否则可能收不到验证码</p>
 			</div>
 			<div class="modal-footer">
 				<p class="text-right"><a class="btn btn-flat btn-red waves-attach waves-effect" data-dismiss="modal">取消/Cancel</a></p>
