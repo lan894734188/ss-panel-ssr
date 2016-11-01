@@ -29,7 +29,7 @@
 											<img alt="Login" src="../assets/md-interface/images/users/avatar-001.jpg">
 										</span>
 									</p>
-									<p class="text-center">{$regIndexMsg}</p>
+									<p class="text-center"></p>
 									<form class="form">
 										<div class="form-group form-group-label">
 											<div class="row">
