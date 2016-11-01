@@ -80,7 +80,7 @@ class AuthController extends BaseController
     public function register($request, $response, $args)
     {
         $ary = $request->getQueryParams();
-        $regIndexMsg = DbConfig::get('reg-index');
+        #$regIndexMsg = DbConfig::get('reg-index');
         $code = "";
         if (isset($ary['code'])) {
             $code = $ary['code'];
