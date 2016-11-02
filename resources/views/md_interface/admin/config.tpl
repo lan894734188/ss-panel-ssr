@@ -60,6 +60,12 @@
                             </div>
 
                             <div class="form-group">
+                                <label>用户中心置顶公告</label>
+                                <textarea class="form-control" id="user-node-top" rows="3"
+                                          placeholder="Enter ...">{$conf['user-node-top']}</textarea>
+                            </div>
+
+                            <div class="form-group">
                                 <label>用户节点公告</label>
                                 <textarea class="form-control" id="user-node" rows="3"
                                           placeholder="Enter ...">{$conf['user-node']}</textarea>
@@ -104,6 +110,7 @@
                     homeCode: $("#home-code").val(),
                     appName: $("#app-name").val(),
                     userIndex: $("#user-index").val(),
+                    userIndextop: $("#user-index-top").val(),
                     userNode: $("#user-node").val()
                 },
                 success: function (data) {
