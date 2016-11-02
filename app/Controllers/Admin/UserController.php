@@ -49,6 +49,9 @@ class UserController extends AdminController
         $user->enable = $request->getParam('enable');
         $user->is_admin = $request->getParam('is_admin');
         $user->ref_by = $request->getParam('ref_by');
+        $user->protocol = $request->getParam('SSRProtocol');
+        $user->obfs = $request->getParam('SSRobfs');
+        $user->level = $request->getParam('user_level');
         if (!$user->save()) {
             $rs['ret'] = 0;
             $rs['msg'] = "修改失败";
