@@ -77,6 +77,7 @@ class AdminController extends UserController
             "home-code" => DbConfig::get('home-code'),
             "analytics-code" => DbConfig::get('analytics-code'),
             "user-index" => DbConfig::get('user-index'),
+            "user-index-top" => DbConfig::get('user-index-top'),
             "user-node" => DbConfig::get('user-node'),
         ];
         return $this->view()->assign('conf', $conf)->display('admin/config.tpl');
@@ -89,6 +90,7 @@ class AdminController extends UserController
             "home-code" => $request->getParam('homeCode'),
             "app-name" => $request->getParam('appName'),
             "user-index" => $request->getParam('userIndex'),
+            "user-index-top" => $request->getParam('userIndextop'),
             "user-node" => $request->getParam('userNode'),
         ];
         foreach ($config as $key => $value) {
