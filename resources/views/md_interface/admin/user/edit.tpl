@@ -83,6 +83,14 @@
                                         </div>
                                     </div>
 
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">用户级别</label>
+
+                                        <div class="col-sm-9">
+                                            <input class="form-control" id="user_level" value="{$user->level}">
+                                        </div>
+                                    </div>
+
                                 </fieldset>
                                 <fieldset class="col-sm-6">
                                     <legend>ShadowSocks连接信息</legend>
@@ -107,6 +115,20 @@
 
                                         <div class="col-sm-9">
                                             <input class="form-control" id="method" value="{$user->method}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">SSR协议</label>
+
+                                        <div class="col-sm-9">
+                                            <input class="form-control" id="SSRProtocol" value="{$user->protocol}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">SSR混淆</label>
+
+                                        <div class="col-sm-9">
+                                            <input class="form-control" id="SSRobfs" value="{$user->obfs}">
                                         </div>
                                     </div>
                                 </fieldset>
@@ -191,7 +213,10 @@
                     method: $("#method").val(),
                     enable: $("#enable").val(),
                     is_admin: $("#is_admin").val(),
-                    ref_by: $("#ref_by").val()
+                    ref_by: $("#ref_by").val(),
+                    SSRobfs: $("#SSRobfs").val(),
+                    SSRProtocol: $("#SSRProtocol").val(),
+                    user_level: $("#user_level").val()
                 },
                 success: function (data) {
                     if (data.ret) {
