@@ -57,7 +57,8 @@
 								<div class="card-inner">
 									<p>A secure socks5 proxy, designed to protect your Internet traffic.</p>
 									<blockquote>If you want to keep a secret, you must also hide it from yourself.</blockquote>
-									<p>高级用户xxxx <a href="#" target="_blank">door<sup class="margin-left-xs"><span class="icon">open_in_new</span></sup></a> site.</p>
+									<h3 class="h5 margin-bottom-no margin-top-no">公告 / Announcement</h3>
+									{$msg}
 								</div>
 							</div>
 						</div>

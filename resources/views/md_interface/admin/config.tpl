@@ -48,7 +48,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label>邀请页公告</label>
+                                <label>主页公告</label>
                                 <textarea class="form-control" id="home-code" rows="3"
                                           placeholder="Enter ...">{$conf['home-code']}</textarea>
                             </div>
