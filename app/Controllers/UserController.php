@@ -49,7 +49,7 @@ class UserController extends BaseController
                     ->orderBy('sort')
                     ->where(function ($query) {
                         $query->where("group","=",$this->user->group)
-                        ->orWhere("group","=",0);}
+                        ->orWhere("group","=",0);})
                     ->where("level","<=",$this->user->level)->get();
 
         return $this->view()
