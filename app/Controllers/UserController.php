@@ -47,9 +47,10 @@ class UserController extends BaseController
         $user = Auth::getUser();
         $nodes = Node::where('type', 1)
                     ->orderBy('sort')
-                    ->where("group","=",$this->user->group)
-                    ->where("level","<=",$this->user->level)
-                    ->get();
+                    ->where(function ($query) {
+                        $query->where("group","=",$this->user->group)
+                        ->orWhere("group","=",0);}
+                    ->where("level","<=",$this->user->level)->get();
 
         return $this->view()
                     ->assign('user_index_msg', $user_index_msg)
