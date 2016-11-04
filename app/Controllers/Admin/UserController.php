@@ -52,6 +52,7 @@ class UserController extends AdminController
         $user->protocol = $request->getParam('SSRProtocol');
         $user->obfs = $request->getParam('SSRobfs');
         $user->level = $request->getParam('user_level');
+        $user->group = $request->getParam('user_group');
         if (!$user->save()) {
             $rs['ret'] = 0;
             $rs['msg'] = "修改失败";
