@@ -31,6 +31,7 @@ class NodeController extends AdminController
         $node->status = $request->getParam('status');
         $node->sort = $request->getParam('sort');
         $node->level = $request->getParam('level');
+        $node->group = $request->getParam('group');
         if (!$node->save()) {
             $rs['ret'] = 0;
             $rs['msg'] = "添加失败";
@@ -66,6 +67,7 @@ class NodeController extends AdminController
         $node->status = $request->getParam('status');
         $node->sort = $request->getParam('sort');
         $node->level = $request->getParam('level');
+        $node->group = $request->getParam('group');
         if (!$node->save()) {
             $rs['ret'] = 0;
             $rs['msg'] = "修改失败";
