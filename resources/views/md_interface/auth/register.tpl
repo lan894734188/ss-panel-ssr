@@ -84,7 +84,7 @@
 						</div>
 						<div class="clearfix">
 							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/wiki">Need help?/需要帮助?</a></p>
-							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="/user/login">Have account/已有账号</a></p>
+							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="/auth/login">Have account/已有账号</a></p>
 						</div>
 					</section>
 				</div>

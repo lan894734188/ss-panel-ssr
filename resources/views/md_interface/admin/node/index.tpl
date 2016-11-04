@@ -24,6 +24,8 @@
                                 <th>加密</th>
                                 <th>描述</th>
                                 <th>排序</th>
+                                <th>级别</th>
+                                <th>群组</th>
                                 <th>操作</th>
                             </tr>
                             {foreach $nodes as $node}
@@ -33,6 +35,8 @@
                                 <td>{$node->method}</td>
                                 <td>{$node->info}</td>
                                 <td>{$node->sort}</td>
+                                <th>{$node->level}</th>
+                                <th>{$node->group}</th>
                                 <td>
                                     <a class="btn btn-info btn-sm" href="/admin/node/{$node->id}/edit">编辑</a>
                                     <a class="btn btn-danger btn-sm" id="delete" value="{$node->id}" href="/admin/node/{$node->id}/delete">删除</a>

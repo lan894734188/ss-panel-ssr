@@ -524,7 +524,7 @@
 					<div class="form-group form-group-label">
 						<div class="row">
 							<div class="col-md-10 col-md-push-1">
-								<label class="floating-label" for="pass_kill">名称/Name</label>
+								<label class="floating-label" for="pass_kill">请输入密码</label>
 								<input class="form-control" id="pass_kill" type="password">
 							</div>
 						</div>

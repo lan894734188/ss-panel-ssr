@@ -20,6 +20,8 @@
                         <table class="table table-hover">
                             <tr>
                                 <th>ID</th>
+                                <th>群组</th>
+                                <th>级别</th>
                                 <th>邮箱</th>
                                 <th>端口</th>
                                 <th>状态</th>
@@ -35,6 +37,8 @@
                             {foreach $users as $user}
                             <tr>
                                 <td>#{$user->id}</td>
+                                <td>#{$user->group}</td>
+                                <td>#{$user->level}</td>
                                 <td>{$user->email}</td>
                                 <td>{$user->port}</td>
                                 <td>{$user->enable}</td>

@@ -122,6 +122,14 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="status" class="col-sm-3 control-label">节点群组</label>
+
+                                        <div class="col-sm-9">
+                                            <input class="form-control" id="node_group" value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="sort" class="col-sm-3 control-label">排序</label>
 
                                         <div class="col-sm-9">
@@ -170,7 +178,8 @@
                     type: $("#type").val(),
                     status: $("#status").val(),
                     sort: $("#sort").val(),
-                    level: $("#node_level").val()
+                    level: $("#node_level").val(),
+                    group: $("#node_group").val()
                 },
                 success: function (data) {
                     if (data.ret) {

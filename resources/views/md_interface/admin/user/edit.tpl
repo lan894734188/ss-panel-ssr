@@ -91,6 +91,14 @@
                                         </div>
                                     </div>
 
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">用户群组</label>
+
+                                        <div class="col-sm-9">
+                                            <input class="form-control" id="user_group" value="{$user->group}">
+                                        </div>
+                                    </div>
+
                                 </fieldset>
                                 <fieldset class="col-sm-6">
                                     <legend>ShadowSocks连接信息</legend>
@@ -216,7 +224,8 @@
                     ref_by: $("#ref_by").val(),
                     SSRobfs: $("#SSRobfs").val(),
                     SSRProtocol: $("#SSRProtocol").val(),
-                    user_level: $("#user_level").val()
+                    user_level: $("#user_level").val(),
+                    user_group: $("#user_group").val()
                 },
                 success: function (data) {
                     if (data.ret) {
