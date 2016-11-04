@@ -61,7 +61,7 @@
 
                             <div class="form-group">
                                 <label>用户中心置顶公告</label>
-                                <textarea class="form-control" id="user-node-top" rows="3"
+                                <textarea class="form-control" id="user-index-top" rows="3"
                                           placeholder="Enter ...">{$conf['user-index-top']}</textarea>
                             </div>
 
