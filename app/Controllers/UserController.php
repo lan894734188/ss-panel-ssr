@@ -48,8 +48,8 @@ class UserController extends BaseController
         $nodes = Node::where('type', 1)
                     ->orderBy('sort')
                     ->where(function ($query) {
-                        $query->where("group","=",$this->user->group)
-                        ->orWhere("group","=",0);})
+                        $query->where("g","=",$this->user->g)
+                        ->orWhere("g","=",0);})
                     ->where("level","<=",$this->user->level)->get();
 
         return $this->view()
