@@ -37,7 +37,7 @@
                             {foreach $users as $user}
                             <tr>
                                 <td>#{$user->id}</td>
-                                <td>#{$user->group}</td>
+                                <td>#{$user->g}</td>
                                 <td>#{$user->level}</td>
                                 <td>{$user->email}</td>
                                 <td>{$user->port}</td>

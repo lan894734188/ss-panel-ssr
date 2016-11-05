@@ -127,7 +127,7 @@
                                         <label for="status" class="col-sm-3 control-label">节点群组</label>
 
                                         <div class="col-sm-9">
-                                            <input class="form-control" id="node_group" value="{$node->group}">
+                                            <input class="form-control" id="node_group" value="{$node->g}">
                                         </div>
                                     </div>
 

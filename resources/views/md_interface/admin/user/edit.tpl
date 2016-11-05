@@ -95,7 +95,7 @@
                                         <label class="col-sm-3 control-label">用户群组</label>
 
                                         <div class="col-sm-9">
-                                            <input class="form-control" id="user_group" value="{$user->group}">
+                                            <input class="form-control" id="user_group" value="{$user->g}">
                                         </div>
                                     </div>
 

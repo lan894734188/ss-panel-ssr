@@ -36,7 +36,7 @@
                                 <td>{$node->info}</td>
                                 <td>{$node->sort}</td>
                                 <th>{$node->level}</th>
-                                <th>{$node->group}</th>
+                                <th>{$node->g}</th>
                                 <td>
                                     <a class="btn btn-info btn-sm" href="/admin/node/{$node->id}/edit">编辑</a>
                                     <a class="btn btn-danger btn-sm" id="delete" value="{$node->id}" href="/admin/node/{$node->id}/delete">删除</a>
