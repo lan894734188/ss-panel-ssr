@@ -642,7 +642,7 @@
                 dataType: "json",
                 success: function (data) {
                     $("#checkin-msg").html(data.msg);
-                    $("#checkin-btn").modal('hide');
+                    $("#checkin-btn").hide();
                 },
                 error: function (jqXHR) {
                     alert("发生错误：" + jqXHR.status);
@@ -801,7 +801,7 @@
         $("#kill").click(function () {
             $.ajax({
                 type: "POST",
-                url: "kill",
+                url: "/user/kill",
                 dataType: "json",
                 data: {
                     passwd: $("#pass_kill").val(),
