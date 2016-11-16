@@ -177,7 +177,7 @@ class AuthController extends BaseController
         $user->invite_num = Config::get('inviteNum');
         $user->reg_ip = Http::getClientIP();
         if (Config::get('ManyShopEnabled') && $c->user_id == Config::get('ManyShopUser')) {
-            $user->group = Config::get('ManyShopGroup');
+            $user->g = Config::get('ManyShopGroup');
             $user->ref_by = $c->user_id;
         }else{
             $user->ref_by = $c->user_id;
