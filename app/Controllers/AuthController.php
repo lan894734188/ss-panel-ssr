@@ -176,7 +176,12 @@ class AuthController extends BaseController
         $user->transfer_enable = Tools::toGB(Config::get('defaultTraffic'));
         $user->invite_num = Config::get('inviteNum');
         $user->reg_ip = Http::getClientIP();
-        $user->ref_by = $c->user_id;
+        if (Config::get('ManyShopEnabled') && $c->user_id == Config::get('ManyShopUser')) {
+            $user->group = Config::get('ManyShopGroup');
+            $user->ref_by = $c->user_id;
+        }else{
+            $user->ref_by = $c->user_id;
+        }
 
         if ($user->save()) {
             $res['ret'] = 1;
