@@ -74,7 +74,11 @@
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
+													{if $requireEmailVerification}
 													<a class="btn btn-block btn-brand waves-attach waves-light" data-backdrop="static" data-toggle="modal" href="#ui_dialog_mailcheck">下一步/NextStep</a>
+													{else}
+													<a class="btn btn-block btn-brand waves-attach waves-light" data-backdrop="static" data-toggle="modal" href="#ui_dialog_tos">下一步/NextStep</a>
+													{/if}
 												</div>
 											</div>
 										</div>
@@ -83,7 +87,7 @@
 							</div>
 						</div>
 						<div class="clearfix">
-							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/wiki">Need help?/需要帮助?</a></p>
+							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/password/reset">ResetPassword?/忘记密码?</a></p>
 							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="/auth/login">Have account/已有账号</a></p>
 						</div>
 					</section>
@@ -96,7 +100,7 @@
 			<p>SS-Panel-SSR</p>
 		</div>
 	</footer>
-
+{if $requireEmailVerification}
 <div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_mailcheck" role="dialog" tabindex="-3">
 	<div class="modal-dialog modal-xs">
 		<div class="modal-content">
@@ -122,7 +126,7 @@
 		</div>
 	</div>
 </div>
-
+{/if}
 <div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_tos" role="dialog" tabindex="-2">
 	<div class="modal-dialog modal-xs">
 		<div class="modal-content">
