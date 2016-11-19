@@ -14,6 +14,8 @@ use App\Utils\Hash;
 use App\Utils\Http;
 use App\Utils\Tools;
 
+use App\Utils\GA;
+
 
 /**
  *  AuthController
@@ -47,6 +49,7 @@ class AuthController extends BaseController
         $email = strtolower($email);
         $passwd = $request->getParam('passwd');
         $rememberMe = $request->getParam('remember_me');
+        $code = $request->getParam('code');
 
         // Handle Login
         $user = User::where('email', '=', $email)->first();
@@ -69,6 +72,19 @@ class AuthController extends BaseController
         if ($rememberMe) {
             $time = 3600 * 24 * 7;
         }
+
+        if($user->ga_enable==1)
+        {
+            $ga = new GA();
+            $rcode = $ga->verifyCode($user->ga_token,$code);
+            
+            if (!$rcode) {
+                $res['ret'] = 0;
+                $res['msg'] = "403 两步验证码错误，如果您是丢失了生成器或者错误地设置了这个选项，您可以尝试重置密码，即可取消这个选项。";
+                return $response->getBody()->write(json_encode($res));
+            }
+        }
+
         Logger::info("login user $user->id ");
         Auth::login($user->id, $time);
 
@@ -182,6 +198,12 @@ class AuthController extends BaseController
         }else{
             $user->ref_by = $c->user_id;
         }
+
+        $ga = new GA();
+        $secret = $ga->createSecret();
+        
+        $user->ga_token=$secret;
+        $user->ga_enable=0;
 
         if ($user->save()) {
             $res['ret'] = 1;
