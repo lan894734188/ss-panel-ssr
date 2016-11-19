@@ -57,7 +57,7 @@ class UserController extends BaseController
                     ->assign('user_index_msg', $user_index_msg)
                     ->assign('user_index_topmsg', $user_index_topmsg)
                     ->assign('nodes', $nodes)
-                    ->assign('user', $user)
+                    ->assign('user', $this->user)
                     ->assign('node_msg', $node_msg)
                     ->display('user/index.tpl');
     }
