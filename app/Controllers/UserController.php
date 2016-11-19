@@ -295,7 +295,7 @@ class UserController extends BaseController
         
         $user->ga_token=$secret;
         $user->save();
-        $newResponse = $response->withStatus(302)->withHeader('Location', '/user/edit');
+        $newResponse = $response->withStatus(302)->withHeader('Location', '/user');
         return $newResponse;
     }
 
