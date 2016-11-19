@@ -61,6 +61,9 @@
 							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_passwd">登陆密码设置/Login Password</a>
 						</li>
 						<li>
+							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_ga">二次验证设置/2step Auth</a>
+						</li>
+						<li>
 							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="/user/invite">邀请码/Invite</a>
 						</li>
 						<li>
