@@ -495,17 +495,44 @@
 <!-- ... -->
 
 <!-- trafficlog_modal -->
-<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_trafficlog" role="dialog" tabindex="-3">
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_ga" role="dialog" tabindex="-3">
 	<div class="modal-dialog modal-xs">
 		<div class="modal-content">
 			<div class="modal-heading">
-				<p class="modal-title">流量记录</p>
+				<p class="modal-title">二次验证</p>
 			</div>
 			<div class="modal-inner">
-				<p class="h5 margin-top-sm text-black-hint">流量记录还没好</p>
+				<p>请下载 Google 的两步验证器，扫描下面的二维码。</p>
+				<p><i class="icon icon-lg" aria-hidden="true">android</i><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2">&nbsp;Android</a></p>
+				<p><i class="icon icon-lg" aria-hidden="true">tablet_mac</i><a href="https://itunes.apple.com/cn/app/google-authenticator/id388497605?mt=8">&nbsp;iOS</a></p>
+				<p>在没有测试完成绑定成功之前请不要启用。</p>
+				<p>当前设置：登录时{if $user->ga_enable==1} 要求 {else} 不要求 {/if}验证</p>
+				<p>当前服务器时间：{date("Y-m-d H:i:s")}</p>
+				<div class="form-group form-group-label">
+					<label class="floating-label" for="ga-enable">验证设置</label>
+					<select id="ga-enable" class="form-control">
+						<option value="0">不要求</option>
+						<option value="1">要求验证</option>
+					</select>
+				</div>
+				<div class="form-group form-group-label">
+					<div class="text-center">
+						<div id="ga-qr"></div>
+						密钥：{$user->ga_token}
+					</div>
+				</div>
+				<div class="form-group form-group-label">
+					<label class="floating-label" for="code">测试一下</label>
+					<input type="text" id="code" placeholder="输入验证器生成的数字来测试" class="form-control">
+				</div>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a></p>
+				<p class="text-left">
+					<a class="btn btn-brand-accent btn-flat waves-attach" href="/user/gareset" ><span class="icon">format_color_reset</span>&nbsp;重置</a><a class="btn btn-flat waves-attach" id="ga-test" ><span class="icon">extension</span>&nbsp;测试</a><a class="btn btn-brand btn-flat waves-attach" id="ga-set" ><span class="icon">perm_data_setting</span>&nbsp;设置</a>
+				</p>
+				<p class="text-right">
+					<a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a>
+				</p>
 			</div>
 		</div>
 	</div>
@@ -823,6 +850,70 @@
             })
         })
     })
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#ga-test").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "/user/gacheck",
+                dataType: "json",
+                data: {
+                    code: $("#code").val()
+                },
+                success: function (data) {
+                    if (data.ret) {
+                        $("#msg-success").modal();
+						$("#msg-success-p").html(data.msg);
+                    } else {
+                        $("#msg-success").modal();
+						$("#msg-success-p").html(data.msg);
+                    }
+                },
+                error: function (jqXHR) {
+                    $("#msg-error").modal();
+					$("#msg-error-p").html(data.msg+"     出现了一些错误。");
+                }
+            })
+        })
+    })
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $("#ga-set").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "/user/gaset",
+                dataType: "json",
+                data: {
+                    enable: $("#ga-enable").val()
+                },
+                success: function (data) {
+                    if (data.ret) {
+                        $("#msg-success").modal();
+						$("#msg-success-p").html(data.msg);
+                    } else {
+                        $("#msg-success").modal();
+						$("#msg-success-p").html(data.msg);
+                    }
+                },
+                error: function (jqXHR) {
+                    $("#msg-error").modal();
+					$("#msg-error-p").html(data.msg+"     出现了一些错误。");
+                }
+            })
+        })
+    })
+</script>
+
+<script>
+	var ga_qrcode = '{$user->getGAurl()}';
+	jQuery('#ga-qr').qrcode({
+		"text": ga_qrcode
+	});
 </script>
 
 <script type="text/javascript">
