@@ -46,6 +46,14 @@
 												</div>
 											</div>
 										</div>
+										<div class="form-group form-group-label">
+											<div class="row">
+												<div class="col-md-10 col-md-push-1">
+													<label class="floating-label" for="code">二次验证码/2stepAuthCode(可选)</label>
+													<input class="form-control" id="code" name="code" type="text">
+												</div>
+											</div>
+										</div>
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
@@ -138,6 +146,7 @@
                 data:{
                     email: $("#email").val(),
                     passwd: $("#passwd").val(),
+                    code: $("#code").val(),
                     remember_me: $("#remember_me").val()
                 },
                 success:function(data){
