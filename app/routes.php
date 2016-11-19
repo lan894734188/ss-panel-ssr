@@ -54,6 +54,9 @@ $app->group('/user', function () {
     $this->post('/method', 'App\Controllers\UserController:updateMethod');
     $this->post('/SSRProtocol', 'App\Controllers\UserController:updateSSRProtocol');
     $this->post('/SSRobfs', 'App\Controllers\UserController:updateSSRobfs');
+    $this->post('/gacheck', 'App\Controllers\UserController:GaCheck');
+    $this->post('/gaset', 'App\Controllers\UserController:GaSet');
+    $this->get('/gareset', 'App\Controllers\UserController:GaReset');
 #    $this->get('/sys', 'App\Controllers\UserController:sys');
     $this->get('/trafficlog', 'App\Controllers\UserController:trafficLog');
 #    $this->get('/kill', 'App\Controllers\UserController:kill');
