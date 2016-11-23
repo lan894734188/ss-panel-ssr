@@ -117,6 +117,8 @@ CREATE TABLE `user` (
   `reg_ip` varchar(128) NOT NULL DEFAULT '127.0.0.1',
   `level` varchar(32) NOT NULL DEFAULT '1',
   `g` varchar(32) NOT NULL DEFAULT '0',
+  `ga_token` text NOT NULL,
+  `ga_enable` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `port` (`port`)
