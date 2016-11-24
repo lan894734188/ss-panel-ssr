@@ -5,7 +5,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            签到日记
+            用户签到日记
             <small>Traffic Log</small>
         </h1>
     </section>
