@@ -1,7 +1,8 @@
 
 ##贡献者/Contributors
 批发靓鸡仔<br/>
-<a href="https://github.com/Rafong973">Rafong</a>
+<a href="https://github.com/Rafong973">Rafong</a><br/>
+<a href="https://github.com/Daemonite/material">Daemonite</a>
 <br/>
 <br/>
 ##原著/Original
