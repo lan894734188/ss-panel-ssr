@@ -16,7 +16,6 @@
 	<script src="../assets/md-interface/js/base.min.js"></script>
 	<script src="../assets/md-interface/js/project.min.js"></script>
 
-{include file='cg.tpl'}
 </head>
 <div id="xLoader">
 	<div class="google-spin-wrapper">
