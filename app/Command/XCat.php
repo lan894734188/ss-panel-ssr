@@ -77,6 +77,12 @@ class XCat
             $user->invite_num = Config::get('inviteNum');
             $user->ref_by = 0;
             $user->is_admin = 1;
+            
+            $ga = new GA();
+			$secret = $ga->createSecret();
+			$user->ga_token=$secret;
+			$user->ga_enable=0;
+            
             if ($user->save()) {
                 echo "Successful/添加成功!";
                 return true;
