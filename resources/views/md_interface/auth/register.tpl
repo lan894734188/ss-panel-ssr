@@ -97,7 +97,7 @@
 	</main>
 	<footer class="ui-footer">
 		<div class="container">
-			<p>SS-Panel-SSR</p>
+			<strong>Copyright &copy; 2016 <a href="">{$config['appName']}. </a>  </strong>All rights reserved. | <a href="/tos">服务条款 </a>
 		</div>
 	</footer>
 {if $requireEmailVerification}
@@ -177,7 +177,7 @@
 </div>
 
 	<!-- js -->
-	<script src="https://ajax-googleapis.cdn.bydisk.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="https://ajax.lug.ustc.edu.cn/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="../assets/md-interface/js/base.min.js"></script>
 	<script src="../assets/md-interface/js/project.min.js"></script>
 

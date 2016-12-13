@@ -5,7 +5,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            流量使用记录
+            用户签到日记
             <small>Traffic Log</small>
         </h1>
     </section>
@@ -43,4 +43,4 @@
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 
-{include file='user/footer.tpl'}
+{include file='admin/footer.tpl'}
