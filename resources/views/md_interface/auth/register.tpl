@@ -97,7 +97,7 @@
 	</main>
 	<footer class="ui-footer">
 		<div class="container">
-			<p>SS-Panel-SSR</p>
+			<strong>Copyright &copy; 2016 <a href="">{$config['appName']}. </a>  </strong>All rights reserved. | <a href="/tos">服务条款 </a>
 		</div>
 	</footer>
 {if $requireEmailVerification}
