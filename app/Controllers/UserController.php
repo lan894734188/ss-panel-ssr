@@ -151,7 +151,7 @@ class UserController extends BaseController
             return $response->getBody()->write(json_encode($res));
         }
         
-        $code=Code::where("code","=",$code)->where("type","=",0)->where("level","<=",$user->level)->where("g","=",$user->g)->orwhere("g","=",0)->first();
+        $code=Code::where("passcode","=",$code)->where("type","=",0)->where("level","<=",$user->level)->where("g","=",$user->g)->orwhere("g","=",0)->first();
 
         if ( $code == null) {
             $res['ret'] = 0;
