@@ -65,7 +65,7 @@
                                 <label for="cate_title" class="col-sm-3 control-label">充值流量数量 单位GB</label>
 
                                 <div class="col-sm-9">
-                                    <input class="form-control" id="size" type="number" placeholder="0为所有">
+                                    <input class="form-control" id="size" type="number" placeholder="单位GB">
                                 </div>
                             </div>
 
