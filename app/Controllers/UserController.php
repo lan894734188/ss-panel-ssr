@@ -140,6 +140,40 @@ class UserController extends BaseController
         return $this->view()->display('user/edit.tpl');
     }
 
+    public function passcode($request, $response, $args)
+    {
+        $code = $request->getParam('passcode');
+        $user = $this->user;
+        
+        if ($code == "") {
+            $res['ret'] = 0;
+            $res['msg'] = "请填好充值码";
+            return $response->getBody()->write(json_encode($res));
+        }
+        
+        $code=Code::where("code","=",$code)->where("type","=",0)->where("level","<=",$user->level)->where("g","=",$user->g)->orwhere("g","=",0)->first();
+
+        if ( $code == null) {
+            $res['ret'] = 0;
+            $res['msg'] = "此充值码错误";
+            return $response->getBody()->write(json_encode($res));
+        }
+        
+        $code->type=1;
+        $code->use_time=date("Y-m-d H:i:s");
+        $code->useing_userid=$user->id;
+        $code->save();
+                
+        $res['ret'] = 1;
+        $res['msg'] = "充值成功，充值的流量为".$code->size."G。";
+
+        return $response->getBody()->write(json_encode($res));
+    
+        $user->transfer_enable=$user->transfer_enable+$code->size*1024*1024*1024;
+        $user->save();
+        
+    }
+
 
     public function invite($request, $response, $args)
     {
