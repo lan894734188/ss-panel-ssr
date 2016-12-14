@@ -48,7 +48,7 @@ $app->group('/user', function () {
 #    $this->get('/profile', 'App\Controllers\UserController:profile');
     $this->get('/invite', 'App\Controllers\UserController:invite');
     $this->post('/invite', 'App\Controllers\UserController:doInvite');
-#    $this->get('/edit', 'App\Controllers\UserController:edit');
+    $this->get('/passcode', 'App\Controllers\UserController:passcode');
     $this->post('/password', 'App\Controllers\UserController:updatePassword');
     $this->post('/sspwd', 'App\Controllers\UserController:updateSsPwd');
     $this->post('/method', 'App\Controllers\UserController:updateMethod');
@@ -114,6 +114,8 @@ $app->group('/admin', function () {
     $this->get('/profile', 'App\Controllers\AdminController:profile');
     $this->get('/invite', 'App\Controllers\AdminController:invite');
     $this->post('/invite', 'App\Controllers\AdminController:addInvite');
+    $this->get('/passcode', 'App\Controllers\AdminController:passcode');
+    $this->post('/passcode', 'App\Controllers\AdminController:addpasscode');
     $this->get('/sys', 'App\Controllers\AdminController:sys');
     $this->get('/logout', 'App\Controllers\AdminController:logout');
 })->add(new Admin());
