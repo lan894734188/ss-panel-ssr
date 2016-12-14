@@ -65,7 +65,7 @@ class AdminController extends UserController
             $res['ret'] = 0;
             return $response->getBody()->write(json_encode($res));
         }
-        $prefix="shop";
+        ##$prefix="shop";
         for ($i = 0; $i < $n; $i++) {
             $char = Tools::genRandomChar(32);
             $code = new PassCode();
