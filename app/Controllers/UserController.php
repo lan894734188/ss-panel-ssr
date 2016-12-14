@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\CheckInLog;
 use App\Models\InviteCode;
+use App\Models\PassCode;
 use App\Models\Node;
 use App\Models\TrafficLog;
 use App\Services\Auth;
@@ -151,7 +152,7 @@ class UserController extends BaseController
             return $response->getBody()->write(json_encode($res));
         }
         
-        $code=Code::where("passcode","=",$code)->where("type","=",0)->where("level","<=",$user->level)->where("g","=",$user->g)->orwhere("g","=",0)->first();
+        $code=PassCode::where("passcode","=",$code)->where("type","=",0)->where("level","<=",$user->level)->where("g","=",$user->g)->orwhere("g","=",0)->first();
 
         if ( $code == null) {
             $res['ret'] = 0;
