@@ -1,4 +1,7 @@
-
+#SS-Panel-SSR
+##简介
+这是个轻量化方向的panel.用不到或者少用的功能可能都砍掉</br>
+优化移动端视觉</br>
 ##贡献者/Contributors
 批发靓鸡仔<br/>
 <a href="https://github.com/Rafong973">Rafong</a><br/>
