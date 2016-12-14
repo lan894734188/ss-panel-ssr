@@ -61,6 +61,7 @@ class AdminController extends UserController
         $prefix = $request->getParam('prefix');
         $g = $request->getParam('g');
         $level = $request->getParam('level');
+        $size = $request->getParam('size');
         if ($n < 1) {
             $res['ret'] = 0;
             return $response->getBody()->write(json_encode($res));
@@ -72,6 +73,7 @@ class AdminController extends UserController
             $code->code = $prefix . $char;
             $code->g = $g;
             $code->level = $level;
+            $code->size = $size;
             $code->save();
         }
         $res['ret'] = 1;
