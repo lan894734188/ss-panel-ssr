@@ -62,6 +62,14 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="cate_title" class="col-sm-3 control-label">充值流量数量 单位GB</label>
+
+                                <div class="col-sm-9">
+                                    <input class="form-control" id="size" type="number" placeholder="0为所有">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label for="cate_title" class="col-sm-3 control-label">充值码数量</label>
 
                                 <div class="col-sm-9">
@@ -106,6 +114,7 @@
                     prefix: $("#prefix").val(),
                     g: $("#g").val(),
                     level: $("#level").val(),
+                    size: $("#size").val(),
                     num: $("#num").val()
                 },
                 success: function (data) {
