@@ -1,4 +1,4 @@
-{include file='auth/header.tpl'}
+{include file='header.tpl'}
 <body class="login-page">
 <div class="login-box">
     <div class="login-logo">
