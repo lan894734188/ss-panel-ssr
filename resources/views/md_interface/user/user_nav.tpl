@@ -67,6 +67,9 @@
 							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="/user/invite">邀请码/Invite</a>
 						</li>
 						<li>
+							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="#ui_dialog_passcode">流量充值</a>
+						</li>
+						<li>
 							<a class="waves-attach" data-backdrop="static" data-toggle="modal" href="/user/trafficlog">连接/流量记录/TrafficLog</a>
 						</li>
 						<li>
