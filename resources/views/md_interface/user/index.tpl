@@ -567,14 +567,24 @@
 <!-- ... -->
 
 <!-- Invitation_modal -->
-<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_inv" role="dialog" tabindex="-2">
+<div aria-hidden="true" class="modal modal-va-middle fade" id="ui_dialog_passcode" role="dialog" tabindex="-2">
 	<div class="modal-dialog modal-xs">
 		<div class="modal-content">
 			<div class="modal-heading">
-				<p class="modal-title">邀请码</p>
+				<p class="modal-title">充流量</p>
+				<p class="h5 margin-top-sm text-black-hint"></p>
 			</div>
 			<div class="modal-inner">
-				<p class="h5 margin-top-sm text-black-hint">邀请码还没好</p>
+				<from class="from">
+					<div class="form-group form-group-label">
+						<div class="row">
+							<div class="col-md-10 col-md-push-1">
+								<label class="floating-label" for="passcode">请输入充值码</label>
+								<input class="form-control" id="passcode" type="number">
+							</div>
+						</div>
+					</div>
+				</from>
 			</div>
 			<div class="modal-footer">
 				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a></p>
@@ -832,6 +842,35 @@
                 dataType: "json",
                 data: {
                     passwd: $("#pass_kill").val(),
+                },
+                success: function (data) {
+                    if (data.ret) {
+                        //$("#msg-error").hide();
+                        $("#msg-success").modal('show');
+                        $("#msg-success-p").html(data.msg);
+                        window.setTimeout("location.href='/'", 2000);
+                    } else {
+                        $("#msg-error").modal('show');
+                        $("#msg-error-p").html(data.msg);
+                    }
+                },
+                error: function (jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                }
+            })
+        })
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#kill").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "/user/passcode",
+                dataType: "json",
+                data: {
+                    passcode: $("#passcode").val(),
                 },
                 success: function (data) {
                     if (data.ret) {
