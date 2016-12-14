@@ -70,7 +70,7 @@ class AdminController extends UserController
         for ($i = 0; $i < $n; $i++) {
             $char = Tools::genRandomChar(32);
             $code = new PassCode();
-            $code->code = $prefix . $char;
+            $code->passcode = $prefix . $char;
             $code->g = $g;
             $code->level = $level;
             $code->size = $size;
