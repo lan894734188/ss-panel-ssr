@@ -35,6 +35,25 @@ CREATE TABLE `ss_invite_code` (
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `shop_code`;
+CREATE TABLE `shop_code` (
+`id`  int(11) NOT NULL AUTO_INCREMENT ,
+`passcode`  varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+`type`  int(8) NOT NULL DEFAULT 0 ,
+`g`  varchar(8) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '0' ,
+`level`  varchar(8) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '0' ,
+`size`  varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+`use_time`  datetime NULL DEFAULT NULL ,
+`useing_userid`  varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
+`created_at`  timestamp NOT NULL ON UPDATE CURRENT_TIMESTAMP ,
+PRIMARY KEY (`id`),
+INDEX `type` (`type`) USING BTREE 
+)
+ENGINE=InnoDB
+DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
+ROW_FORMAT=COMPACT
+;
+
 
 DROP TABLE IF EXISTS `ss_node`;
 CREATE TABLE `ss_node` (
