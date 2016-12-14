@@ -164,14 +164,16 @@ class UserController extends BaseController
         $code->use_time=date("Y-m-d H:i:s");
         $code->useing_userid=$user->id;
         $code->save();
+        
+        $user->transfer_enable=$user->transfer_enable+$code->size*1024*1024*1024;
+        $user->save();
                 
         $res['ret'] = 1;
         $res['msg'] = "充值成功，充值的流量为".$code->size."G。";
 
         return $response->getBody()->write(json_encode($res));
     
-        $user->transfer_enable=$user->transfer_enable+$code->size*1024*1024*1024;
-        $user->save();
+        
         
     }
 
