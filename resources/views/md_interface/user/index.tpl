@@ -877,7 +877,7 @@
                         //$("#msg-error").hide();
                         $("#msg-success").modal('show');
                         $("#msg-success-p").html(data.msg);
-                        window.setTimeout("location.href='/'", 2000);
+                        //window.setTimeout("location.href='/user'", 2000);
                     } else {
                         $("#msg-error").modal('show');
                         $("#msg-error-p").html(data.msg);
