@@ -71,6 +71,7 @@ class AdminController extends UserController
             $char = Tools::genRandomChar(32);
             $code = new PassCode();
             $code->passcode = $prefix . $char;
+            $code->type = 0;
             $code->g = $g;
             $code->level = $level;
             $code->size = $size;
