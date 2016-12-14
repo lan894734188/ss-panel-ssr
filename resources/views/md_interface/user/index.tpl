@@ -580,7 +580,7 @@
 						<div class="row">
 							<div class="col-md-10 col-md-push-1">
 								<label class="floating-label" for="passcode">请输入充值码</label>
-								<input class="form-control" id="passcode" type="number">
+								<input class="form-control" id="passcode">
 							</div>
 						</div>
 					</div>
