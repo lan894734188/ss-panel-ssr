@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\CheckInLog;
 use App\Models\InviteCode;
+use App\Models\PassCode;
 use App\Models\TrafficLog;
 use App\Services\Analytics;
 use App\Services\DbConfig;
@@ -45,6 +46,36 @@ class AdminController extends UserController
         }
         $res['ret'] = 1;
         $res['msg'] = "邀请码添加成功";
+        return $response->getBody()->write(json_encode($res));
+    }
+
+    public function passcode($request, $response, $args)
+    {
+        $codes = PassCode::where('type', '=', '0')->get();
+        return $this->view()->assign('codes', $codes)->display('admin/passcode.tpl');
+    }
+
+    public function addpasscode($request, $response, $args)
+    {
+        $n = $request->getParam('num');
+        $prefix = $request->getParam('prefix');
+        $g = $request->getParam('g');
+        $level = $request->getParam('level');
+        if ($n < 1) {
+            $res['ret'] = 0;
+            return $response->getBody()->write(json_encode($res));
+        }
+        $prefix="shop";
+        for ($i = 0; $i < $n; $i++) {
+            $char = Tools::genRandomChar(32);
+            $code = new PassCode();
+            $code->code = $prefix . $char;
+            $code->g = $g;
+            $code->level = $level;
+            $code->save();
+        }
+        $res['ret'] = 1;
+        $res['msg'] = "续命码添加成功";
         return $response->getBody()->write(json_encode($res));
     }
 
