@@ -587,7 +587,7 @@
 				</from>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a></p>
+				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a><a class="btn btn-flat btn-brand-accent waves-attach" id="dopasscode">确定</a></p>
 			</div>
 		</div>
 	</div>
@@ -864,7 +864,7 @@
 
 <script>
     $(document).ready(function () {
-        $("#kill").click(function () {
+        $("#dopasscode").click(function () {
             $.ajax({
                 type: "POST",
                 url: "/user/passcode",
