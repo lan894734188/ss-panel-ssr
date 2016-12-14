@@ -124,6 +124,12 @@
                 </li>
 
                 <li>
+                    <a href="/admin/passcode">
+                        <i class="fa fa-users"></i> <span>充值管理</span>
+                    </a>
+                </li>
+
+                <li>
                     <a href="/admin/trafficlog">
                         <i class="fa fa-history"></i> <span>流量记录</span>
                     </a>
