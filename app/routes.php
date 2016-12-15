@@ -121,12 +121,12 @@ $app->group('/admin', function () {
 })->add(new Admin());
 
 // API
-$app->group('/api', function () {
-    $this->get('/token/{token}', 'App\Controllers\ApiController:token');
-    $this->post('/token', 'App\Controllers\ApiController:newToken');
-    $this->get('/node', 'App\Controllers\ApiController:node')->add(new Api());
-    $this->get('/user/{id}', 'App\Controllers\ApiController:userInfo')->add(new Api());
-});
+#$app->group('/api', function () {
+#    $this->get('/token/{token}', 'App\Controllers\ApiController:token');
+#    $this->post('/token', 'App\Controllers\ApiController:newToken');
+#    $this->get('/node', 'App\Controllers\ApiController:node')->add(new Api());
+#    $this->get('/user/{id}', 'App\Controllers\ApiController:userInfo')->add(new Api());
+#});
 
 // mu
 $app->group('/mu', function () {
