@@ -1,5 +1,6 @@
 {include file='user/header.tpl'}
 <head>
+<style>
 .pagination li{
     background-image: none;
     background-position: 50% 50%;
@@ -17,7 +18,7 @@
     user-select: none;
     background-color: transparent;
     box-shadow: none;
-}
+}</style>
 </head>
 <body class="page-brand">
 <header class="header header-transparent header-waterfall ui-header">
