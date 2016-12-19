@@ -1,5 +1,24 @@
 {include file='user/header.tpl'}
-
+<head>
+.pagination li{
+    background-image: none;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.15), 0 1px 3px 1px rgba(0,0,0,.15);
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 0;
+    max-width: 100%;
+    padding: 8px;
+    text-transform: uppercase;
+    user-select: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+</head>
 <body class="page-brand">
 <header class="header header-transparent header-waterfall ui-header">
 	<ul class="nav nav-list pull-left">
