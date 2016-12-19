@@ -67,7 +67,6 @@
 				                                </tr>
 				                            {/foreach}
 				                        </table>
-				                        {$logs->render()}
 				                    </div>
 								</div>
 							</div>
