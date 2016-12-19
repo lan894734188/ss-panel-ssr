@@ -43,4 +43,4 @@
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 
-{include file='user/footer.tpl'}
+{include file='admin/footer.tpl'}
