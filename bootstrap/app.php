@@ -19,6 +19,7 @@ require BASE_PATH . '/vendor/autoload.php';
 Boot::loadEnv();
 Boot::setDebug();
 Boot::setVersion(VERSION);
+Boot::setGPLIDER(GPLIDER);
 // config time zone
 Boot::setTimezone();
 // Init db
