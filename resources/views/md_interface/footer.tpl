@@ -1,7 +1,10 @@
 <footer class="ui-footer">
 	<div class="container">
-		<p>SS-Panel-SSR</p>
+		<p>SS-Panel-SSR{$config["version"]}</p>
 	</div>
+	<div style="display:none;">
+	    {$config["GPLIDER"]}
+	</div	
 </footer>
 <div class="fbtn-container">
 	<div class="fbtn-inner">
