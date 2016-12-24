@@ -1,7 +1,10 @@
 <footer class="ui-footer">
 	<div class="container">
-		<p>SS-Panel-SSR</p>
+		<p>SS-Panel-SSR &nbsp; {$config["version"]}</p>
 	</div>
+	<div style="display:none;">
+	    {md5($config["version"])}
+	</div	
 </footer>
 <!-- analytics -->
 <div style="display:none;">
