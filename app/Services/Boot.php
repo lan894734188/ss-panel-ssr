@@ -29,6 +29,7 @@ class Boot
     }
     public static function setGPLIDER($GPLIDER)
     {
+        $_ENV['GPLIDER'] = $GPLIDER;
         putenv("GPLIDER=$GPLIDER");
     }
     public static function setTimezone()
