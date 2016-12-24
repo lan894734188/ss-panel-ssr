@@ -3,7 +3,7 @@
 		<p>SS-Panel-SSR &nbsp; {$config["version"]}</p>
 	</div>
 	<div style="display:none;">
-	    {$config["GPLIDER"]}
+	    {md5($config["version"])}
 	</div	
 </footer>
 <div class="fbtn-container">
