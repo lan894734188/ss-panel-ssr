@@ -1,6 +1,6 @@
 <footer class="ui-footer">
 	<div class="container">
-		<p>SS-Panel-SSR{$config["version"]}</p>
+		<p>SS-Panel-SSR &nbsp; {$config["version"]}</p>
 	</div>
 	<div style="display:none;">
 	    {$config["GPLIDER"]}
