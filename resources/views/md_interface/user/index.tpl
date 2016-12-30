@@ -445,16 +445,16 @@
 				    <label class="floating-label" for="SSRProtocol"></label>
 				    <select class="form-control" id="SSRProtocol">
 				        <option value="{$user->protocol}">当前:{$user->protocol}</option>
-                        <option value="origin">origin原版协议</option>
-                        <option value="verify_simple">verify_simple(不兼容原版)</option>
-                        <option value="verify_deflate">verify_deflate(不兼容原版)</option>
-                        <option value="verify_sha1_compatible">verify_sha1(兼容原版)</option>
-                        <option value="auth_sha1_compatible">auth_sha1(兼容原版)</option>
-                        <option value="auth_sha1_v2_compatible">auth_sha1_v2(兼容原版)</option>
-                        <option value="auth_sha1_v3_compatible">auth_sha1_v3(兼容原版)</option>
-                        <option value="auth_sha1_v4_compatible">auth_sha1_v4(兼容原版)</option>
-                        <option value="auth_aes128_md5_compatible">auth_aes128_md5(兼容原版)</option>
-                        <option value="auth_aes128_sha1_compatible">auth_aes128_sha1(兼容原版)</option>
+                        <option value="origin">origin(无验证)</option>
+                        <option value="verify_simple">verify_simple(只支持SSR/OnlySSR)</option>
+                        <option value="verify_deflate">verify_deflate(只支持SSR/OnlySSR)</option>
+                        <option value="verify_sha1_compatible">verify_sha1(兼容SS/SSR)</option>
+                        <option value="auth_sha1">auth_sha1(只支持SSR/OnlySSR)</option>
+                        <option value="auth_sha1_v2">auth_sha1_v2(只支持SSR/OnlySSR)</option>
+                        <option value="auth_sha1_v3">auth_sha1_v3(只支持SSR/OnlySSR)</option>
+                        <option value="auth_sha1_v4">auth_sha1_v4(只支持SSR/OnlySSR)</option>
+                        <option value="auth_aes128_md5">auth_aes128_md5(只支持SSR/OnlySSR)</option>
+                        <option value="auth_aes128_sha1">auth_aes128_sha1(只支持SSR/OnlySSR)</option>
 				    </select>
 				</div>
 			</div>
@@ -479,10 +479,10 @@
 				    <label class="floating-label" for="SSRobfs"></label>
 				    <select class="form-control" id="SSRobfs">
 				        <option value="{$user->obfs}">当前:{$user->obfs}</option>
-                        <option value="plain">plain无混淆</option>
-                        <option value="http_simple_compatible">http_simple(兼容原版)</option>
-                        <option value="http_post_compatible">http_post(兼容原版)</option>
-                        <option value="tls1.2_ticket_auth_compatible">tls1.2_ticket_auth(兼容原版)</option>
+                        <option value="plain">plain(无混淆)</option>
+                        <option value="http_simple_compatible">http_simple(兼容SS/SSR)</option>
+                        <option value="http_post_compatible">http_post(兼容SS/SSR)</option>
+                        <option value="tls1.2_ticket_auth_compatible">tls1.2_ticket_auth(兼容SS/SSR)</option>
 				    </select>
 				</div>
 			</div>
