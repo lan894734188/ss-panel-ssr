@@ -445,16 +445,16 @@
 				    <label class="floating-label" for="SSRProtocol"></label>
 				    <select class="form-control" id="SSRProtocol">
 				        <option value="{$user->protocol}">当前:{$user->protocol}</option>
-                        <option value="origin">origin(无验证)</option>
-                        <option value="verify_simple">verify_simple(只支持SSR/OnlySSR)</option>
-                        <option value="verify_deflate">verify_deflate(只支持SSR/OnlySSR)</option>
-                        <option value="verify_sha1_compatible">verify_sha1(兼容SS/SSR)</option>
-                        <option value="auth_sha1">auth_sha1(只支持SSR/OnlySSR)</option>
-                        <option value="auth_sha1_v2">auth_sha1_v2(只支持SSR/OnlySSR)</option>
-                        <option value="auth_sha1_v3">auth_sha1_v3(只支持SSR/OnlySSR)</option>
-                        <option value="auth_sha1_v4">auth_sha1_v4(只支持SSR/OnlySSR)</option>
-                        <option value="auth_aes128_md5">auth_aes128_md5(只支持SSR/OnlySSR)</option>
-                        <option value="auth_aes128_sha1">auth_aes128_sha1(只支持SSR/OnlySSR)</option>
+					<option value="origin">origin(无验证)</option>
+					<option value="verify_simple">verify_simple(只支持SSR/OnlySSR)</option>
+					<option value="verify_deflate">verify_deflate(只支持SSR/OnlySSR)</option>
+					<option value="verify_sha1_compatible">verify_sha1(兼容SS/SSR)</option>
+					<option value="auth_sha1">auth_sha1(只支持SSR/OnlySSR)</option>
+					<option value="auth_sha1_v2">auth_sha1_v2(只支持SSR/OnlySSR)</option>
+					<option value="auth_sha1_v3">auth_sha1_v3(只支持SSR/OnlySSR)</option>
+					<option value="auth_sha1_v4">auth_sha1_v4(只支持SSR/OnlySSR)</option>
+					<option value="auth_aes128_md5">auth_aes128_md5(只支持SSR/OnlySSR)</option>
+					<option value="auth_aes128_sha1">auth_aes128_sha1(只支持SSR/OnlySSR)</option>
 				    </select>
 				</div>
 			</div>
