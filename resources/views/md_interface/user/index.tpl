@@ -258,7 +258,7 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<p class="text-right"><a id="node_sugre_{$node->id}" class="btn btn-flat btn-brand-accent waves-attach">Sugre</a><a id="node_qrcode_{$node->id}" class="btn btn-flat btn-brand-accent waves-attach">二维码</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a></p>
+					<p class="text-right"><a id="node_sugre_{$node->id}" class="btn btn-flat btn-brand-accent waves-attach">Sugre</a><a id="node_ssrqrcode_{$node->id}" class="btn btn-flat btn-brand-accent waves-attach">SSR二维码</a><a id="node_qrcode_{$node->id}" class="btn btn-flat btn-brand-accent waves-attach">SS二维码</a><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a></p>
 				</div>
 				<script type="text/javascript">
 					$(document).ready(function (){
@@ -267,6 +267,37 @@
 								type: "POST",
 								url: "/user/nodeqrcode/{$node->id}",
 								dataType: "json",
+								data: {
+									type: "SS"
+								},
+								success: function (data) {
+									if(data.ret) {
+										//console.log(data)
+										$("#ss-qr").empty();
+										$("#ssurl").empty();
+										$("#ui_dialog_qrcode").modal('show');
+										$("#ssurl").html(data.ssqr);
+										jQuery('#ss-qr').qrcode({
+											"text": data.ssqr 
+										});
+									} else {
+										$("#msg-error").modal('show');
+				                        $("#msg-error-p").html(data.msg);
+									}
+								},
+								error: function (jqXHR) {
+									alert("发生错误：" + jqXHR.status);
+								}
+							})
+						})
+						$("#node_ssrqrcode_{$node->id}").click(function () {
+							$.ajax({
+								type: "POST",
+								url: "/user/nodeqrcode/{$node->id}",
+								dataType: "json",
+								data: {
+									type: "SSR"
+								},
 								success: function (data) {
 									if(data.ret) {
 										//console.log(data)
