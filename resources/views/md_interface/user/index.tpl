@@ -633,6 +633,10 @@
 				<p class="modal-title">二维码</p>
 			</div>
 			<div class="modal-inner">
+				<div class="form-group form-group-label control-highlight">
+					<label class="floating-label" for="ssurl">链接</label>
+					<input class="form-control" id="ssurl" type="text" value="">
+				</div>
 				<p class="h5 margin-top-sm text-black-hint"><input class="form-control" id="ssurl" type="text"></p>
 <div id="ss-qr"></div>
 			</div>
