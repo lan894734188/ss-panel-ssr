@@ -129,14 +129,32 @@
                                         <label class="col-sm-3 control-label">SSR协议</label>
 
                                         <div class="col-sm-9">
-                                            <input class="form-control" id="SSRProtocol" value="{$user->protocol}">
+                                            <select class="form-control" id="SSRProtocol">
+                                                <option value="{$user->protocol}">当前:{$user->protocol}</option>
+                                                <option value="origin">origin(无验证)</option>
+                                                <option value="verify_simple">verify_simple(只支持SSR/OnlySSR)</option>
+                                                <option value="verify_deflate">verify_deflate(只支持SSR/OnlySSR)</option>
+                                                <option value="verify_sha1_compatible">verify_sha1(兼容SS/SSR)</option>
+                                                <option value="auth_sha1_compatible">auth_sha1(兼容SS/SSR)</option>
+                                                <option value="auth_sha1_v2_compatible">auth_sha1_v2(兼容SS/SSR)</option>
+                                                <option value="auth_sha1_v3">auth_sha1_v3(只支持SSR/OnlySSR)</option>
+                                                <option value="auth_sha1_v4_compatible">auth_sha1_v4(兼容SS/SSR)</option>
+                                                <option value="auth_aes128_md5">auth_aes128_md5(只支持SSR/OnlySSR)</option>
+                                                <option value="auth_aes128_sha1">auth_aes128_sha1(只支持SSR/OnlySSR)</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">SSR混淆</label>
 
                                         <div class="col-sm-9">
-                                            <input class="form-control" id="SSRobfs" value="{$user->obfs}">
+                                            <select class="form-control" id="SSRobfs">
+                                                <option value="{$user->obfs}">当前:{$user->obfs}</option>
+                                                <option value="plain">plain(无混淆)</option>
+                                                <option value="http_simple_compatible">http_simple(兼容SS/SSR)</option>
+                                                <option value="http_post_compatible">http_post(兼容SS/SSR)</option>
+                                                <option value="tls1.2_ticket_auth_compatible">tls1.2_ticket_auth(兼容SS/SSR)</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </fieldset>
