@@ -276,7 +276,7 @@
 										$("#ss-qr").empty();
 										$("#ssurl").empty();
 										$("#ui_dialog_qrcode").modal('show');
-										$("#ssurl").(data.ssqr);
+										$("#ssurl").html(data.ssqr);
 										jQuery('#ss-qr').qrcode({
 											"text": data.ssqr 
 										});
@@ -304,7 +304,7 @@
 										$("#ss-qr").empty();
 										$("#ssurl").empty();
 										$("#ui_dialog_qrcode").modal('show');
-										$("#ssurl").(data.ssqr);
+										$("#ssurl").html(data.ssqr);
 										jQuery('#ss-qr').qrcode({
 											"text": data.ssqr 
 										});
