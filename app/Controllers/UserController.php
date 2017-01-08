@@ -80,6 +80,8 @@ class UserController extends BaseController
             $ary['server'] = $node->server;
             $ary['server_port'] = $this->user->port;
             $ary['password'] = $this->user->passwd;
+            $ary['protocol'] = $this->user->protocol;
+            $ary['obfs'] = $this->user->obfs;
             $ary['method'] = $node->method;
             if ($node->custom_method) {
                 $ary['method'] = $this->user->method;
