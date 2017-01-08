@@ -85,8 +85,15 @@ class UserController extends BaseController
             }
             $json = json_encode($ary);
             $json_show = json_encode($ary, JSON_PRETTY_PRINT);
-            $ssurl = $ary['method'] . ":" . $ary['password'] . "@" . $ary['server'] . ":" . $ary['server_port'];
-            $ssqr = "ss://" . base64_encode($ssurl);
+            if ($args['type'] == "SSR") {
+                $ssurl = $ary['server']. ":" . $ary['server_port'].":".str_replace("_compatible","",$mu_user->protocol).":".$ary['method'].":".str_replace("_compatible","",$user->obfs).":".Tools::base64_url_encode($ary['password'])."/?obfsparam=".Tools::base64_url_encode($user->obfs_param)."&remarks=".Tools::base64_url_encode($node->name);
+                $ssqr = "ssr://" . Tools::base64_url_encode($ssurl);
+            }elseif($args['type'] == "SS"){
+                $ssurl = $ary['method'] . ":" . $ary['password'] . "@" . $ary['server'] . ":" . $ary['server_port'];
+                $ssqr = "ss://" . base64_encode($ssurl);
+                
+            }
+            
 
             $surge_base = Config::get('baseUrl') . "/downloads/ProxyBase.conf";
             $surge_proxy = "#!PROXY-OVERRIDE:ProxyBase.conf\n";
