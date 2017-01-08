@@ -87,7 +87,7 @@ class UserController extends BaseController
             $json = json_encode($ary);
             $json_show = json_encode($ary, JSON_PRETTY_PRINT);
             if ($ctype == "SSR") {
-                $ssurl = $ary['server']. ":" . $ary['server_port'].":".str_replace("_compatible","",$user->protocol).":".$ary['method'].":".str_replace("_compatible","",$user->obfs).":".Tools::base64_url_encode($ary['password'])."&remarks=".Tools::base64_url_encode($node->name);
+                $ssurl = $ary['server']. ":" . $ary['server_port'].":".str_replace("_compatible","",$this->user->protocol).":".$ary['method'].":".str_replace("_compatible","",$this->user->obfs).":".Tools::base64_url_encode($ary['password'])."&remarks=".Tools::base64_url_encode($node->name);
                 $ssqr = "ssr://" . Tools::base64_url_encode($ssurl)."|";
             }elseif($ctype == "SS"){
                 $ssurl = $ary['method'] . ":" . $ary['password'] . "@" . $ary['server'] . ":" . $ary['server_port'];
