@@ -274,9 +274,9 @@
 									if(data.ret) {
 										//console.log(data)
 										$("#ss-qr").empty();
-										$("#ssurl").empty();
+										//$("#ssurl").empty();
 										$("#ui_dialog_qrcode").modal('show');
-										$("#ssurl").append(data.ssqr);
+										//$("#ssurl").append(data.ssqr);
 										jQuery('#ss-qr').qrcode({
 											"text": data.ssqr 
 										});
@@ -302,9 +302,9 @@
 									if(data.ret) {
 										//console.log(data)
 										$("#ss-qr").empty();
-										$("#ssurl").empty();
+										//$("#ssurl").empty();
 										$("#ui_dialog_qrcode").modal('show');
-										$("#ssurl").append(data.ssqr);
+										//$("#ssurl").append(data.ssqr);
 										jQuery('#ss-qr').qrcode({
 											"text": data.ssqr 
 										});
@@ -328,11 +328,11 @@
 										//console.log(data)
 										$("#surge-base-qr").empty();
 										$("#surge-proxy-qr").empty();
-										$("#surge-base").empty();
-										$("#surge-proxy").empty();
+										//$("#surge-base").empty();
+										//$("#surge-proxy").empty();
 										$("#ui_dialog_sugre").modal('show');
-										$("#surge-base").html(data.surge_base);
-										$("#surge-proxy").html(data.surge_proxy);
+										//$("#surge-base").html(data.surge_base);
+										//$("#surge-proxy").html(data.surge_proxy);
 										jQuery('#surge-base-qr').qrcode({
 											"text": data.surge_base 
 										});
@@ -633,12 +633,7 @@
 				<p class="modal-title">二维码</p>
 			</div>
 			<div class="modal-inner">
-				<div class="form-group form-group-label control-highlight">
-					<label class="floating-label" for="ssurl">链接</label>
-					<input class="form-control" id="ssurl" type="text" value="">
-				</div>
-				<p class="h5 margin-top-sm text-black-hint"><input class="form-control" id="ssurl" type="text"></p>
-<div id="ss-qr"></div>
+				<p class="h5 margin-top-sm text-black-hint"><div id="ss-qr"></div></p>
 			</div>
 			<div class="modal-footer">
 				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a></p>
@@ -657,11 +652,9 @@
 			</div>
 			<div class="modal-inner">
 				<p class="h5 margin-top-sm text-black-hint">基础配置二维码</p>
-				<small id="surge-base"></small>
 				<div id="surge-base-qr"></div>
 				<br/>
 				<p class="h5 margin-top-sm text-black-hint">代理配置二维码</p>
-				<small id="surge-proxy"></small>
 				<div id="surge-proxy-qr"></div>
 			</div>
 			<div class="modal-footer">
