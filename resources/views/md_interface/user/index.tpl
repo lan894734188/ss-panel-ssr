@@ -633,8 +633,7 @@
 				<p class="modal-title">二维码</p>
 			</div>
 			<div class="modal-inner">
-				<p class="h5 margin-top-sm text-black-hint">Shadowsocks二维码</p>
-				<small id="ssurl"></small>
+				<input class="form-control" id="ssurl" type="text" value="">
 				<div id="ss-qr"></div>
 			</div>
 			<div class="modal-footer">
