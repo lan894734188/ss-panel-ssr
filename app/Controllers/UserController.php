@@ -72,6 +72,7 @@ class UserController extends BaseController
     public function nodeqrcode($request, $response, $args)
     {
         $id = $args['id'];
+        $ctype = $request->getParam('type');
         $node = Node::find($id);
         if ($node == null) {
             $res['msg'] = "发生错误";
@@ -85,10 +86,10 @@ class UserController extends BaseController
             }
             $json = json_encode($ary);
             $json_show = json_encode($ary, JSON_PRETTY_PRINT);
-            if ($args['type'] == "SSR") {
+            if ($ctype == "SSR") {
                 $ssurl = $ary['server']. ":" . $ary['server_port'].":".str_replace("_compatible","",$mu_user->protocol).":".$ary['method'].":".str_replace("_compatible","",$user->obfs).":".Tools::base64_url_encode($ary['password'])."/?obfsparam=".Tools::base64_url_encode($user->obfs_param)."&remarks=".Tools::base64_url_encode($node->name);
                 $ssqr = "ssr://" . Tools::base64_url_encode($ssurl);
-            }elseif($args['type'] == "SS"){
+            }elseif($ctype == "SS"){
                 $ssurl = $ary['method'] . ":" . $ary['password'] . "@" . $ary['server'] . ":" . $ary['server_port'];
                 $ssqr = "ss://" . base64_encode($ssurl);
                 
