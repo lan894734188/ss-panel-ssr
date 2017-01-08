@@ -633,8 +633,8 @@
 				<p class="modal-title">二维码</p>
 			</div>
 			<div class="modal-inner">
-				<input class="form-control" id="ssurl" type="text">
-				<div id="ss-qr"></div>
+				<p class="h5 margin-top-sm text-black-hint"><input class="form-control" id="ssurl" type="text"></p>
+<div id="ss-qr"></div>
 			</div>
 			<div class="modal-footer">
 				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">关闭</a></p>
