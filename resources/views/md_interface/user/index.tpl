@@ -633,7 +633,7 @@
 				<p class="modal-title">二维码</p>
 			</div>
 			<div class="modal-inner">
-				<input class="form-control" id="ssurl" type="text" value="">
+				<input class="form-control" id="ssurl" type="text">
 				<div id="ss-qr"></div>
 			</div>
 			<div class="modal-footer">
