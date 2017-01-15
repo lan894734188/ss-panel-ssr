@@ -408,6 +408,7 @@
 			<div class="modal-inner">
 				<p class="h5 margin-top-sm text-black-hint">Shadowsocks连接密码修改</p>
 				<div class="form-group form-group-label">
+					<small style="color:red;">修改后需等待数分钟同步节点信息</small>
 					<div class="row">
 						<div class="col-md-10 col-md-push-1">
 							<label class="floating-label" for="sspwd">新密码</label>
@@ -434,6 +435,7 @@
 			<div class="modal-inner">
 				<p class="h5 margin-top-sm text-black-hint">加密方式修改</p>
 				<div class="form-group form-group-label">
+				    <small style="color:red;">修改后需等待数分钟同步节点信息</small>
 				    <label class="floating-label" for="method"></label>
 				    <select class="form-control" id="method">
 				        <option value="{$user->method}"> 当前:{$user->method}</option>
@@ -473,6 +475,7 @@
 			<div class="modal-inner">
 				<p class="h5 margin-top-sm text-black-hint">SSR连接协议修改</p>
 				<div class="form-group form-group-label">
+				    <small style="color:red;">修改后需等待数分钟同步节点信息</small>
 				    <label class="floating-label" for="SSRProtocol"></label>
 				    <select class="form-control" id="SSRProtocol">
 				        <option value="{$user->protocol}">当前:{$user->protocol}</option>
@@ -506,6 +509,7 @@
 			</div>
 			<div class="modal-inner">
 				<p class="h5 margin-top-sm text-black-hint">SSR混淆方式修改</p>
+				<small style="color:red;">修改后需等待数分钟同步节点信息</small>
 				<div class="form-group form-group-label">
 				    <label class="floating-label" for="SSRobfs"></label>
 				    <select class="form-control" id="SSRobfs">
