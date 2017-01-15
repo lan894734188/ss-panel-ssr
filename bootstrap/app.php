@@ -1,7 +1,7 @@
 <?php
 
 /***
- * ss-panel-ssr(owner) v3 Bootstrap
+ * ss-panel-ssr for ss-panel v3 Bootstrap
  * @author orvice
  * @email sspanel@orx.me
  * @url https://github.com/orvice/ss-panel
