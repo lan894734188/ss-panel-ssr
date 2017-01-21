@@ -123,9 +123,9 @@
 								<div class="card-action">
 									<div class="card-action-btn pull-left">
 										{if $user->isAbleToCheckin() }
-				                            <a id="checkin" class="btn btn-brand waves-attach waves-light">签到</a>
+				                            <a id="checkin" class="btn btn-pink waves-attach waves-light">签到</a>
 				                        {else}
-				                            <a class="btn btn-brand waves-attach waves-light disabled">不能签到</a>
+				                            <a class="btn btn-pink waves-attach waves-light disabled">不能签到</a>
 				                        {/if}
 									</div>
 								</div>
