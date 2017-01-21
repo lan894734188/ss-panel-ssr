@@ -1,6 +1,6 @@
 {include file='header.tpl'}
 <body class="page-pink">
-	<header class="header header-brand ui-header">
+	<header class="header header-pink ui-header">
 		<ul class="nav nav-list pull-left">
 			<li>
 				<a data-toggle="menu" href="#ui_menu">
