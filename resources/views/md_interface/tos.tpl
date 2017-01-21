@@ -1,5 +1,5 @@
 {include file='header.tpl'}
-<body class="page-brand">
+<body class="page-pink">
 	<header class="header header-brand ui-header">
 		<ul class="nav nav-list pull-left">
 			<li>
