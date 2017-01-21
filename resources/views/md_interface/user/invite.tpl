@@ -1,6 +1,6 @@
 {include file='user/header.tpl'}
 
-<body class="page-brand">
+<body class="page-pink">
 <header class="header header-transparent header-waterfall ui-header">
 		<ul class="nav nav-list pull-left">
 			<li>
