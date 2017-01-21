@@ -1,6 +1,6 @@
 {include file='header.tpl'}
 <body class="page-pink">
-	<header class="header header-brand ui-header">
+	<header class="header header-pink ui-header">
 		<ul class="nav nav-list pull-left">
 			<li>
 				<a data-toggle="menu" href="#ui_menu">
@@ -57,7 +57,7 @@
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<a class="btn btn-block btn-brand waves-attach waves-light" id="login">登陆/Sign In</a>
+													<a class="btn btn-block btn-pink waves-attach waves-light" id="login">登陆/Sign In</a>
 												</div>
 											</div>
 										</div>
