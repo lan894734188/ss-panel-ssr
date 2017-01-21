@@ -21,7 +21,7 @@
 }</style>
 </head>
 <body class="page-pink">
-<header class="header header-transparent header-waterfall ui-header">
+<header class="header header-pink header-waterfall ui-header">
 	<ul class="nav nav-list pull-left">
 		<li>
 			<a data-toggle="menu" href="#ui_menu">
