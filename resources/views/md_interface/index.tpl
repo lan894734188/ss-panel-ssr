@@ -71,10 +71,10 @@
 								</div>
 								<div class="card-inner">
 									<p class="margin-top-no">
-										<a class="btn-pink waves-attach" href="/auth/login" target="_blank">登陆/Login</a>&nbsp;&nbsp;&nbsp;
-										<a class="btn-pink waves-attach" href="/auth/register" target="_blank">注册/SignUP</a>&nbsp;&nbsp;&nbsp;
-										<a class="btn-pink waves-attach" href="/tos" target="_blank">用户协议/TOS</a>&nbsp;&nbsp;&nbsp;
-										<a class="btn-pink waves-attach" href="https://github.com/lan894734188" target="_blank">Github</a>
+										<a class="btn btn-pink waves-attach" href="/auth/login" target="_blank">登陆/Login</a>&nbsp;&nbsp;&nbsp;
+										<a class="btn btn-pink waves-attach" href="/auth/register" target="_blank">注册/SignUP</a>&nbsp;&nbsp;&nbsp;
+										<a class="btn btn-pink waves-attach" href="/tos" target="_blank">用户协议/TOS</a>&nbsp;&nbsp;&nbsp;
+										<a class="btn btn-pink waves-attach" href="https://github.com/lan894734188" target="_blank">Github</a>
 									</p>
 								</div>
 							</div>
