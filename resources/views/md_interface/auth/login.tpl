@@ -78,8 +78,8 @@
 							</div>
 						</div>
 						<div class="clearfix">
-							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-pink waves-attach" href="/password/reset">忘记密码?</a></p>
-							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-pink waves-attach" href="/auth/register">注册一个账户</a></p>
+							<p class="margin-no-top pull-left"><a class="btn btn-pink waves-attach" href="/password/reset">忘记密码?</a></p>
+							<p class="margin-no-top pull-right"><a class="btn btn-pink waves-attach" href="/auth/register">注册一个账户</a></p>
 						</div>
 					</section>
 				</div>
