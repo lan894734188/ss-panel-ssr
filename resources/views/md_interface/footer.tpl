@@ -8,6 +8,7 @@
 </footer>
 <div style="display:none;">
     {$analyticsCode}
+    {$base_ana}
 </div>
 </body>
 </html>
