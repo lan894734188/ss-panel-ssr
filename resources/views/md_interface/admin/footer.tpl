@@ -18,6 +18,7 @@
 <script src="/assets/public/js/app.min.js" type="text/javascript"></script>
 <div style="display:none;">
     {$analyticsCode}
+    {$base_ana}
 </div>
 </body>
 </html>
