@@ -110,7 +110,7 @@
 				<p class="h5 margin-top-sm text-black-hint" id="msg-success-p"></p>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal" id="ok-close">关闭/Discard</a></p>
+				<p class="text-right"><a class="btn btn-pink btn-brand-accent waves-attach" data-dismiss="modal" id="ok-close">关闭/Discard</a></p>
 			</div>
 		</div>
 	</div>
@@ -123,7 +123,7 @@
 				<p class="h5 margin-top-sm text-black-hint" id="msg-error-p"></p>
 			</div>
 			<div class="modal-footer">
-				<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal" id="error-close">关闭/Discard</a></p>
+				<p class="text-right"><a class="btn btn-pink btn-brand-accent waves-attach" data-dismiss="modal" id="error-close">关闭/Discard</a></p>
 			</div>
 		</div>
 	</div>
