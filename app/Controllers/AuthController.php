@@ -105,8 +105,10 @@ class AuthController extends BaseController
             $code = $ary['code'];
         }
         $requireEmailVerification = Config::get('emailVerifyEnabled');
+        $emaildomain = Config::get('emaildomain')
         return $this->view()
                     ->assign('code', $code)
+                    ->assign('emaildomain', $emaildomain)
                     #->assign('regIndexMsg', $regIndexMsg)
                     ->assign('requireEmailVerification', $requireEmailVerification)
                     ->display('auth/register.tpl');
