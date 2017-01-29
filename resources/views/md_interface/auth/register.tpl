@@ -116,7 +116,7 @@
 						</div>
 					</div>
 				</div>
-				<p class="h5 margin-top-sm text-black-hint">请将本站域名添加到邮箱白名单。否则可能收不到验证码</p>
+				<p class="h5 margin-top-sm text-black-hint">请将{$emaildomain}添加到邮箱白名单。否则可能收不到验证码</p>
 			</div>
 			<div class="modal-footer">
 				<p class="text-right"><a class="btn btn-pink waves-attach waves-effect" data-dismiss="modal">取消/Cancel</a></p>
