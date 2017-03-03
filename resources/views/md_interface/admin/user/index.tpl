@@ -22,10 +22,13 @@
                                 <th>ID</th>
                                 <th>群组</th>
                                 <th>级别</th>
+                                <th>用户名</th>
                                 <th>邮箱</th>
                                 <th>端口</th>
                                 <th>状态</th>
                                 <th>加密方式</th>
+                                <th>协议</th>
+                                <th>混淆</th>
                                 <th>已用流量/总流量</th>
                                 <th>最后在线时间</th>
                                 <th>最后签到时间</th>
@@ -36,13 +39,16 @@
                             </tr>
                             {foreach $users as $user}
                             <tr>
-                                <td>#{$user->id}</td>
-                                <td>#{$user->g}</td>
-                                <td>#{$user->level}</td>
+                                <td>{$user->id}</td>
+                                <td>{$user->g}</td>
+                                <td>{$user->level}</td>
+                                <td>{$user->user_name}</td>
                                 <td>{$user->email}</td>
                                 <td>{$user->port}</td>
                                 <td>{$user->enable}</td>
                                 <td>{$user->method}</td>
+                                <td>{$user->protocol}</td>
+                                <td>{$user->obfs}</td>
                                 <td>{$user->usedTraffic()}/{$user->enableTraffic()}</td>
                                 <td>{$user->lastSsTime()}</td>
                                 <td>{$user->lastCheckInTime()}</td>

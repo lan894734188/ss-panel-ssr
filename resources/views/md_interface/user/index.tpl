@@ -64,7 +64,15 @@
 													</tr>
 													<tr>
 														<td>密码:</td>
-														<td>{$user->passwd}</td>
+														<td><p>
+                                                            <a class="btn btn-sm collapsed waves-attach" data-toggle="collapse" href="#ui_password_msg">
+                                                            <span class="collapsed-hide">收起密码</span>
+                                                            <span class="collapsed-show">展开密码</span>
+										</a>
+									</p>
+									<div class="collapsible-region collapse" id="ui_password_msg">
+										{$user->passwd}
+									</div></td>
 													</tr>
 													<tr>
 														<td>自定义加密方式:</td>
@@ -131,7 +139,7 @@
 								</div>
 							</div>
 						</div>
-						<h3 class="h5">節點列表</h3>
+						<h3 class="h5">节点列表</h3>
 						<div class="card">
 							<div class="card-main">
 								<div class="card-inner">
@@ -157,11 +165,11 @@
 																<table class="table">
 																	<tbody>
 																		<tr>
-																			<td>狀態</td>
+																			<td>状态</td>
 																			<td>{$node->status}</td>
 																		</tr>
 																		<tr>
-																			<td>在綫人數</td>
+																			<td>在线人数</td>
 																			<td>{$node->getOnlineUserCount()}</td>
 																		</tr>
 																		<tr>
@@ -169,11 +177,11 @@
 																			<td>{$node->traffic_rate}</td>
 																		</tr>
 																		<tr>
-																			<td>產生流量</td>
+																			<td>已经使用流量</td>
 																			<td>{$node->getTrafficFromLogs()}</td>
 																		</tr>
 																		<tr>
-																			<td>在綫時間</td>
+																			<td>在线時間</td>
 																			<td>{$node->getNodeUptime()}</td>
 																		</tr>
 																		<tr>
@@ -480,15 +488,15 @@
 				    <select class="form-control" id="SSRProtocol">
 				        <option value="{$user->protocol}">当前:{$user->protocol}</option>
 					<option value="origin">origin(无验证)</option>
-					<option value="verify_simple">verify_simple(只支持SSR/OnlySSR)</option>
-					<option value="verify_deflate">verify_deflate(只支持SSR/OnlySSR)</option>
-					<option value="verify_sha1_compatible">verify_sha1(兼容SS/SSR)</option>
-					<option value="auth_sha1_compatible">auth_sha1(兼容SS/SSR)</option>
-					<option value="auth_sha1_v2_compatible">auth_sha1_v2(兼容SS/SSR)</option>
-					<option value="auth_sha1_v3">auth_sha1_v3(只支持SSR/OnlySSR)</option>
-					<option value="auth_sha1_v4_compatible">auth_sha1_v4(兼容SS/SSR)</option>
-					<option value="auth_aes128_md5">auth_aes128_md5(只支持SSR/OnlySSR)</option>
-					<option value="auth_aes128_sha1">auth_aes128_sha1(只支持SSR/OnlySSR)</option>
+					<option value="verify_simple">verify_simple</option>
+					<option value="verify_deflate">verify_deflate</option>
+					<option value="verify_sha1">verify_sha1</option>
+					<option value="auth_sha1">auth_sha1</option>
+					<option value="auth_sha1_v2">auth_sha1_v2</option>
+					<option value="auth_sha1_v3">auth_sha1_v3</option>
+					<option value="auth_sha1_v4">auth_sha1_v4</option>
+					<option value="auth_aes128_md5">auth_aes128_md5</option>
+					<option value="auth_aes128_sha1">auth_aes128_sha1</option>
 				    </select>
 				</div>
 			</div>
@@ -515,9 +523,9 @@
 				    <select class="form-control" id="SSRobfs">
 				        <option value="{$user->obfs}">当前:{$user->obfs}</option>
                         <option value="plain">plain(无混淆)</option>
-                        <option value="http_simple_compatible">http_simple(兼容SS/SSR)</option>
-                        <option value="http_post_compatible">http_post(兼容SS/SSR)</option>
-                        <option value="tls1.2_ticket_auth_compatible">tls1.2_ticket_auth(兼容SS/SSR)</option>
+                        <option value="http_simple">http_simple</option>
+                        <option value="http_post">http_post</option>
+                        <option value="tls1.2_ticket_auth">tls1.2_ticket_auth</option>
 				    </select>
 				</div>
 			</div>
