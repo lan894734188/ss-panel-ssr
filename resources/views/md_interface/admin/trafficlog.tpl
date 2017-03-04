@@ -31,7 +31,7 @@
                             <div class="col-xs-6 form-inline pagination">
                                     <div class="form-group">
                                         <label for="userId" class="control-label">用户ID</label>
-                                        <select class="form-control" id="nodeId">
+                                        <select class="form-control" id="userId">
                                             <option value="" selected="selected">全部</option>
                                             {foreach $users as $user}
                                                 <option value="{$user->id}">{$user->user_name}:{$user->email}</option>
