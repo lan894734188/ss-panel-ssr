@@ -14,6 +14,11 @@ class TrafficLog extends Model
         return Node::find($this->attributes['node_id']);
     }
 
+    public function user()
+    {
+        return User::find($this->attributes['user_id']);
+    }
+
     public function totalUsed()
     {
         return Tools::flowAutoShow($this->attributes['u'] + $this->attributes['d']);
