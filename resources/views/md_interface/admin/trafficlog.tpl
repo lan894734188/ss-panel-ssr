@@ -21,7 +21,7 @@
             </div>
         </div-->
         <div class="row">
-            <div class="form-horizontal">
+            <div class="form-inline">
                 <div class="row">
                     <fieldset class="col-sm-12">
                         <legend>查询条件</legend>
