@@ -75,24 +75,25 @@
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 <script>
-    $(document).ready(
-        $.ajax({
-            type:"POST",
-            url:"/node/get",
-            success:function(data){
-                if(data.data){
-                    var html = "";
-                    $(data.data).each(function (i, e) {
-                        html += "<option value=\"e['id']\">" + e['name'] + "</option>"
-                    });
-                    $('#nodeId').append(html);
-                }
-            },
-            error:function(jqXHR){
+    $(document).ready(function() {
+            $.ajax({
+                type: "POST",
+                url: "/node/get",
+                success: function (data) {
+                    if (data.data) {
+                        var html = "";
+                        $(data.data).each(function (i, e) {
+                            html += "<option value=\"e['id']\">" + e['name'] + "</option>"
+                        });
+                        $('#nodeId').append(html);
+                    }
+                },
+                error: function (jqXHR) {
 
-            }
-        });
-    )
+                }
+            });
+        }
+    );
     function getUrlParam(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
         var r = window.location.search.substr(1).match(reg); //匹配目标参数
