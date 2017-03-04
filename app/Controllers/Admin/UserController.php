@@ -24,7 +24,7 @@ class UserController extends AdminController
         }
         $users = null;
         if($email != null){
-            $users = User::where('email', 'like', '%'+$email+'%')->paginate(15, ['*'], 'page', $pageNum);
+            $users = User::where('email', 'like', '%' . $email . '%')->paginate(15, ['*'], 'page', $pageNum);
         }else{
             $users = User::paginate(15, ['*'], 'page', $pageNum);
         }
