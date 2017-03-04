@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Node;
+use App\Models\User;
 use App\Models\CheckInLog;
 use App\Models\InviteCode;
 use App\Models\PassCode;
@@ -124,9 +125,10 @@ class AdminController extends UserController
         }
 
         $nodes = Node::all();
+        $users = User::all();
 
         $logs->setPath('/admin/trafficlog');
-        return $this->view()->assign('nodes', $nodes)->assign('logs', $logs)->assign('nodeId', $nodeId)->assign('userId', $userId)->display('admin/trafficlog.tpl');
+        return $this->view()->assign('nodes', $nodes)->assign('users', $users)->assign('logs', $logs)->assign('nodeId', $nodeId)->assign('userId', $userId)->display('admin/trafficlog.tpl');
     }
 
     public function config($request, $response, $args)
