@@ -26,7 +26,7 @@
                     <div class="box-body table-responsive no-padding">
                         <div class="row">
                             <div class="col-xs-6">
-                                {$logs->appends(['userId' => $userId, 'nodeId' => $nodeId])->render()}
+                                {$logs->appends(['userId' => $userId])->appends(['nodeId' => $nodeId])->render()}
                             </div>
                             <div class="col-xs-6 form-inline pagination">
                                     <div class="form-group">
