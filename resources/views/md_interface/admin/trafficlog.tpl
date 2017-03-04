@@ -37,7 +37,7 @@
                                         <label for="nodeId" class="control-label">节点</label>
                                         <input class="form-control" id="nodeId" value="">
                                     </div>
-                                    <button class="btn btn-info">查询</button>
+                                    <button class="btn btn-info" onclick="query()">查询</button>
                             </div>
                         </div>
                         <table class="table table-hover">
@@ -72,5 +72,9 @@
 
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
-
+<script>
+    function query(){
+        $.get('/admin/trafficlog',{ userId: $("#userId").val(), nodeId: $("#nodeId").val() })
+    }
+</script>
 {include file='admin/footer.tpl'}

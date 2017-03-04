@@ -102,10 +102,16 @@ class AdminController extends UserController
         $nodeId = null;
         if (isset($request->getQueryParams()["nodeId"])) {
             $nodeId = $request->getQueryParams()["nodeId"];
+            if($nodeId==""){
+                $nodeId= null;
+            }
         }
         $userId = null;
         if (isset($request->getQueryParams()["userId"])) {
             $userId = $request->getQueryParams()["userId"];
+            if($userId==""){
+                $userId= null;
+            }
         }
         $logs = TrafficLog::orderBy('id', 'desc')->paginate(15, ['*'], 'page', $pageNum);
         if($nodeId!=null&&$userId!=null){
