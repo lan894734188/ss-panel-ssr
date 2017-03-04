@@ -35,7 +35,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="nodeId" class="control-label">节点</label>
-                                        <section class="form-control" id="nodeId"></section>
+                                        <section class="form-control" id="nodeId">
+                                            {foreach $nodes as $node}
+                                                <option value="{$node->id}">{$node->name}</option>
+                                            {/foreach}
+                                        </section>
                                     </div>
                                     <button class="btn btn-info" onclick="query()">查询</button>
                             </div>
@@ -75,25 +79,6 @@
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 <script>
-    $(document).ready(function() {
-            $.ajax({
-                type: "POST",
-                url: "/admin/node/get",
-                success: function (data) {
-                    if (data.data) {
-                        var html = "";
-                        $(data.data).each(function (i, e) {
-                            html += "<option value=\"e['id']\">" + e['name'] + "</option>"
-                        });
-                        $('#nodeId').append(html);
-                    }
-                },
-                error: function (jqXHR) {
-
-                }
-            });
-        }
-    );
     function getUrlParam(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
         var r = window.location.search.substr(1).match(reg); //匹配目标参数

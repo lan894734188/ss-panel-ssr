@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Node;
 use App\Models\CheckInLog;
 use App\Models\InviteCode;
 use App\Models\PassCode;
@@ -122,8 +123,10 @@ class AdminController extends UserController
             $logs = TrafficLog::where('user_id', '=', $userId)->orderBy('id', 'desc')->paginate(15, ['*'], 'page', $pageNum);
         }
 
+        $nodes = Node::all();
+
         $logs->setPath('/admin/trafficlog');
-        return $this->view()->assign('logs', $logs)->assign('nodeId', $nodeId)->assign('userId', $userId)->display('admin/trafficlog.tpl');
+        return $this->view()->assign('nodes', $nodes)->assign('logs', $logs)->assign('nodeId', $nodeId)->assign('userId', $userId)->display('admin/trafficlog.tpl');
     }
 
     public function config($request, $response, $args)
