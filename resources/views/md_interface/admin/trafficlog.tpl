@@ -24,18 +24,22 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-body table-responsive no-padding">
-                        {$logs->render()}
-                        <div class="form-inline">
-                            <div class="row">
-                                <div class="form-group">
-                                    <label for="userId" class="control-label">用户ID</label>
-                                    <input class="form-control" id="userId" value="">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                {$logs->render()}
+                            </div>
+                            <div class="col-xs-6 form-inline">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label for="userId" class="control-label">用户ID</label>
+                                        <input class="form-control" id="userId" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nodeId" class="control-label">节点</label>
+                                        <input class="form-control" id="nodeId" value="">
+                                    </div>
+                                    <button class="btn btn-info">查询</button>
                                 </div>
-                                <div class="form-group">
-                                    <label for="nodeId" class="control-label">节点</label>
-                                    <input class="form-control" id="nodeId" value="">
-                                </div>
-                                <button class="btn btn-info">查询</button>
                             </div>
                         </div>
                         <table class="table table-hover">
