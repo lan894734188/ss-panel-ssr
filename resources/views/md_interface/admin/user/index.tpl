@@ -85,7 +85,7 @@
 
 <script>
     $(document).ready(function(){
-        function delete(){
+        function delete2(){
             $.ajax({
                 type:"DELETE",
                 url:"/admin/user/",
@@ -118,7 +118,7 @@
             }
         });
         $("#delete").click(function(){
-            delete();
+            delete2();
         });
         $("#ok-close").click(function(){
             $("#msg-success").hide(100);
