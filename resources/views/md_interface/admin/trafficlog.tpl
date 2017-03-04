@@ -21,32 +21,23 @@
             </div>
         </div-->
         <div class="row">
-            <div class="form-inline">
-                <div class="row">
-                    <fieldset class="col-sm-12">
-                        <legend>查询条件</legend>
-                        <div class="form-group">
-                            <label for="title" class="col-sm-3 control-label">用户ID</label>
-                            <div class="col-sm-9">
-                                <input class="form-control" id="userId" value="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="title" class="col-sm-3 control-label">节点</label>
-                            <div class="col-sm-9">
-                                <input class="form-control" id="nodeId" value="">
-                            </div>
-                        </div>
-                        <button class="btn btn-info">查询</button>
-                    </fieldset>
-                </div>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-body table-responsive no-padding">
                         {$logs->render()}
+                        <div class="form-inline">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="userId" class="control-label">用户ID</label>
+                                    <input class="form-control" id="userId" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nodeId" class="control-label">节点</label>
+                                    <input class="form-control" id="nodeId" value="">
+                                </div>
+                                <button class="btn btn-info">查询</button>
+                            </div>
+                        </div>
                         <table class="table table-hover">
                             <tr>
                                 <th>ID</th>
