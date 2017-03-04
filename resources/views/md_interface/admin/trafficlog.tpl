@@ -28,8 +28,7 @@
                             <div class="col-xs-6">
                                 {$logs->render()}
                             </div>
-                            <div class="col-xs-6 form-inline">
-                                <div class="row">
+                            <div class="col-xs-6 form-inline pagination">
                                     <div class="form-group">
                                         <label for="userId" class="control-label">用户ID</label>
                                         <input class="form-control" id="userId" value="">
@@ -39,7 +38,6 @@
                                         <input class="form-control" id="nodeId" value="">
                                     </div>
                                     <button class="btn btn-info">查询</button>
-                                </div>
                             </div>
                         </div>
                         <table class="table table-hover">
