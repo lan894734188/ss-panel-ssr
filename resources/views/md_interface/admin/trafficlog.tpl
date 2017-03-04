@@ -36,6 +36,7 @@
                                     <div class="form-group">
                                         <label for="nodeId" class="control-label">节点</label>
                                         <select class="form-control" id="nodeId">
+                                            <option value="">全部</option>
                                             {foreach $nodes as $node}
                                                 <option value="{$node->id}">{$node->name}</option>
                                             {/foreach}
