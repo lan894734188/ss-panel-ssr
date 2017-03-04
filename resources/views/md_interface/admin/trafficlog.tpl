@@ -35,11 +35,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="nodeId" class="control-label">节点</label>
-                                        <section class="form-control" id="nodeId">
+                                        <select class="form-control" id="nodeId">
                                             {foreach $nodes as $node}
                                                 <option value="{$node->id}">{$node->name}</option>
                                             {/foreach}
-                                        </section>
+                                        </select>
                                     </div>
                                     <button class="btn btn-info" onclick="query()">查询</button>
                             </div>
