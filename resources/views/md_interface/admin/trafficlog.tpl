@@ -74,7 +74,7 @@
 </div><!-- /.content-wrapper -->
 <script>
     function query(){
-        window.location.href=window.location.href+'&userId='+$("#userId").val()+'&nodeId='+$("#nodeId").val();
+        $.get('/admin/trafficlog',{ userId: $("#userId").val(), nodeId: $("#nodeId").val() })
     }
 </script>
 {include file='admin/footer.tpl'}
