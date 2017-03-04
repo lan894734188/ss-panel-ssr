@@ -123,7 +123,7 @@ class AdminController extends UserController
         }
 
         $logs->setPath('/admin/trafficlog');
-        return $this->view()->assign('logs', $logs)->assign('nodeId', $nodeId)->assign('$userId', $userId)->display('admin/trafficlog.tpl');
+        return $this->view()->assign('logs', $logs)->assign('nodeId', $nodeId)->assign('userId', $userId)->display('admin/trafficlog.tpl');
     }
 
     public function config($request, $response, $args)
