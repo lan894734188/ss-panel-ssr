@@ -78,7 +78,7 @@
     $(document).ready(function() {
             $.ajax({
                 type: "POST",
-                url: "/node/get",
+                url: "/admin/node/get",
                 success: function (data) {
                     if (data.data) {
                         var html = "";
