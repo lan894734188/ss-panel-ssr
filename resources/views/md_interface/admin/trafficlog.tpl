@@ -35,7 +35,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="nodeId" class="control-label">节点</label>
-                                        <input class="form-control" id="nodeId" value="">
+                                        <section class="form-control" id="nodeId"></section>
                                     </div>
                                     <button class="btn btn-info" onclick="query()">查询</button>
                             </div>
@@ -45,6 +45,7 @@
                                 <th>ID</th>
                                 <th>用户</th>
                                 <th>用户名</th>
+                                <th>节点ID</th>
                                 <th>使用节点</th>
                                 <th>倍率</th>
                                 <th>实际使用流量</th>
@@ -56,6 +57,7 @@
                                     <td>#{$log->id}</td>
                                     <td>{$log->user_id}</td>
                                     <td>{$log->user()->user_name}</td>
+                                    <td>{$log->node_id}</td>
                                     <td>{$log->node()->name}</td>
                                     <td>{$log->rate}</td>
                                     <td>{$log->totalUsed()}</td>
@@ -73,6 +75,24 @@
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 <script>
+    $(document).ready(
+        $.ajax({
+            type:"POST",
+            url:"/node/get",
+            success:function(data){
+                if(data.data){
+                    var html = "";
+                    $(data.data).each(function (i, e) {
+                        html += "<option value=\"e['id']\">" + e['name'] + "</option>"
+                    });
+                    $('#nodeId').append(html);
+                }
+            },
+            error:function(jqXHR){
+
+            }
+        });
+    )
     function getUrlParam(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
         var r = window.location.search.substr(1).match(reg); //匹配目标参数

@@ -100,4 +100,13 @@ class NodeController extends AdminController
         $node->delete();
         return $this->redirect($response, '/admin/node');
     }
+
+    public function getAllNodeId($request, $response)
+    {
+        $nodes = Node::all();
+        $rs['ret'] = 1;
+        $rs['msg'] = "获取成果";
+        $rs['data'] = $nodes;
+        return $response->getBody()->write(json_encode($rs));
+    }
 }
