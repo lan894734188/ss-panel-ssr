@@ -16,7 +16,18 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-body table-responsive no-padding">
-                        {$users->render()}
+                        <div class="row">
+                            <div class="col-xs-6">
+                                {$users->appends(['email' => $email])->render()}
+                            </div>
+                            <div class="col-xs-6 form-inline pagination">
+                                <div class="form-group">
+                                    <label for="email" class="control-label">用户email</label>
+                                    <input class="form-control" id="email" placeholder="请输入邮箱">
+                                </div>
+                                <button class="btn btn-info" onclick="query()">查询</button>
+                            </div>
+                        </div>
                         <table class="table table-hover">
                             <tr>
                                 <th>ID</th>
@@ -115,7 +126,17 @@
         $("#error-close").click(function(){
             $("#msg-error").hide(100);
         });
-    })
+    });
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+        if (r != null) return unescape(r[2]); return null; //返回参数值
+    }
+    var userId = getUrlParam('email');
+    $("#email").val(userId);
+    function query(){
+        window.location.href = '/admin/user?email='+$("#email").val();
+    }
 </script>
 
 {include file='admin/footer.tpl'}

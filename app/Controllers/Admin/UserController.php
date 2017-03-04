@@ -15,9 +15,21 @@ class UserController extends AdminController
         if (isset($request->getQueryParams()["page"])) {
             $pageNum = $request->getQueryParams()["page"];
         }
-        $users = User::paginate(15, ['*'], 'page', $pageNum);
+        $email = null;
+        if (isset($request->getQueryParams()["email"])) {
+            $email = $request->getQueryParams()["email"];
+            if($email==""){
+                $email = null;
+            }
+        }
+        $users = null;
+        if($email != null){
+            $users = User::where('email', 'LIKE', '%'+$email+'%')->paginate(15, ['*'], 'page', $pageNum);
+        }else{
+            $users = User::paginate(15, ['*'], 'page', $pageNum);
+        }
         $users->setPath('/admin/user');
-        return $this->view()->assign('users', $users)->display('admin/user/index.tpl');
+        return $this->view()->assign('users', $users)->assign('email', $email)->display('admin/user/index.tpl');
     }
 
     public function edit($request, $response, $args)

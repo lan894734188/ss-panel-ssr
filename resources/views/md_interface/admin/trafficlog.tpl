@@ -32,7 +32,7 @@
                                     <div class="form-group">
                                         <label for="userId" class="control-label">用户ID</label>
                                         <select class="form-control" id="nodeId">
-                                            <option value="">全部</option>
+                                            <option value="" selected="selected">全部</option>
                                             {foreach $users as $user}
                                                 <option value="{$user->id}">{$user->user_name}:{$user->email}</option>
                                             {/foreach}
@@ -41,7 +41,7 @@
                                     <div class="form-group">
                                         <label for="nodeId" class="control-label">节点</label>
                                         <select class="form-control" id="nodeId">
-                                            <option value="">全部</option>
+                                            <option value="" selected="selected">全部</option>
                                             {foreach $nodes as $node}
                                                 <option value="{$node->id}">{$node->name}</option>
                                             {/foreach}
