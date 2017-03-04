@@ -23,18 +23,22 @@
         <div class="row">
             <div class="form-horizontal">
                 <div class="row">
-                    <div class="form-group col-sm-6">
-                        <label for="title" class="col-sm-3 control-label">用户ID</label>
-                        <div class="col-sm-9">
-                            <input class="form-control" id="userId" value="">
+                    <fieldset class="col-sm-12">
+                        <legend>查询条件</legend>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-3 control-label">用户ID</label>
+                            <div class="col-sm-9">
+                                <input class="form-control" id="userId" value="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group col-sm-6">
-                        <label for="title" class="col-sm-3 control-label">节点</label>
-                        <div class="col-sm-9">
-                            <input class="form-control" id="nodeId" value="">
+                        <div class="form-group">
+                            <label for="title" class="col-sm-3 control-label">节点</label>
+                            <div class="col-sm-9">
+                                <input class="form-control" id="nodeId" value="">
+                            </div>
                         </div>
-                    </div>
+                        <button class="btn btn-info">查询</button>
+                    </fieldset>
                 </div>
             </div>
         </div>
