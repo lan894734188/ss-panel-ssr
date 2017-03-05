@@ -119,7 +119,7 @@
 													</tr>
 													<tr>
 														<td colspan="2">
-															<div class="progress progress-striped active" style="height: 20px;margin: auto">
+															<div class="progress" style="height: 20px;margin: auto">
 																<div class="progress-bar progress-bar-info text-center" role="progressbar" aria-valuenow="60"
 																	 aria-valuemin="0" aria-valuemax="100" style="width:{$user->usedPercent()}%">
 																	使用率{$user->usedPercent()}%
