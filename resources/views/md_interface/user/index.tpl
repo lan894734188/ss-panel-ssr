@@ -120,10 +120,15 @@
 													<tr>
 														<td colspan="2">
 															<div class="progress progress-striped active" style="height: 20px;margin: auto">
-																<div id="bar" class="progress-bar text-center" role="progressbar" aria-valuenow="60"
+																<div id="bar" class="progress-bar progress-bar-info text-center" role="progressbar" aria-valuenow="60"
 																	 aria-valuemin="0" aria-valuemax="100" style="width:{$user->usedPercent()}%">
 																	使用率{$user->usedPercent()}%
 																</div>
+															</div>
+															<div class="progress-bar progress-bar-warning text-center" role="progressbar"
+																 aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+																 style="width:{$user->unusedPercent()}%;">
+																剩余{$user->unusedPercent()}%
 															</div>
 														</td>
 													</tr>
