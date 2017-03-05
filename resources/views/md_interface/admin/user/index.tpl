@@ -23,7 +23,7 @@
                             <div class="col-xs-6 form-inline pagination">
                                 <div class="form-group">
                                     <label for="email" class="control-label">用户email</label>
-                                    <input class="form-control" id="email" placeholder="请输入邮箱">
+                                    <input class="form-control" id="email" placeholder="请输入邮箱" value="{$email}">
                                 </div>
                                 <button class="btn btn-info" id="query">查询</button>
                             </div>
@@ -129,7 +129,6 @@
         $("#query").click(function(){
             window.location.href = '/admin/user?email='+$("#email").val();
         });
-        $("#email").val({$email});
     });
 </script>
 
