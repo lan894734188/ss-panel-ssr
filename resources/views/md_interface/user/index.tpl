@@ -118,9 +118,8 @@
 														<td>{$user->unusedTraffic()}/{$user->unusedPercent()}%</td>
 													</tr>
 													<tr>
-														<td>使用率</td>
-														<td>
-															<div class="progress progress-striped active">
+														<td colspan="2">
+															<div class="progress progress-striped active" style="height: 20px;margin: auto">
 																<div id="bar" class="progress-bar" role="progressbar" aria-valuenow="60"
 																	 aria-valuemin="0" aria-valuemax="100" style="width:{$user->usedPercent()}%">
 																	使用率{$user->usedPercent()}%
@@ -135,7 +134,7 @@
 												</tbody>
 											</table>
 										</div>
-									</div>										
+									</div>
 			                        <p> 每{$config['checkinTime']}小时可以签到一次。</p>
 									<p id="checkin-msg"></p>
 								</div>
@@ -297,7 +296,7 @@
 										$("#ui_dialog_qrcode").modal('show');
 										//$("#ssurl").append(data.ssqr);
 										jQuery('#ss-qr').qrcode({
-											"text": data.ssqr 
+											"text": data.ssqr
 										});
 									} else {
 										$("#msg-error").modal('show');
@@ -325,7 +324,7 @@
 										$("#ui_dialog_qrcode").modal('show');
 										//$("#ssurl").append(data.ssqr);
 										jQuery('#ss-qr').qrcode({
-											"text": data.ssqr 
+											"text": data.ssqr
 										});
 									} else {
 										$("#msg-error").modal('show');
@@ -353,10 +352,10 @@
 										//$("#surge-base").html(data.surge_base);
 										//$("#surge-proxy").html(data.surge_proxy);
 										jQuery('#surge-base-qr').qrcode({
-											"text": data.surge_base 
+											"text": data.surge_base
 										});
 										jQuery('#surge-proxy-qr').qrcode({
-											"text": data.surge_proxy 
+											"text": data.surge_proxy
 										});
 									} else {
 										$("#msg-error").modal('show');
@@ -846,7 +845,7 @@
     })
 </script>
 <script type="text/javascript">
-	
+
 </script>
 
 
