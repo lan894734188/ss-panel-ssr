@@ -101,26 +101,20 @@ class AdminController extends UserController
         if (isset($request->getQueryParams()["page"])) {
             $pageNum = $request->getQueryParams()["page"];
         }
-        $nodeId = null;
+        $nodeId = "";
         if (isset($request->getQueryParams()["nodeId"])) {
             $nodeId = $request->getQueryParams()["nodeId"];
-            if($nodeId==""){
-                $nodeId= null;
-            }
         }
-        $userId = null;
+        $userId = "";
         if (isset($request->getQueryParams()["userId"])) {
             $userId = $request->getQueryParams()["userId"];
-            if($userId==""){
-                $userId= null;
-            }
         }
         $logs = TrafficLog::orderBy('id', 'desc')->paginate(15, ['*'], 'page', $pageNum);
-        if($nodeId!=null&&$userId!=null){
+        if($nodeId!=""&&$userId!=""){
             $logs = TrafficLog::where('user_id', '=', $userId)->where('node_id', '=', $nodeId)->orderBy('id', 'desc')->paginate(15, ['*'], 'page', $pageNum);
-        }elseif ($nodeId!=null&&$userId==null){
+        }elseif ($nodeId!=""&&$userId==""){
             $logs = TrafficLog::where('node_id', '=', $nodeId)->orderBy('id', 'desc')->paginate(15, ['*'], 'page', $pageNum);
-        }elseif ($nodeId==null&&$userId!=null){
+        }elseif ($nodeId==""&&$userId!=""){
             $logs = TrafficLog::where('user_id', '=', $userId)->orderBy('id', 'desc')->paginate(15, ['*'], 'page', $pageNum);
         }
 
@@ -128,7 +122,7 @@ class AdminController extends UserController
         $users = User::all();
 
         $logs->setPath('/admin/trafficlog');
-        return $this->view()->assign('nodes', $nodes)->assign('users', $users)->assign('logs', $logs)->assign('nodeId', $nodeId)->assign('userId', $userId)->display('admin/trafficlog.tpl');
+        return $this->view()->assign('userId', $userId)->assign('nodeId', $nodeId)->assign('nodes', $nodes)->assign('users', $users)->assign('logs', $logs)->assign('nodeId', $nodeId)->assign('userId', $userId)->display('admin/trafficlog.tpl');
     }
 
     public function config($request, $response, $args)

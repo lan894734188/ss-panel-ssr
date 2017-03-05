@@ -32,7 +32,7 @@
                                     <div class="form-group">
                                         <label for="userId" class="control-label">用户ID</label>
                                         <select class="form-control" id="userId">
-                                            <option value="" selected="selected">全部</option>
+                                            <option value="">全部</option>
                                             {foreach $users as $user}
                                                 <option value="{$user->id}">{$user->user_name}:{$user->email}</option>
                                             {/foreach}
@@ -41,7 +41,7 @@
                                     <div class="form-group">
                                         <label for="nodeId" class="control-label">节点</label>
                                         <select class="form-control" id="nodeId">
-                                            <option value="" selected="selected">全部</option>
+                                            <option value="">全部</option>
                                             {foreach $nodes as $node}
                                                 <option value="{$node->id}">{$node->name}</option>
                                             {/foreach}
@@ -85,15 +85,8 @@
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 <script>
-    function getUrlParam(name) {
-        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-        var r = window.location.search.substr(1).match(reg); //匹配目标参数
-        if (r != null) return unescape(r[2]); return null; //返回参数值
-    }
-    var userId = getUrlParam('userId');
-    var nodeId = getUrlParam('nodeId');
-    $("#userId").val(userId);
-    $("#nodeId").val(nodeId);
+    $("#userId").val({$userId});
+    $("#nodeId").val({$nodeId});
     function query(){
         window.location.href = '/admin/trafficlog?userId='+$("#userId").val()+'&nodeId='+$("#nodeId").val();
     }
