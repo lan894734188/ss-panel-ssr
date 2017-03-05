@@ -119,8 +119,8 @@
 													</tr>
 													<tr>
 														<td colspan="2">
-															<div class="progress" style="height: 20px;margin: auto">
-																<div class="progress-bar" role="progressbar" aria-valuenow="60"
+															<div class="progress progress-bar-indeterminate" style="height: 20px;margin: auto">
+																<div class="progress-bar progress-green" role="progressbar" aria-valuenow="60"
 																	 aria-valuemin="0" aria-valuemax="100" style="width:{$user->usedPercent()}%">
 																	<span>使用率{$user->usedPercent()}%</span>
 																</div>
