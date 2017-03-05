@@ -11,6 +11,11 @@ use Ramsey\Uuid\Uuid;
 class Tools
 {
 
+    public static function usePercent($use, $total)
+    {
+        $per = bcdiv(bcmul($use, 100), $total, 3);
+        return $per;
+    }
     /**
      * 根据流量值自动转换单位输出
      * @param int $value

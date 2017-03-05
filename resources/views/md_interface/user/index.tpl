@@ -111,11 +111,22 @@
 													</tr>
 													<tr>
 														<td>已用流量:</td>
-														<td>{$user->usedTraffic()}</td>
+														<td>{$user->usedTraffic()}/{$user->usedPercent()}%</td>
 													</tr>
 													<tr>
 														<td>剩余流量:</td>
-														<td>{$user->unusedTraffic()}</td>
+														<td>{$user->unusedTraffic()}/{$user->unusedPercent()}%</td>
+													</tr>
+													<tr>
+														<td>使用率</td>
+														<td>
+															<div class="progress progress-striped active">
+																<div id="bar" class="progress-bar" role="progressbar" aria-valuenow="60"
+																	 aria-valuemin="0" aria-valuemax="100" style="width:{$user->usedPercent()}%">
+																	使用率{$user->usedPercent()}%
+																</div>
+															</div>
+														</td>
 													</tr>
 													<tr>
 														<td>上次签到时间:</td>
