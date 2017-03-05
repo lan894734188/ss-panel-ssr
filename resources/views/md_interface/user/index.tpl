@@ -122,7 +122,7 @@
 															<div class="progress progress-striped active" style="height: 20px;margin: auto">
 																<div id="bar" class="progress-bar" role="progressbar" aria-valuenow="60"
 																	 aria-valuemin="0" aria-valuemax="100" style="width:{$user->usedPercent()}%">
-																	使用率{$user->usedPercent()}%
+																	<p class="text-center">使用率{$user->usedPercent()}%</p>
 																</div>
 															</div>
 														</td>
