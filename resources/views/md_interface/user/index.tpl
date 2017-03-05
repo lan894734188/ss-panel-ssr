@@ -72,7 +72,7 @@
                                                         <span class="collapsed-show">展开密码</span>
                                                     </a>
                                                     <div class="collapsible-region collapse" id="ui_password_msg">
-                                                        {$user->passwd}
+                                                        <p>{$user->passwd}</p>
                                                     </div>
                                                 </td>
                                             </tr>
