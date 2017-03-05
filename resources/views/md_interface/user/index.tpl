@@ -120,7 +120,7 @@
 													<tr>
 														<td colspan="2">
                                                             {if $user->usedPercent()<20}
-																<p>使用率{$user->usedPercent()}%</p>
+																<p style="margin: auto;">使用率{$user->usedPercent()}%</p>
                                                             {/if}
 															<div class="progress" style="height: 20px;margin: auto">
 																<div class="progress-bar progress-green text-center" role="progressbar" aria-valuenow="60"
