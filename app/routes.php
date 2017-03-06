@@ -99,7 +99,6 @@ $app->group('/admin', function () {
     $this->put('/node/{id}', 'App\Controllers\Admin\NodeController:update');
     $this->delete('/node/{id}', 'App\Controllers\Admin\NodeController:delete');
     $this->get('/node/{id}/delete', 'App\Controllers\Admin\NodeController:deleteGet');
-    $this->post('/node/get', 'App\Controllers\NodeController:getAllNodeId');
 
     // User Mange
     $this->get('/user', 'App\Controllers\Admin\UserController:index');
@@ -119,6 +118,9 @@ $app->group('/admin', function () {
     $this->post('/passcode', 'App\Controllers\AdminController:addpasscode');
     $this->get('/sys', 'App\Controllers\AdminController:sys');
     $this->get('/logout', 'App\Controllers\AdminController:logout');
+    //new api
+    $this->get('/api/cleanuser', 'App\Controllers\Admin\UserController:cleanuser');
+    //$this->get('/api/cleanlog', 'App\Controllers\Admin\UserController:cleanlog');
 })->add(new Admin());
 
 // API

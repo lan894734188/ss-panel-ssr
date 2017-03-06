@@ -21,6 +21,15 @@
             </div>
         </div-->
         <div class="row">
+            <div class="col-md-12">
+                <div id="msg-success" class="alert alert-info alert-dismissable" style="display: none;">
+                    <button type="button" class="close" id="ok-close" aria-hidden="true">&times;</button>
+                    <h4><i class="icon fa fa-info"></i> 成功!</h4>
+                    <p id="msg-success-p"></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-body table-responsive no-padding">
@@ -47,7 +56,9 @@
                                             {/foreach}
                                         </select>
                                     </div>
-                                    <button class="btn btn-info" onclick="query()">查询</button>
+                                    <button class="btn btn-info" id="query">查询</button>
+                                    <button class="btn btn-info" onclick="cleanuser">重置流量</button>
+                                    <button class="btn btn-info" onclick="cleanlog">清空记录</button>
                             </div>
                         </div>
                         <table class="table table-hover">
@@ -85,10 +96,55 @@
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 <script>
-    $("#userId").val({$userId});
-    $("#nodeId").val({$nodeId});
-    function query(){
-        window.location.href = '/admin/trafficlog?userId='+$("#userId").val()+'&nodeId='+$("#nodeId").val();
-    }
+    $(document).ready(function () {
+        $("#userId").val({$userId});
+        $("#nodeId").val({$nodeId});
+        $("#query").click(function () {
+            window.location.href = '/admin/trafficlog?userId=' + $("#userId").val() + '&nodeId=' + $("#nodeId").val();
+        });
+        $("#cleanuser").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "/api/cleanuser",
+                dataType: "json",
+                data: {
+                    userId: $("#userId").val()
+                },
+                success: function (data) {
+                    if (data.ret) {
+                        $("#msg-success").show(100);
+                        $("#msg-success-p").html(data.msg);
+                        //window.setTimeout("location.href='/admin/invite'", 2000);
+                    }
+                    // window.location.reload();
+                },
+                error: function (jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                }
+            })
+        });
+        $("#cleanlog").click(function () {
+            alert("不建议清空流量日志");
+            /*$.ajax({
+                type: "POST",
+                url: "/api/cleanlog",
+                dataType: "json",
+                data: {
+                    nodeId: $("#nodeId").val()
+                },
+                success: function (data) {
+                    if (data.ret) {
+                        $("#msg-success").show(100);
+                        $("#msg-success-p").html(data.msg);
+                        //window.setTimeout("location.href='/admin/invite'", 2000);
+                    }
+                    // window.location.reload();
+                },
+                error: function (jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                }
+            })*/
+        });
+    })
 </script>
 {include file='admin/footer.tpl'}
