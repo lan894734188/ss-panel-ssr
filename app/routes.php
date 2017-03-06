@@ -119,7 +119,7 @@ $app->group('/admin', function () {
     $this->get('/sys', 'App\Controllers\AdminController:sys');
     $this->get('/logout', 'App\Controllers\AdminController:logout');
     //new api
-    $this->get('/api/cleanuser', 'App\Controllers\Admin\UserController:cleanuser');
+    $this->post('/api/cleanuser', 'App\Controllers\Admin\UserController:cleanuser');
     //$this->get('/api/cleanlog', 'App\Controllers\Admin\UserController:cleanlog');
 })->add(new Admin());
 
