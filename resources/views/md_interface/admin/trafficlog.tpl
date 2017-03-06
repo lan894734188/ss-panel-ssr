@@ -105,7 +105,7 @@
         $("#cleanuser").click(function () {
             $.ajax({
                 type: "POST",
-                url: "/api/cleanuser",
+                url: "/admin/api/cleanuser",
                 dataType: "json",
                 data: {
                     userId: $("#userId").val()
@@ -127,7 +127,7 @@
             alert("不建议清空流量日志");
             /*$.ajax({
                 type: "POST",
-                url: "/api/cleanlog",
+                url: "/admin/api/cleanlog",
                 dataType: "json",
                 data: {
                     nodeId: $("#nodeId").val()
