@@ -34,10 +34,10 @@
                 <div class="box">
                     <div class="box-body table-responsive no-padding">
                         <div class="row">
-                            <div class="col-xs-6">
+                            <div class="col-xs-5">
                                 {$logs->appends(['userId' => $userId, 'nodeId' => $nodeId])->render()}
                             </div>
-                            <div class="col-xs-6 form-inline pagination">
+                            <div class="col-xs-7 form-inline pagination">
                                     <div class="form-group">
                                         <label for="userId" class="control-label">用户ID</label>
                                         <select class="form-control" id="userId">
@@ -57,7 +57,7 @@
                                         </select>
                                     </div>
                                     <button class="btn btn-info" id="query">查询</button>
-                                    <button class="btn btn-info" id="cleanuser">重置用户流量</button>
+                                    <button class="btn btn-danger" id="cleanuser">重置用户流量</button>
                                     <!--button class="btn btn-info" id="cleanlog">清空记录</button-->
                             </div>
                         </div>
@@ -87,7 +87,7 @@
                                 </tr>
                             {/foreach}
                         </table>
-                        {$logs->render()}
+                        {$logs->appends(['userId' => $userId, 'nodeId' => $nodeId])->render()}
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->
             </div>

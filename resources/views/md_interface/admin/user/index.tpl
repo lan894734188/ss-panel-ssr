@@ -73,7 +73,7 @@
                             </tr>
                             {/foreach}
                         </table>
-                        {$users->render()}
+                        {$users->appends(['email' => $email])->render()}
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->
             </div>
