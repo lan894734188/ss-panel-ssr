@@ -57,8 +57,8 @@
                                         </select>
                                     </div>
                                     <button class="btn btn-info" id="query">查询</button>
-                                    <button class="btn btn-info" onclick="cleanuser">重置流量</button>
-                                    <button class="btn btn-info" onclick="cleanlog">清空记录</button>
+                                    <button class="btn btn-info" id="cleanuser">重置流量</button>
+                                    <button class="btn btn-info" id="cleanlog">清空记录</button>
                             </div>
                         </div>
                         <table class="table table-hover">
