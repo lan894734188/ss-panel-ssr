@@ -154,7 +154,9 @@
             })
         });
         $("#userId").val({$userId});
-
+        $("#query").click(function () {
+            window.location.href = '/admin/invite?userId=' + $("#userId").val();
+        });
     })
 </script>
 
