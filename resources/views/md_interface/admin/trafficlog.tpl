@@ -34,33 +34,31 @@
                 <div class="box">
                     <div class="box-body table-responsive no-padding">
                         <div class="row">
-                            <div class="col-xs-12 form-inline pagination-sm">
-                                <div class="form-group">
-                                    <label for="userId" class="control-label">用户ID</label>
-                                    <select class="form-control" id="userId">
-                                        <option value="">全部</option>
-                                        {foreach $users as $user}
-                                            <option value="{$user->id}">{$user->user_name}:{$user->email}</option>
-                                        {/foreach}
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="nodeId" class="control-label">节点</label>
-                                    <select class="form-control" id="nodeId">
-                                        <option value="">全部</option>
-                                        {foreach $nodes as $node}
-                                            <option value="{$node->id}">{$node->name}</option>
-                                        {/foreach}
-                                    </select>
-                                </div>
-                                <button class="btn btn-info" id="query">查询</button>
-                                <button class="btn btn-danger" id="cleanuser">重置</button>
-                                <!--button class="btn btn-info" id="cleanlog">清空记录</button-->
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
+                            <div class="col-xs-5">
                                 {$logs->appends(['userId' => $userId, 'nodeId' => $nodeId])->render()}
+                            </div>
+                            <div class="col-xs-7 form-inline pagination-sm">
+                                    <div class="form-group">
+                                        <label for="userId" class="control-label">用户ID</label>
+                                        <select class="form-control" id="userId">
+                                            <option value="">全部</option>
+                                            {foreach $users as $user}
+                                                <option value="{$user->id}">{$user->user_name}:{$user->email}</option>
+                                            {/foreach}
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nodeId" class="control-label">节点</label>
+                                        <select class="form-control" id="nodeId">
+                                            <option value="">全部</option>
+                                            {foreach $nodes as $node}
+                                                <option value="{$node->id}">{$node->name}</option>
+                                            {/foreach}
+                                        </select>
+                                    </div>
+                                    <button class="btn btn-info" id="query">查询</button>
+                                    <button class="btn btn-danger" id="cleanuser">重置</button>
+                                    <!--button class="btn btn-info" id="cleanlog">清空记录</button-->
                             </div>
                         </div>
                         <table class="table table-hover">
@@ -128,25 +126,26 @@
         $("#cleanlog").click(function () {
             alert("不建议清空流量日志");
             /*$.ajax({
-             type: "POST",
-             url: "/admin/api/cleanlog",
-             dataType: "json",
-             data: {
-             nodeId: $("#nodeId").val()
-             },
-             success: function (data) {
-             if (data.ret) {
-             $("#msg-success").show(100);
-             $("#msg-success-p").html(data.msg);
-             //window.setTimeout("location.href='/admin/invite'", 2000);
-             }
-             // window.location.reload();
-             },
-             error: function (jqXHR) {
-             alert("发生错误：" + jqXHR.status);
-             }
-             })*/
+                type: "POST",
+                url: "/admin/api/cleanlog",
+                dataType: "json",
+                data: {
+                    nodeId: $("#nodeId").val()
+                },
+                success: function (data) {
+                    if (data.ret) {
+                        $("#msg-success").show(100);
+                        $("#msg-success-p").html(data.msg);
+                        //window.setTimeout("location.href='/admin/invite'", 2000);
+                    }
+                    // window.location.reload();
+                },
+                error: function (jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                }
+            })*/
         });
+        $(".pagination").attr("class", "pagination-sm");
     })
 </script>
 {include file='admin/footer.tpl'}
