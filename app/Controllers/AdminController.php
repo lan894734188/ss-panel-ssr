@@ -83,7 +83,7 @@ class AdminController extends UserController
     public function deleteInviteGet($request, $response, $args)
     {
         $id = $args['id'];
-        if($id="all"){
+        if($id=="all"){
             $codes = InviteCode::all();
             for ($i = 0; $i < count($codes); $i++) {
                 $codes[$i]::delete();
