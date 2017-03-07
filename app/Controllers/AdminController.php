@@ -83,14 +83,24 @@ class AdminController extends UserController
     public function deleteInviteGet($request, $response, $args)
     {
         $id = $args['id'];
-        if($id=="all"){
+        $code = InviteCode::find($id);
+        $code->delete();
+
+        $newResponse = $response->withStatus(302)->withHeader('Location', '/admin/invite');
+        return $newResponse;
+    }
+
+    public function deleteUserInviteGet($request, $response, $args)
+    {
+        $userId = $args['id'];
+        $codes = null;
+        if($userId=="all"){
             $codes = InviteCode::all();
-            for ($i = 0; $i < count($codes); $i++) {
-                $codes[$i]->delete();
-            }
         }else{
-            $code = InviteCode::find($id);
-            $code->delete();
+            $codes = InviteCode::where("user_id", "=", $userId);
+        }
+        for ($i = 0; $i < count($codes); $i++) {
+            $codes[$i]->delete();
         }
         $newResponse = $response->withStatus(302)->withHeader('Location', '/admin/invite');
         return $newResponse;

@@ -117,6 +117,7 @@ $app->group('/admin', function () {
     $this->post('/invite', 'App\Controllers\AdminController:addInvite');
     $this->delete('/invite/{id}', 'App\Controllers\AdminController:deleteInvite');
     $this->get('/invite/{id}/delete', 'App\Controllers\AdminController:deleteInviteGet');
+    $this->get('/invite/user/{id}/delete', 'App\Controllers\AdminController:deleteUserInviteGet');
 
     $this->get('/passcode', 'App\Controllers\AdminController:passcode');
     $this->post('/passcode', 'App\Controllers\AdminController:addpasscode');

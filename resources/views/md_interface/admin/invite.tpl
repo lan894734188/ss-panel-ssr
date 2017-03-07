@@ -94,7 +94,7 @@
                                 </select>
                             </div>
                             <button class="btn btn-info" id="query">查询</button>
-                            <a class="btn btn-danger btn-sm" href="/admin/invite/all/delete">删除全部</a>
+                            <a class="btn btn-danger btn-sm" id="deleteuser">删除</a>
                         </div>
                     </div>
                     <table class="table table-hover">
@@ -157,6 +157,13 @@
         $("#userId").val({$userId});
         $("#query").click(function () {
             window.location.href = '/admin/invite?userId=' + $("#userId").val();
+        });
+        $("#deleteuser").click(function () {
+            var userId = $("#userId").val();
+            if(userId==""){
+                userId = "all";
+            }
+            window.location.href = '/admin/invite/user/'+userId+'/delete';
         });
     })
 </script>
