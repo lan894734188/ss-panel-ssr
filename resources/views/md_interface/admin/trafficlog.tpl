@@ -35,7 +35,7 @@
                     <div class="box-body table-responsive no-padding">
                         <div class="row">
                             <div class="col-xs-5">
-                                {$logs->appends(['userId' => $userId, 'nodeId' => $nodeId])->render(5)}
+                                {$logs->appends(['userId' => $userId, 'nodeId' => $nodeId])->render()}
                             </div>
                             <div class="col-xs-7 form-inline pagination">
                                     <div class="form-group">
