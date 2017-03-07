@@ -34,7 +34,10 @@ class AdminController extends UserController
         if (isset($request->getQueryParams()["userId"])) {
             $userId = $request->getQueryParams()["userId"];
         }
-        $codes = InviteCode::all()->paginate(15, ['*'], 'page', $pageNum);
+        $codes = InviteCode::all();
+        if($codes!=null){
+            $codes = $codes->paginate(15, ['*'], 'page', $pageNum);
+        }
         $users = User::all();
         if($userId != ""){
             $codes = InviteCode::where("user_id", "=", $userId)->paginate(15, ['*'], 'page', $pageNum);
