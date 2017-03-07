@@ -109,7 +109,7 @@
                             <tr>
                                 <td>{$code->id}</td>
                                 <td>{$code->code}</td>
-                                <td>{$code->user_id}</td>
+                                <td>{$code->user()->user_name}</td>
                                 <td>{$code->user_id}</td>
                                 <td>{$code->createDate()}</td>
                                 <td>

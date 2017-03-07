@@ -85,7 +85,7 @@ class AdminController extends UserController
         $id = $args['id'];
         $code = InviteCode::find($id);
         $code->delete();
-        $newResponse = $response->withStatus(302)->withHeader('Location', '/admin/invite.tpl');
+        $newResponse = $response->withStatus(302)->withHeader('Location', '/admin/invite');
         return $newResponse;
     }
 
