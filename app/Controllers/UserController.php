@@ -154,9 +154,6 @@ class UserController extends BaseController
         $res['msg'] = "充值成功，充值的流量为".$code->size."G。";
 
         return $response->getBody()->write(json_encode($res));
-    
-        
-        
     }
 
 
