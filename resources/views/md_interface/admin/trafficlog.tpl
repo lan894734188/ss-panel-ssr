@@ -37,7 +37,7 @@
                             <div class="col-xs-5">
                                 {$logs->appends(['userId' => $userId, 'nodeId' => $nodeId])->render()}
                             </div>
-                            <div class="col-xs-7 form-inline pagination-sm">
+                            <div class="col-xs-7 form-inline pagination">
                                     <div class="form-group">
                                         <label for="userId" class="control-label">用户ID</label>
                                         <select class="form-control" id="userId">
@@ -145,7 +145,7 @@
                 }
             })*/
         });
-        $(".pagination").attr("class", "pagination-sm");
+        //$(".pagination").attr("class", "pagination-sm");
     })
 </script>
 {include file='admin/footer.tpl'}
