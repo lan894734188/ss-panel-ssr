@@ -49,7 +49,12 @@
                                 <label for="cate_title" class="col-sm-3 control-label">邀请码类别</label>
 
                                 <div class="col-sm-9">
-                                    <input class="form-control" id="uid" type="number" placeholder="0为公开，其他数字为对应用户的UID">
+                                    <select class="form-control" id="uid">
+                                        <option value="0">公共邀请码</option>
+                                        {foreach $users as $user}
+                                            <option value="{$user->id}">{$user->user_name}:{$user->email}</option>
+                                        {/foreach}
+                                    </select>
                                 </div>
                             </div>
 
@@ -94,7 +99,7 @@
                                 </select>
                             </div>
                             <button class="btn btn-info" id="query">查询</button>
-                            <a class="btn btn-danger btn-sm" id="deleteuser">删除</a>
+                            <a class="btn btn-danger" id="deleteuser">删除</a>
                         </div>
                     </div>
                     <table class="table table-hover">
