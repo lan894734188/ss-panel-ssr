@@ -95,30 +95,30 @@
                             </div>
                             <button class="btn btn-info" id="query">查询</button>
                         </div>
-                        <table class="table table-hover">
-                            <tr>
-                                <th>ID</th>
-                                <th>邀请码</th>
-                                <th>用户名</th>
-                                <th>用户ID</th>
-                                <th>创建时间</th>
-                                <th>操作</th>
-                            </tr>
-                            {foreach $codes as $code}
-                                <tr>
-                                    <td>{$code->id}</td>
-                                    <td>{$code->code}</td>
-                                    <td>{$code->user_id}</td>
-                                    <td>{$code->user_id}</td>
-                                    <td>{$code->createDate()}</td>
-                                    <td>
-                                        <a class="btn btn-danger btn-sm" id="delete" value="{$code->id}" href="/admin/invite/{$code->id}/delete">删除</a>
-                                    </td>
-                                </tr>
-                            {/foreach}
-                        </table>
-                        {$codes->appends(['userId' => $userId])->render()}
                     </div>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>ID</th>
+                            <th>邀请码</th>
+                            <th>用户名</th>
+                            <th>用户ID</th>
+                            <th>创建时间</th>
+                            <th>操作</th>
+                        </tr>
+                        {foreach $codes as $code}
+                            <tr>
+                                <td>{$code->id}</td>
+                                <td>{$code->code}</td>
+                                <td>{$code->user_id}</td>
+                                <td>{$code->user_id}</td>
+                                <td>{$code->createDate()}</td>
+                                <td>
+                                    <a class="btn btn-danger btn-sm" id="delete" value="{$code->id}" href="/admin/invite/{$code->id}/delete">删除</a>
+                                </td>
+                            </tr>
+                        {/foreach}
+                    </table>
+                    {$codes->appends(['userId' => $userId])->render()}
                 </div>
             </div>
             <!-- /.box -->
