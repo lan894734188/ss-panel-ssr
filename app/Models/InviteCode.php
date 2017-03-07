@@ -11,15 +11,6 @@ class InviteCode extends Model
 {
     protected $table = "ss_invite_code";
 
-    public function userName()
-    {
-        if($this->attributes['user_id']==0){
-            return "公共邀请码";
-        }else{
-            return User::find($this->attributes['user_id'])->attributes['user_name'];
-        }
-    }
-
     public function user()
     {
         if($this->attributes['user_id']==0){
