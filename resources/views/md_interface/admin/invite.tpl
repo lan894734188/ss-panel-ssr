@@ -94,6 +94,7 @@
                                 </select>
                             </div>
                             <button class="btn btn-info" id="query">查询</button>
+                            <a class="btn btn-danger btn-sm" href="/admin/invite/all/delete">删除全部</a>
                         </div>
                     </div>
                     <table class="table table-hover">
