@@ -112,8 +112,12 @@ $app->group('/admin', function () {
     $this->post('/test/sendmail', 'App\Controllers\Admin\TestController:sendMailPost');
 
     $this->get('/profile', 'App\Controllers\AdminController:profile');
+
     $this->get('/invite', 'App\Controllers\AdminController:invite');
     $this->post('/invite', 'App\Controllers\AdminController:addInvite');
+    $this->delete('/invite/{id}', 'App\Controllers\AdminController:deleteInvite');
+    $this->get('/invite/{id}/delete', 'App\Controllers\AdminController:deleteInviteGet');
+
     $this->get('/passcode', 'App\Controllers\AdminController:passcode');
     $this->post('/passcode', 'App\Controllers\AdminController:addpasscode');
     $this->get('/sys', 'App\Controllers\AdminController:sys');

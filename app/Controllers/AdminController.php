@@ -26,8 +26,23 @@ class AdminController extends UserController
 
     public function invite($request, $response, $args)
     {
-        $codes = InviteCode::where('user_id', '=', '0')->get();
-        return $this->view()->assign('codes', $codes)->display('admin/invite.tpl');
+        $pageNum = 1;
+        if (isset($request->getQueryParams()["page"])) {
+            $pageNum = $request->getQueryParams()["page"];
+        }
+        $userId = "";
+        if (isset($request->getQueryParams()["userId"])) {
+            $userId = $request->getQueryParams()["userId"];
+        }
+        $codes = InviteCode::all()->paginate(15, ['*'], 'page', $pageNum);
+        $users = User::all();
+        if($userId != ""){
+            $codes = InviteCode::where("user_id", "=", $userId)->paginate(15, ['*'], 'page', $pageNum);
+        }
+        return $this->view()->assign('codes', $codes)
+                            ->assign('userId', $userId)
+                            ->assign('users', $users)
+                            ->display('admin/invite.tpl');
     }
 
     public function addInvite($request, $response, $args)
@@ -49,6 +64,29 @@ class AdminController extends UserController
         $res['ret'] = 1;
         $res['msg'] = "邀请码添加成功";
         return $response->getBody()->write(json_encode($res));
+    }
+
+    public function deleteInvite($request, $response, $args)
+    {
+        $id = $args['id'];
+        $code = InviteCode::find($id);
+        if (!$code->delete()) {
+            $rs['ret'] = 0;
+            $rs['msg'] = "删除失败";
+            return $response->getBody()->write(json_encode($rs));
+        }
+        $rs['ret'] = 1;
+        $rs['msg'] = "删除成功";
+        return $response->getBody()->write(json_encode($rs));
+    }
+
+    public function deleteInviteGet($request, $response, $args)
+    {
+        $id = $args['id'];
+        $code = InviteCode::find($id);
+        $code->delete();
+        $newResponse = $response->withStatus(302)->withHeader('Location', '/admin/invite.tpl');
+        return $newResponse;
     }
 
     public function passcode($request, $response, $args)

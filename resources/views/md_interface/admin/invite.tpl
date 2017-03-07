@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="row">
-            <!-- left column -->
+            <!-- on column -->
             <div class="col-md-6">
                 <!-- general form elements -->
                 <div class="box box-primary">
@@ -70,13 +70,54 @@
 
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <div class="box box-primary">
                     <div class="box-header">
-                        <h3 class="box-title">注意</h3>
+                        <h3 class="box-title">邀请码</h3>
                     </div>
-                    <div class="box-footer">
-                        <p>公共邀请码（类别为0的邀请码）请<a href="/code">在这里查看</a>。</p>
+                    <div class="row">
+                        <div class="col-xs-5">
+                            {$codes->appends(['userId' => $userId])->render()}
+                        </div>
+                        <div class="col-xs-7 form-inline pagination">
+                            <div class="form-group">
+                                <label for="userId" class="control-label">用户ID</label>
+                                <select class="form-control" id="userId">
+                                    <option value="">全部</option>
+                                    <option value="0">公共邀请码</option>
+                                    {foreach $users as $user}
+                                        <option value="{$user->id}">{$user->user_name}:{$user->email}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                            <button class="btn btn-info" id="query">查询</button>
+                        </div>
+                        <table class="table table-hover">
+                            <tr>
+                                <th>ID</th>
+                                <th>邀请码</th>
+                                <th>用户名</th>
+                                <th>用户ID</th>
+                                <th>创建时间</th>
+                                <th>操作</th>
+                            </tr>
+                            {foreach $codes as $code}
+                                <tr>
+                                    <td>{$code->id}</td>
+                                    <td>{$code->code}</td>
+                                    <td>{$code->user()->user_name}</td>
+                                    <td>{$code->user_id}</td>
+                                    <td>{$code->createDate()}</td>
+                                    <td>
+                                        <a class="btn btn-danger btn-sm" id="delete" value="{$code->id}" href="/admin/invite/{$code->id}/delete">删除</a>
+                                    </td>
+                                </tr>
+                            {/foreach}
+                        </table>
+                        {$codes->appends(['userId' => $userId])->render()}
                     </div>
                 </div>
             </div>
@@ -111,7 +152,9 @@
                     alert("发生错误：" + jqXHR.status);
                 }
             })
-        })
+        });
+        $("#userId").val({$userId});
+
     })
 </script>
 
