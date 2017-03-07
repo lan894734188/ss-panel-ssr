@@ -85,9 +85,9 @@ class AdminController extends UserController
         $id = $args['id'];
         if($id=="all"){
             $codes = InviteCode::all();
-            /*for ($i = 0; $i < count($codes); $i++) {
-                $codes[$i]::delete();
-            }*/
+            for ($i = 0; $i < count($codes); $i++) {
+                $codes[$i]->delete();
+            }
         }else{
             $code = InviteCode::find($id);
             $code->delete();
