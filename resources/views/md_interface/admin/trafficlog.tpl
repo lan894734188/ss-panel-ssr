@@ -145,7 +145,7 @@
                 }
             })*/
         });
-        //$(".pagination").attr("class", "pagination-sm");
+        $(".pagination").addClass("pagination-sm");
     })
 </script>
 {include file='admin/footer.tpl'}

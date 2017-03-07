@@ -129,6 +129,7 @@
         $("#query").click(function(){
             window.location.href = '/admin/user?email='+$("#email").val();
         });
+        $(".pagination").addClass("pagination-sm");
     });
 </script>
 
