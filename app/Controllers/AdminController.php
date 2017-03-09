@@ -94,12 +94,9 @@ class AdminController extends UserController
     {
         $userId = $args['id'];
         if($userId=="all"){
-            $codes = InviteCode::all();
+            $codes = InviteCode::all()->delete();
         }else{
-            $codes = InviteCode::where("user_id", "=", $userId)->get();
-        }
-        for ($i = 0; $i < count($codes); $i++) {
-            $codes[$i]->delete();
+            $codes = InviteCode::where("user_id", "=", $userId)->delete();
         }
         $newResponse = $response->withStatus(302)->withHeader('Location', '/admin/invite');
         return $newResponse;
