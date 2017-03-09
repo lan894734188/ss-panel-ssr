@@ -58,7 +58,7 @@
                                     </div>
                                     <button class="btn btn-info" id="query">查询</button>
                                     <button class="btn btn-danger" id="cleanuser">重置</button>
-                                    <button class="btn btn-info" id="cleanlog">清空记录</button>
+                                    <!--button class="btn btn-info" id="cleanlog">清空记录</button-->
                             </div>
                         </div>
                         <table class="table table-hover">
@@ -123,8 +123,8 @@
                 }
             })
         });
-        $("#cleanlog").click(function () {
-            //alert("不建议清空流量日志");
+        //不建议清空流量日志
+        /*$("#cleanlog").click(function () {
             $.ajax({
                 type: "POST",
                 url: "/admin/api/cleanlog",
@@ -144,7 +144,7 @@
                     alert("发生错误：" + jqXHR.status);
                 }
             })
-        });
+        });*/
         $(".pagination").addClass("pagination-sm");
     })
 </script>

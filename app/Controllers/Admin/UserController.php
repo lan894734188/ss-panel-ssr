@@ -113,7 +113,8 @@ class UserController extends AdminController
                     'd' => 0,
                     'u' => 0,
                 ]);
-                TrafficLog::where("user_id", "=", $userId)->delete();
+                //不清除 否则会影响统计
+                //TrafficLog::where("user_id", "=", $userId)->delete();
             }
             $rs['ret'] = 1;
             $rs['msg'] = "清空用户流量完成";
