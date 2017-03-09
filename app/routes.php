@@ -125,7 +125,7 @@ $app->group('/admin', function () {
     $this->get('/logout', 'App\Controllers\AdminController:logout');
     //new api
     $this->post('/api/cleanuser', 'App\Controllers\Admin\UserController:cleanuser');
-    $this->get('/api/cleanlog', 'App\Controllers\Admin\NodeController:cleanlog');
+    $this->post('/api/cleanlog', 'App\Controllers\Admin\NodeController:cleanlog');
 })->add(new Admin());
 
 // API
