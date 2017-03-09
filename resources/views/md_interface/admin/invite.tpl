@@ -150,7 +150,7 @@
                     if (data.ret) {
                         $("#msg-success").show(100);
                         $("#msg-success-p").html(data.msg);
-                        //window.setTimeout("location.href='/admin/invite'", 2000);
+                        window.setTimeout("location.href='/admin/invite'", 2000);
                     }
                     // window.location.reload();
                 },

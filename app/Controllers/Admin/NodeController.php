@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\AdminController;
 use App\Models\Node;
+use App\Models\TrafficLog;
 
 class NodeController extends AdminController
 {
@@ -100,5 +101,24 @@ class NodeController extends AdminController
         $node = Node::find($id);
         $node->delete();
         return $this->redirect($response, '/admin/node');
+    }
+
+    public function cleanlog($request, $response, $args)
+    {
+        try{
+            $nodeId = $request->getParam('nodeId');
+            if($nodeId==""){
+                TrafficLog::delete();
+            }else{
+                TrafficLog::where("node_id", "=", $nodeId)->delete();
+            }
+        }catch (\Exception $e) {
+            $rs['ret'] = 0;
+            $rs['msg'] = "删除失败";
+            return $response->getBody()->write(json_encode($rs));
+        }
+        $rs['ret'] = 1;
+        $rs['msg'] = "删除成功";
+        return $response->getBody()->write(json_encode($rs));
     }
 }

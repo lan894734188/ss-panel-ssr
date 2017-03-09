@@ -58,7 +58,7 @@
                                     </div>
                                     <button class="btn btn-info" id="query">查询</button>
                                     <button class="btn btn-danger" id="cleanuser">重置</button>
-                                    <!--button class="btn btn-info" id="cleanlog">清空记录</button-->
+                                    <button class="btn btn-info" id="cleanlog">清空记录</button>
                             </div>
                         </div>
                         <table class="table table-hover">
@@ -114,7 +114,7 @@
                     if (data.ret) {
                         $("#msg-success").show(100);
                         $("#msg-success-p").html(data.msg);
-                        //window.setTimeout("location.href='/admin/invite'", 2000);
+                        window.setTimeout("location.href='/admin/trafficlog'", 2000);
                     }
                     // window.location.reload();
                 },
@@ -124,8 +124,8 @@
             })
         });
         $("#cleanlog").click(function () {
-            alert("不建议清空流量日志");
-            /*$.ajax({
+            //alert("不建议清空流量日志");
+            $.ajax({
                 type: "POST",
                 url: "/admin/api/cleanlog",
                 dataType: "json",
@@ -136,14 +136,14 @@
                     if (data.ret) {
                         $("#msg-success").show(100);
                         $("#msg-success-p").html(data.msg);
-                        //window.setTimeout("location.href='/admin/invite'", 2000);
+                        window.setTimeout("location.href='/admin/trafficlog'", 2000);
                     }
                     // window.location.reload();
                 },
                 error: function (jqXHR) {
                     alert("发生错误：" + jqXHR.status);
                 }
-            })*/
+            })
         });
         $(".pagination").addClass("pagination-sm");
     })
