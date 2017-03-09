@@ -108,7 +108,7 @@ class NodeController extends AdminController
         try{
             $nodeId = $request->getParam('nodeId');
             if($nodeId==""){
-                TrafficLog::delete();
+                TrafficLog::where("node_id", ">", -99)->delete();
             }else{
                 TrafficLog::where("node_id", "=", $nodeId)->delete();
             }
