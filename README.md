@@ -7,7 +7,7 @@ SS-Panel-SSR
 ----------------------
 ##贡献者/Contributors
 =========
->批发靓鸡仔
+>批发靓鸡仔<br>
 >[Rafong](https://github.com/Rafong973)<br>
 >[Daemonite](https://github.com/Daemonite/material)<br>
 >[glzjin](https://github.com/glzjin/ss-panel-v3-mod)<br>
