@@ -1,19 +1,19 @@
 SS-Panel-SSR
 ================
-	简介##
+简介##
 --------
-这是个轻量化方向的panel &nbsp; 用不到或者少用的功能可能都砍掉	
-优化移动端视觉
+这是个轻量化方向的panel &nbsp; 用不到或者少用的功能可能都砍掉<br>
+优化移动端视觉<br>
 ----------------------
-贡献者/Contributors
+##贡献者/Contributors
 =========
 >批发靓鸡仔
->Rafong
->Daemonite
->glzjin
+>![Rafong](https://github.com/Rafong973)<br>
+>![Daemonite](https://github.com/Daemonite/material)<br>
+>![glzjin](https://github.com/glzjin/ss-panel-v3-mod)<br>
 ----------------------
 ##原著/Original
-###orvice
+###![orvice](https://github.com/orvice)<br>
 ----------------------
 ##FAQ
 ###https://github.com/lan894734188/ss-panel-ssr/wiki
