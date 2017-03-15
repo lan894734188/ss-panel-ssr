@@ -13,7 +13,7 @@
 <a href="https://github.com/orvice">orvice</a>
 <br/>
 ##FAQ
-<a href="https://github.com/lan894734188/ss-panel-ssr/wiki">wiki</a>
+https://github.com/lan894734188/ss-panel-ssr/wiki
 ##LICENSE
 GNU GENERAL PUBLIC LICENSE<br/>
 Version 3
