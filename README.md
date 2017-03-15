@@ -8,12 +8,12 @@ SS-Panel-SSR
 ##贡献者/Contributors
 =========
 >批发靓鸡仔
->![Rafong](https://github.com/Rafong973)<br>
->![Daemonite](https://github.com/Daemonite/material)<br>
->![glzjin](https://github.com/glzjin/ss-panel-v3-mod)<br>
+>[Rafong](https://github.com/Rafong973)<br>
+>[Daemonite](https://github.com/Daemonite/material)<br>
+>[glzjin](https://github.com/glzjin/ss-panel-v3-mod)<br>
 ----------------------
 ##原著/Original
-###![orvice](https://github.com/orvice)<br>
+###[orvice](https://github.com/orvice)<br>
 ----------------------
 ##FAQ
 ###https://github.com/lan894734188/ss-panel-ssr/wiki
