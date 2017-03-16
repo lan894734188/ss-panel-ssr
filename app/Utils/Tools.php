@@ -209,7 +209,7 @@ class Tools
         if ($user == null) {
             return 20000; // @todo
         }
-        $users = User::orderBy('port', 'asc')->all();
+        $users = User::orderBy('port', 'asc');
         $number_tmp = array();
         foreach ($users as $tmp ){
             array_push($number_tmp, $tmp->port);
