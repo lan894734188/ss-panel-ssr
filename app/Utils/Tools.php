@@ -217,8 +217,7 @@ class Tools
         $number = range(20000, $user->port);
         $result = array_diff($number, $number_tmp);
         if(count($result)>0){
-            return 20007-1;
-            //return current($result)-1;
+            return current($result)-1;
         }else{
             return $user->port;
         }
