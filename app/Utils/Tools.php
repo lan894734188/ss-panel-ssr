@@ -214,13 +214,14 @@ class Tools
         foreach ($users as $tmp ){
             array_push($number_tmp, $tmp->port);
         }
-        $number = range(20000,$user->port);
+        $number = range(20000, $user->port);
         $result = array_diff($number, $number_tmp);
-        if(count($result)>0){
+        return 20001;
+        /*if(count($result)>0){
             return current($result)-1;
         }else{
             return $user->port;
-        }
+        }*/
     }
 	
     public static function base64_url_encode($input) {
