@@ -205,10 +205,22 @@ class Tools
     public static function getLastPort()
     {
         $user = User::orderBy('port', 'desc')->first();
+
         if ($user == null) {
-            return 1024; // @todo
+            return 20000; // @todo
         }
-        return $user->port;
+        $users = User::orderBy('port', 'asc');
+        $number_tmp = array();
+        foreach ($users as $tmp ){
+            array_push($number_tmp, $tmp->port);
+        }
+        $number = range(20000,$user->port);
+        $result = array_diff($number, $number_tmp);
+        if(count($result)>0){
+            return $result[0]-1;
+        }else{
+            return $user->port;
+        }
     }
 	
     public static function base64_url_encode($input) {
