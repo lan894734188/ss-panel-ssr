@@ -81,7 +81,7 @@
                                         <li>可能会出现如下图的安全警报 点击:允许访问</li>
                                         <li><img src="../assets/md-interface/images/tutorial/windows/03.jpg"></li>
                                         <li>删除初始化的空白服务器</li>
-                                        <li><img src="../assets/md-interface/images/tutorial/windows/04.jpg"></li>
+                                        <li><img src="../assets/md-interface/images/tutorial/windows/04.jpg" style="height: 50%;width: 50%"></li>
                                         <li>在屏幕右下角找蓝色纸飞机的图标 用鼠标右键点击他 点击二维码扫描 ps请不要遮住上文说的二维码图片</li>
                                         <li><img src="../assets/md-interface/images/tutorial/windows/05.jpg"></li>
                                         <li>会出现上上图相似的 服务器编辑界面 直接点击确定</li>
@@ -89,7 +89,7 @@
                                         <li>再次鼠标右键点击小飞机图标 > 选择第二个"PAC" > 选择"更新PAC为GFWList"</li>
                                         <li>再次鼠标右键点击小飞机图标 > 选择第三个"代理规则" > 选择"绕过局域网"</li>
                                         <li>再次鼠标右键点击小飞机图标 > 选择"选项设置..." > 选中"右上角的开机启动" 如果弹出UAC菜单选择允许 点击确定</li>
-                                        <li>重启浏览器 welcome new world</li>
+                                        <li>重启浏览器 welcome to new world</li>
                                     </ul>
                                 </div>
                             </div>
@@ -109,6 +109,7 @@
                                         <li>会弹出一个对话框 点击中间的SSR二维码</li>
                                         <li><img src="../assets/md-interface/images/tutorial/03.png"></li>
                                         <li>这样屏幕上就会出现二维码, 千万别点关闭, 也不要用其他窗口遮住这个二维码</li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -128,6 +129,14 @@
                                         <li>会弹出一个对话框 点击中间的SSR二维码</li>
                                         <li><img src="../assets/md-interface/images/tutorial/03.png"></li>
                                         <li>这样屏幕上就会出现二维码, 千万别点关闭, 也不要用其他窗口遮住这个二维码</li>
+                                        <li>下载android客户端 记得在新窗口中打开<a href="https://github.com/shadowsocksr/shadowsocksr-android/releases">下载地址</a></li>
+                                        <li>安装完成后 右下角按钮 点击扫描二维码</li>
+                                        <li><img src="../assets/md-interface/images/tutorial/android/01.jpg"></li>
+                                        <li>扫描刚的二维码</li>
+                                        <li><img src="../assets/md-interface/images/tutorial/android/02.jpg"></li>
+                                        <li>在"功能设置" > "路由" > 选择"绕过局域网 大陆网站"</li>
+                                        <li>在"功能设置" > 打开 "UDP转发"</li>
+                                        <li>连接服务器 welcome to new world</li>
                                     </ul>
                                 </div>
                             </div>
