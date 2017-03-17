@@ -111,7 +111,7 @@
                                         <li>这样屏幕上就会出现二维码, 千万别点关闭, 也不要用其他窗口遮住这个二维码</li>
                                         <li>下载ios客户端Shadowrocket 作者是 Guangming Li 需要购买软件 记得在新窗口中打开<a href="https://appsto.re/cn/UDjM3.i">下载地址</a></li>
                                         <li>安装完成后 右下角按钮 点击扫描二维码</li>
-                                        <li><img src="../assets/md-interface/images/tutorial/ios/01.jpg"></li>
+                                        <li><img src="../assets/md-interface/images/tutorial/ios/01.png"></li>
                                         <li>扫描刚的二维码</li>
                                         <li>在"全局路由" 设置为 "代理"</li>
                                         <li>拨动 未连接 右侧开关 连接服务器 welcome to new world</li>
@@ -138,7 +138,7 @@
                                         <li>安装完成后 右下角按钮 点击扫描二维码</li>
                                         <li><img src="../assets/md-interface/images/tutorial/android/01.jpg"></li>
                                         <li>扫描刚的二维码</li>
-                                        <li><img src="../assets/md-interface/images/tutorial/android/02.jpg"></li>
+                                        <li><img src="../assets/md-interface/images/tutorial/android/02.png"></li>
                                         <li>在"功能设置" > "路由" > 选择"绕过局域网 大陆网站"</li>
                                         <li>在"功能设置" > 打开 "UDP转发"</li>
                                         <li>连接服务器 welcome to new world</li>
