@@ -6,17 +6,17 @@
         <ul id="myTab" class="nav nav-tabs">
             <li class="active">
                 <a href="#windows" data-toggle="tab">
-                    流量查询
+                    windows
                 </a>
             </li>
             <li>
                 <a href="#ios" data-toggle="tab">
-                    用户管理
+                    ios
                 </a>
             </li>
             <li>
                 <a href="#andriod" data-toggle="tab">
-                    使用量分析
+                    andriod
                 </a>
             </li>
         </ul>
