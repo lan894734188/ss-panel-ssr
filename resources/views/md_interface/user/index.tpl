@@ -235,8 +235,7 @@
 <footer class="ui-footer">
     <div class="container">
         <div class="row">
-            <p>SS-Panel-SSR</p>
-            <a href="/user/tutorial">使用教程</a>
+            <p>SS-Panel-SSR</p><a href="/user/tutorial">使用教程</a>
         </div>
     </div>
 </footer>
