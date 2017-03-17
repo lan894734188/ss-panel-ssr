@@ -234,8 +234,10 @@
 </main>
 <footer class="ui-footer">
     <div class="container">
-        <p>SS-Panel-SSR</p>
-        <a herf="/user/tutorial">使用教程</a>
+        <div class="row">
+            <p>SS-Panel-SSR</p>
+            <a href="/user/tutorial">使用教程</a>
+        </div>
     </div>
 </footer>
 <div class="fbtn-container">
