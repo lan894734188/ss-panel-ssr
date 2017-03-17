@@ -59,11 +59,11 @@
 
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade in active" id="windows">
-                        <
                         <div class="card">
                             <div class="card-main">
                                 <div class="card-inner margin-bottom-no margin-top-no">
                                     <ul>
+                                        <li><h3>windows 教程</h3></li>
                                         <li><p>进入用户中心 记得在新窗口中打开<a href="/user">点我进入</a></p></li>
                                         <li>滚动网页到最底部,找到节点列表,点击展开</li>
                                         <li><img src="../assets/md-interface/images/tutorial/01.jpg"></li>
@@ -72,6 +72,24 @@
                                         <li>会弹出一个对话框 点击中间的SSR二维码</li>
                                         <li><img src="../assets/md-interface/images/tutorial/03.png"></li>
                                         <li>这样屏幕上就会出现二维码, 千万别点关闭, 也不要用其他窗口遮住这个二维码</li>
+                                        <li>下载windows客户端 记得在新窗口中打开<a href="https://github.com/shadowsocksr/shadowsocksr-csharp/releases">下载地址</a></li>
+                                        <li>在网页中找到下图的红色框框的标记</li>
+                                        <li><img src="../assets/md-interface/images/tutorial/windows/01.jpg"></li>
+                                        <li>找到对应的版本进行下载 如下图 PS:尽量使用新版本, 服务器版本永远会使用最新版本, 并不支持旧版本</li>
+                                        <li><img src="../assets/md-interface/images/tutorial/windows/02.jpg"></li>
+                                        <li>保存 解压到固定文件夹 双击ShadowsocksR-dotnet4.0.exe运行程序</li>
+                                        <li>可能会出现如下图的安全警报 点击:允许访问</li>
+                                        <li><img src="../assets/md-interface/images/tutorial/windows/03.jpg"></li>
+                                        <li>删除初始化的空白服务器</li>
+                                        <li><img src="../assets/md-interface/images/tutorial/windows/04.jpg"></li>
+                                        <li>在屏幕右下角找蓝色纸飞机的图标 用鼠标右键点击他 点击二维码扫描 ps请不要遮住上文说的二维码图片</li>
+                                        <li><img src="../assets/md-interface/images/tutorial/windows/05.jpg"></li>
+                                        <li>会出现上上图相似的 服务器编辑界面 直接点击确定</li>
+                                        <li>再次鼠标右键点击小飞机图标 > 选择第一个"系统代理模式" > 选择"PAC模式"</li>
+                                        <li>再次鼠标右键点击小飞机图标 > 选择第二个"PAC" > 选择"更新PAC为GFWList"</li>
+                                        <li>再次鼠标右键点击小飞机图标 > 选择第三个"代理规则" > 选择"绕过局域网"</li>
+                                        <li>再次鼠标右键点击小飞机图标 > 选择"选项设置..." > 选中"右上角的开机启动" 如果弹出UAC菜单选择允许 点击确定</li>
+                                        <li>重启浏览器 welcome new world</li>
                                     </ul>
                                 </div>
                             </div>
@@ -82,6 +100,7 @@
                             <div class="card-main">
                                 <div class="card-inner margin-bottom-no margin-top-no">
                                     <ul>
+                                        <li><h3>ios 教程</h3></li>
                                         <li><p>进入用户中心 记得在新窗口中打开<a href="/user">点我进入</a></p></li>
                                         <li>滚动网页到最底部,找到节点列表,点击展开</li>
                                         <li><img src="../assets/md-interface/images/tutorial/01.jpg"></li>
@@ -100,6 +119,7 @@
                             <div class="card-main">
                                 <div class="card-inner margin-bottom-no margin-top-no">
                                     <ul>
+                                        <li><h3>android 教程</h3></li>
                                         <li><p>进入用户中心 记得在新窗口中打开<a href="/user">点我进入</a></p></li>
                                         <li>滚动网页到最底部,找到节点列表,点击展开</li>
                                         <li><img src="../assets/md-interface/images/tutorial/01.jpg"></li>
