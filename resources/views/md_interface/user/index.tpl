@@ -235,6 +235,7 @@
 <footer class="ui-footer">
     <div class="container">
         <p>SS-Panel-SSR</p>
+        <a herf="/user/tutorial">使用教程</a>
     </div>
 </footer>
 <div class="fbtn-container">

@@ -118,6 +118,11 @@ class UserController extends BaseController
         return $this->view()->display('user/profile.tpl');
     }
 
+    public function tutorial($request, $response, $args)
+    {
+        return $this->view()->display('user/tutorial.tpl');
+    }
+
     public function edit($request, $response, $args)
     {
         return $this->view()->display('user/edit.tpl');
