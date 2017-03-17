@@ -81,7 +81,7 @@
                                         <li>可能会出现如下图的安全警报 点击:允许访问</li>
                                         <li><img src="../assets/md-interface/images/tutorial/windows/03.jpg"></li>
                                         <li>删除初始化的空白服务器</li>
-                                        <li><img src="../assets/md-interface/images/tutorial/windows/04.jpg" style="height: 50%;width: 50%"></li>
+                                        <li><img src="../assets/md-interface/images/tutorial/windows/04.jpg" style="height: 70%;width: 70%"></li>
                                         <li>在屏幕右下角找蓝色纸飞机的图标 用鼠标右键点击他 点击二维码扫描 ps请不要遮住上文说的二维码图片</li>
                                         <li><img src="../assets/md-interface/images/tutorial/windows/05.jpg"></li>
                                         <li>会出现上上图相似的 服务器编辑界面 直接点击确定</li>
