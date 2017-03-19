@@ -134,5 +134,13 @@ class AdminController extends UserController
         $res['msg'] = "更新成功";
         return $response->getBody()->write(json_encode($res));
     }
-
+    public function cleanNodelog($request, $response, $args)
+    {
+        if($clean = NodeInfoLog::truncate();){
+            $res['ret'] = 1;
+            $res['msg'] = "清理成功";
+        }
+        $res['ret'] = 0;
+        return $response->getBody()->write(json_encode($res));  
+    }
 }
