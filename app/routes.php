@@ -120,7 +120,7 @@ $app->group('/admin', function () {
     $this->post('/invite', 'App\Controllers\AdminController:addInvite');
     $this->get('/passcode', 'App\Controllers\AdminController:passcode');
     $this->post('/passcode', 'App\Controllers\AdminController:addpasscode');
-    $this->get('/sys', 'App\Controllers\AdminController:sys');
+    //$this->get('/sys', 'App\Controllers\AdminController:sys');
     $this->get('/logout', 'App\Controllers\AdminController:logout');
 })->add(new Admin());
 
