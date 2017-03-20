@@ -125,7 +125,7 @@
 
                 <li>
                     <a href="/admin/passcode">
-                        <i class="fa fa-users"></i> <span>充值管理</span>
+                        <i class="fa fa-usd"></i> <span>充值管理</span>
                     </a>
                 </li>
 
@@ -143,7 +143,7 @@
          
                 <li>
                     <a href="/admin/sys">
-                        <i class="fa fa-history"></i> <span>系统维护</span>
+                        <i class="fa fa-cog"></i> <span>系统维护</span>
                     </a>
                 </li>
 
