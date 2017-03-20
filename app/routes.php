@@ -62,6 +62,7 @@ $app->group('/user', function () {
 #    $this->get('/kill', 'App\Controllers\UserController:kill');
     $this->post('/kill', 'App\Controllers\UserController:handleKill');
     $this->get('/logout', 'App\Controllers\UserController:logout');
+    $this->get('/tutorial', 'App\Controllers\UserController:tutorial');
 })->add(new Auth());
 
 // Auth
@@ -116,12 +117,20 @@ $app->group('/admin', function () {
     $this->post('/test/sendmail', 'App\Controllers\Admin\TestController:sendMailPost');
 
     $this->get('/profile', 'App\Controllers\AdminController:profile');
+
     $this->get('/invite', 'App\Controllers\AdminController:invite');
     $this->post('/invite', 'App\Controllers\AdminController:addInvite');
+    $this->delete('/invite/{id}', 'App\Controllers\AdminController:deleteInvite');
+    $this->get('/invite/{id}/delete', 'App\Controllers\AdminController:deleteInviteGet');
+    $this->get('/invite/user/{id}/delete', 'App\Controllers\AdminController:deleteUserInviteGet');
+
     $this->get('/passcode', 'App\Controllers\AdminController:passcode');
     $this->post('/passcode', 'App\Controllers\AdminController:addpasscode');
     //$this->get('/sys', 'App\Controllers\AdminController:sys');
     $this->get('/logout', 'App\Controllers\AdminController:logout');
+    //new api
+    $this->post('/api/cleanuser', 'App\Controllers\Admin\UserController:cleanuser');
+    $this->post('/api/cleanlog', 'App\Controllers\Admin\NodeController:cleanlog');
 })->add(new Admin());
 
 // API

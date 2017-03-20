@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\AdminController;
+use App\Models\TrafficLog;
 use App\Models\User;
 use App\Utils\Hash;
 use App\Utils\Tools;
@@ -15,9 +16,21 @@ class UserController extends AdminController
         if (isset($request->getQueryParams()["page"])) {
             $pageNum = $request->getQueryParams()["page"];
         }
-        $users = User::paginate(15, ['*'], 'page', $pageNum);
+        $email = null;
+        if (isset($request->getQueryParams()["email"])) {
+            $email = $request->getQueryParams()["email"];
+            if($email==""){
+                $email = null;
+            }
+        }
+        $users = null;
+        if($email != null){
+            $users = User::where('email', 'like', '%' . $email . '%')->paginate(15, ['*'], 'page', $pageNum);
+        }else{
+            $users = User::paginate(15, ['*'], 'page', $pageNum);
+        }
         $users->setPath('/admin/user');
-        return $this->view()->assign('users', $users)->display('admin/user/index.tpl');
+        return $this->view()->assign('users', $users)->assign('email', $email)->display('admin/user/index.tpl');
     }
 
     public function edit($request, $response, $args)
@@ -84,5 +97,33 @@ class UserController extends AdminController
         $user->delete();
         $newResponse = $response->withStatus(302)->withHeader('Location', '/admin/user');
         return $newResponse;
+    }
+
+    public function cleanuser($request, $response, $args)
+    {
+        $userId = $request->getParam('userId');
+        try {
+            if ($userId == "") {
+                User::where("enable", 1)->update([
+                    'd' => 0,
+                    'u' => 0,
+                ]);
+            } else {
+                User::where("enable", 1)->where("id", "=", $userId)->update([
+                    'd' => 0,
+                    'u' => 0,
+                ]);
+                //不清除 否则会影响统计
+                //TrafficLog::where("user_id", "=", $userId)->delete();
+            }
+            $rs['ret'] = 1;
+            $rs['msg'] = "清空用户流量完成";
+            return $response->getBody()->write(json_encode($rs));
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+            $rs['ret'] = 0;
+            $rs['msg'] = "清空用户流量失败";
+            return $response->getBody()->write(json_encode($rs));
+        }
     }
 }

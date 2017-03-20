@@ -153,6 +153,22 @@ class User extends Model
         return Tools::flowAutoShow($transfer_enable - $total);
     }
 
+    public function usedPercent()
+    {
+        $used = $this->attributes['u'] + $this->attributes['d'];
+        $total = $this->attributes['transfer_enable'];
+        $per = Tools::usePercent($used, $total);
+        return $per;
+    }
+
+    public function unusedPercent()
+    {
+        $used = $this->attributes['u'] + $this->attributes['d'];
+        $total = $this->attributes['transfer_enable'];
+        $per = Tools::usePercent($total-$used, $total);
+        return $per;
+    }
+
     public function isAbleToCheckin()
     {
         $last = $this->attributes['last_check_in_time'];

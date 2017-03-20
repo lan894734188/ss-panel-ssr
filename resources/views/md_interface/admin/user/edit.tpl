@@ -5,7 +5,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            用户编辑 #{$user->id}
+            用户编辑 用户名:{$user->user_name} 用户ID:{$user->id} 
             <small>Edit User</small>
         </h1>
     </section>
@@ -122,7 +122,24 @@
                                         <label class="col-sm-3 control-label">自定义加密</label>
 
                                         <div class="col-sm-9">
-                                            <input class="form-control" id="method" value="{$user->method}">
+                                            <select class="form-control" id="method">
+										        <option value="{$user->method}"> 当前:{$user->method}</option>
+										        <option value="aes-128-cfb">AES-128-CFB</option>
+						                        <option value="aes-192-cfb">AES-192-CFB</option>
+						                        <option value="aes-256-cfb">AES-256-CFB</option>
+						                        <option value="aes-128-ctr">AES-128-CTR</option>
+						                        <option value="aes-192-ctr">AES-192-CTR</option>
+						                        <option value="aes-256-ctr">AES-256-CTR</option>
+						                        <option value="bf-cfb">BF-CFB</option>
+						                        <option value="camellia-128-cfb">CAMELLIA-128-CFB</option>
+						                        <option value="camellia-192-cfb">CAMELLIA-192-CFB</option>
+						                        <option value="camellia-256-cfb">CAMELLIA-256-CFB</option>
+						                        <option value="rc4-md5">RC4-MD5</option>
+						                        <option value="rc4-md5-6">RC4-MD5-6</option>
+						                        <option value="salsa20">SALSA20</option>
+						                        <option value="chacha20">CHACHA20</option>
+						                        <option value="chacha20-ietf">CHACHA20-IETF</option>
+										    </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -132,15 +149,12 @@
                                             <select class="form-control" id="SSRProtocol">
                                                 <option value="{$user->protocol}">当前:{$user->protocol}</option>
                                                 <option value="origin">origin(无验证)</option>
-                                                <option value="verify_simple">verify_simple(只支持SSR/OnlySSR)</option>
-                                                <option value="verify_deflate">verify_deflate(只支持SSR/OnlySSR)</option>
-                                                <option value="verify_sha1_compatible">verify_sha1(兼容SS/SSR)</option>
-                                                <option value="auth_sha1_compatible">auth_sha1(兼容SS/SSR)</option>
-                                                <option value="auth_sha1_v2_compatible">auth_sha1_v2(兼容SS/SSR)</option>
-                                                <option value="auth_sha1_v3">auth_sha1_v3(只支持SSR/OnlySSR)</option>
-                                                <option value="auth_sha1_v4_compatible">auth_sha1_v4(兼容SS/SSR)</option>
-                                                <option value="auth_aes128_md5">auth_aes128_md5(只支持SSR/OnlySSR)</option>
-                                                <option value="auth_aes128_sha1">auth_aes128_sha1(只支持SSR/OnlySSR)</option>
+                                                <option value="verify_sha1">verify_sha1</option>
+                                                <option value="auth_sha1">auth_sha1</option>
+                                                <option value="auth_sha1_v2">auth_sha1_v2</option>
+                                                <option value="auth_sha1_v4">auth_sha1_v4</option>
+                                                <option value="auth_aes128_md5">auth_aes128_md5</option>
+                                                <option value="auth_aes128_sha1">auth_aes128_sha1</option>
                                             </select>
                                         </div>
                                     </div>
@@ -151,9 +165,8 @@
                                             <select class="form-control" id="SSRobfs">
                                                 <option value="{$user->obfs}">当前:{$user->obfs}</option>
                                                 <option value="plain">plain(无混淆)</option>
-                                                <option value="http_simple_compatible">http_simple(兼容SS/SSR)</option>
-                                                <option value="http_post_compatible">http_post(兼容SS/SSR)</option>
-                                                <option value="tls1.2_ticket_auth_compatible">tls1.2_ticket_auth(兼容SS/SSR)</option>
+                                                <option value="http_simple">http_simple</option>
+                                                <option value="tls1.2_ticket_auth">tls1.2_ticket_auth</option>
                                             </select>
                                         </div>
                                     </div>

@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\Node;
+use App\Models\User;
 use App\Models\CheckInLog;
 use App\Models\InviteCode;
 use App\Models\PassCode;
@@ -26,8 +28,23 @@ class AdminController extends UserController
 
     public function invite($request, $response, $args)
     {
-        $codes = InviteCode::where('user_id', '=', '0')->get();
-        return $this->view()->assign('codes', $codes)->display('admin/invite.tpl');
+        $pageNum = 1;
+        if (isset($request->getQueryParams()["page"])) {
+            $pageNum = $request->getQueryParams()["page"];
+        }
+        $userId = "";
+        if (isset($request->getQueryParams()["userId"])) {
+            $userId = $request->getQueryParams()["userId"];
+        }
+        $codes = InviteCode::paginate(15, ['*'], 'page', $pageNum);
+        $users = User::all();
+        if($userId != ""){
+            $codes = InviteCode::where("user_id", "=", $userId)->paginate(15, ['*'], 'page', $pageNum);
+        }
+        return $this->view()->assign('codes', $codes)
+                            ->assign('userId', $userId)
+                            ->assign('users', $users)
+                            ->display('admin/invite.tpl');
     }
     
     public function sysinfo($request, $response, $args)
@@ -54,6 +71,42 @@ class AdminController extends UserController
         $res['ret'] = 1;
         $res['msg'] = "邀请码添加成功";
         return $response->getBody()->write(json_encode($res));
+    }
+
+    public function deleteInvite($request, $response, $args)
+    {
+        $id = $args['id'];
+        $code = InviteCode::find($id);
+        if (!$code->delete()) {
+            $rs['ret'] = 0;
+            $rs['msg'] = "删除失败";
+            return $response->getBody()->write(json_encode($rs));
+        }
+        $rs['ret'] = 1;
+        $rs['msg'] = "删除成功";
+        return $response->getBody()->write(json_encode($rs));
+    }
+
+    public function deleteInviteGet($request, $response, $args)
+    {
+        $id = $args['id'];
+        $code = InviteCode::find($id);
+        $code->delete();
+
+        $newResponse = $response->withStatus(302)->withHeader('Location', '/admin/invite');
+        return $newResponse;
+    }
+
+    public function deleteUserInviteGet($request, $response, $args)
+    {
+        $userId = $args['id'];
+        if($userId=="all"){
+            InviteCode::where("user_id", ">", -99)->delete();
+        }else{
+            InviteCode::where("user_id", "=", $userId)->delete();
+        }
+        $newResponse = $response->withStatus(302)->withHeader('Location', '/admin/invite');
+        return $newResponse;
     }
 
     public function passcode($request, $response, $args)
@@ -106,9 +159,28 @@ class AdminController extends UserController
         if (isset($request->getQueryParams()["page"])) {
             $pageNum = $request->getQueryParams()["page"];
         }
+        $nodeId = "";
+        if (isset($request->getQueryParams()["nodeId"])) {
+            $nodeId = $request->getQueryParams()["nodeId"];
+        }
+        $userId = "";
+        if (isset($request->getQueryParams()["userId"])) {
+            $userId = $request->getQueryParams()["userId"];
+        }
         $logs = TrafficLog::orderBy('id', 'desc')->paginate(15, ['*'], 'page', $pageNum);
+        if($nodeId!=""&&$userId!=""){
+            $logs = TrafficLog::where('user_id', '=', $userId)->where('node_id', '=', $nodeId)->orderBy('id', 'desc')->paginate(15, ['*'], 'page', $pageNum);
+        }elseif ($nodeId!=""&&$userId==""){
+            $logs = TrafficLog::where('node_id', '=', $nodeId)->orderBy('id', 'desc')->paginate(15, ['*'], 'page', $pageNum);
+        }elseif ($nodeId==""&&$userId!=""){
+            $logs = TrafficLog::where('user_id', '=', $userId)->orderBy('id', 'desc')->paginate(15, ['*'], 'page', $pageNum);
+        }
+
+        $nodes = Node::all();
+        $users = User::all();
+
         $logs->setPath('/admin/trafficlog');
-        return $this->view()->assign('logs', $logs)->display('admin/trafficlog.tpl');
+        return $this->view()->assign('userId', $userId)->assign('nodeId', $nodeId)->assign('nodes', $nodes)->assign('users', $users)->assign('logs', $logs)->assign('nodeId', $nodeId)->assign('userId', $userId)->display('admin/trafficlog.tpl');
     }
 
     public function config($request, $response, $args)

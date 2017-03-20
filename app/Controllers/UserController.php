@@ -90,7 +90,7 @@ class UserController extends BaseController
             $json_show = json_encode($ary, JSON_PRETTY_PRINT);
             if ($ctype == "SSR") {
                 $ssurl = $ary['server']. ":" . $ary['server_port'].":".str_replace("_compatible","",$ary['protocol']).":".$ary['method'].":".str_replace("_compatible","",$ary['obfs']).":".Tools::base64_url_encode($ary['password'])."/?&remarks=".Tools::base64_url_encode($node->name);
-                $ssqr = "ssr://" . Tools::base64_url_encode($ssurl)."|";
+                $ssqr = "ssr://" . Tools::base64_url_encode($ssurl);
             }elseif($ctype == "SS"){
                 $ssurl = $ary['method'] . ":" . $ary['password'] . "@" . $ary['server'] . ":" . $ary['server_port'];
                 $ssqr = "ss://" . Tools::base64_url_encode($ssurl);
@@ -116,6 +116,11 @@ class UserController extends BaseController
     public function profile($request, $response, $args)
     {
         return $this->view()->display('user/profile.tpl');
+    }
+
+    public function tutorial($request, $response, $args)
+    {
+        return $this->view()->display('user/tutorial.tpl');
     }
 
     public function edit($request, $response, $args)
@@ -154,9 +159,6 @@ class UserController extends BaseController
         $res['msg'] = "充值成功，充值的流量为".$code->size."G。";
 
         return $response->getBody()->write(json_encode($res));
-    
-        
-        
     }
 
 

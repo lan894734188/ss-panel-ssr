@@ -22,6 +22,7 @@
                                 <th>ID</th>
                                 <th>节点</th>
                                 <th>加密</th>
+                                <th>使用流量</th>
                                 <th>描述</th>
                                 <th>排序</th>
                                 <th>级别</th>
@@ -33,6 +34,7 @@
                                 <td>#{$node->id}</td>
                                 <td> {$node->name}</td>
                                 <td>{$node->method}</td>
+                                <td>{$node->getTrafficFromLogs()}</td>
                                 <td>{$node->info}</td>
                                 <td>{$node->sort}</td>
                                 <th>{$node->level}</th>
@@ -55,7 +57,7 @@
 
 <script>
     $(document).ready(function(){
-        function delete(){
+        function delete2(){
             $.ajax({
                 type:"DELETE",
                 url:"/admin/node/",
@@ -88,7 +90,7 @@
             }
         });
         $("#delete").click(function(){
-            delete();
+            delete2();
         });
         $("#ok-close").click(function(){
             $("#msg-success").hide(100);

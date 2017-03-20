@@ -1,6 +1,6 @@
 <footer class="ui-footer">
 	<div class="container">
-		<p>{date("Y")}SS-Panel-SSR &nbsp; {$config["version"]}</p>
+		<p>Copy&nbsp;Right&nbsp;{date("Y")}&nbsp;SS-Panel-SSR&nbsp;{$config["version"]}&nbsp;Coolkid</p>
 	</div>
 	<div style="display:none;">
 	    {md5($config["version"])}
