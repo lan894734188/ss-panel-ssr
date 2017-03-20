@@ -6,6 +6,8 @@ use App\Models\CheckInLog;
 use App\Models\InviteCode;
 use App\Models\PassCode;
 use App\Models\TrafficLog;
+use App\Models\NodeInfoLog;
+use App\Models\NodeOnlineLog;
 use App\Services\Analytics;
 use App\Services\DbConfig;
 use App\Utils\Tools;
