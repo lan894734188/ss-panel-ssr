@@ -89,8 +89,8 @@ $app->group('/admin', function () {
     $this->get('/trafficlog', 'App\Controllers\AdminController:trafficLog');
     $this->get('/checkinlog', 'App\Controllers\AdminController:checkinLog');
     $this->get('/cleannodelog', 'App\Controllers\AdminController:cleanNodelog');
-    $this->get('/cleannodelog', 'App\Controllers\AdminController:cleanOnlinelog');
-    $this->get('/cleannodelog', 'App\Controllers\AdminController:cleantrafficlog');
+    $this->get('/cleanonlinelog', 'App\Controllers\AdminController:cleanOnlinelog');
+    $this->get('/cleantrafficlog', 'App\Controllers\AdminController:cleantrafficlog');
     // app config
     $this->get('/config', 'App\Controllers\AdminController:config');
     $this->put('/config', 'App\Controllers\AdminController:updateConfig');
