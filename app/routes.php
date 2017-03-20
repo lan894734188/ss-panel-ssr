@@ -86,11 +86,12 @@ $app->group('/password', function () {
 $app->group('/admin', function () {
     $this->get('', 'App\Controllers\AdminController:index');
     $this->get('/', 'App\Controllers\AdminController:index');
+    $this->get('/sys', 'App\Controllers\AdminController:sysinfo');
     $this->get('/trafficlog', 'App\Controllers\AdminController:trafficLog');
     $this->get('/checkinlog', 'App\Controllers\AdminController:checkinLog');
-    $this->get('/cleannodelog', 'App\Controllers\AdminController:cleanNodelog');
-    $this->get('/cleanonlinelog', 'App\Controllers\AdminController:cleanOnlinelog');
-    $this->get('/cleantrafficlog', 'App\Controllers\AdminController:cleantrafficlog');
+    $this->post('/cleannodelog', 'App\Controllers\AdminController:cleanNodelog');
+    $this->post('/cleanonlinelog', 'App\Controllers\AdminController:cleanOnlinelog');
+    $this->post('/cleantrafficlog', 'App\Controllers\AdminController:cleantrafficlog');
     // app config
     $this->get('/config', 'App\Controllers\AdminController:config');
     $this->put('/config', 'App\Controllers\AdminController:updateConfig');
