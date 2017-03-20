@@ -10,17 +10,6 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            <div class="col-md-12">
-                <div id="msg-success" class="alert alert-info alert-dismissable" style="display: none;">
-                    <button type="button" class="close" id="ok-close" aria-hidden="true">&times;</button>
-                    <h4><i class="icon fa fa-info"></i> 成功!</h4>
-
-                    <p id="msg-success-p"></p>
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
             <div class="col-md-6">
                 <div class="box box-primary">
                     <div class="box-header">
@@ -73,8 +62,7 @@
                 dataType: "json",
                 success: function (data) {
                     if (data.ret==1) {
-                        $("#msg-success").show(100);
-                        //$("#msg-success-p").html(data.msg);
+                        alert("清理成功");
                     }else{
                         alert("发生错误");
                     }
@@ -95,8 +83,7 @@
                 dataType: "json",
                 success: function (data) {
                     if (data.ret==1) {
-                        $("#msg-success").show(100);
-                        //$("#msg-success-p").html(data.msg);
+                        alert("清理成功");
                     }else{
                         alert("发生错误");
                     }
@@ -117,8 +104,7 @@
                 dataType: "json",
                 success: function (data) {
                     if (data.ret==1) {
-                        $("#msg-success").show(100);
-                        //$("#msg-success-p").html(data.msg);
+                        alert("清理成功");
                     }else{
                         alert("发生错误");
                     }
