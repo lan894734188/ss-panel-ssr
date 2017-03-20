@@ -62,10 +62,7 @@
                 dataType: "json",
                 data: {},
                 success: function (data) {
-                    if (data.ret) {
-                        $("#msg-success").show(100);
-                        //$("#msg-success-p").html(data.msg);
-                    }
+                    $("#msg-success").show(100);
                 },
                 error: function (jqXHR) {
                     alert("发生错误：" + jqXHR.status);
