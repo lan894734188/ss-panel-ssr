@@ -3,8 +3,7 @@
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-            系统清理
-            <small>A</small>
+            系统维护
         </h1>
     </section>
     <!-- Main content -->
