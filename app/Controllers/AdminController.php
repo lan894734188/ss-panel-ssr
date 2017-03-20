@@ -136,11 +136,30 @@ class AdminController extends UserController
     }
     public function cleanNodelog($request, $response, $args)
     {
-        if($clean = NodeInfoLog::truncate();){
+        if($clean = NodeInfoLog::TRUNCATE()){
             $res['ret'] = 1;
-            $res['msg'] = "清理成功";
+            return $response->getBody()->write(json_encode($res));
         }
         $res['ret'] = 0;
-        return $response->getBody()->write(json_encode($res));  
+        return $response->getBody()->write(json_encode($res));
     }
+    public function cleanOnlinelog($request, $response, $args)
+    {
+        if($clean = NodeOnlineLog::TRUNCATE()){
+            $res['ret'] = 1;
+            return $response->getBody()->write(json_encode($res));
+        }
+        $res['ret'] = 0;
+        return $response->getBody()->write(json_encode($res));
+    }
+    public function cleantrafficlog($request, $response, $args)
+    {
+        if($clean = TrafficLog::TRUNCATE()){
+            $res['ret'] = 1;
+            return $response->getBody()->write(json_encode($res));
+        }
+        $res['ret'] = 0;
+        return $response->getBody()->write(json_encode($res));
+    }
+
 }
