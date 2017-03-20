@@ -19,7 +19,7 @@
                         <p>该信息包括节点在线时间和负载</p>
                     </div>
                     <div class="box-footer">
-                        <button id="info" class="btn btn-primary">确认清理</button>
+                        <button id="info" type="submit" name="action" class="btn btn-primary">确认清理</button>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                         <p>该信息包括节点在线人数的历史信息</p>
                     </div>
                     <div class="box-footer">
-                        <button id="online" class="btn btn-primary">确认清理</button>
+                        <button id="online" type="submit" name="action" class="btn btn-primary">确认清理</button>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                         <span>该选项不会清零用户流量 但可能会导致一次流量结算不准确</span>
                     </div>
                     <div class="box-footer">
-                        <button id="traffic" class="btn btn-primary">确认清理</button>
+                        <button id="traffic" type="submit" name="action" class="btn btn-primary">确认清理</button>
                     </div>
                 </div>
             </div>
