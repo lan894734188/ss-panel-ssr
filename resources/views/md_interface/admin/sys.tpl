@@ -10,6 +10,17 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
+            <div class="col-md-12">
+                <div id="msg-success" class="alert alert-info alert-dismissable" style="display: none;">
+                    <button type="button" class="close" id="ok-close" aria-hidden="true">&times;</button>
+                    <h4><i class="icon fa fa-info"></i> 成功!</h4>
+
+                    <p id="msg-success-p"></p>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-6">
                 <div class="box box-primary">
                     <div class="box-header">
@@ -61,7 +72,12 @@
                 url: "/admin/cleannodelog",
                 dataType: "json",
                 success: function (data) {
-                    $("#msg-success").show(100);
+                    if (data.ret==1) {
+                        $("#msg-success").show(100);
+                        //$("#msg-success-p").html(data.msg);
+                    }else{
+                        alert("发生错误");
+                    }
                 },
                 error: function (jqXHR) {
                     alert("发生错误：" + jqXHR.status);
@@ -77,11 +93,12 @@
                 type: "POST",
                 url: "/admin/cleanonlinelog",
                 dataType: "json",
-                data: {},
                 success: function (data) {
-                    if (data.ret) {
+                    if (data.ret==1) {
                         $("#msg-success").show(100);
                         //$("#msg-success-p").html(data.msg);
+                    }else{
+                        alert("发生错误");
                     }
                 },
                 error: function (jqXHR) {
@@ -98,11 +115,12 @@
                 type: "POST",
                 url: "/admin/cleantrafficlog",
                 dataType: "json",
-                data: {},
                 success: function (data) {
-                    if (data.ret) {
+                    if (data.ret==1) {
                         $("#msg-success").show(100);
                         //$("#msg-success-p").html(data.msg);
+                    }else{
+                        alert("发生错误");
                     }
                 },
                 error: function (jqXHR) {
