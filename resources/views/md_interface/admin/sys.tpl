@@ -44,6 +44,7 @@
                     <div class="box-body">
                         <p>该信息包括所有用户的使用流量信息,流量结算信息,使用节点</p>
                         <span>该选项不会清零用户流量 但可能会导致一次流量结算不准确</span>
+                        <span>同时节点产生流量数据也将重置</span>
                     </div>
                     <div class="box-footer">
                         <button id="traffic" type="submit" name="action" class="btn btn-primary">确认清理</button>
