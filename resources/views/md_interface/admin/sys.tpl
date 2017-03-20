@@ -60,6 +60,7 @@
                 type: "POST",
                 url: "/admin/cleannodelog",
                 dataType: "json",
+                data: {},
                 success: function (data) {
                     if (data.ret) {
                         $("#msg-success").show(100);
@@ -80,6 +81,7 @@
                 type: "POST",
                 url: "/admin/cleanonlinelog",
                 dataType: "json",
+                data: {},
                 success: function (data) {
                     if (data.ret) {
                         $("#msg-success").show(100);
@@ -100,6 +102,7 @@
                 type: "POST",
                 url: "/admin/cleantrafficlog",
                 dataType: "json",
+                data: {},
                 success: function (data) {
                     if (data.ret) {
                         $("#msg-success").show(100);
