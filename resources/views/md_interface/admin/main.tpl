@@ -134,16 +134,16 @@
                         <i class="fa fa-history"></i> <span>流量记录</span>
                     </a>
                 </li>
-                
-                <li>
-                    <a href="/admin/cleanlog">
-                        <i class="fa fa-history"></i> <span>清理日志</span>
-                    </a>
-                </li>
 
                 <li>
                     <a href="/admin/checkinlog">
                         <i class="fa  fa-check-square"></i> <span>签到日志</span>
+                    </a>
+                </li>
+         
+                <li>
+                    <a href="/admin/sys">
+                        <i class="fa fa-history"></i> <span>系统维护</span>
                     </a>
                 </li>
 
