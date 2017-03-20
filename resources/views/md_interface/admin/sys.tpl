@@ -60,7 +60,6 @@
                 type: "POST",
                 url: "/admin/cleannodelog",
                 dataType: "json",
-                data: {},
                 success: function (data) {
                     $("#msg-success").show(100);
                 },
