@@ -38,7 +38,7 @@ class UserController extends BaseController
     {
         $user_index_msg = DbConfig::get('user-index');
         $othershop = Config::get('ManyShopGroup');
-        if($user->g == $othershop){
+        if($this->user->g == $othershop){
             $user_index_topmsg = DbConfig::get('user-index-top-other');
         }else{
             $user_index_topmsg = DbConfig::get('user-index-top');
