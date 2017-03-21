@@ -37,7 +37,12 @@ class UserController extends BaseController
     public function index($request, $response, $args)
     {
         $user_index_msg = DbConfig::get('user-index');
-        $user_index_topmsg = DbConfig::get('user-index-top');
+        $othershop = Config::get('ManyShopGroup');
+        if($user->g == $othershop){
+            $user_index_topmsg = DbConfig::get('user-index-top-other');
+        }else{
+            $user_index_topmsg = DbConfig::get('user-index-top');
+        }
         if ($user_index_topmsg == null) {
             $user_index_topmsg = "在后台修改用户中心置顶公告...";
         }
