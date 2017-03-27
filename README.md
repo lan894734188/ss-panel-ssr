@@ -6,7 +6,8 @@ SS-Panel-SSR
 优化移动端视觉<br>
 <br>
 去掉github链接的我会拉进静态库cdn黑名单
-<br>
+</br>
+
 贡献者/Contributors
 ----------------
 批发靓鸡仔<br>
