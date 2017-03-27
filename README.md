@@ -4,7 +4,9 @@ SS-Panel-SSR
 --------
 这是个轻量化方向的panel &nbsp; 用不到或者少用的功能可能都砍掉<br>
 优化移动端视觉<br>
-
+<br>
+去掉github链接的我会拉进静态库cdn黑名单
+<br>
 贡献者/Contributors
 ----------------
 批发靓鸡仔<br>
