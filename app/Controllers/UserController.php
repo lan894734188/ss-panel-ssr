@@ -141,7 +141,7 @@ class UserController extends BaseController
         
         $code=PassCode::where("passcode","=",$code)->where("type","=",0)->where("level","<=",$user->level)->where("g","=",$user->g)->orwhere("g","=",0)->first();
 
-        if ( $code == null) {
+        if ( $code == null || $code->type == 1) {
             $res['ret'] = 0;
             $res['msg'] = "此充值码错误";
             return $response->getBody()->write(json_encode($res));
