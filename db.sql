@@ -45,7 +45,7 @@ CREATE TABLE `shop_code` (
 `size`  varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
 `use_time`  datetime NULL DEFAULT NULL ,
 `useing_userid`  varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
-`created_at`  timestamp NOT NULL ON UPDATE CURRENT_TIMESTAMP ,
+`created_at`  timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ,
 PRIMARY KEY (`id`),
 INDEX `type` (`type`) USING BTREE 
 )
