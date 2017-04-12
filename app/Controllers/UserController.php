@@ -31,7 +31,9 @@ class UserController extends BaseController
     public function view()
     {
         $userFooter = DbConfig::get('user-footer');
-        return parent::view()->assign('userFooter', $userFooter);
+        $cdnfunction = Config::get('CDNType');
+        $cdndomain = Config::get('CDNDomain');
+        return parent::view()->assign('CDNType', $cdnfunction)->assign('CDNDomain', $cdndomain)->assign('userFooter', $userFooter);
     }
 
     public function index($request, $response, $args)
@@ -58,17 +60,12 @@ class UserController extends BaseController
                         $query->where("g","=",$this->user->g)
                         ->orWhere("g","=",0);})
                     ->where("level","<=",$this->user->level)->get();
-
-        $cdnfunction = Config::get('CDNType');
-        $cdndomain = Config::get('CDNDomain');
         return $this->view()
                     ->assign('user_index_msg', $user_index_msg)
                     ->assign('user_index_topmsg', $user_index_topmsg)
                     ->assign('nodes', $nodes)
                     ->assign('user', $this->user)
                     ->assign('node_msg', $node_msg)
-                    ->assign('CDNType', $cdnfunction)
-                    ->assign('CDNDomain', $cdndomain)
                     ->display('user/index.tpl');
     }
 
@@ -172,9 +169,7 @@ class UserController extends BaseController
     public function invite($request, $response, $args)
     {
         $codes = $this->user->inviteCodes();
-        $cdnfunction = Config::get('CDNType');
-        $cdndomain = Config::get('CDNDomain');
-        return $this->view()->assign('codes', $codes)->assign('CDNType', $cdnfunction)->assign('CDNDomain', $cdndomain)->display('user/invite.tpl');
+        return $this->view()->assign('codes', $codes)->display('user/invite.tpl');
     }
 
     public function doInvite($request, $response, $args)
@@ -392,10 +387,8 @@ class UserController extends BaseController
         if (isset($request->getQueryParams()["page"])) {
             $pageNum = $request->getQueryParams()["page"];
         }
-        $cdnfunction = Config::get('CDNType');
-        $cdndomain = Config::get('CDNDomain');
         $traffic = TrafficLog::where('user_id', $this->user->id)->orderBy('id', 'desc')->paginate(15, ['*'], 'page', $pageNum);
         $traffic->setPath('/user/trafficlog');
-        return $this->view()->assign('logs', $traffic)->assign('CDNType', $cdnfunction)->assign('CDNDomain', $cdndomain)->display('user/trafficlog.tpl');
+        return $this->view()->assign('logs', $traffic)->display('user/trafficlog.tpl');
     }
 }
