@@ -27,11 +27,13 @@ class HomeController extends BaseController
         $msg = DbConfig::get('home-code'); //code
         $codes = InviteCode::where('user_id', '=', '0')->take(10)->get();
         $cdnfunction = Config::get('CDNType');
+        $cdndomain = Config::get('CDNDomain');
         return $this->view()
                      ->assign('homeIndexMsg', $homeIndexMsg)
                      ->assign('codes', $codes)
                      ->assign('msg', $msg)
                      ->assign('CDNType', $cdnfunction)
+                     ->assign('CDNDomain', $cdndomain)
                      ->display('index.tpl');
     }
 
@@ -55,7 +57,8 @@ class HomeController extends BaseController
     public function tos()
     {
         $cdnfunction = Config::get('CDNType');
-        return $this->view()->assign('CDNType', $cdnfunction)->display('tos.tpl');
+        $cdndomain = Config::get('CDNDomain');
+        return $this->view()->assign('CDNType', $cdnfunction)->assign('CDNDomain', $cdndomain)->display('tos.tpl');
     }
 
     public function postDebug(Request $request,Response $response, $args)
