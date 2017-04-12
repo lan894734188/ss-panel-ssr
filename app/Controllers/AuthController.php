@@ -36,6 +36,13 @@ class AuthController extends BaseController
     // Verify Email
     const VerifyEmailWrongEmail = 701;
     const VerifyEmailExist = 702;
+    
+    public function view()
+    {
+        $cdnfunction = Config::get('CDNType');
+        $cdndomain = Config::get('CDNDomain');
+        return parent::view()->assign('CDNType', $cdnfunction)->assign('CDNDomain', $cdndomain);
+    }
 
     public function login($request, $response, $args)
     {
