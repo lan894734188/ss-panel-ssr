@@ -21,19 +21,22 @@ use App\Utils\Http;
 class HomeController extends BaseController
 {
 
+    public function view()
+    {
+        $cdnfunction = Config::get('CDNType');
+        $cdndomain = Config::get('CDNDomain');
+        return parent::view()->assign('CDNType', $cdnfunction)->assign('CDNDomain', $cdndomain);
+    }
+    
     public function index()
     {
         $homeIndexMsg = DbConfig::get('home-index');
         $msg = DbConfig::get('home-code'); //code
         $codes = InviteCode::where('user_id', '=', '0')->take(10)->get();
-        $cdnfunction = Config::get('CDNType');
-        $cdndomain = Config::get('CDNDomain');
         return $this->view()
                      ->assign('homeIndexMsg', $homeIndexMsg)
                      ->assign('codes', $codes)
                      ->assign('msg', $msg)
-                     ->assign('CDNType', $cdnfunction)
-                     ->assign('CDNDomain', $cdndomain)
                      ->display('index.tpl');
     }
 
