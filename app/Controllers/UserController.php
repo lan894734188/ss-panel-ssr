@@ -60,6 +60,7 @@ class UserController extends BaseController
                     ->where("level","<=",$this->user->level)->get();
 
         $cdnfunction = Config::get('CDNType');
+        $cdndomain = Config::get('CDNDomain');
         return $this->view()
                     ->assign('user_index_msg', $user_index_msg)
                     ->assign('user_index_topmsg', $user_index_topmsg)
@@ -67,6 +68,7 @@ class UserController extends BaseController
                     ->assign('user', $this->user)
                     ->assign('node_msg', $node_msg)
                     ->assign('CDNType', $cdnfunction)
+                    ->assign('CDNDomain', $cdndomain)
                     ->display('user/index.tpl');
     }
 
@@ -389,8 +391,9 @@ class UserController extends BaseController
             $pageNum = $request->getQueryParams()["page"];
         }
         $cdnfunction = Config::get('CDNType');
+        $cdndomain = Config::get('CDNDomain');
         $traffic = TrafficLog::where('user_id', $this->user->id)->orderBy('id', 'desc')->paginate(15, ['*'], 'page', $pageNum);
         $traffic->setPath('/user/trafficlog');
-        return $this->view()->assign('logs', $traffic)->assign('CDNType', $cdnfunction)->display('user/trafficlog.tpl');
+        return $this->view()->assign('logs', $traffic)->assign('CDNType', $cdnfunction)->assign('CDNDomain', $cdndomain)->display('user/trafficlog.tpl');
     }
 }
