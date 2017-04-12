@@ -169,11 +169,13 @@ class UserController extends BaseController
     }
 
 
-    //public function invite($request, $response, $args)
-    //{
-    //   $codes = $this->user->inviteCodes();
-    //    return $this->view()->assign('codes', $codes)->display('user/invite.tpl');
-    //}
+    public function invite($request, $response, $args)
+    {
+        $codes = $this->user->inviteCodes();
+        $cdnfunction = Config::get('CDNType');
+        $cdndomain = Config::get('CDNDomain');
+        return $this->view()->assign('codes', $codes)->assign('CDNType', $cdnfunction)->assign('CDNDomain', $cdndomain)->display('user/invite.tpl');
+    }
 
     public function doInvite($request, $response, $args)
     {
