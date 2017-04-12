@@ -32,7 +32,7 @@ $app->add(new WhoopsMiddleware);
 
 // Home
 $app->get('/', 'App\Controllers\HomeController:index');
-#$app->get('/code', 'App\Controllers\HomeController:index');
+//$app->get('/code', 'App\Controllers\HomeController:index');
 $app->get('/tos', 'App\Controllers\HomeController:tos');
 $app->get('/debug', 'App\Controllers\HomeController:debug');
 $app->post('/debug', 'App\Controllers\HomeController:postDebug');
@@ -42,10 +42,10 @@ $app->group('/user', function () {
     $this->get('', 'App\Controllers\UserController:index');
     $this->get('/', 'App\Controllers\UserController:index');
     $this->post('/checkin', 'App\Controllers\UserController:doCheckin');
-    $this->get('/node', 'App\Controllers\UserController:node');
-    $this->get('/node/{id}', 'App\Controllers\UserController:nodeInfo');
+//    $this->get('/node', 'App\Controllers\UserController:node');
+//    $this->get('/node/{id}', 'App\Controllers\UserController:nodeInfo');
     $this->post('/nodeqrcode/{id}', 'App\Controllers\UserController:nodeqrcode');
-#    $this->get('/profile', 'App\Controllers\UserController:profile');
+//    $this->get('/profile', 'App\Controllers\UserController:profile');
     $this->get('/invite', 'App\Controllers\UserController:invite');
     $this->post('/invite', 'App\Controllers\UserController:doInvite');
     $this->post('/passcode', 'App\Controllers\UserController:passcode');
@@ -57,9 +57,9 @@ $app->group('/user', function () {
     $this->post('/gacheck', 'App\Controllers\UserController:GaCheck');
     $this->post('/gaset', 'App\Controllers\UserController:GaSet');
     $this->get('/gareset', 'App\Controllers\UserController:GaReset');
-#    $this->get('/sys', 'App\Controllers\UserController:sys');
+//    $this->get('/sys', 'App\Controllers\UserController:sys');
     $this->get('/trafficlog', 'App\Controllers\UserController:trafficLog');
-#    $this->get('/kill', 'App\Controllers\UserController:kill');
+//    $this->get('/kill', 'App\Controllers\UserController:kill');
     $this->post('/kill', 'App\Controllers\UserController:handleKill');
     $this->get('/logout', 'App\Controllers\UserController:logout');
 })->add(new Auth());
@@ -126,10 +126,10 @@ $app->group('/admin', function () {
 
 // API
 $app->group('/api', function () {
-    $this->get('/token/{token}', 'App\Controllers\ApiController:token');
-    $this->post('/token', 'App\Controllers\ApiController:newToken');
-    $this->get('/node', 'App\Controllers\ApiController:node')->add(new Api());
-    $this->get('/user/{id}', 'App\Controllers\ApiController:userInfo')->add(new Api());
+//    $this->get('/token/{token}', 'App\Controllers\ApiController:token');
+//    $this->post('/token', 'App\Controllers\ApiController:newToken');
+//    $this->get('/node', 'App\Controllers\ApiController:node')->add(new Api());
+//    $this->get('/user/{id}', 'App\Controllers\ApiController:userInfo')->add(new Api());
 });
 
 // mu
