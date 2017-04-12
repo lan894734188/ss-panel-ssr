@@ -59,20 +59,22 @@ class UserController extends BaseController
                         ->orWhere("g","=",0);})
                     ->where("level","<=",$this->user->level)->get();
 
+        $cdnfunction = Config::get('CDNType');
         return $this->view()
                     ->assign('user_index_msg', $user_index_msg)
                     ->assign('user_index_topmsg', $user_index_topmsg)
                     ->assign('nodes', $nodes)
                     ->assign('user', $this->user)
                     ->assign('node_msg', $node_msg)
+                    ->assign('CDNType', $cdnfunction)
                     ->display('user/index.tpl');
     }
 
-    public function node($request, $response, $args)
-    {
+   // public function node($request, $response, $args)
+   // {
         
        // return $this->view()->assign('nodes', $nodes)->assign('user', $user)->assign('msg', $msg)->display('user/node.tpl');
-    }
+   // }
 
     public function nodeqrcode($request, $response, $args)
     {
@@ -118,15 +120,15 @@ class UserController extends BaseController
 
     }
 
-    public function profile($request, $response, $args)
-    {
-        return $this->view()->display('user/profile.tpl');
-    }
+   // public function profile($request, $response, $args)
+   // {
+   //     return $this->view()->display('user/profile.tpl');
+   // }
 
-    public function edit($request, $response, $args)
-    {
-        return $this->view()->display('user/edit.tpl');
-    }
+   // public function edit($request, $response, $args)
+   // {
+   //     return $this->view()->display('user/edit.tpl');
+   // }
 
     public function passcode($request, $response, $args)
     {
@@ -165,11 +167,11 @@ class UserController extends BaseController
     }
 
 
-    public function invite($request, $response, $args)
-    {
-        $codes = $this->user->inviteCodes();
-        return $this->view()->assign('codes', $codes)->display('user/invite.tpl');
-    }
+    //public function invite($request, $response, $args)
+    //{
+    //   $codes = $this->user->inviteCodes();
+    //    return $this->view()->assign('codes', $codes)->display('user/invite.tpl');
+    //}
 
     public function doInvite($request, $response, $args)
     {
@@ -191,10 +193,10 @@ class UserController extends BaseController
         return $this->echoJson($response, $res);
     }
 
-    public function sys($request, $response, $args)
-    {
-        return $this->view()->assign('ana', "")->display('user/sys.tpl');
-    }
+    //public function sys($request, $response, $args)
+    //{
+    //    return $this->view()->assign('ana', "")->display('user/sys.tpl');
+    //}
 
     public function updatePassword($request, $response, $args)
     {
@@ -357,10 +359,10 @@ class UserController extends BaseController
         return $this->echoJson($response, $res);
     }
 
-    public function kill($request, $response, $args)
-    {
-        return $this->view()->display('user/kill.tpl');
-    }
+    //public function kill($request, $response, $args)
+    //{
+    //    return $this->view()->display('user/kill.tpl');
+    //}
 
     public function handleKill($request, $response, $args)
     {
@@ -386,8 +388,9 @@ class UserController extends BaseController
         if (isset($request->getQueryParams()["page"])) {
             $pageNum = $request->getQueryParams()["page"];
         }
+        $cdnfunction = Config::get('CDNType');
         $traffic = TrafficLog::where('user_id', $this->user->id)->orderBy('id', 'desc')->paginate(15, ['*'], 'page', $pageNum);
         $traffic->setPath('/user/trafficlog');
-        return $this->view()->assign('logs', $traffic)->display('user/trafficlog.tpl');
+        return $this->view()->assign('logs', $traffic)->assign('CDNType', $cdnfunction)->display('user/trafficlog.tpl');
     }
 }
