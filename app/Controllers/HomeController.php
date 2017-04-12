@@ -21,12 +21,23 @@ use App\Utils\Http;
 class HomeController extends BaseController
 {
 
+    public function view()
+    {
+        $cdnfunction = Config::get('CDNType');
+        $cdndomain = Config::get('CDNDomain');
+        return parent::view()->assign('CDNType', $cdnfunction)->assign('CDNDomain', $cdndomain);
+    }
+    
     public function index()
     {
         $homeIndexMsg = DbConfig::get('home-index');
         $msg = DbConfig::get('home-code'); //code
         $codes = InviteCode::where('user_id', '=', '0')->take(10)->get();
-        return $this->view()->assign('homeIndexMsg', $homeIndexMsg)->assign('codes', $codes)->assign('msg', $msg)->display('index.tpl');
+        return $this->view()
+                     ->assign('homeIndexMsg', $homeIndexMsg)
+                     ->assign('codes', $codes)
+                     ->assign('msg', $msg)
+                     ->display('index.tpl');
     }
 
 
@@ -48,7 +59,9 @@ class HomeController extends BaseController
 
     public function tos()
     {
-        return $this->view()->display('tos.tpl');
+        $cdnfunction = Config::get('CDNType');
+        $cdndomain = Config::get('CDNDomain');
+        return $this->view()->assign('CDNType', $cdnfunction)->assign('CDNDomain', $cdndomain)->display('tos.tpl');
     }
 
     public function postDebug(Request $request,Response $response, $args)

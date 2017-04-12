@@ -31,7 +31,9 @@ class UserController extends BaseController
     public function view()
     {
         $userFooter = DbConfig::get('user-footer');
-        return parent::view()->assign('userFooter', $userFooter);
+        $cdnfunction = Config::get('CDNType');
+        $cdndomain = Config::get('CDNDomain');
+        return parent::view()->assign('CDNType', $cdnfunction)->assign('CDNDomain', $cdndomain)->assign('userFooter', $userFooter);
     }
 
     public function index($request, $response, $args)
@@ -58,7 +60,6 @@ class UserController extends BaseController
                         $query->where("g","=",$this->user->g)
                         ->orWhere("g","=",0);})
                     ->where("level","<=",$this->user->level)->get();
-
         return $this->view()
                     ->assign('user_index_msg', $user_index_msg)
                     ->assign('user_index_topmsg', $user_index_topmsg)
@@ -68,11 +69,11 @@ class UserController extends BaseController
                     ->display('user/index.tpl');
     }
 
-    public function node($request, $response, $args)
-    {
+   // public function node($request, $response, $args)
+   // {
         
        // return $this->view()->assign('nodes', $nodes)->assign('user', $user)->assign('msg', $msg)->display('user/node.tpl');
-    }
+   // }
 
     public function nodeqrcode($request, $response, $args)
     {
@@ -118,15 +119,15 @@ class UserController extends BaseController
 
     }
 
-    public function profile($request, $response, $args)
-    {
-        return $this->view()->display('user/profile.tpl');
-    }
+   // public function profile($request, $response, $args)
+   // {
+   //     return $this->view()->display('user/profile.tpl');
+   // }
 
-    public function edit($request, $response, $args)
-    {
-        return $this->view()->display('user/edit.tpl');
-    }
+   // public function edit($request, $response, $args)
+   // {
+   //     return $this->view()->display('user/edit.tpl');
+   // }
 
     public function passcode($request, $response, $args)
     {
@@ -191,10 +192,10 @@ class UserController extends BaseController
         return $this->echoJson($response, $res);
     }
 
-    public function sys($request, $response, $args)
-    {
-        return $this->view()->assign('ana', "")->display('user/sys.tpl');
-    }
+    //public function sys($request, $response, $args)
+    //{
+    //    return $this->view()->assign('ana', "")->display('user/sys.tpl');
+    //}
 
     public function updatePassword($request, $response, $args)
     {
@@ -357,10 +358,10 @@ class UserController extends BaseController
         return $this->echoJson($response, $res);
     }
 
-    public function kill($request, $response, $args)
-    {
-        return $this->view()->display('user/kill.tpl');
-    }
+    //public function kill($request, $response, $args)
+    //{
+    //    return $this->view()->display('user/kill.tpl');
+    //}
 
     public function handleKill($request, $response, $args)
     {
