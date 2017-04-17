@@ -30,7 +30,7 @@ class Node extends Model
         if((time()-$errorcheck)>600){
             return ture;
         }
-        return null;
+        return false;
     }
 
     public function getNodeUptime()
