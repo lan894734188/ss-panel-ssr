@@ -28,7 +28,7 @@ class Node extends Model
     {
         $time = $this->getLastNodeInfolog();
         if((time()-$time->uptime)>600){
-            return 1;
+            return "1";
         }
         return null;
     }
