@@ -158,7 +158,7 @@
 																	<tbody>
 																		<tr>
 																			<td>狀態</td>
-																			<td>{if $node->getNodeError()=false}离线{else}{$node->status}{/if}</td>
+																			<td>{if $node->getNodeError() eq 'false'}离线{else}{$node->status}{/if}</td>
 																		</tr>
 																		<tr>
 																			<td>在綫人數</td>
