@@ -23,6 +23,15 @@ class Node extends Model
         }
         return $log;
     }
+    
+    public function getNodeError()
+    {
+        $time = $this->getLastNodeInfolog();
+        if((time()-$time->uptime)>600){
+            return 1;
+        }
+        return null;
+    }
 
     public function getNodeUptime()
     {
