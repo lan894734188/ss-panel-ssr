@@ -158,27 +158,27 @@
 																	<tbody>
 																		<tr>
 																			<td>狀態</td>
-																			<td>{if $nodes->getNodeError}离线{else}{$nodes->status}{/if}</td>
+																			<td>{if $node->getNodeError}离线{else}{$node->status}{/if}</td>
 																		</tr>
 																		<tr>
 																			<td>在綫人數</td>
-																			<td>{$nodes->getOnlineUserCount()}</td>
+																			<td>{$node->getOnlineUserCount()}</td>
 																		</tr>
 																		<tr>
 																			<td>流量比例</td>
-																			<td>{$nodes->traffic_rate}</td>
+																			<td>{$node->traffic_rate}</td>
 																		</tr>
 																		<tr>
 																			<td>產生流量</td>
-																			<td>{$nodes->getTrafficFromLogs()}</td>
+																			<td>{$node->getTrafficFromLogs()}</td>
 																		</tr>
 																		<tr>
 																			<td>在綫時間</td>
-																			<td>{$nodes->getNodeUptime()}</td>
+																			<td>{$node->getNodeUptime()}</td>
 																		</tr>
 																		<tr>
 																			<td>负载</td>
-																			<td>{$nodes->getNodeLoad()}</td>
+																			<td>{$node->getNodeLoad()}</td>
 																		</tr>
 																	</tbody>
 																</table>
