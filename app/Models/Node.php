@@ -26,9 +26,9 @@ class Node extends Model
     
     public function getNodeError()
     {
-        $errorcheck = $this->getLastNodeInfolog();
-        if((time()-$errorcheck->uptime)>600){
-            return "1";
+        $errorcheck = $this->getLastNodeInfolog()->uptime;
+        if((time()-$errorcheck)>600){
+            return ture;
         }
         return null;
     }
