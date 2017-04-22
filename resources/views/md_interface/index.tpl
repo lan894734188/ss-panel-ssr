@@ -17,7 +17,7 @@
 					<span class="avatar avatar-sm"><img alt="User Image" src="{$user->gravatar}"></span>
 					{else}
 					<span class="access-hide"></span>
-					<span class="avatar avatar-sm"><img alt="User Image" src="../assets/md-interface/images/users/avatar-001.jpg"></span>
+					<span class="avatar avatar-sm"><img alt="User Image" src="{if $CDNType}{$CDNDomain}{else}..{/if}/assets/md-interface/images/users/avatar-001.jpg"></span>
 					{/if}
 				</a>
 				<ul class="dropdown-menu dropdown-menu-right">
