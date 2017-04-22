@@ -26,7 +26,7 @@
 								<div class="card-inner">
 									<p class="text-center">
 										<span class="avatar avatar-inline avatar-lg">
-											<img alt="Login" src="../assets/md-interface/images/users/avatar-001.jpg">
+											<img alt="Login" src="{if $CDNType}{$CDNDomain}{else}..{/if}/assets/md-interface/images/users/avatar-001.jpg">
 										</span>
 									</p>
 									<form class="form">
