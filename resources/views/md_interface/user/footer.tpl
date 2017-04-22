@@ -6,7 +6,7 @@
 	</div>
 	<div style="display:none;">
 	    {md5($config["version"])}
-	</div	
+	</div>
 </footer>
 <!-- analytics -->
 <div style="display:none;">
