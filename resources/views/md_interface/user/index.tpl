@@ -443,7 +443,7 @@
 				    <label class="floating-label" for="method"></label>
 				    <select class="form-control" id="method">
 				        <option value="{$user->method}"> 当前:{$user->method}</option>
-					<option value="">无加密/null</option>
+					<option value="none">无加密/null</option>
 				        <option value="aes-128-cfb">AES-128-CFB</option>
 					<option value="aes-192-cfb">AES-192-CFB</option>
 					<option value="aes-256-cfb">AES-256-CFB</option>
