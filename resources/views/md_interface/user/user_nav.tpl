@@ -17,7 +17,7 @@
 					<a class="waves-attach" href="/user">用户中心/DashBoard</a>
 				</li>
 				<li>
-					<a class="waves-attach">
+					<a class="waves-attach" data-target="#link-set" data-toggle="collapse">
 						连接信息设置/Conn Set
 						<span class="menu-collapse-toggle collapsed waves-attach" data-target="#link-set" data-toggle="collapse">
 							<div class="menu-collapse-toggle-close">
@@ -45,7 +45,7 @@
 					</ul>
 				</li>
 				<li>
-					<a class="waves-attach">
+					<a class="waves-attach" data-target="#ui_menu_account" data-toggle="collapse">
 					账户信息设置/Account Set
 					<span class="menu-collapse-toggle collapsed waves-attach" data-target="#ui_menu_account" data-toggle="collapse">
 						<div class="menu-collapse-toggle-close">
