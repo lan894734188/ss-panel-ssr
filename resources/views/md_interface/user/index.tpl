@@ -439,21 +439,22 @@
 				    <label class="floating-label" for="method"></label>
 				    <select class="form-control" id="method">
 				        <option value="{$user->method}"> 当前:{$user->method}</option>
+					<option value="">无加密/null</option>
 				        <option value="aes-128-cfb">AES-128-CFB</option>
-                        <option value="aes-192-cfb">AES-192-CFB</option>
-                        <option value="aes-256-cfb">AES-256-CFB</option>
-                        <option value="aes-128-ctr">AES-128-CTR</option>
-                        <option value="aes-192-ctr">AES-192-CTR</option>
-                        <option value="aes-256-ctr">AES-256-CTR</option>
-                        <option value="bf-cfb">BF-CFB</option>
-                        <option value="camellia-128-cfb">CAMELLIA-128-CFB</option>
-                        <option value="camellia-192-cfb">CAMELLIA-192-CFB</option>
-                        <option value="camellia-256-cfb">CAMELLIA-256-CFB</option>
-                        <option value="rc4-md5">RC4-MD5</option>
-                        <option value="rc4-md5-6">RC4-MD5-6</option>
-                        <option value="salsa20">SALSA20</option>
-                        <option value="chacha20">CHACHA20</option>
-                        <option value="chacha20-ietf">CHACHA20-IETF</option>
+					<option value="aes-192-cfb">AES-192-CFB</option>
+					<option value="aes-256-cfb">AES-256-CFB</option>
+					<option value="aes-128-ctr">AES-128-CTR</option>
+					<option value="aes-192-ctr">AES-192-CTR</option>
+					<option value="aes-256-ctr">AES-256-CTR</option>
+					<option value="bf-cfb">BF-CFB</option>
+					<option value="camellia-128-cfb">CAMELLIA-128-CFB</option>
+					<option value="camellia-192-cfb">CAMELLIA-192-CFB</option>
+					<option value="camellia-256-cfb">CAMELLIA-256-CFB</option>
+					<option value="rc4-md5">RC4-MD5</option>
+					<option value="rc4-md5-6">RC4-MD5-6</option>
+					<option value="salsa20">SALSA20</option>
+					<option value="chacha20">CHACHA20</option>
+					<option value="chacha20-ietf">CHACHA20-IETF</option>
 				    </select>
 				</div>
 			</div>
