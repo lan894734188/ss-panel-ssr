@@ -9,6 +9,12 @@ use App\Utils\Tools;
 
 class UserController extends AdminController
 {
+    public function view()
+    {
+        $cdnfunction = Config::get('CDNType');
+        $cdndomain = Config::get('CDNDomain');
+        return parent::view()->assign('CDNType', $cdnfunction)->assign('CDNDomain', $cdndomain);
+    }
     public function index($request, $response, $args)
     {
         $pageNum = 1;
