@@ -32,10 +32,7 @@ class BaseController
      */
     public function view()
     {
-        $cdnfunction = Config::get('CDNType');
-        $cdndomain = Config::get('CDNDomain');
-        return $this->assign('CDNType', $cdnfunction)->assign('CDNDomain', $cdndomain)
-->smarty();
+        return $this->smarty();
     }
 
     /**
