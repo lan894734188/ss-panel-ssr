@@ -55,9 +55,7 @@
 						<div class="card">
 							<div class="card-main">
 								<div class="card-inner">
-									<p>A secure socks5 proxy, designed to protect your Internet traffic.</p>
-									<blockquote>If you want to keep a secret, you must also hide it from yourself.</blockquote>
-									<h3 class="h5 margin-bottom-no margin-top-no">公告 / Announcement</h3>
+									<h3 class="h5 margin-bottom-no margin-top-no"><p class="card-heading">公告 / Announcement</p></h3>
 									{$msg}
 								</div>
 							</div>
