@@ -54,8 +54,12 @@
 					<section class="content-inner margin-top-no">
 						<div class="card">
 							<div class="card-main">
+								<div class="card-header">
+									<div class="card-inner">
+										<h3 class="h5 margin-bottom-no margin-top-no">公告 / Announcement</h3>
+									</div>
+								</div>
 								<div class="card-inner">
-									<h3 class="h5 margin-bottom-no margin-top-no"><p class="card-heading">公告 / Announcement</p></h3>
 									{$msg}
 								</div>
 							</div>
