@@ -81,7 +81,7 @@
 								</div>
 							</div>
 						</div>
-						{if $isrefon}
+						{if !$isrefon}
 						<div class="card">
 							<div class="card-main">
 								<div class="card-inner margin-bottom-no">
