@@ -81,6 +81,7 @@
 								</div>
 							</div>
 						</div>
+						{if $isrefon}
 						<div class="card">
 							<div class="card-main">
 								<div class="card-inner margin-bottom-no">
@@ -116,6 +117,7 @@
 								</div>
 							</div>
 						</div>
+						{/if}
 					</section>
 				</div>
 			</div>
