@@ -33,10 +33,12 @@ class HomeController extends BaseController
         $homeIndexMsg = DbConfig::get('home-index');
         $msg = DbConfig::get('home-code'); //code
         $codes = InviteCode::where('user_id', '=', '0')->take(10)->get();
+        $isref = Config::get('REFON');
         return $this->view()
                      ->assign('homeIndexMsg', $homeIndexMsg)
                      ->assign('codes', $codes)
                      ->assign('msg', $msg)
+                     ->assign('isrefon', $isref)
                      ->display('index.tpl');
     }
 
