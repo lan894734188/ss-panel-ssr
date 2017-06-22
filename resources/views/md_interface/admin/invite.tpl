@@ -76,7 +76,7 @@
                         <h3 class="box-title">注意</h3>
                     </div>
                     <div class="box-footer">
-                        <p>公共邀请码（类别为0的邀请码）请<a href="/code">在这里查看</a>。</p>
+                        <p>公共邀请码（类别为0的邀请码）请<a href="/">在这里查看</a>。</p>
                     </div>
                 </div>
             </div>
