@@ -20,7 +20,7 @@ class RSSController extends BaseController
 		$tokenauth = RSS::where('token',$token)->first();
 		if (!$tokenauth) {
 			return 403;
-		}else{
+		}
 		$user = User::where('id', $tokenauth->id)->first();
 		$g=$user->g;
 		$level=$user->level;
@@ -46,7 +46,7 @@ class RSSController extends BaseController
 		    $ssr_all_link = "ssr://" . Tools::base64_url_encode($ssrurl);
 		    $rss_link .= $ssr_all_link."\n";
 		    return Tools::base64_url_encode($rss_link);
-		}
+		
 
 		
 		}
