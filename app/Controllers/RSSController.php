@@ -23,14 +23,14 @@ class RSSController extends BaseController
 			return 403;
 		}else{
 		$id=$tokenauth->id;
-		$user = User::where('id', $id)->get();
+		$user = User::where('id', $id)->first();
 			var_dump($user);
 			var_dump($tokenauth->id);
 			var_dump(md5($user->email+Config::get('token_salt')));
 		$g=$user->g;
 		$level=$user->level;
 		
-		$nodepacket = Node::where('type', '1')->where("g", $user->g)->where("level", $user->level)->orderBy('sort')->get();
+		$nodepacket = Node::where('type', '1')->where("g", $user->g)->where("level", $user->level)->orderBy('sort');
 		var_dump($nodepacket);
 	    	$nodes_array = $nodepacket-> toArray();
 
