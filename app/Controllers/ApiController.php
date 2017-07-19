@@ -102,7 +102,7 @@ class ApiController extends BaseController
 		if (!$tokenauth) {
 			return 403;
 		}
-		$user = User::where('id', $tokenauth->id)->first();
+		$user = User::find($tokenauth->id);
 		$g=$user->g;
 		$level=$user->level;
 		var_dump($g);
