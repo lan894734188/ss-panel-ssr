@@ -6,6 +6,7 @@ use App\Models\CheckInLog;
 use App\Models\InviteCode;
 use App\Models\PassCode;
 use App\Models\Node;
+se App\Models\RSS;
 use App\Models\TrafficLog;
 use App\Services\Auth;
 use App\Services\Config;
@@ -60,7 +61,18 @@ class UserController extends BaseController
                         $query->where("g","=",$this->user->g)
                         ->orWhere("g","=",0);})
                     ->where("level","<=",$this->user->level)->get();
-        $user_rss = Config::get('baseUrl')."/rss/".md5(($user->id+Config::get('token_salt')));
+        
+        $rss_token = RSS::where('user_id',$user->id)->first();
+        if ($rss_token == null)) {
+            $new_rss_token = new RSS();
+            $new_rss_token->token = md5(($user->email+DbConfig::get('token_salt'));
+            $new_rss_token->user_id = $this->user->id;
+            $new_rss_token->create_time = time();
+            $new_rss_token->save();
+        }else{
+            $user_rss = DbConfig::get('baseUrl')."/rss/".$rss_token->token;
+        }
+        
         return $this->view()
                     ->assign('user_index_msg', $user_index_msg)
                     ->assign('user_index_topmsg', $user_index_topmsg)
