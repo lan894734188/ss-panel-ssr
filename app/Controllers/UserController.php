@@ -60,12 +60,14 @@ class UserController extends BaseController
                         $query->where("g","=",$this->user->g)
                         ->orWhere("g","=",0);})
                     ->where("level","<=",$this->user->level)->get();
+        $user_rss = DbConfig::get('baseUrl')."/".md5(($user->id+DbConfig::get('token_salt')));
         return $this->view()
                     ->assign('user_index_msg', $user_index_msg)
                     ->assign('user_index_topmsg', $user_index_topmsg)
                     ->assign('nodes', $nodes)
                     ->assign('user', $this->user)
                     ->assign('node_msg', $node_msg)
+                    ->assign('user_rss', $user_rss)
                     ->display('user/index.tpl');
     }
 
