@@ -78,7 +78,7 @@
 														<td>{$user->obfs}</td>
 													</tr>
 													<tr>
-														<td>SSR订阅链接:</td>
+														<td>SSR订阅链接(未正常运行):</td>
 														<td>{$user_rss}</td>
 													</tr>
 													<tr>
