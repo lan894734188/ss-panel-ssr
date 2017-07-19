@@ -25,15 +25,9 @@ class RSSController extends BaseController
 		$user = User::where("id", $tokenauth->userid)->first();
 		$level = $user->level;
 		$group = $user->g;
-		$nodepacket = Node::where('type', 1)
-		    ->orderBy('sort')
-		    ->where(function ($query) {
-			$query->where("g","=",$group)
-			->orWhere("g","=","0");})
-		    ->where("level","<=",$level)->get();
+		$nodepacket = Node::where('type', 1)->where(function ($query) {$query->where("g","=",$group)->orWhere("g","=","0");})->where("level","<=",$level)->orderBy('sort')->get();
 
-	    $nodes_array = $nodepacket-> toArray();
-	    $i = 0;
+	    	$nodes_array = $nodepacket-> toArray();
 
 		foreach ($nodes_array as $nodes) {
 		    $ary['server'] = $nodes->server;
@@ -47,7 +41,7 @@ class RSSController extends BaseController
 		    }
 		    $ssrurl = $ary['server']. ":" . $ary['server_port'].":".str_replace("_compatible","",$ary['protocol']).":".$ary['method'].":".str_replace("_compatible","",$ary['obfs']).":".Tools::base64_url_encode($ary['password'])."/?&remarks=".Tools::base64_url_encode($node->name)."&group=".Config::get('appName');
 		    $ssr_all_link = "ssr://" . Tools::base64_url_encode($ssrurl);
-		$rss_link .= $ssr_all_link."\n";
+		    $rss_link .= $ssr_all_link."\n";
 		}
 
 		return Tools::base64_url_encode($rss_link);
