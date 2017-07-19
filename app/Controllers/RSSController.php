@@ -44,9 +44,10 @@ class RSSController extends BaseController
 		    $ssrurl = $ary['server']. ":" . $ary['server_port'].":".str_replace("_compatible","",$ary['protocol']).":".$ary['method'].":".str_replace("_compatible","",$ary['obfs']).":".Tools::base64_url_encode($ary['password'])."/?&remarks=".Tools::base64_url_encode($node->name)."&group=".Config::get('appName');
 		    $ssr_all_link = "ssr://" . Tools::base64_url_encode($ssrurl);
 		    $rss_link .= $ssr_all_link."\n";
+		    return Tools::base64_url_encode($rss_link);
 		}
 
-		return Tools::base64_url_encode($rss_link);
+		
 		}
 	}
 
