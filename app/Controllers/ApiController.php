@@ -103,7 +103,8 @@ class ApiController extends BaseController
 			return 403;
 		}
 		$user = User::find($tokenauth->id);
-		$node = Node::where('type', 1)->orderBy('sort')->get();
+	    	$type = "1";
+		$node = Node::find($type);
 		foreach ($node as $nodes) {
 		    $ary['server'] = $nodes->server;
 		    $ary['server_port'] = $user->port;
