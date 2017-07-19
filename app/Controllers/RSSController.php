@@ -22,13 +22,15 @@ class RSSController extends BaseController
 		if ($tokenauth == null) {
 			return 403;
 		}else{
-			$user = User::where("id", $tokenauth->userid)->first();
-			$nodepacket = Node::where('type', 1)
+		$user = User::where("id", $tokenauth->userid)->first();
+		$level = $user->level;
+		$group = $user->g;
+		$nodepacket = Node::where('type', 1)
 		    ->orderBy('sort')
 		    ->where(function ($query) {
-			$query->where("g","=",$user->g)
+			$query->where("g","=",$group)
 			->orWhere("g","=","0");})
-		    ->where("level","<=",$user->level)->get();
+		    ->where("level","<=",$level)->get();
 
 	    $nodes_array = $nodepacket-> toArray();
 	    $i = 0;
