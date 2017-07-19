@@ -78,6 +78,10 @@
 														<td>{$user->obfs}</td>
 													</tr>
 													<tr>
+														<td>SSR订阅链接:</td>
+														<td>{$user_rss}</td>
+													</tr>
+													<tr>
 														<td>上次使用:</td>
 														<td>{$user->lastSsTime()}</td>
 													</tr>
