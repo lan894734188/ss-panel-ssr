@@ -110,7 +110,7 @@ class ApiController extends BaseController
 		$node = Node::where('type', 1)
 			 ->orderBy('sort')
                     	 ->where(function ($query) {
-                        	$query->where("g","=",$g);
+                        	$query->where("g","=",$g)
                          ->orWhere("g","=",0);})
                          ->where("level","<=",$level)->get();
 		foreach ($node as $nodes) {
