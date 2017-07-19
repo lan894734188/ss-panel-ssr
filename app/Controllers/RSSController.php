@@ -23,7 +23,7 @@ class RSSController extends BaseController
 			return 403;
 		}else{
 		$id=$tokenauth->id;
-		$user = User::where('id', $id)->first();
+		$user = User::where('id', $id)->get();
 			var_dump($user);
 			var_dump($tokenauth->id);
 			var_dump(md5($user->email+Config::get('token_salt')));
