@@ -22,7 +22,12 @@ class RSSController extends BaseController
 			return 403;
 		}else{
 		$user = User::where('id', $tokenauth->id)->first();
-		$node = Node::where('type', '1')->where("g", $user->g)->where("level", $user->level)->orderBy('sort');
+		$node = Node::where('type', 1)
+			 ->orderBy('sort')
+                    	 ->where(function ($query) {
+                        	$query->where("g","=",$user->g)
+                         ->orWhere("g","=",0);})
+                         ->where("level","<=",$user->level)->get();
 		foreach ($node as $nodes) {
 		    $ary['server'] = $nodes->server;
 		    $ary['server_port'] = $user->port;
