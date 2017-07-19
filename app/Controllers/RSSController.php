@@ -19,12 +19,14 @@ class RSSController extends BaseController
 	public function RSSContent ($request, $response, $args){
 		$token = $args['token'];
 		$tokenauth = RSS::where('token',$token)->first();
+		var_dump($tokenauth->id);
 		if (!$tokenauth) {
 			return 403;
 		}else{
 		$user = User::where("id", $tokenauth['user_id'])->get();
+			var_dump($user->level);
 		$nodepacket = Node::where('type', 1)->where("g","=",$user->g)->where("level","<=","$user->level")->orderBy('sort')->get();
-
+		var_dump($nodepacket->server);
 	    	$nodes_array = $nodepacket-> toArray();
 
 		foreach ($nodes_array as $nodes) {
