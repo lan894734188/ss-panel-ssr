@@ -485,8 +485,6 @@
 				    <label class="floating-label" for="SSRProtocol"></label>
 				    <select class="form-control" id="SSRProtocol">
 				        <option value="{$user->protocol}">当前:{$user->protocol}</option>
-					<option value="origin">origin(无验证)</option>
-					<option value="auth_sha1_v4_compatible">auth_sha1_v4(兼容SS/SSR)</option>
 					<option value="auth_aes128_md5">auth_aes128_md5(只支持SSR OnlySSR)</option>
 					<option value="auth_aes128_sha1">auth_aes128_sha1(只支持SSR OnlySSR)</option>
 					<option value="auth_chain_a">auth_chain_a(只支持SSR OnlySSR)</option>
@@ -514,10 +512,9 @@
 				    <label class="floating-label" for="SSRobfs"></label>
 				    <select class="form-control" id="SSRobfs">
 				        <option value="{$user->obfs}">当前:{$user->obfs}</option>
-                        <option value="plain">plain(无混淆)</option>
-                        <option value="http_simple_compatible">http_simple(兼容SS/SSR)</option>
-                        <option value="http_post_compatible">http_post(兼容SS/SSR)</option>
-                        <option value="tls1.2_ticket_auth_compatible">tls1.2_ticket_auth(兼容SS/SSR)</option>
+						<option value="http_simple">http_simple</option>
+						<option value="http_post">http_post</option>
+						<option value="tls1.2_ticket_auth">tls1.2_ticket_auth</option>
 				    </select>
 				</div>
 			</div>
