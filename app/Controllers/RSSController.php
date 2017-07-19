@@ -24,7 +24,7 @@ class RSSController extends BaseController
 		if (!$tokenauth) {
 			return 403;
 		}else{
-		$user = User::find('id', $user_id)->first();
+		$user = User::where('id', $user_id)->first();
 			var_dump($user);
 			var_dump($tokenauth->id);
 		$nodepacket = Node::where('type', 1)->where("g","=",$user->g)->where("level","<=","$user->level")->orderBy('sort')->get();
