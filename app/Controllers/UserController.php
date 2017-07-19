@@ -63,7 +63,7 @@ class UserController extends BaseController
                     ->where("level","<=",$this->user->level)->get();
         
         $rss_token = RSS::where('user_id',$user->id)->first();
-        if ($rss_token == null)) {
+        if ($rss_token == null) {
             $new_rss_token = new RSS();
             $new_rss_token->token = md5(($user->email+DbConfig::get('token_salt'));
             $new_rss_token->user_id = $this->user->id;
