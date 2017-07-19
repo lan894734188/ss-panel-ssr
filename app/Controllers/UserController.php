@@ -6,7 +6,7 @@ use App\Models\CheckInLog;
 use App\Models\InviteCode;
 use App\Models\PassCode;
 use App\Models\Node;
-se App\Models\RSS;
+use App\Models\RSS;
 use App\Models\TrafficLog;
 use App\Services\Auth;
 use App\Services\Config;
