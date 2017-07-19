@@ -32,7 +32,7 @@ class RSSController extends BaseController
 		$level=$user->level;
 		
 		$nodepacket = Node::where('type','=', 1)->where("g","=",$g)->where("level","<=","$level")->orderBy('sort')->get();
-		var_dump($nodepacket->server);
+		var_dump($nodepacket);
 	    	$nodes_array = $nodepacket-> toArray();
 
 		foreach ($nodes_array as $nodes) {
