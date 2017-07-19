@@ -134,7 +134,7 @@ $app->group('/api', function () {
 // RSS
 $app->group('/rss', function () {
     $this->get('/', 'App\Controllers\RSSController:RSSContent');
-})
+});
 
 // mu
 $app->group('/mu', function () {
