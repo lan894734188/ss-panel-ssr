@@ -65,12 +65,12 @@ class UserController extends BaseController
         $rss_token = RSS::where('user_id',$user->id)->first();
         if ($rss_token == null) {
             $new_rss_token = new RSS();
-            $new_rss_token->token = md5($user->email+DbConfig::get('token_salt'));
+            $new_rss_token->token = md5($user->email+Config::get('token_salt'));
             $new_rss_token->user_id = $this->user->id;
             $new_rss_token->create_time = time();
             $new_rss_token->save();
         }else{
-            $user_rss = DbConfig::get('baseUrl')."/rss/".$rss_token->token;
+            $user_rss = Config::get('baseUrl')."/rss/".$rss_token->token;
         }
         
         return $this->view()
