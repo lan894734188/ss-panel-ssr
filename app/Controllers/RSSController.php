@@ -18,23 +18,12 @@ class RSSController extends BaseController
 	public function RSSContent ($request, $response, $args){
 		$token = $args['token'];
 		$tokenauth = RSS::where('token',$token)->first();
-		var_dump($tokenauth->id);
 		if (!$tokenauth) {
 			return 403;
 		}else{
-		$id=$tokenauth->id;
-		$user = User::where('id', $id)->first();
-			var_dump($user);
-			var_dump($tokenauth->id);
-			var_dump(md5($user->email+Config::get('token_salt')));
-		$g=$user->g;
-		$level=$user->level;
-		
-		$nodepacket = Node::where('type', '1')->where("g", $user->g)->where("level", $user->level)->orderBy('sort');
-		var_dump($nodepacket);
-	    	$nodes_array = $nodepacket;
-
-		foreach ($nodes_array as $nodes) {
+		$user = User::where('id', $tokenauth->id)->first();
+		$node = Node::where('type', '1')->where("g", $user->g)->where("level", $user->level)->orderBy('sort');
+		foreach ($node as $nodes) {
 		    $ary['server'] = $nodes->server;
 		    $ary['server_port'] = $user->port;
 		    $ary['password'] = $user->passwd;
