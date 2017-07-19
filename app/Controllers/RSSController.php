@@ -2,8 +2,7 @@
 namespace App\Controllers;
 
 use App\Models\RSS;
-use App\Models\User;
-use App\Models\Node;
+use App\Models\Node,App\Models\User;
 use App\Utils\Tools;
 use App\Services\Config;
 
