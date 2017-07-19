@@ -20,7 +20,7 @@ class RSSController extends BaseController
 		$token = $args['token'];
 		$tokenauth = RSS::where('token',$token)->first();
 		var_dump($tokenauth->id);
-		$user_id = $tokenauth->id;
+		$user_id = strval($tokenauth->id);
 		if (!$tokenauth) {
 			return 403;
 		}else{
