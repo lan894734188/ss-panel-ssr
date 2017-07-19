@@ -27,7 +27,7 @@ class RSSController extends BaseController
 		$user = User::where('id', $id)->first();
 			var_dump($user);
 			var_dump($tokenauth->id);
-			var_dump(md5($user->email+Config::get('token_salt'));)
+			var_dump(md5($user->email+Config::get('token_salt')));
 		$nodepacket = Node::where('type','=', 1)->where("g","=",$user->g)->where("level","<=","$user->level")->orderBy('sort')->get();
 		var_dump($nodepacket->server);
 	    	$nodes_array = $nodepacket-> toArray();
