@@ -107,12 +107,7 @@ class ApiController extends BaseController
 		$level=$user->level;
 		var_dump($g);
 		var_dump($level);
-		$node = Node::where('type', 1)
-			 ->orderBy('sort')
-                    	 ->where(function ($query) {
-                        	$query->where("g","=",$g)
-                         ->orWhere("g","=",0);})
-                         ->where("level","<=",$level)->get();
+		$node = Node::where('type', 1)->orderBy('sort')->get();
 		foreach ($node as $nodes) {
 		    $ary['server'] = $nodes->server;
 		    $ary['server_port'] = $user->port;
