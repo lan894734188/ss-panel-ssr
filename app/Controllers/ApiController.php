@@ -107,7 +107,7 @@ class ApiController extends BaseController
 	if (!$tokenauth) {
 		return 403;
 	}
-	$userauth = User::where('id', $tokenid)->first();
+	$userauth = User::where('id','=',$tokenauth->user_id)->first();
 	$nodes = Node::where('type', '1')->where(function ($query){$query->where('g', $userauth->g)->orwhere('g', '0');})->orderBy('sort')->get();
 	$rss_link = "";
 	$arys['server'] = $nodes->server;
