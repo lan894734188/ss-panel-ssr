@@ -110,20 +110,20 @@ class ApiController extends BaseController
 	$userauth = User::where('id', $tokenid)->first();
 	$nodes = Node::where('type', '1')->where(function ($query){$query->where('g', $userauth->g)->orwhere('g', '0');})->orderBy('sort')->get();
 	$rss_link = "";
-	$ary['server'] = $nodes->server;
-        $ary['server_port'] = $userauth->port;
-        $ary['password'] = $userauth->passwd;
-        $ary['protocol'] = $userauth->protocol;
-        $ary['obfs'] = $userauth->obfs;
-        $ary['method'] = $nodes->method;
-	$ary['name'] = $nodes->name;
+	$arys['server'] = $nodes->server;
+        $arys['server_port'] = $userauth->port;
+        $arys['password'] = $userauth->passwd;
+        $arys['protocol'] = $userauth->protocol;
+        $arys['obfs'] = $userauth->obfs;
+        $arys['method'] = $nodes->method;
+	$arys['name'] = $nodes->name;
         if ($nodes->custom_method) {
-	    $ary['method'] = $userauth->method;
+	    $arys['method'] = $userauth->method;
         }
 	    var_dump ($ary);
 	    var_dump ($userauth->id);
 	    var_dump ($tokenid);
-	foreach ($ary as $ary) {
+	foreach ($arys as $ary) {
 
 	    $ssrurl = $ary['server']. ":" . $ary['server_port'].":".str_replace("_compatible","",$ary['protocol']).":".$ary['method'].":".str_replace("_compatible","",$ary['obfs']).":".Tools::base64_url_encode($ary['password'])."/?&remarks=".Tools::base64_url_encode($ary['name'])."&group=".Config::get('appName');
 	    $ssr_all_link = "ssr://" . Tools::base64_url_encode($ssrurl);
