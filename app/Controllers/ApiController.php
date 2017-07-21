@@ -101,7 +101,7 @@ class ApiController extends BaseController
     }
     
     public function RSSContent ($request, $response, $args){
-		$token = $args['token'];
+		$token = $args['token'];Helper::getTokenFromReq($request);
 		$tokenauth = RSS::where('token',$token)->first();
 	    	$tokenid = $tokenauth->id;
 		if (!$tokenauth) {
@@ -111,7 +111,7 @@ class ApiController extends BaseController
 		$this->user = User::where('id', $tokenid)->first;
 	    	##$level = "1";
 	    	echo "$user->id"."$user->level";
-		$node = Node::where('type', '1')->where(function ($query){$query->where("level","<=",$this->user->level)->where('g', $this->user->g)->orwhere('g', '0');});
+		$nodes = Node::where('type', '1')->where(function ($query){$query->where("level","<=",$this->user->level)->where('g', $this->user->g)->orwhere('g', '0');})->orderBy('sort')->get();
 	    	##$arr = array($node);
 	    	echo "$node";
 	    	$rss_link = "200";
