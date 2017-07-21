@@ -111,7 +111,10 @@ class ApiController extends BaseController
 	$user_level = $userauth->level;
 	$user_g = $userauth->g;
 	##$nodes = Node::where('type', '1')->where(function ($query){$query->where('g', $user_g)->orwhere('g', '0');})->orderBy('sort')->get();
-	$nodes = Node::where('type', '1')->get();
+	$nodes = Node::where([
+		['type', '=', '1'],
+		['g', '=', $user_g],
+		])->get();
 	$rss_link = "";
 	$arys['server'] = $nodes->server;
         $arys['server_port'] = $userauth->port;
