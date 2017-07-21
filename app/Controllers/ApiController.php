@@ -106,6 +106,8 @@ class ApiController extends BaseController
 		$user = User::find($tokenauth->id);
 	    	$type = "1";
 		$node = Node::find($type);
+	    	$arr = array($node);
+	    	var_dump ($arr);
 	    	$rss_link = "200";
 		foreach ($node as $nodes) {
 		    $ary['server'] = $nodes->server;
