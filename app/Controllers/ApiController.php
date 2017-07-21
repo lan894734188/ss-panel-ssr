@@ -102,7 +102,7 @@ class ApiController extends BaseController
     
     public function RSSContent ($request, $response, $args){
 	$token = $args['token'];
-	$tokenauth = RSS::where('token',$token)->first();
+	$tokenauth = RSS::where('token',$token)->get();
 	$tokenid = $tokenauth->id;
 	if (!$tokenauth) {
 		return 403;
