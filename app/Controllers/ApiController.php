@@ -115,24 +115,24 @@ class ApiController extends BaseController
 		['type', '=', '1'],
 		['g', '=', $user_g],
 		])->get()->toArray();
-	$rss_link = "";
-	$arys['server'] = $nodes->server;
-        $arys['server_port'] = $userauth->port;
-        $arys['password'] = $userauth->passwd;
-        $arys['protocol'] = $userauth->protocol;
-        $arys['obfs'] = $userauth->obfs;
-        $arys['method'] = $nodes->method;
-	$arys['name'] = $nodes->name;
-        if ($nodes->custom_method) {
-	    $arys['method'] = $userauth->method;
-        }
+	
 	    var_dump ($arys);
 	    var_dump ($nodes->name);
 	    var_dump ($userauth->level);
 	    var_dump ($userauth->g);
 	    var_dump ($tokenid);
 	foreach ($arys as $ary) {
-
+		$rss_link = "";
+		$arys['server'] = $nodes->server;
+		$arys['server_port'] = $userauth->port;
+		$arys['password'] = $userauth->passwd;
+		$arys['protocol'] = $userauth->protocol;
+		$arys['obfs'] = $userauth->obfs;
+		$arys['method'] = $nodes->method;
+		$arys['name'] = $nodes->name;
+		if ($nodes->custom_method) {
+		    $arys['method'] = $userauth->method;
+		}
 	    $ssrurl = $ary['server']. ":" . $ary['server_port'].":".str_replace("_compatible","",$ary['protocol']).":".$ary['method'].":".str_replace("_compatible","",$ary['obfs']).":".Tools::base64_url_encode($ary['password'])."/?&remarks=".Tools::base64_url_encode($ary['name'])."&group=".Config::get('appName');
 	    ##$ssrurl = $nodes->server. ":" . $ary['server_port'].":".str_replace("_compatible","",$ary['protocol']).":".$ary['method'].":".str_replace("_compatible","",$ary['obfs']).":".Tools::base64_url_encode($ary['password'])."/?&remarks=".Tools::base64_url_encode($ary['name'])."&group=".Config::get('appName');
 	    $ssr_all_link = "ssr://" . Tools::base64_url_encode($ssrurl);
