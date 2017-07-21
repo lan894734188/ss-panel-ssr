@@ -110,7 +110,7 @@ class ApiController extends BaseController
 		$user = User::where($tokenauth->id)->get;
 	    	##$level = "1";
 	    	echo "$user->id"."$user->level";
-		$node = Node::where('type', '1')->where(function ($query){$query->where('g', $user->g)->orwhere('g', '0');})->where('level','<=',$user->level);
+		$node = Node::where('type', '1')->where(function ($query){$query->where('g', $user->g)->orwhere('g', '0');})->where("level","<=",$user->level);
 	    	##$arr = array($node);
 	    	echo "$node";
 	    	$rss_link = "200";
