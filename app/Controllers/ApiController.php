@@ -120,8 +120,8 @@ class ApiController extends BaseController
         if ($nodes->custom_method) {
 	    $arys['method'] = $userauth->method;
         }
-	    var_dump ($ary);
-	    var_dump ($userauth->id);
+	    var_dump ($arys);
+	    var_dump ($userauth->level);
 	    var_dump ($tokenid);
 	foreach ($arys as $ary) {
 
