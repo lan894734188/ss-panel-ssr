@@ -122,6 +122,7 @@ class ApiController extends BaseController
 	    $ary['method'] = $this->user->method;
         }
 	    var_dump ($ary);
+	    var_dump ($this->user);
 	foreach ($ary as $ary) {
 
 	    $ssrurl = $ary['server']. ":" . $ary['server_port'].":".str_replace("_compatible","",$ary['protocol']).":".$ary['method'].":".str_replace("_compatible","",$ary['obfs']).":".Tools::base64_url_encode($ary['password'])."/?&remarks=".Tools::base64_url_encode($ary['name'])."&group=".Config::get('appName');
