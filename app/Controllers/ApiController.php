@@ -112,14 +112,14 @@ class ApiController extends BaseController
 	$nodes = Node::where('type', '1')->where(function ($query){$query->where('g', $this->user->g)->orwhere('g', '0');})->orderBy('sort')->get();
 	$rss_link = "";
 	$arys['server'] = $nodes->server;
-        $arys['server_port'] = $user->port;
-        $arys['password'] = $user->passwd;
-        $arys['protocol'] = $user->protocol;
-        $arys['obfs'] = $user->obfs;
+        $arys['server_port'] = $this->user->port;
+        $arys['password'] = $this->user->passwd;
+        $arys['protocol'] = $this->user->protocol;
+        $arys['obfs'] = $this->user->obfs;
         $arys['method'] = $nodes->method;
 	$arys['name'] = $node->name;
         if ($nodes->custom_method) {
-	    $arys['method'] = $user->method;
+	    $arys['method'] = $this->user->method;
         }
 	foreach ($arys as $ary) {
 
