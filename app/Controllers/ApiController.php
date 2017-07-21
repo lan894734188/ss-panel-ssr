@@ -4,7 +4,7 @@ namespace App\Controllers;
 use App\Services\Auth;
 use App\Models\User;
 use App\Models\Node;
-
+use App\Services\Config;
 use App\Models\InviteCode;
 use App\Models\RSS;
 
@@ -121,12 +121,13 @@ class ApiController extends BaseController
         $arys['protocol'] = $user->protocol;
         $arys['obfs'] = $user->obfs;
         $arys['method'] = $nodes->method;
+	$arys['name'] = $node->name;
         if ($nodes->custom_method) {
 	    $arys['method'] = $user->method;
         }
 	foreach ($arys as $ary) {
 
-	    $ssrurl = $ary['server']. ":" . $ary['server_port'].":".str_replace("_compatible","",$ary['protocol']).":".$ary['method'].":".str_replace("_compatible","",$ary['obfs']).":".Tools::base64_url_encode($ary['password'])."/?&remarks=".Tools::base64_url_encode($node->name)."&group=".Config::get('appName');
+	    $ssrurl = $ary['server']. ":" . $ary['server_port'].":".str_replace("_compatible","",$ary['protocol']).":".$ary['method'].":".str_replace("_compatible","",$ary['obfs']).":".Tools::base64_url_encode($ary['password'])."/?&remarks=".Tools::base64_url_encode($ary['name'])."&group=".Config::get('appName');
 	    $ssr_all_link = "ssr://" . Tools::base64_url_encode($ssrurl);
 	    $rss_link .= $ssr_all_link."\n";
 	}
