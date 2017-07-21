@@ -103,11 +103,11 @@ class ApiController extends BaseController
 		if (!$tokenauth) {
 			return 403;
 		}
-		$user = User::find($tokenauth->id);
+		$user = User::where($tokenauth->id);
 	    	$level = "1";
 		$node = Node::where('level', $user->level);
 	    	$arr = array($node);
-	    	var_dump ($arr);
+	    	echo "$arr";
 	    	$rss_link = "200";
 		foreach ($node as $nodes) {
 		    $ary['server'] = $nodes->server;
