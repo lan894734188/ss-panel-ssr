@@ -111,17 +111,17 @@ class ApiController extends BaseController
 	$this->user = User::where('id', $tokenid)->first;
 	$nodes = Node::where('type', '1')->where(function ($query){$query->where('g', $this->user->g)->orwhere('g', '0');})->orderBy('sort')->get();
 	$rss_link = "";
-	$arys['server'] = $nodes->server;
-        $arys['server_port'] = $this->user->port;
-        $arys['password'] = $this->user->passwd;
-        $arys['protocol'] = $this->user->protocol;
-        $arys['obfs'] = $this->user->obfs;
-        $arys['method'] = $nodes->method;
-	$arys['name'] = $nodes->name;
+	$ary['server'] = $nodes->server;
+        $ary['server_port'] = $this->user->port;
+        $ary['password'] = $this->user->passwd;
+        $ary['protocol'] = $this->user->protocol;
+        $ary['obfs'] = $this->user->obfs;
+        $ary['method'] = $nodes->method;
+	$ary['name'] = $nodes->name;
         if ($nodes->custom_method) {
-	    $arys['method'] = $this->user->method;
+	    $ary['method'] = $this->user->method;
         }
-	foreach ($arys as $ary) {
+	foreach ($ary as $ary) {
 
 	    $ssrurl = $ary['server']. ":" . $ary['server_port'].":".str_replace("_compatible","",$ary['protocol']).":".$ary['method'].":".str_replace("_compatible","",$ary['obfs']).":".Tools::base64_url_encode($ary['password'])."/?&remarks=".Tools::base64_url_encode($ary['name'])."&group=".Config::get('appName');
 	    $ssr_all_link = "ssr://" . Tools::base64_url_encode($ssrurl);
