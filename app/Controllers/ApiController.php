@@ -127,7 +127,7 @@ class ApiController extends BaseController
 	    $arys['method'] = $userauth->method;
         }
 	    var_dump ($arys);
-	    var_dump ($nodes);
+	    var_dump ($nodes->name);
 	    var_dump ($userauth->level);
 	    var_dump ($userauth->g);
 	    var_dump ($tokenid);
