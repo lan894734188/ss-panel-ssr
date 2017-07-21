@@ -128,6 +128,7 @@ class ApiController extends BaseController
         }
 	    var_dump ($arys);
 	    var_dump ($userauth->level);
+	    var_dump ($userauth->g);
 	    var_dump ($tokenid);
 	foreach ($arys as $ary) {
 
