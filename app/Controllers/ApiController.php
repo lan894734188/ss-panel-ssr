@@ -108,10 +108,10 @@ class ApiController extends BaseController
 			return 403;
 		}
 	    	$this->user = Auth::getUser();
-		$user = User::where('id', $tokenid)->first;
+		$this->user = User::where('id', $tokenid)->first;
 	    	##$level = "1";
 	    	echo "$user->id"."$user->level";
-		$node = Node::where('type', '1')->where(function ($query){$query->where("level","<=",$user->level)->where('g', $user->g)->orwhere('g', '0');});
+		$node = Node::where('type', '1')->where(function ($query){$query->where("level","<=",$this->user->level)->where('g', $this->user->g)->orwhere('g', '0');});
 	    	##$arr = array($node);
 	    	echo "$node";
 	    	$rss_link = "200";
