@@ -101,36 +101,37 @@ class ApiController extends BaseController
     }
     
     public function RSSContent ($request, $response, $args){
-		$token = $args['token'];Helper::getTokenFromReq($request);
-		$tokenauth = RSS::where('token',$token)->first();
-	    	$tokenid = $tokenauth->id;
-		if (!$tokenauth) {
-			return 403;
-		}
-	    	$this->user = Auth::getUser();
-		$this->user = User::where('id', $tokenid)->first;
-	    	##$level = "1";
-	    	echo "$user->id"."$user->level";
-		$nodes = Node::where('type', '1')->where(function ($query){$query->where("level","<=",$this->user->level)->where('g', $this->user->g)->orwhere('g', '0');})->orderBy('sort')->get();
-	    	##$arr = array($node);
-	    	echo "$node";
-	    	$rss_link = "200";
-		foreach ($node as $nodes) {
-		    $ary['server'] = $nodes->server;
-		    $ary['server_port'] = $user->port;
-		    $ary['password'] = $user->passwd;
-		    $ary['protocol'] = $user->protocol;
-		    $ary['obfs'] = $user->obfs;
-		    $ary['method'] = $nodes->method;
-		    if ($nodes->custom_method) {
-			$ary['method'] = $user->method;
-		    }
-		    $ssrurl = $ary['server']. ":" . $ary['server_port'].":".str_replace("_compatible","",$ary['protocol']).":".$ary['method'].":".str_replace("_compatible","",$ary['obfs']).":".Tools::base64_url_encode($ary['password'])."/?&remarks=".Tools::base64_url_encode($node->name)."&group=".Config::get('appName');
-		    $ssr_all_link = "ssr://" . Tools::base64_url_encode($ssrurl);
-		    $rss_link .= $ssr_all_link."\n";
-		}
-	    	return Tools::base64_url_encode($rss_link);
+	$token = $args['token'];Helper::getTokenFromReq($request);
+	$tokenauth = RSS::where('token',$token)->first();
+	$tokenid = $tokenauth->id;
+	if (!$tokenauth) {
+		return 403;
 	}
+	$this->user = Auth::getUser();
+	$this->user = User::where('id', $tokenid)->first;
+	##$level = "1";
+	echo "$user->id"."$user->level";
+	$nodes = Node::where('type', '1')->where(function ($query){$query->where("level","<=",$this->user->level)->where('g', $this->user->g)->orwhere('g', '0');})->orderBy('sort')->get();
+	##$arr = array($node);
+	echo "$node";
+	$rss_link = "200";
+	$arys['server'] = $nodes->server;
+        $arys['server_port'] = $user->port;
+        $arys['password'] = $user->passwd;
+        $arys['protocol'] = $user->protocol;
+        $arys['obfs'] = $user->obfs;
+        $arys['method'] = $nodes->method;
+        if ($nodes->custom_method) {
+	    $arys['method'] = $user->method;
+        }
+	foreach ($arys as $ary) {
+
+	    $ssrurl = $ary['server']. ":" . $ary['server_port'].":".str_replace("_compatible","",$ary['protocol']).":".$ary['method'].":".str_replace("_compatible","",$ary['obfs']).":".Tools::base64_url_encode($ary['password'])."/?&remarks=".Tools::base64_url_encode($node->name)."&group=".Config::get('appName');
+	    $ssr_all_link = "ssr://" . Tools::base64_url_encode($ssrurl);
+	    $rss_link .= $ssr_all_link."\n";
+	}
+	return Tools::base64_url_encode($rss_link);
+}
 
 
 }
