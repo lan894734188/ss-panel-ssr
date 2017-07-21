@@ -117,7 +117,7 @@ class ApiController extends BaseController
         $arys['protocol'] = $this->user->protocol;
         $arys['obfs'] = $this->user->obfs;
         $arys['method'] = $nodes->method;
-	$arys['name'] = $node->name;
+	$arys['name'] = $nodes->name;
         if ($nodes->custom_method) {
 	    $arys['method'] = $this->user->method;
         }
