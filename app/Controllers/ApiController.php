@@ -114,7 +114,7 @@ class ApiController extends BaseController
 	$nodes = Node::where([
 		['type', '=', '1'],
 		['g', '=', $user_g],
-		])->get();
+		])->get()->toArray();
 	$rss_link = "";
 	$arys['server'] = $nodes->server;
         $arys['server_port'] = $userauth->port;
@@ -134,6 +134,7 @@ class ApiController extends BaseController
 	foreach ($arys as $ary) {
 
 	    $ssrurl = $ary['server']. ":" . $ary['server_port'].":".str_replace("_compatible","",$ary['protocol']).":".$ary['method'].":".str_replace("_compatible","",$ary['obfs']).":".Tools::base64_url_encode($ary['password'])."/?&remarks=".Tools::base64_url_encode($ary['name'])."&group=".Config::get('appName');
+	    ##$ssrurl = $nodes->server. ":" . $ary['server_port'].":".str_replace("_compatible","",$ary['protocol']).":".$ary['method'].":".str_replace("_compatible","",$ary['obfs']).":".Tools::base64_url_encode($ary['password'])."/?&remarks=".Tools::base64_url_encode($ary['name'])."&group=".Config::get('appName');
 	    $ssr_all_link = "ssr://" . Tools::base64_url_encode($ssrurl);
 	    $rss_link .= $ssr_all_link."\n";
 	}
