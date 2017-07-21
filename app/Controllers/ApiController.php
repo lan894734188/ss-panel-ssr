@@ -109,12 +109,8 @@ class ApiController extends BaseController
 	}
 	$this->user = Auth::getUser();
 	$this->user = User::where('id', $tokenid)->first;
-	##$level = "1";
-	echo "$user->id"."$user->level";
 	$nodes = Node::where('type', '1')->where(function ($query){$query->where('g', $this->user->g)->orwhere('g', '0');})->orderBy('sort')->get();
-	##$arr = array($node);
-	echo "$node";
-	$rss_link = "200";
+	$rss_link = "";
 	$arys['server'] = $nodes->server;
         $arys['server_port'] = $user->port;
         $arys['password'] = $user->passwd;
