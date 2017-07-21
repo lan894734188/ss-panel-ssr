@@ -107,21 +107,21 @@ class ApiController extends BaseController
 	if (!$tokenauth) {
 		return 403;
 	}
-	$this->user = User::where('id', $tokenid)->first;
-	$nodes = Node::where('type', '1')->where(function ($query){$query->where('g', $this->user->g)->orwhere('g', '0');})->orderBy('sort')->get();
+	$userauth = User::where('id', $tokenid)->first;
+	$nodes = Node::where('type', '1')->where(function ($query){$query->where('g', $userauth->g)->orwhere('g', '0');})->orderBy('sort')->get();
 	$rss_link = "";
 	$ary['server'] = $nodes->server;
-        $ary['server_port'] = $this->user->port;
-        $ary['password'] = $this->user->passwd;
-        $ary['protocol'] = $this->user->protocol;
-        $ary['obfs'] = $this->user->obfs;
+        $ary['server_port'] = $userauth->port;
+        $ary['password'] = $userauth->passwd;
+        $ary['protocol'] = $userauth->protocol;
+        $ary['obfs'] = $userauth->obfs;
         $ary['method'] = $nodes->method;
 	$ary['name'] = $nodes->name;
         if ($nodes->custom_method) {
-	    $ary['method'] = $this->user->method;
+	    $ary['method'] = $userauth->method;
         }
 	    var_dump ($ary);
-	    var_dump ($this->user->id);
+	    var_dump ($userauth->id);
 	    var_dump ($tokenid);
 	foreach ($ary as $ary) {
 
