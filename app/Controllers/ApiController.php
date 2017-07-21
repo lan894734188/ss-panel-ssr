@@ -111,7 +111,7 @@ class ApiController extends BaseController
 	$this->user = User::where('id', $tokenid)->first;
 	##$level = "1";
 	echo "$user->id"."$user->level";
-	$nodes = Node::where('type', '1')->where(function ($query){$query->where("level","<=",$this->user->level)->where('g', $this->user->g)->orwhere('g', '0');})->orderBy('sort')->get();
+	$nodes = Node::where('type', '1')->where(function ($query){$query->where('g', $this->user->g)->orwhere('g', '0');})->orderBy('sort')->get();
 	##$arr = array($node);
 	echo "$node";
 	$rss_link = "200";
