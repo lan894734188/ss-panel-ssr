@@ -108,7 +108,9 @@ class ApiController extends BaseController
 		return 403;
 	}
 	$userauth = User::where('id','=',$tokenauth->user_id)->first();
-	$nodes = Node::where('type', '1')->where(function ($query){$query->where('g', $userauth->g)->orwhere('g', '0');})->orderBy('sort')->get();
+	$user_level = $userauth->level;
+	$user_g = $userauth->g;
+	$nodes = Node::where('type', '1')->where(function ($query){$query->where('g', $user_g)->orwhere('g', '0');})->orderBy('sort')->get();
 	$rss_link = "";
 	$arys['server'] = $nodes->server;
         $arys['server_port'] = $userauth->port;
