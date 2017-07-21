@@ -126,14 +126,11 @@ $app->group('/admin', function () {
 
 // API
 $app->group('/api', function () {
+      $this->get('/rss/{token}', 'App\Controllers\ApiController:RSSContent');
 //    $this->get('/token/{token}', 'App\Controllers\ApiController:token');
 //    $this->post('/token', 'App\Controllers\ApiController:newToken');
 //    $this->get('/node', 'App\Controllers\ApiController:node')->add(new Api());
 //    $this->get('/user/{id}', 'App\Controllers\ApiController:userInfo')->add(new Api());
-});
-// RSS
-$app->group('/rss', function () {
-    $this->get('/{token}', 'App\Controllers\ApiController:RSSContent');
 });
 
 // mu
