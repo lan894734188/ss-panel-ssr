@@ -12,7 +12,7 @@
 	<link href="{if $CDNType}{$CDNDomain}{else}..{/if}/assets/md-interface/css/project.min.css" rel="stylesheet">
 
 	<!-- js -->
-	<script src="https://ajax-googleapis.cdn.bydisk.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="https://cache.cdn.bydisk.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="{if $CDNType}{$CDNDomain}{else}..{/if}/assets/md-interface/js/base.min.js"></script>
 	<script src="{if $CDNType}{$CDNDomain}{else}..{/if}/assets/md-interface/js/project.min.js"></script>
 
